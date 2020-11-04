@@ -14,6 +14,7 @@ public class DBConnectorTest extends MyTestCase{
 	@Test
 	public void test() {
 		assertNotNull(sqlSession.getConnection());
+		System.out.println("DB연결");
 	}
 	
 
