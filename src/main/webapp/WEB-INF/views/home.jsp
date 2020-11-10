@@ -5,15 +5,40 @@
 
 <head>
 
+
+
 <style type="text/css">
-	.slide{
+.slide{
 	height: 450px;
 	width: 100%;
 }
-.best{
-	height: 50px;
+.symbol{
+	height: 40px;
 	width: 50px;
 }
+.img-circle{
+	width: 160px;
+	height: 160px;
+	
+}
+.best{
+	list-style: none;
+	float: left;
+}
+.trainer{
+	float: left;
+	margin-left: 10px;
+}
+.gym{
+	float: left;
+	margin-left: 10px;
+}
+
+.food{
+	float: left;
+	margin-left: 10px;
+}
+
 	</style>
 
   <meta charset="UTF-8">
