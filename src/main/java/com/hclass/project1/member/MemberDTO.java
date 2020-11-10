@@ -1,6 +1,6 @@
 package com.hclass.project1.member;
 
-public class MemberDTO {
+public abstract class MemberDTO {
 public long num;
 public String id;
 public String pw;

@@ -4,6 +4,7 @@
 <!doctype html>
 <html>
 <head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <meta charset="utf-8">
 <title>..</title>
 <style>
@@ -25,7 +26,7 @@
 </head>
 <body>
 	
-<form action="" method="get" id="form1">
+<form action="./memberJoin" method="get" id="form1">
 
 <div class = "center">
 
@@ -68,9 +69,9 @@
 	</p>
 
 
-	<p>
+	<p id="input">
 		<input type="submit" value="동의">
-		<a><input type="button" value="트레이너"></a>
+		<input type="button" value="트레이너" id="trainer">
 		<input type="reset" value="미동의">
 	</p>
 	
@@ -148,8 +149,11 @@
 			}
 		}
 	}; */
-
-
+	$("#input").on("click","#trainer",function(){
+		$("#form1").attr("action", "./memberJoinTrainer");
+		$("#form1").submit();
+		});
+	
 	form1.onsubmit = function(e) {
 		e.preventDefault(); // 서브밋 될때 화면이 깜빡이지 않게 방지
 

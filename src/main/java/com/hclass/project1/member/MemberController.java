@@ -11,6 +11,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.hclass.project1.trainer.MemberTrainerDTO;
+
 @Controller
 @RequestMapping("/member/**")
 public class MemberController {
@@ -29,7 +31,7 @@ public class MemberController {
 	public ModelAndView memberLogin(MemberDTO memberDTO,HttpSession session) throws Exception{
 		ModelAndView mv = new ModelAndView();
 		memberDTO=memberService.memberLogin(memberDTO);
-		mv.setViewName("index");
+		mv.setViewName("home");
 		return mv;
 	}
 	@GetMapping("memberLogin")
@@ -38,6 +40,7 @@ public class MemberController {
 		mv.setViewName("member/memberLogin");
 		return mv;
 	}
+	//회원가입시 중복되는 값 체크
 	@GetMapping("memberEmailCheck")
 	public ModelAndView getEmail(MemberDTO memberDTO) throws Exception{
 		ModelAndView mv = new ModelAndView();
@@ -66,6 +69,7 @@ public class MemberController {
 		mv.setViewName("common/ajaxResult");
 		return mv;
 	}
+	//회원가입 페이지로 이동!!
 
 	@GetMapping("memberIdCheck")
 	public ModelAndView getOne(MemberDTO memberDTO) throws Exception{
@@ -82,9 +86,26 @@ public class MemberController {
 		mv.setViewName("common/ajaxResult");
 		return mv;
 	}
+	@PostMapping("memberJoinTrainer")
+	public ModelAndView setTrainer(MemberTrainerDTO membertrainerDTO) throws Exception{
+		ModelAndView mv = new ModelAndView();
+		mv.addObject("classification","trainer");
+		mv.setViewName("member/memberJoin");
+		return mv;
+	}
+	
+	@GetMapping("memberJoinTrainer")
+	public ModelAndView setTrainer() throws Exception{
+		ModelAndView mv = new ModelAndView();
+		mv.addObject("classification","trainer");
+		mv.setViewName("member/memberJoin");
+		return mv;
+	}
+	
 	@GetMapping("memberJoin")
 	public ModelAndView setOne() throws Exception{
 		ModelAndView mv = new ModelAndView();
+		mv.addObject("classification","member");
 		mv.setViewName("member/memberJoin");
 		return mv;
 	}

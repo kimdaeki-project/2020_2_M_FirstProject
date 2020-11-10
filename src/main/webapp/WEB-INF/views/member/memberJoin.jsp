@@ -36,7 +36,10 @@
             <!-- 모달창 -->
 
             <!-- 본문 들어가는 부분 -->
-                
+            <div class="container">
+               <h1 >${classification} 회원가입</h1>
+               <div><a href ="../">home</a></div>
+               <input type="text" hidden="" value="${classification}" id="title">
  		<div class="container">
             <form class="form-horizontal" id="frm" method="post" action="./memberJoin">
                 <div class="form-group" id="divId">
@@ -85,8 +88,36 @@
                          <div id="phoneResult"></div>
                     </div>
                 </div>
-               
+                <c:if test="${classification eq	'trainer'}">
+               <div class="form-group" id="divAddress">
+                    <label for="inputPhoneNumber" class="col-lg-2 control-label">주소</label>
+                    <div class="col-lg-10">
+                        <input type="tel" class="form-control onlyNumber" id="address" data-rule-required="true" placeholder="주소를 입력하세요" name="address" >
+                         <div id="addressResult"></div>
+                    </div>
+                </div>
                 
+                <div class="form-group" id="divGym">
+                    <label for="inputPhoneNumber" class="col-lg-2 control-label">체육관</label>
+                    <div class="col-lg-10">
+                        <input type="tel" class="form-control onlyNumber" id="gym" data-rule-required="true" placeholder="체육관 이름을 입력하세요" maxlength="11" name="gym">
+                         <div id="gymResult"></div>
+                    </div>
+                </div>
+                <div class="form-group" id="divBusiness">
+                    <label for="inputPhoneNumber" class="col-lg-2 control-label">business</label>
+                    <div class="col-lg-10">
+                        <input type="tel" class="form-control onlyNumber" id="business" data-rule-required="true" placeholder="business" maxlength="11" name="business">
+                         <div id="businessResult"></div>
+                    </div>
+                </div>
+                <div class="form-group" id="divFile">
+                	 <label for="inputPhoneNumber" class="col-lg-2 control-label">증명사진</label>
+                	 <div class="col-lg-10">
+                	 <input type="file" class="form-control onlyNumber" id="business" data-rule-required="true" name="file">
+                	 </div>
+                </div>
+         	 </c:if>
                 <div class="form-group">
                     <label for="inputEmailReceiveYn" class="col-lg-2 control-label">성별</label>
                     <div class="col-lg-10">
@@ -98,30 +129,15 @@
                         </label>
                     </div>
                 </div>
-                
-              
-                <div class="form-group">
-                    <label for="inputPhoneNumber" class="col-lg-2 control-label">SMS 수신여부</label>
-                    <div class="col-lg-10">
-                        <label class="radio-inline">
-                            <input type="radio" id="smsReceiveYn" name="smsReceiveYn" value="Y" checked> 동의합니다.
-                        </label>
-                        <label class="radio-inline">
-                            <input type="radio" id="smsReceiveYn" name="smsReceiveYn" value="N"> 동의하지 않습니다.
-                        </label>
-                    </div>
-                </div>
                 <div class="form-group" id="divsingIn"> 
-                    <div class="col-lg-offset-2 col-lg-10">
-                        <button type="submit" class="btn btn-primary">Sign in</button>
-                    </div>
                      <div class="col-lg-offset-2 col-lg-10">
                     	<input type ="button" class="btn btn-primary" value="회원가입" id="signIn"> 
+                    	
                     </div>
                 </div>
                 </form>
                 </div>
-            
+            </div>
         
                 <!--// 본문 들어가는 부분 -->
             <hr/>
@@ -132,16 +148,27 @@
 			var idCheck = false;
 			var emailCheck = false;
 			var ageCheck = false;
+			var addressCheck=false;
+			var gymCheck = false;
+			var businessCheck=false;
+			var ch = $("#title").val();
+		
 			
 		
 			//*****************************필수 입력 체크 및 회원가입*********************************
 				$("#signIn").click(function(){
+					if(ch!='trainer'){
 						if(pwCheck&&idCheck&&emailCheck&&ageCheck){
 							$("#frm").submit();
 							}
 						else{
 								alert("필수항목을 입력하세요!");
 							}
+					}
+					else{
+						$("#frm").attr("action", "./memberJoinTrainer");
+						$("#frm").submit();
+						}
 					});
 				//*******************************핸드폰번호 중복 체크************************************
 				$("#divPhone").on("blur", "#phone", function(){
@@ -214,6 +241,11 @@
 							$("#pwResult").removeClass("idCheck1").addClass("idCheck0");
 							pwCheck = true;
 						}
+					if(pw==''||pw2==''){
+							str="비밀번호는 필수입니다.";
+							$("#pwResult").removeClass("idCheck0").addClass("idCheck1");
+							pwCheck = false;
+						}
 					$("#pwResult").html(str);
                 });
             //***********************idcheck**************************************
@@ -235,9 +267,47 @@
 				}else {
 					$("#idResult").html("Id는 필수 항목입니다");
 					$("#idResult").removeClass("idCheck0").addClass("idCheck1");
+					
 				}
 				
-				});	         
+				});
+			//***********************트레이너 전용확인********************************************
+			
+				if(ch=='trainer'){	
+					$("#divAddress").on("blur","#address",function(){
+						var address = $(this).val();
+						if(address==''){
+							var str="주소는 필수입니다.";
+							$("#addressResult").html(str);
+							$("#addressResult").removeClass("idCheck0").addClass("idCheck1");
+							}
+						else{
+							$("#addressResult").remove();
+							}
+					});
+					$("#divGym").on("blur","#gym",function(){
+						var gym = $(this).val();
+						if(gym==''){
+							var str2="체육관이름은 필수입니다.";
+							$("#gymResult").html(str2);
+							$("#gymResult").removeClass("idCheck0").addClass("idCheck1");
+							}
+						else{
+							$("#gymResult").remove();
+							}
+					});
+					$("#divBusiness").on("blur","#business",function(){
+						var business = $(this).val();
+						if(business==''){
+							var str3="business는 필수입니다.";
+							$("#businessResult").html(str3);
+							$("#businessResult").removeClass("idCheck0").addClass("idCheck1");
+							}
+						else{
+							$("#businessResult").remove();
+							}
+					});
+				}	         
             </script>
             <!-- 푸터 들어가는 부분 -->
             

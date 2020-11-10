@@ -6,6 +6,9 @@
     <insert id ="setOne" parameterType="com.hclass.project1.member.MemberDTO">
     	insert into member values(member_seq.nextval,#{name},#{id},#{pw},#{phone},#{email},#{gender},#{age})
 	</insert>
+	<insert id="setTrainer" parameterType="com.hclass.project1.trainer.MemberTrainerDTO">
+			insert into trainer values(trainer_seq.nextval,#{name},#{id},#{pw},#{phone},#{email},#{gender},#{age},#{address},#{gym},#{business})
+	</insert>
 	<select id="getOne" resultType="com.hclass.project1.member.MemberDTO" parameterType="com.hclass.project1.member.MemberDTO">
 		select * from member where id=#{id}
 	</select>

@@ -6,12 +6,19 @@ import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import com.hclass.project1.trainer.MemberTrainerDTO;
+
 @Repository
 public class MemberDAO {
 
 	@Autowired
 	private SqlSession sqlSession;
 	private final String namespace="com.hclass.project1.member.MemberDAO.";
+	
+	public int setTrainer(MemberTrainerDTO trainerDTO) throws Exception{
+		
+		return sqlSession.insert(namespace+"setTrainer",trainerDTO);
+	}
 	
 	public int setOne(MemberDTO memberDTO) throws Exception{
 		
@@ -29,7 +36,7 @@ public class MemberDAO {
 	public MemberDTO getPhone(MemberDTO memberDTO) throws Exception{
 	
 		return sqlSession.selectOne(namespace+"getPhone",memberDTO);
-}
+	}
 	
 	public MemberDTO memberLogin(MemberDTO memberDTO)throws Exception{
 		return sqlSession.selectOne(namespace+"memberLogin",memberDTO);
