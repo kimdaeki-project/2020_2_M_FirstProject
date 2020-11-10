@@ -18,3 +18,4 @@
 
   <!-- Custom scripts for this template -->
   <script src="./resources/js/clean-blog.min.js"></script>
+  

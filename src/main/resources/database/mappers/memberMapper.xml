@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+    <mapper namespace="com.hclass.project1.member.MemberDAO" >
+    <insert id ="setOne" parameterType="com.hclass.project1.member.MemberDTO">
+    	insert into member values(member_seq.nextval,#{name},#{id},#{pw},#{phone},#{email},#{gender},#{age})
+	</insert>
+	<select id="getOne" resultType="com.hclass.project1.member.MemberDTO" parameterType="com.hclass.project1.member.MemberDTO">
+		select * from member where id=#{id}
+	</select>
+	<select id="getEmail" resultType="com.hclass.project1.member.MemberDTO" parameterType="com.hclass.project1.member.MemberDTO">
+		select * from member where email=#{email}
+	</select>
+	<select id="getPhone" resultType="com.hclass.project1.member.MemberDTO" parameterType="com.hclass.project1.member.MemberDTO">
+		select * from member where phone=#{phone}
+	</select>
+	<select id = "memberLogin" resultType="com.hclass.project1.member.MemberDTO" parameterType="com.hclass.project1.member.MemberDTO">
+			select * from member where id=#{id} and pw=#{pw}
+	</select>
+	
+    </mapper>

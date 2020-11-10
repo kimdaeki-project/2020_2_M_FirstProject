@@ -22,10 +22,10 @@
             <a class="nav-link" href="post.html">Q&A</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="contact.html">Login</a>
+            <a class="nav-link" href="${pageContext.request.contextPath}/member/memberLogin">Login</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="contact.html">Sign up</a>
+            <a class="nav-link" href="${pageContext.request.contextPath}/member/memberAgrement">Sign up</a>
           </li>
         </ul>
       </div>
