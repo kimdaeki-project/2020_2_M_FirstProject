@@ -6,5 +6,6 @@
   <configuration>
   	<typeAliases>
   			<typeAlias type="com.hclass.project1.member.MemberDTO" alias="MemberDTO"/>
+  			<typeAlias type="com.hclass.project1.member.memberfile.MemberFileDTO" alias="MemberFileDTO"/>
   	</typeAliases>
   </configuration>

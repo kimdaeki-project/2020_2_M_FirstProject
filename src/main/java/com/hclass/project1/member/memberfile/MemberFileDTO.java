@@ -1,4 +1,4 @@
-package com.hclass.project1.member.membetrainerfile;
+package com.hclass.project1.member.memberfile;
 
 public class MemberFileDTO {
 	private String oriName;

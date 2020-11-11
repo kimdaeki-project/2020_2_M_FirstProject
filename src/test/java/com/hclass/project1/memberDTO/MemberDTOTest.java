@@ -8,7 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import com.hclass.project1.MyTestCase;
 import com.hclass.project1.member.MemberDAO;
 import com.hclass.project1.member.MemberDTO;
-import com.hclass.project1.trainer.MemberTrainerDTO;
+
 
 public class MemberDTOTest extends MyTestCase {
 	

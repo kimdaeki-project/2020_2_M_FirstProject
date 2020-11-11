@@ -41,7 +41,7 @@
                <div><a href ="../">home</a></div>
                <input type="text" hidden="" value="${classification}" id="title">
  		<div class="container">
-            <form class="form-horizontal" id="frm" method="post" action="./memberJoin">
+            <form class="form-horizontal" id="frm" method="post" action="./memberJoin"  enctype="multipart/form-data">
                 <div class="form-group" id="divId">
                     <label for="id" class="col-lg-2 control-label">아이디</label>
                     <div class="col-lg-10">
@@ -119,7 +119,7 @@
                 <div class="form-group" id="divFile">
                 	 <label for="inputPhoneNumber" class="col-lg-2 control-label">증명사진</label>
                 	 <div class="col-lg-10">
-                	 <input type="file" class="form-control" id="business" data-rule-required="true" name="file">
+                	 <input type="file" class="form-control" id="photo" data-rule-required="true" name="photo">
                 	 </div>
                 </div>
          	 </c:if>

@@ -6,7 +6,6 @@ import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
-import com.hclass.project1.trainer.MemberTrainerDTO;
 
 @Repository
 public class MemberDAO {
@@ -15,10 +14,7 @@ public class MemberDAO {
 	private SqlSession sqlSession;
 	private final String namespace="com.hclass.project1.member.MemberDAO.";
 	
-	public int setTrainer(MemberTrainerDTO membertrainerDTO) throws Exception{
-		
-		return sqlSession.insert(namespace+"setTrainer",membertrainerDTO);
-	}
+	
 	
 	public int setOne(MemberDTO memberDTO) throws Exception{
 		
