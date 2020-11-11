@@ -9,7 +9,10 @@ public String phone;
 public String email;
 public String gender;
 public int age;
-
+private String address;
+private String gym;
+private String business;
+private String trainer;
 
 public String getEmail() {
 	return email;
@@ -59,6 +62,30 @@ public int getAge() {
 }
 public void setAge(int age) {
 	this.age = age;
+}
+public String getAddress() {
+	return address;
+}
+public void setAddress(String address) {
+	this.address = address;
+}
+public String getGym() {
+	return gym;
+}
+public void setGym(String gym) {
+	this.gym = gym;
+}
+public String getBusiness() {
+	return business;
+}
+public void setBusiness(String business) {
+	this.business = business;
+}
+public String getTrainer() {
+	return trainer;
+}
+public void setTrainer(String trainer) {
+	this.trainer = trainer;
 }
 
 

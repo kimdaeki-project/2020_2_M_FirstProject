@@ -30,8 +30,10 @@ public class MemberController {
 	@PostMapping("memberLogin")
 	public ModelAndView memberLogin(MemberDTO memberDTO,HttpSession session) throws Exception{
 		ModelAndView mv = new ModelAndView();
+		System.out.println(memberDTO.getId());
+		System.out.println(memberDTO.getPw());
 		memberDTO=memberService.memberLogin(memberDTO);
-		mv.setViewName("home");
+		mv.setViewName("member/memberLogin");
 		return mv;
 	}
 	@GetMapping("memberLogin")
@@ -86,39 +88,29 @@ public class MemberController {
 		mv.setViewName("common/ajaxResult");
 		return mv;
 	}
-	@PostMapping("memberJoinTrainer")
-	public ModelAndView setTrainer(MemberTrainerDTO membertrainerDTO) throws Exception{
-		ModelAndView mv = new ModelAndView();
-		int result = memberService.setTrainer(membertrainerDTO);
-		String message = "가입 실패";
-		if(result>0) {
-			message ="가입 성공";
-		}
-		mv.addObject("msg",message);
-		mv.addObject("path", "../");
-		mv.setViewName("common/result");
-		return mv;
-	}
-	
-	@GetMapping("memberJoinTrainer")
-	public ModelAndView setTrainer() throws Exception{
-		ModelAndView mv = new ModelAndView();
-		mv.addObject("classification","trainer");
-		mv.setViewName("member/memberJoin");
-		return mv;
-	}
-	
 	@GetMapping("memberJoin")
-	public ModelAndView setOne() throws Exception{
+	public ModelAndView setOne(String division) throws Exception{
 		ModelAndView mv = new ModelAndView();
-		mv.addObject("classification","member");
-		mv.setViewName("member/memberJoin");
+		System.out.println(division);
+		if(division.equals("Y")) {
+			mv.addObject("classification","trainer");
+			mv.setViewName("member/memberJoin");
+		}
+		else {
+			mv.addObject("classification","member");
+			mv.setViewName("member/memberJoin");
+		}
 		return mv;
 	}
 	@PostMapping("memberJoin")
 	public ModelAndView setOne(MemberDTO memberDTO) throws Exception{
 		ModelAndView mv = new ModelAndView();
-		System.out.println(memberDTO.getId());
+		System.out.println(memberDTO.getTrainer());
+		if(memberDTO.getTrainer().equals("M")) {
+			memberDTO.setAddress("");
+			memberDTO.setGym("");
+			memberDTO.setBusiness("");	
+		}
 		int result = memberService.setOne(memberDTO);
 		String message ="가입실패";
 		if(result>0) {

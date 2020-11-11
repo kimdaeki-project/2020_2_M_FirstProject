@@ -15,23 +15,24 @@ public class MemberDTOTest extends MyTestCase {
 	@Autowired
 	private MemberDAO memberDAO; 
 
-	//@Test
+	@Test
 	public void test() throws Exception {
-		MemberTrainerDTO trDTO =new MemberTrainerDTO();
-		trDTO.setId("trainer1");
+		MemberDTO trDTO =new MemberDTO();
+		trDTO.setId("trainer2");
 		trDTO.setPw("trainer");
-		trDTO.setName("trainer1");
+		trDTO.setName("trainer2");
 		trDTO.setAge(22);
-		trDTO.setEmail("trainer1");
-		trDTO.setPhone("01012345678");
-		trDTO.setAddress("trainer1");
+		trDTO.setEmail("trainer2");
+		trDTO.setPhone("01064143095");
 		trDTO.setGender("남자");
-		trDTO.setBusiness("o");
-		trDTO.setGym("체육관");
-		int result = memberDAO.setTrainer(trDTO);
+		trDTO.setTrainer("M");
+		trDTO.setAddress("");
+		trDTO.setGym("");
+		trDTO.setBusiness("");
+		int result = memberDAO.setOne(trDTO);
 		assertEquals(1, result);
 	}
-	@Test
+	//@Test
 	public void getOn() throws Exception{
 		MemberDTO memberDTO =new MemberDTO() {
 		};

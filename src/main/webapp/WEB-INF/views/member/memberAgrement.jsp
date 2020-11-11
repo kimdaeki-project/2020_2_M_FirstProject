@@ -67,11 +67,19 @@
 		</div>
 		</label>
 	</p>
-
-
+	<div class="form-group">
+                    <label for="inputEmailReceiveYn" class="col-lg-2 control-label">트레이너입니까?</label>
+                    <div class="col-lg-10">
+                        <label class="radio-inline">
+                            <input type="radio" id="division" name="division" value="Y" checked> 네
+                        </label>
+                        <label class="radio-inline">
+                            <input type="radio" id="division" name="division" value="N"> 아니오
+                        </label>
+                    </div>
+                </div>
 	<p id="input">
-		<input type="submit" value="동의">
-		<input type="button" value="트레이너" id="trainer">
+		<input type="submit" value="동의" id="member">
 		<input type="reset" value="미동의">
 	</p>
 	
@@ -149,11 +157,6 @@
 			}
 		}
 	}; */
-	$("#input").on("click","#trainer",function(){
-		$("#form1").attr("action", "./memberJoinTrainer");
-		$("#form1").submit();
-		});
-	
 	form1.onsubmit = function(e) {
 		e.preventDefault(); // 서브밋 될때 화면이 깜빡이지 않게 방지
 

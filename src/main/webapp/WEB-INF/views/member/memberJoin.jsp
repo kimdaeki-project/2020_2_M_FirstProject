@@ -104,17 +104,22 @@
                          <div id="gymResult"></div>
                     </div>
                 </div>
-                <div class="form-group" id="divBusiness">
-                    <label for="inputPhoneNumber" class="col-lg-2 control-label">business</label>
+             
+                <div class="form-group">
+                    <label for="inputEmailReceiveYn" class="col-lg-2 control-label">출장유무</label>
                     <div class="col-lg-10">
-                        <input type="tel" class="form-control onlyNumber" id="business" data-rule-required="true" placeholder="business" maxlength="11" name="business">
-                         <div id="businessResult"></div>
+                        <label class="radio-inline">
+                            <input type="radio" id="business" name="business" value="Y"> 네
+                        </label>
+                        <label class="radio-inline">
+                            <input type="radio" id="business" name="business" value="N" checked> 아니오
+                        </label>
                     </div>
                 </div>
                 <div class="form-group" id="divFile">
                 	 <label for="inputPhoneNumber" class="col-lg-2 control-label">증명사진</label>
                 	 <div class="col-lg-10">
-                	 <input type="file" class="form-control onlyNumber" id="business" data-rule-required="true" name="file">
+                	 <input type="file" class="form-control" id="business" data-rule-required="true" name="file">
                 	 </div>
                 </div>
          	 </c:if>
@@ -129,16 +134,20 @@
                         </label>
                     </div>
                 </div>
+                <div class="form-group" id="divFile" hidden="">
+                	 <label for="inputPhoneNumber" class="col-lg-2 control-label">트레이너구분</label>
+                	 <div class="col-lg-10">
+                	 <input type="text" class="form-control" id="trainer" data-rule-required="true" value="M" name="trainer" readonly="readonly" hidden="">
+                	 </div>
+                </div>
                 <div class="form-group" id="divsingIn"> 
                      <div class="col-lg-offset-2 col-lg-10">
-                    	<input type ="button" class="btn btn-primary" value="회원가입" id="signIn"> 
-                    	
+                    	<input type ="button" class="btn btn-primary" value="회원가입" id="signIn" > 
                     </div>
                 </div>
                 </form>
                 </div>
             </div>
-        
                 <!--// 본문 들어가는 부분 -->
             <hr/>
             
@@ -150,9 +159,14 @@
 			var ageCheck = false;
 			var addressCheck=false;
 			var gymCheck = false;
-			var businessCheck=false;
 			var ch = $("#title").val();
-		
+		//***************************************회원가입시에 트레이너와 일반회원 구분*****************************************
+			if(ch=='trainer'){
+				$("#trainer").val("T");
+				}
+			else{
+				$("#trainer").val("M");
+				}
 			
 		
 			//*****************************필수 입력 체크 및 회원가입*********************************
@@ -166,11 +180,12 @@
 							}
 					}
 					else{
-						if(pwCheck&&idCheck&&emailCheck&&ageCheck&&addressCheck&&gymCheck&&businessCheck){
+						if(pwCheck&&idCheck&&emailCheck&&ageCheck&&addressCheck&&gymCheck){
 							$("#frm").submit();
 							}
-						$("#frm").attr("action", "./memberJoinTrainer");
-						$("#frm").submit();
+						else{
+							alert("필수항목을 입력하세요!");
+						}
 						}
 					});
 				//*******************************핸드폰번호 중복 체크************************************
@@ -286,6 +301,8 @@
 							}
 						else{
 							$("#addressResult").remove();
+							addressCheck=true;
+							
 							}
 					});
 					$("#divGym").on("blur","#gym",function(){
@@ -297,19 +314,10 @@
 							}
 						else{
 							$("#gymResult").remove();
+							gymCheck = true;
 							}
 					});
-					$("#divBusiness").on("blur","#business",function(){
-						var business = $(this).val();
-						if(business==''){
-							var str3="business는 필수입니다.";
-							$("#businessResult").html(str3);
-							$("#businessResult").removeClass("idCheck0").addClass("idCheck1");
-							}
-						else{
-							$("#businessResult").remove();
-							}
-					});
+				
 				}	         
             </script>
             <!-- 푸터 들어가는 부분 -->

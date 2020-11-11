@@ -1,10 +1,23 @@
 package com.hclass.project1.member.membetrainerfile;
 
-public class TrainerFileDTO {
+public class MemberFileDTO {
 	private String oriName;
 	private String fileName;
+	private String id;
+	private long num;
 
-
+	public String getId() {
+		return id;
+	}
+	public void setId(String id) {
+		this.id = id;
+	}
+	public long getNum() {
+		return num;
+	}
+	public void setNum(long num) {
+		this.num = num;
+	}
 	public String getOriName() {
 		return oriName;
 	}
@@ -17,4 +30,5 @@ public class TrainerFileDTO {
 	public void setFileName(String fileName) {
 		this.fileName = fileName;
 	}
+	
 }
