@@ -166,6 +166,9 @@
 							}
 					}
 					else{
+						if(pwCheck&&idCheck&&emailCheck&&ageCheck&&addressCheck&&gymCheck&&businessCheck){
+							$("#frm").submit();
+							}
 						$("#frm").attr("action", "./memberJoinTrainer");
 						$("#frm").submit();
 						}

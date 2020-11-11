@@ -15,9 +15,9 @@ public class MemberDAO {
 	private SqlSession sqlSession;
 	private final String namespace="com.hclass.project1.member.MemberDAO.";
 	
-	public int setTrainer(MemberTrainerDTO trainerDTO) throws Exception{
+	public int setTrainer(MemberTrainerDTO membertrainerDTO) throws Exception{
 		
-		return sqlSession.insert(namespace+"setTrainer",trainerDTO);
+		return sqlSession.insert(namespace+"setTrainer",membertrainerDTO);
 	}
 	
 	public int setOne(MemberDTO memberDTO) throws Exception{

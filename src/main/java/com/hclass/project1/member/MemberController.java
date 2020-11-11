@@ -89,8 +89,14 @@ public class MemberController {
 	@PostMapping("memberJoinTrainer")
 	public ModelAndView setTrainer(MemberTrainerDTO membertrainerDTO) throws Exception{
 		ModelAndView mv = new ModelAndView();
-		mv.addObject("classification","trainer");
-		mv.setViewName("member/memberJoin");
+		int result = memberService.setTrainer(membertrainerDTO);
+		String message = "가입 실패";
+		if(result>0) {
+			message ="가입 성공";
+		}
+		mv.addObject("msg",message);
+		mv.addObject("path", "../");
+		mv.setViewName("common/result");
 		return mv;
 	}
 	
@@ -114,7 +120,13 @@ public class MemberController {
 		ModelAndView mv = new ModelAndView();
 		System.out.println(memberDTO.getId());
 		int result = memberService.setOne(memberDTO);
-		mv.setViewName("home");
+		String message ="가입실패";
+		if(result>0) {
+			message ="가입 성공";
+		}
+		mv.addObject("msg",message);
+		mv.addObject("path", "../");
+		mv.setViewName("common/result");
 		return mv;
 	}
 }

@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 import com.hclass.project1.MyTestCase;
 import com.hclass.project1.member.MemberDAO;
+import com.hclass.project1.member.MemberDTO;
 import com.hclass.project1.trainer.MemberTrainerDTO;
 
 public class MemberDTOTest extends MyTestCase {
@@ -14,7 +15,7 @@ public class MemberDTOTest extends MyTestCase {
 	@Autowired
 	private MemberDAO memberDAO; 
 
-	@Test
+	//@Test
 	public void test() throws Exception {
 		MemberTrainerDTO trDTO =new MemberTrainerDTO();
 		trDTO.setId("trainer1");
@@ -29,6 +30,14 @@ public class MemberDTOTest extends MyTestCase {
 		trDTO.setGym("체육관");
 		int result = memberDAO.setTrainer(trDTO);
 		assertEquals(1, result);
+	}
+	@Test
+	public void getOn() throws Exception{
+		MemberDTO memberDTO =new MemberDTO() {
+		};
+		memberDTO.setId("popopo");
+		memberDTO= memberDAO.getOne(memberDTO);
+		assertNull(memberDTO);
 	}
 
 }
