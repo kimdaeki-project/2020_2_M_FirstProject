@@ -19,6 +19,35 @@ import org.springframework.web.servlet.ModelAndView;
 public class MemberController {
 	@Autowired
 	private MemberService memberService;
+	
+	@GetMapping("memberUpdate")
+	public ModelAndView memberUpdate(HttpSession session)throws Exception{
+		ModelAndView mv =new ModelAndView();
+		MemberDTO memberDTO = (MemberDTO)session.getAttribute("member");
+		mv.setViewName("member/memberUpdate");
+		return mv;
+	}
+	@GetMapping("memberPage")
+	public ModelAndView memberPage(HttpSession session) throws Exception{
+		ModelAndView mv =new ModelAndView();
+		MemberDTO memberDTO = (MemberDTO)session.getAttribute("member");
+		if(memberDTO!=null) {
+		mv.setViewName("member/memberPage");
+		}
+		else {
+			mv.setViewName("redirect:../");
+		}
+		return mv;
+	}
+	
+	@GetMapping("memberLogout")
+	public ModelAndView memberLogout(HttpSession session) throws Exception{
+		ModelAndView mv =new ModelAndView();
+		session.invalidate();
+		mv.setViewName("redirect:../");
+		return mv;
+		
+	}
 	@GetMapping("memberAgrement")
 	public ModelAndView memberAgrememnt() throws Exception{
 		ModelAndView mv = new ModelAndView();

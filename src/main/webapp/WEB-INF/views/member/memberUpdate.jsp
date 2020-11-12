@@ -16,15 +16,11 @@
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
  
 <script src="http://dmaps.daum.net/map_js_init/postcode.v2.js"></script> 
-<style type="text/css">
-	.box{
-		width:700px;
-	}
-
-</style>
 </head>
 <body>
-<div class="container box">
+<div class="container">
+    <form name="f" method="post">
+ 
         <div class="col-sm-12 pt-3">
             <div class="card">
                 <div class="card-header card-header-primary">
@@ -38,22 +34,22 @@
                             <tr style="line-height:32px;">
                                 <td>ID</td>
                                 <td>
-                                  ${member.id }
+                                    <input type="text" name="id" class="form-control" value="${member.id}" readonly>
                          
                                 </td>
-                                <td>이름</td>
+                                <td>관리자 이름</td>
                                 <td>
-                                    ${member.name }
+                                    <input type="text" name="name" class="form-control" value="${member.name}" readonly="readonly">
                                 </td>                        
                             </tr>
                             <tr>
-                                <td>이메일</td>
+                                <td>관리자 비밀번호</td>
                                 <td>
-                                  ${member.email }                                    
+                                    <input type="text" name="email" class="form-control" maxlength="10" value="${member.email}" readonly="readonly">                                    
                                 </td>
-                                <td>전화번호</td>
+                                <td>관리자 비밀번호 확인</td>
                                 <td>
-                                   ${member.phone }          
+                                    <input type="text" name="phone" class="form-control" maxlength="10" value="${member.phone}" readonly="readonly">                                    
                                 </td>
                             </tr>  
                             <tr>
@@ -61,15 +57,16 @@
                                 <td>
                                     ${member.gender}
                                 </td>
-                                <td>나이</td>
+                                <td>팩스</td>
                                 <td>
-                                    ${member.age }
+                                    <input type="tel" name="fax" class="form-control" value="">
                                 </td>
                             </tr>
                             <tr>
-                                <td>회원구분</td>
-                                <td>
-                                    ${member.trainer}
+                                <td>주소</td>
+                                <td colspan="3">
+                                    <input type="text" name="address1" id="address1" class="form-control mb-3" value="">
+                                    <input type="text" name="address2" id="address2" class="form-control" value="">
                                 </td>
                             </tr>
                             </tbody>
@@ -81,18 +78,12 @@
             <div class="pt-3"></div>
         </div>
         
-
+    </form>
  
     <div class="text-center mt-3">
-       <a href ="${pageContext.request.contextPath}/member/memberUpdate"><button type="button" class="btn btn-success" >변경하기</button></a> 
+        <button type="button" class="btn btn-success">변경하기</button>
         <button type="button" class="btn btn-info">다시쓰기</button>
     </div>
 </div>
-<script type="text/javascript">
-	var trainer = "${member.trainer}";
-	if(trainer=='T'){
-			$("#trainer").removeAttr("hidden","hidden");	
-		}
-</script>
 </body>
 </html>
