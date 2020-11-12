@@ -16,6 +16,14 @@ public class MemberDTOTest extends MyTestCase {
 	private MemberDAO memberDAO; 
 
 	@Test
+	public void memberLoginTest() throws Exception{
+		MemberDTO trDTO = new MemberDTO();
+		trDTO.setId("popo12");
+		trDTO.setPw("popo");
+		trDTO =memberDAO.memberLogin(trDTO);
+		assertNotNull(trDTO);
+	}
+	//@Test
 	public void test() throws Exception {
 		MemberDTO trDTO =new MemberDTO();
 		trDTO.setId("trainer2");

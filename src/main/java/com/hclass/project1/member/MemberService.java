@@ -26,6 +26,7 @@ public class MemberService {
 	public int setOne(MemberDTO memberDTO)throws Exception{
 		return memberDAO.setOne(memberDTO);
 	}
+	
 	public int setOne(MemberDTO memberDTO,MultipartFile photo, HttpSession session) throws Exception{
 		String path =session.getServletContext().getRealPath("/resources/upload/member");
 		File file2 = new File(path);

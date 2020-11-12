@@ -17,7 +17,6 @@ import org.springframework.web.servlet.ModelAndView;
 @Controller
 @RequestMapping("/member/**")
 public class MemberController {
-	
 	@Autowired
 	private MemberService memberService;
 	@GetMapping("memberAgrement")
@@ -27,14 +26,26 @@ public class MemberController {
 		mv.setViewName("member/memberAgrement");
 		return mv;
 	}
-	
 	@PostMapping("memberLogin")
 	public ModelAndView memberLogin(MemberDTO memberDTO,HttpSession session) throws Exception{
 		ModelAndView mv = new ModelAndView();
 		System.out.println(memberDTO.getId());
 		System.out.println(memberDTO.getPw());
 		memberDTO=memberService.memberLogin(memberDTO);
-		mv.setViewName("member/memberLogin");
+		String message = "로그인 실패";
+		if(memberDTO!=null) {
+			session.setAttribute("member", memberDTO);
+			message ="로그인성공";
+			mv.addObject("msg",message);
+			mv.addObject("path", "../");
+			mv.setViewName("common/result");
+		}
+		else {
+			mv.addObject("msg",message);
+			mv.addObject("path", "../");
+			mv.setViewName("common/result");
+		}
+		System.out.println(session.getId());
 		return mv;
 	}
 	@GetMapping("memberLogin")

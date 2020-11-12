@@ -22,10 +22,17 @@
 	
 	.idCheck1 {
 		color: red;
+		}
+	.form-control{
+			width:460px;
+		
+	}
+
+	.emailbox{
+		display:inline-block;
+		width : 220px;
 	}
 	
-
-
 </style>
     </head>
     <body>
@@ -37,15 +44,16 @@
 
             <!-- 본문 들어가는 부분 -->
             <div class="container">
+             <div><a href ="../">home</a></div>
                <h1 >${classification} 회원가입</h1>
-               <div><a href ="../">home</a></div>
+              
                <input type="text" hidden="" value="${classification}" id="title">
  		<div class="container">
             <form class="form-horizontal" id="frm" method="post" action="./memberJoin"  enctype="multipart/form-data">
                 <div class="form-group" id="divId">
-                    <label for="id" class="col-lg-2 control-label">아이디</label>
+                    <label for="id" class="col-lg-2  control-label">아이디</label>
                     <div class="col-lg-10">
-                        <input type="text" class="form-control onlyAlphabetAndNumber" id="id"  data-rule-required="true" placeholder="30자이내의 알파벳, 언더스코어(_), 숫자만 입력 가능합니다." maxlength="30" name="id">
+                        <input type="text" class="form-control  onlyAlphabetAndNumber" id="id"  data-rule-required="true" placeholder="30자이내의 알파벳, 언더스코어(_), 숫자만 입력 가능합니다." maxlength="30" name="id">
                          <div id="idResult"></div>
                     </div>
                 </div>
@@ -65,7 +73,7 @@
                 <div class="form-group" id="name">
                     <label for="inputName" class="col-lg-2 control-label">이름</label>
                     <div class="col-lg-10">
-                        <input type="text" class="form-control onlyHangul" id="name" data-rule-required="true" placeholder="한글만 입력 가능합니다." maxlength="15" name ="name">
+                        <input type="text" class="form-control onlyHangul" id="name" data-rule-required="true" placeholder="이름을 입력하세요." maxlength="15" name ="name">
                     </div>
                 </div>
                 <div class="form-group" id="divAge">
@@ -77,7 +85,20 @@
                 <div class="form-group" id="divEmail">
                     <label for="inputEmail" class="col-lg-2 control-label">이메일</label>
                     <div class="col-lg-10">
-                        <input type="email" class="form-control" id="email" data-rule-required="true" placeholder="이메일" maxlength="40" name ="email">
+                        <input type="text" class="form-control emailbox" id="emailid" data-rule-required="true" placeholder="이메일" maxlength="40" name ="emailid" style="ime-mode:disabled">@	
+                        <input type="text" class="form-control emailbox" id="domain" data-rule-required="true" placeholder="이메일" maxlength="40" name ="email" readonly="readonly">
+                      <span>
+                        <select name="emailbox" id="domainbox">
+    							<option value="notSelected" selected="selected">이메일선택</option>
+   								<option value="gmail.com">gmail.com</option>
+   								<option value="naver.com">naver.com</option>
+   								<option value="hanmail.com">hanmail.com</option>
+   								<option value="direct">직접입력</option>
+						</select>
+						</span>
+						<div>
+						<input type="email" class="form-control" id="email" data-rule-required="true" placeholder="이메일" maxlength="40" name ="email" hidden="" readonly="readonly">
+						</div>
                         <div id="emailResult"></div>
                     </div>
                 </div>
@@ -156,10 +177,39 @@
 			var pwCheck =false;
 			var idCheck = false;
 			var emailCheck = false;
+			var phoneCheck =false;
 			var ageCheck = false;
 			var addressCheck=false;
 			var gymCheck = false;
 			var ch = $("#title").val();
+		
+		
+		//******************************이메일 한글 사용 불가능***********************************************
+		function nonKoreanSpecialKey(event) {
+ 				if(check_key() != 1 && check_key() != 2) {
+ 					 event.returnValue = false;  
+  						alert("숫자나 영문자만 입력하세요!");
+  						return;
+ 						}
+					}
+
+		//******************************셀렉트박스 선택시 이메일 도메인넘겨줌**************************************
+			$("#divEmail").on("change","#domainbox",function(){
+					domain = $(this).val();
+					if(domain!='direct'&&domain!='notSelected'){
+						$("#domain").val(domain);
+						$("#domain").attr("readonly","readonly");
+						}
+					else{
+						$("#domain").removeAttr("readonly","readonly");
+						$("#domain").val('');
+						$("#domain").blur(function(){
+							domain=$("#domain").val();
+							});
+						}
+					
+					
+				});
 		//***************************************회원가입시에 트레이너와 일반회원 구분*****************************************
 			if(ch=='trainer'){
 				$("#trainer").val("T");
@@ -190,6 +240,7 @@
 					});
 				//*******************************핸드폰번호 중복 체크************************************
 				$("#divPhone").on("blur", "#phone", function(){
+					phoneCheck = false;
 					var phone = $(this).val();
 					if(phone != ''){
 						$.get("./memberPhoneCheck?phone="+phone,function(data){
@@ -207,16 +258,31 @@
 					}else {
 						$("#phoneResult").html("전화번호는 필수 항목입니다");
 						$("#phoneResult").removeClass("idCheck0").addClass("idCheck1");
+						phoneCheck = false;
 					}
 					
 					});		
 			//*******************************이메일체크************************************
-			$("#divEmail").on("blur", "#email", function(){
-				var email = $(this).val();
-				if(email != ''){
+			$("#divEmail").on("blur", "#domainbox", function(){
+				var str = "중복된 email 입니다";
+				emailCheck = false;
+				var emailId = $("#emailid").val();
+				var email='';
+				if(emailId != ''){
+				email= emailId+'@'+domain; 
+				$("#email").val(email);
+				}
+				var emailChk = email.slice(-4);
+				if(emailChk!='.com'){
+						str="이메일 형식이 잘못되었습니다.";
+						$("#emailResult").removeClass("idCheck0").addClass("idCheck1");
+						emailCheck = false;
+						$("#emailResult").html(str);
+					}
+				else if(email != ''){
 					$.get("./memberEmailCheck?email="+email,function(data){
 						data=data.trim();
-						var str = "중복된 email 입니다";
+						
 						$("#emailResult").removeClass("idCheck0").addClass("idCheck1");
 						if(data==0){
 							str = "사용 가능한 email 입니다"
@@ -229,12 +295,12 @@
 				}else {
 					$("#emailResult").html("이메일은 필수 항목입니다");
 					$("#emailResult").removeClass("idCheck0").addClass("idCheck1");
+					emailCheck = false;
 				}
-				
 				});	
 			
 			//******************************나이,핸드폰 숫자만 입력**************************
-			 function checkNum(e) {
+			 function checkNum(event) {
         		var keyVal = event.keyCode;				
        			if(((keyVal >= 48) && (keyVal <= 57))){
            			ageCheck = true;
@@ -280,7 +346,6 @@
 							idCheck=true;
 						}
 						$("#idResult").html(str);
-						
 					});
 				}else {
 					$("#idResult").html("Id는 필수 항목입니다");
