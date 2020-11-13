@@ -46,7 +46,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>Personal Traing</title>
+  <title>Personal Training</title>
 
 <c:import url="./template/bootStrap.jsp"></c:import>
 </head>

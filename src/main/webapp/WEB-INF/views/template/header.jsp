@@ -16,7 +16,7 @@
             <a class="nav-link" href="index.html">Search</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="about.html">Notice</a>
+            <a class="nav-link" href="${pageContext.request.contextPath}/notice/noticeList">Notice</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="post.html">Q&A</a>
