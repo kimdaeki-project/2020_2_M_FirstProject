@@ -63,7 +63,7 @@
                                     <input type="text" name="name" class="form-control" maxlength="10" value="${member.name}" id="name">                                    
                                 </td>
                             </tr>  
-                            <tr >
+                            <tr hidden="">
                                 <td>회원구분</td>
                                 <td>
                                      <input type="text" name="trainer" class="form-control" maxlength="10" value="${member.trainer}" id="trainer">
