@@ -7,7 +7,7 @@
     	delete member where id=#{id}
     </delete>
     <update id ="memberUpdate" parameterType="MemberDTO">
-    	update member set pw = #{pw},email=#{email}, phone = #{phone},address=#{address},gym=#{gym} where id=#{id};
+    	update member set pw = #{pw}, phone = #{phone}, address=#{address}, gym=#{gym} where id=#{id};
     </update>
     <insert id ="setOne" parameterType="com.hclass.project1.member.MemberDTO">
     	insert into member values(member_seq.nextval,#{name},#{id},#{pw},#{phone},#{email},#{gender},#{age},#{address},#{gym},#{business},#{trainer})

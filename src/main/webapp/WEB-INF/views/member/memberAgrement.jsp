@@ -161,7 +161,7 @@
 		e.preventDefault(); // 서브밋 될때 화면이 깜빡이지 않게 방지
 
 		if ( !form1_data['c1'] ) {
-			alert('네이버 이용약관 동의를 하지 않았습니다'); 
+			alert('이용약관 동의를 하지 않았습니다'); 
 			c1.parentNode.style.color = 'red'; 
 			return false; 
 		}

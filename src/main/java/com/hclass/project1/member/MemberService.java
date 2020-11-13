@@ -40,9 +40,7 @@ public class MemberService {
 			MemberFileDTO memberfileDTO =new MemberFileDTO();
 			memberfileDTO.setId(memberDTO.getId());
 			memberfileDTO.setFileName(fileName);
-			System.out.println(fileName);
 			memberfileDTO.setOriName(photo.getOriginalFilename());
-			System.out.println(photo.getOriginalFilename());
 			result = memberfileDAO.setFileOne(memberfileDTO);
 			
 		}

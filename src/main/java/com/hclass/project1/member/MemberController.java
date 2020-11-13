@@ -33,10 +33,18 @@ public class MemberController {
 	}
 	
 	@PostMapping("memberUpdate")
-	public ModelAndView memberUpdate(MemberDTO memberDTO)throws Exception{
+	public ModelAndView memberUpdate(MemberDTO memberDTO,HttpSession session)throws Exception{
 		ModelAndView mv =new ModelAndView();
+		System.out.println(memberDTO.getTrainer());
+		if(memberDTO.getTrainer().equals("M")) {
+			memberDTO.setAddress("");
+			memberDTO.setGym("");
+		}
 		memberService.memberUpdate(memberDTO);
 		mv.setViewName("member/memberUpdate");
+		if(session==null) {
+			mv.setViewName("redirect:../");
+		}
 		return mv;
 	}
 	

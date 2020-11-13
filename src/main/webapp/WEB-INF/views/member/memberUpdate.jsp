@@ -16,10 +16,19 @@
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
  
 <script src="http://dmaps.daum.net/map_js_init/postcode.v2.js"></script> 
+<style type="text/css">
+		.idCheck0 {
+		color: blue;
+	}
+	
+	.idCheck1 {
+		color: red;
+		}
+</style>
 </head>
 <body>
 <div class="container">
-    <form name="f" method="post" action="./memberUpdate">
+    <form name="f" id="frm" method="post" action="./memberUpdate">
  
         <div class="col-sm-12 pt-3">
             <div class="card">
@@ -35,11 +44,12 @@
                                 <td>비밀번호</td>
                                 <td>
                                     <input type="text" name="pw" class="form-control" value="${member.pw}" id="pw">
+                                    <div id ="pwResult"></div>
                          
                                 </td>
                                 <td>비밀번호 확인</td>
                                 <td>
-                                    <input type="text" name="pw" class="form-control" id="pw2">
+                                    <input type="text" class="form-control" id="pw2">
                                 </td>                        
                             </tr>
                             <tr>
@@ -53,7 +63,7 @@
                                     <input type="text" name="name" class="form-control" maxlength="10" value="${member.name}" id="name">                                    
                                 </td>
                             </tr>  
-                            <tr hidden="">
+                            <tr >
                                 <td>회원구분</td>
                                 <td>
                                      <input type="text" name="trainer" class="form-control" maxlength="10" value="${member.trainer}" id="trainer">
@@ -61,14 +71,13 @@
                        
                             </tr>
                             <tr id="trainerinfo">
-                             <td>체육관이름</td>
+                             <td>센터</td>
                                 <td>
-                                     <input type="text" name="trainer" class="form-control" maxlength="10" value="${member.gym}" id="gym">
+                                     <input type="text" name="gym" class="form-control" maxlength="10" value="${member.gym}" id="gym">
                                 </td>
                                 <td>주소</td>
                                 <td colspan="3">
-                                    <input type="text" name="address1" id="address1" class="form-control mb-3" value="">
-                                    <input type="text" name="address2" id="address2" class="form-control" value="">
+                                    <input type="text" name="address" id="address" class="form-control mb-3" value="${member.address}">
                                 </td>
                             </tr>
                             </tbody>
@@ -83,13 +92,23 @@
     </form>
  
     <div class="text-center mt-3">
-        <a><button type="button" class="btn btn-success">변경하기</button></a>
+        <button type="button" class="btn btn-success" id="btn">변경하기</button>
     </div>
 </div>
 <script type="text/javascript">
 var trainer = $("#trainer").val();
 var phoneCheck =false;
+var pwCheck = false;
 
+//************************회원정보 수정버튼******************************************************
+	$("#btn").click(function(){
+		if(phoneCheck&&pwCheck){
+			$("#frm").submit();
+			}
+		else{
+				alert("필수 항목을 입력하세요");
+			}
+		});
 //************************트레이너회원만 보이게 하기*************************************************
 	if(trainer=='M'){
 			$("#trainerinfo").attr("hidden","hidden");
@@ -102,7 +121,7 @@ var phoneCheck =false;
 		var phone = $(this).val();
 		if(phone==pn){
 				phoneCheck =true;	
-				$("phoneResult").remove();
+				$("phoneResult").html("");
 			}
 		else if(phone != ''){
 			$.get("./memberPhoneCheck?phone="+phone,function(data){
@@ -136,6 +155,29 @@ function checkNum(event) {
            				 return false;
       			  }
   					  }
+  //**********************************비밀번호 확인*****************************
+   //***************************PW*************************************
+            var pw =0;
+          $("#pw").blur(function(){
+				pw = $(this).val();
+						});
+            $("#pw2").blur(function(){
+            		pw = $("#pw").val();
+					var pw2=$(this).val();
+					var str = "비밀번호가 일치하지 않습니다.";
+					$("#pwResult").removeClass("idCheck0").addClass("idCheck1");
+					if(pw==pw2){
+							str ="비밀번호가 일치합니다.";
+							$("#pwResult").removeClass("idCheck1").addClass("idCheck0");
+							pwCheck = true;
+						}
+					if(pw==''||pw2==''){
+							str="비밀번호는 필수입니다.";
+							$("#pwResult").removeClass("idCheck0").addClass("idCheck1");
+							pwCheck = false;
+						}
+					$("#pwResult").html(str);
+                });
 
 </script>
 </body>

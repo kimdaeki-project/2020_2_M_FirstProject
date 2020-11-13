@@ -119,7 +119,7 @@
                 </div>
                 
                 <div class="form-group" id="divGym">
-                    <label for="inputPhoneNumber" class="col-lg-2 control-label">체육관</label>
+                    <label for="inputPhoneNumber" class="col-lg-2 control-label">센터</label>
                     <div class="col-lg-10">
                         <input type="tel" class="form-control onlyNumber" id="gym" data-rule-required="true" placeholder="체육관 이름을 입력하세요" maxlength="11" name="gym">
                          <div id="gymResult"></div>
@@ -151,7 +151,7 @@
                             <input type="radio" id="gender" name="gender" value="M" checked> 남
                         </label>
                         <label class="radio-inline">
-                            <input type="radio" id="gender" name="gender" value="Y"> 녀
+                            <input type="radio" id="gender" name="gender" value="Y"> 여
                         </label>
                     </div>
                 </div>
