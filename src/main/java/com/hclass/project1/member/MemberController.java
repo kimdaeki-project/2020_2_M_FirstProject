@@ -33,8 +33,15 @@ public class MemberController {
 	}
 	
 	@PostMapping("memberUpdate")
-	public ModelAndView memberUpdate(MemberDTO memberDTO)throws Exception{
+	public ModelAndView memberUpdate(MemberDTO memberDTO,HttpSession session)throws Exception{
 		ModelAndView mv =new ModelAndView();
+		MemberDTO md = new MemberDTO();
+		md=(MemberDTO) session.getAttribute("member");
+		memberDTO.setId(md.getId());
+		if(memberDTO.getTrainer().equals("M")) {
+			memberDTO.setAddress("");
+			memberDTO.setGym("");
+		}
 		memberService.memberUpdate(memberDTO);
 		mv.setViewName("member/memberUpdate");
 		return mv;
@@ -166,24 +173,24 @@ public class MemberController {
 	@PostMapping("memberJoin")
 	public ModelAndView setOne(MemberDTO memberDTO, MultipartFile photo,HttpSession session) throws Exception{
 		ModelAndView mv = new ModelAndView();
-		System.out.println(memberDTO.getTrainer());
 		int result=0;
-		if(memberDTO.getTrainer().equals("M")) {
-			memberDTO.setAddress("");
-			memberDTO.setGym("");
-			memberDTO.setBusiness("");	
-			result = memberService.setOne(memberDTO);
-		}
-		else {
-		result = memberService.setOne(memberDTO,photo,session);
-		}
-		String message ="가입실패";
-		if(result>0) {
-			message ="가입 성공";
-		}
-		mv.addObject("msg",message);
-		mv.addObject("path", "../");
-		mv.setViewName("common/result");
+		System.out.println(memberDTO.getEmail());
+//		if(memberDTO.getTrainer().equals("M")) {
+//			memberDTO.setAddress("");
+//			memberDTO.setGym("");
+//			memberDTO.setBusiness("");	
+//			result = memberService.setOne(memberDTO);
+//		}
+//		else {
+//		result = memberService.setOne(memberDTO,photo,session);
+//		}
+//		String message ="가입실패";
+//		if(result>0) {
+//			message ="가입 성공";
+//		}
+//		mv.addObject("msg",message);
+//		mv.addObject("path", "../");
+//		mv.setViewName("common/result");
 		return mv;
 	}
 }

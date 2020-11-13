@@ -37,9 +37,9 @@
                                     <input type="text" name="pw" class="form-control" value="${member.pw}" id="pw">
                          
                                 </td>
-                                <td>비밀번호 확인</td>
+                                <td>이메일</td>
                                 <td>
-                                    <input type="text" name="pw" class="form-control" id="pw2">
+                                    <input type="text" name="pw" class="form-control" id="email" value ="${member.email} ">
                                 </td>                        
                             </tr>
                             <tr>

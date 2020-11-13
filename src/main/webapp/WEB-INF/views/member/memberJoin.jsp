@@ -86,7 +86,7 @@
                     <label for="inputEmail" class="col-lg-2 control-label">이메일</label>
                     <div class="col-lg-10">
                         <input type="text" class="form-control emailbox" id="emailid" data-rule-required="true" placeholder="이메일" maxlength="40" name ="emailid" style="ime-mode:disabled">@	
-                        <input type="text" class="form-control emailbox" id="domain" data-rule-required="true" placeholder="이메일" maxlength="40" name ="email" readonly="readonly">
+                        <input type="text" class="form-control emailbox" id="domain" data-rule-required="true" placeholder="이메일" maxlength="40" name ="domain" readonly="readonly">
                       <span>
                         <select name="emailbox" id="domainbox">
     							<option value="notSelected" selected="selected">이메일선택</option>
@@ -97,7 +97,7 @@
 						</select>
 						</span>
 						<div>
-						<input type="email" class="form-control" id="email" data-rule-required="true" placeholder="이메일" maxlength="40" name ="email" hidden="" readonly="readonly">
+						<input type="email" class="form-control" id="email" data-rule-required="true" placeholder="이메일" maxlength="40" name ="email">
 						</div>
                         <div id="emailResult"></div>
                     </div>
@@ -194,22 +194,7 @@
 					}
 
 		//******************************셀렉트박스 선택시 이메일 도메인넘겨줌**************************************
-			$("#divEmail").on("change","#domainbox",function(){
-					domain = $(this).val();
-					if(domain!='direct'&&domain!='notSelected'){
-						$("#domain").val(domain);
-						$("#domain").attr("readonly","readonly");
-						}
-					else{
-						$("#domain").removeAttr("readonly","readonly");
-						$("#domain").val('');
-						$("#domain").blur(function(){
-							domain=$("#domain").val();
-							});
-						}
-					
-					
-				});
+			
 		//***************************************회원가입시에 트레이너와 일반회원 구분*****************************************
 			if(ch=='trainer'){
 				$("#trainer").val("T");
@@ -263,42 +248,93 @@
 					
 					});		
 			//*******************************이메일체크************************************
-			$("#divEmail").on("blur", "#domainbox", function(){
+			var domain='';
+			var emailid='';
+			var email='';
+			emailCheck = true;
+			$("#domainbox").change(function(){
 				var str = "중복된 email 입니다";
-				emailCheck = false;
-				var emailId = $("#emailid").val();
-				var email='';
-				if(emailId != ''){
-				email= emailId+'@'+domain; 
-				$("#email").val(email);
-				}
-				var emailChk = email.slice(-4);
-				if(emailChk!='.com'){
-						str="이메일 형식이 잘못되었습니다.";
+					domain = $(this).val();
+					if(domain=='direct'){
+						$("#domain").removeAttr("readonly","readonly");
+						$("#domain").blur(function(){
+							domain=$(this).val();
+							});
+						}
+					if(emailid!=''){
+					email=emailid+'@'+domain;
+					$("#email").val(email);
+					if(email != ''&&domain!='direct'){
+						$.get("./memberEmailCheck?email="+email,function(data){
+							data=data.trim();
+							
+							$("#emailResult").removeClass("idCheck0").addClass("idCheck1");
+							if(data==0){
+								str = "사용 가능한 email 입니다"
+								$("#emailResult").removeClass("idCheck1").addClass("idCheck0");
+								emailCheck=true;
+							}
+							$("#emailResult").html(str);
+							
+						});
+					}else {
+						$("#emailResult").html("이메일은 필수 항목입니다");
 						$("#emailResult").removeClass("idCheck0").addClass("idCheck1");
 						emailCheck = false;
-						$("#emailResult").html(str);
 					}
-				else if(email != ''){
-					$.get("./memberEmailCheck?email="+email,function(data){
-						data=data.trim();
-						
-						$("#emailResult").removeClass("idCheck0").addClass("idCheck1");
-						if(data==0){
-							str = "사용 가능한 email 입니다"
-							$("#emailResult").removeClass("idCheck1").addClass("idCheck0");
-							emailCheck=true;
-						}
-						$("#emailResult").html(str);
-						
+					}
+					
 					});
-				}else {
-					$("#emailResult").html("이메일은 필수 항목입니다");
-					$("#emailResult").removeClass("idCheck0").addClass("idCheck1");
-					emailCheck = false;
-				}
+			$("#divEmail").on("blur", "#emailid", function(){
+				var str = "중복된 email 입니다";
+				emailCheck = false;
+				emailid = $(this).val();
+				if(domain!=''&&domain!='direct'){
+					email=emailid+'@'+domain;
+					$("#email").val(email);
+					if(email != ''){
+						$.get("./memberEmailCheck?email="+email,function(data){
+							data=data.trim();
+							
+							$("#emailResult").removeClass("idCheck0").addClass("idCheck1");
+							if(data==0){
+								str = "사용 가능한 email 입니다"
+								$("#emailResult").removeClass("idCheck1").addClass("idCheck0");
+								emailCheck=true;
+							}
+							$("#emailResult").html(str);
+							
+						});
+					}else {
+						$("#emailResult").html("이메일은 필수 항목입니다");
+						$("#emailResult").removeClass("idCheck0").addClass("idCheck1");
+						emailCheck = false;
+					}
+					}
 				});	
-			
+			//**************************이메일 체크 함수************************************
+			function emailChk(){
+			email=emailid+'@'+domain;
+					$("#email").val(email);
+					if(email != ''){
+						$.get("./memberEmailCheck?email="+email,function(data){
+							data=data.trim();
+							
+							$("#emailResult").removeClass("idCheck0").addClass("idCheck1");
+							if(data==0){
+								str = "사용 가능한 email 입니다"
+								$("#emailResult").removeClass("idCheck1").addClass("idCheck0");
+								emailCheck=true;
+							}
+							$("#emailResult").html(str);
+							
+						});
+					}else {
+						$("#emailResult").html("이메일은 필수 항목입니다");
+						$("#emailResult").removeClass("idCheck0").addClass("idCheck1");
+						emailCheck = false;
+					}
+			}
 			//******************************나이,핸드폰 숫자만 입력**************************
 			 function checkNum(event) {
         		var keyVal = event.keyCode;				
