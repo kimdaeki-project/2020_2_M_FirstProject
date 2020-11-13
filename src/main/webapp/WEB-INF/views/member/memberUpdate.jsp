@@ -19,12 +19,12 @@
 </head>
 <body>
 <div class="container">
-    <form name="f" method="post">
+    <form name="f" method="post" action="./memberUpdate">
  
         <div class="col-sm-12 pt-3">
             <div class="card">
                 <div class="card-header card-header-primary">
-                    <h4 class="card-title"><i class="fas fa-square"></i>내 정보 확인</h4>
+                    <h4 class="card-title"><i class="fas fa-square"></i>정보 수정</h4>
                     <p class="card-catagory"></p>
                 </div>
                 <div class="card-body">
@@ -32,37 +32,39 @@
                         <table class="table">
                             <tbody>
                             <tr style="line-height:32px;">
-                                <td>ID</td>
+                                <td>비밀번호</td>
                                 <td>
-                                    <input type="text" name="id" class="form-control" value="${member.id}" readonly>
+                                    <input type="text" name="pw" class="form-control" value="${member.pw}" id="pw">
                          
                                 </td>
-                                <td>관리자 이름</td>
+                                <td>비밀번호 확인</td>
                                 <td>
-                                    <input type="text" name="name" class="form-control" value="${member.name}" readonly="readonly">
+                                    <input type="text" name="pw" class="form-control" id="pw2">
                                 </td>                        
                             </tr>
                             <tr>
-                                <td>관리자 비밀번호</td>
+                                <td>전화번호</td>
                                 <td>
-                                    <input type="text" name="email" class="form-control" maxlength="10" value="${member.email}" readonly="readonly">                                    
+                                    <input type="text" name="phone" class="form-control" maxlength="11" value="${member.phone}" id ="phone"  onKeyPress="return checkNum(event)"> 
+                                    <div id = "phoneResult"></div>                                   
                                 </td>
-                                <td>관리자 비밀번호 확인</td>
+                                <td>이름</td>
                                 <td>
-                                    <input type="text" name="phone" class="form-control" maxlength="10" value="${member.phone}" readonly="readonly">                                    
+                                    <input type="text" name="name" class="form-control" maxlength="10" value="${member.name}" id="name">                                    
                                 </td>
                             </tr>  
-                            <tr>
-                                <td>성별</td>
+                            <tr hidden="">
+                                <td>회원구분</td>
                                 <td>
-                                    ${member.gender}
+                                     <input type="text" name="trainer" class="form-control" maxlength="10" value="${member.trainer}" id="trainer">
                                 </td>
-                                <td>팩스</td>
-                                <td>
-                                    <input type="tel" name="fax" class="form-control" value="">
-                                </td>
+                       
                             </tr>
-                            <tr>
+                            <tr id="trainerinfo">
+                             <td>체육관이름</td>
+                                <td>
+                                     <input type="text" name="trainer" class="form-control" maxlength="10" value="${member.gym}" id="gym">
+                                </td>
                                 <td>주소</td>
                                 <td colspan="3">
                                     <input type="text" name="address1" id="address1" class="form-control mb-3" value="">
@@ -81,9 +83,60 @@
     </form>
  
     <div class="text-center mt-3">
-        <button type="button" class="btn btn-success">변경하기</button>
-        <button type="button" class="btn btn-info">다시쓰기</button>
+        <a><button type="button" class="btn btn-success">변경하기</button></a>
     </div>
 </div>
+<script type="text/javascript">
+var trainer = $("#trainer").val();
+var phoneCheck =false;
+
+//************************트레이너회원만 보이게 하기*************************************************
+	if(trainer=='M'){
+			$("#trainerinfo").attr("hidden","hidden");
+			}
+
+//*************************핸드퐅 번호 중복 확인***************************************************
+	$("#phone").blur(function(){
+		var pn="${member.phone}";
+		phoneCheck = false;
+		var phone = $(this).val();
+		if(phone==pn){
+				phoneCheck =true;	
+				$("phoneResult").remove();
+			}
+		else if(phone != ''){
+			$.get("./memberPhoneCheck?phone="+phone,function(data){
+				data=data.trim();
+				var str = "중복된 번호 입니다";
+				$("#phoneResult").removeClass("idCheck0").addClass("idCheck1");
+				if(data==0){
+					str = "사용 가능한 번호 입니다"
+					$("#phoneResult").removeClass("idCheck1").addClass("idCheck0");
+					phoneCheck=true;
+				}
+				$("#phoneResult").html(str);
+				
+			});
+		}else {
+			$("#phoneResult").html("전화번호는 필수 항목입니다");
+			$("#phoneResult").removeClass("idCheck0").addClass("idCheck1");
+			phoneCheck = false;
+		}
+		
+		});
+//***********************************핸드폰 숫자만 입력*****************************************
+function checkNum(event) {
+        		var keyVal = event.keyCode;				
+       			if(((keyVal >= 48) && (keyVal <= 57))){
+           			ageCheck = true;
+            			return true;
+        		}
+       				 else{
+          				 alert("숫자만 입력가능합니다");
+           				 return false;
+      			  }
+  					  }
+
+</script>
 </body>
 </html>

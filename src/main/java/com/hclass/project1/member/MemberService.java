@@ -23,6 +23,9 @@ public class MemberService {
 	@Autowired
 	private MemberFileDAO memberfileDAO;
 	
+	public int memberDelete(MemberDTO memberDTO) throws Exception{
+		return memberDAO.memberDelete(memberDTO);
+	}
 	public int setOne(MemberDTO memberDTO)throws Exception{
 		return memberDAO.setOne(memberDTO);
 	}
@@ -60,5 +63,8 @@ public class MemberService {
 	}
 	public MemberDTO memberLogin(MemberDTO memberDTO)throws Exception{
 		return memberDAO.memberLogin(memberDTO);
+	}
+	public int memberUpdate(MemberDTO memberDTO) throws Exception{
+		return memberDAO.memberUpdate(memberDTO);
 	}
 }

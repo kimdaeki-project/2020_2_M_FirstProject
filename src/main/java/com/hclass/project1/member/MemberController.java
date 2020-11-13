@@ -20,6 +20,26 @@ public class MemberController {
 	@Autowired
 	private MemberService memberService;
 	
+	@GetMapping("memberDelete")
+	public ModelAndView memberDelete(MemberDTO memberDTO, HttpSession session) throws Exception{
+		ModelAndView mv = new ModelAndView();
+		memberDTO=(MemberDTO) session.getAttribute("member");
+		int result = memberService.memberDelete(memberDTO);
+		session.invalidate();
+		mv.setViewName("redirect:../");
+		
+	
+		return mv;
+	}
+	
+	@PostMapping("memberUpdate")
+	public ModelAndView memberUpdate(MemberDTO memberDTO)throws Exception{
+		ModelAndView mv =new ModelAndView();
+		memberService.memberUpdate(memberDTO);
+		mv.setViewName("member/memberUpdate");
+		return mv;
+	}
+	
 	@GetMapping("memberUpdate")
 	public ModelAndView memberUpdate(HttpSession session)throws Exception{
 		ModelAndView mv =new ModelAndView();

@@ -15,6 +15,10 @@ public class MemberDAO {
 	private final String namespace="com.hclass.project1.member.MemberDAO.";
 	
 	
+public int memberDelete(MemberDTO memberDTO) throws Exception{
+		
+		return sqlSession.delete(namespace+"memberDelete",memberDTO);
+	}
 	
 	public int setOne(MemberDTO memberDTO) throws Exception{
 		
@@ -38,4 +42,7 @@ public class MemberDAO {
 		return sqlSession.selectOne(namespace+"memberLogin",memberDTO);
 	}
 	
+	public int memberUpdate(MemberDTO memberDTO)throws Exception{
+		return sqlSession.update(namespace+"memberUpdate",memberDTO);
+	}
 }

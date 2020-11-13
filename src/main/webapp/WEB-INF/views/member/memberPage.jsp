@@ -84,15 +84,9 @@
 
  
     <div class="text-center mt-3">
-       <a href ="${pageContext.request.contextPath}/member/memberUpdate"><button type="button" class="btn btn-success" >변경하기</button></a> 
-        <button type="button" class="btn btn-info">다시쓰기</button>
+       <a href ="${pageContext.request.contextPath}/member/memberUpdate"><button type="button"class="btn btn-primary">변경하기</button></a> 
+        <a href ="./memberDelete"><button type="button" class="btn btn-danger">회원탈퇴</button></a>
     </div>
 </div>
-<script type="text/javascript">
-	var trainer = "${member.trainer}";
-	if(trainer=='T'){
-			$("#trainer").removeAttr("hidden","hidden");	
-		}
-</script>
 </body>
 </html>
