@@ -1,10 +1,12 @@
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<%@ page session="false" %>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
-<html lang="en">
+<html>
 
 
 <head>
+<title>NoticeList Page</title>
 
 <style type="text/css">
 	.slide{
@@ -22,21 +24,18 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>Personal Training</title>
 
-<c:import url="./template/bootStrap.jsp"></c:import>
+<c:import url="../template/bootStrap.jsp"></c:import>
 </head>
 
 <body>
+<h2>NoticePage</h2>
 
   <!-- Navigation -->
-  <c:import url="./template/header.jsp"></c:import>
-  <!-- Main Content -->
-   <c:import url="./template/section.jsp"></c:import>
+  <c:import url="../template/header.jsp"></c:import>
 
   <!-- Footer -->
- <c:import url="./template/footer.jsp"></c:import>
-
+ <c:import url="../template/footer.jsp"></c:import>
+ 
 </body>
-
 </html>
