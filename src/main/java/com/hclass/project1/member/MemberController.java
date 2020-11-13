@@ -175,22 +175,22 @@ public class MemberController {
 		ModelAndView mv = new ModelAndView();
 		int result=0;
 		System.out.println(memberDTO.getEmail());
-//		if(memberDTO.getTrainer().equals("M")) {
-//			memberDTO.setAddress("");
-//			memberDTO.setGym("");
-//			memberDTO.setBusiness("");	
-//			result = memberService.setOne(memberDTO);
-//		}
-//		else {
-//		result = memberService.setOne(memberDTO,photo,session);
-//		}
-//		String message ="가입실패";
-//		if(result>0) {
-//			message ="가입 성공";
-//		}
-//		mv.addObject("msg",message);
-//		mv.addObject("path", "../");
-//		mv.setViewName("common/result");
+		if(memberDTO.getTrainer().equals("M")) {
+			memberDTO.setAddress("");
+			memberDTO.setGym("");
+			memberDTO.setBusiness("");	
+			result = memberService.setOne(memberDTO);
+		}
+		else {
+		result = memberService.setOne(memberDTO,photo,session);
+		}
+		String message ="가입실패";
+		if(result>0) {
+			message ="가입 성공";
+		}
+		mv.addObject("msg",message);
+		mv.addObject("path", "../");
+		mv.setViewName("common/result");
 		return mv;
 	}
 }
