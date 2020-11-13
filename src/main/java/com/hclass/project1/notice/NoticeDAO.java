@@ -1,5 +1,11 @@
 package com.hclass.project1.notice;
 
-public class NoticeDAO {
+import java.util.List;
 
+import org.springframework.stereotype.Repository;
+
+@Repository
+public interface NoticeDAO {
+		public List<NoticeDTO> list();
+		public void NoticeWrite(NoticeDTO dto);
 }
