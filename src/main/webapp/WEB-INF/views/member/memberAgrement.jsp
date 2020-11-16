@@ -4,7 +4,9 @@
 <!doctype html>
 <html>
 <head>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<c:import url="../template/bootStrap.jsp"></c:import>
+
 <meta charset="utf-8">
 <title>..</title>
 <style>
@@ -18,10 +20,13 @@
 	.center{
 			height:700px;
 			width:  600px;
-			background-color:white;
 			border: 1px solid rgb(245,246,247);
 			border-radius :20px 20px 20px 20px;
-	position: absolute;top: 30%;left: 40%;margin:-150px 0 0 -150px}
+	position: absolute;top: 30%;left: 45%;margin:-150px 0 0 -150px}
+	.noResize{
+		resize: none;
+	
+	}
 </style>
 </head>
 <body>
@@ -39,7 +44,7 @@
 		</label>
 	</p>
 	<p>
-		<textarea rows="7" cols="70" readonly="readonly">필수 약관동의1</textarea>
+		<textarea rows="7" cols="70" readonly="readonly" class="noResize">필수 약관동의1</textarea>
 		<label>
 		<div>
 			<input type="checkbox" name="c1" id="c1"> 
@@ -48,7 +53,7 @@
 		</label>
 	</p>
 	<p>
-	<textarea rows="7" cols="70" readonly="readonly">필수약간동의2</textarea>
+	<textarea rows="7" cols="70" readonly="readonly" class="noResize">필수 약관동의2</textarea>
 		<label>
 		<div>
 			<input type="checkbox" name="c2" id="c2"> 
@@ -60,7 +65,7 @@
 
 	<p>
 		<label>
-		<textarea rows="7" cols="70" readonly="readonly">선택약관동의</textarea>
+		<textarea rows="7" cols="70" readonly="readonly"  class="noResize">선택 약관동의</textarea>
 		<div>
 			<input type="checkbox" name="c3" id="c3"> 
 			위치정보 이용약관 동의(선택)
@@ -85,6 +90,7 @@
 	
 </div>
 </form>
+
 <script>
 	var doc = document; 
 	var form1 = doc.getElementById('form1'); 
@@ -161,7 +167,7 @@
 		e.preventDefault(); // 서브밋 될때 화면이 깜빡이지 않게 방지
 
 		if ( !form1_data['c1'] ) {
-			alert('네이버 이용약관 동의를 하지 않았습니다'); 
+			alert('이용약관 동의를 하지 않았습니다'); 
 			c1.parentNode.style.color = 'red'; 
 			return false; 
 		}
@@ -173,6 +179,7 @@
 
 		this.submit(); 
 	}; 
+	
 </script>
 </body>
 </html>

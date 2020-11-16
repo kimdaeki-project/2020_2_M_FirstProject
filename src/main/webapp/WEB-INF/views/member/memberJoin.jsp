@@ -4,7 +4,7 @@
 <!DOCTYPE html>
 <html lang="ko">
     <head>
-   <!-- Latest compiled and minified CSS -->
+       <!-- Latest compiled and minified CSS -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 
 <!-- jQuery library -->
@@ -12,7 +12,7 @@
 
 <!-- Latest compiled JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-
+<c:import url="../template/bootStrap.jsp"></c:import>
         <meta charset="UTF-8">
         
   <style type="text/css">
@@ -28,23 +28,26 @@
 		
 	}
 
-	.emailbox{
-		display:inline-block;
-		width : 220px;
-	}
+left: 10px;
+}
+	
 	
 </style>
     </head>
     <body>
     <!-- 좌우측의 공간 확보 -->
             <!-- 헤더 들어가는 부분 -->
-   
+            
+  <!-- Navigation -->
+ 		
+ 
             <!--// 헤더 들어가는 부분 -->
             <!-- 모달창 -->
 
             <!-- 본문 들어가는 부분 -->
-            <div class="container">
-             <div><a href ="../">home</a></div>
+            
+            
+            <div class="container center" id="joinbody">
                <h1 >${classification} 회원가입</h1>
               
                <input type="text" hidden="" value="${classification}" id="title">
@@ -125,7 +128,21 @@
                          <div id="gymResult"></div>
                     </div>
                 </div>
-             
+                
+                 <div id = "divKind" class="form-group">
+                    <label for="inputKind" class="col-lg-2 control-label">주종목</label>
+                	<select name="kindbox" id="kindbox">
+    							<option value="health" selected="selected">헬스</option>
+   								<option value="yoga">요가</option>
+   								<option value="pilates">필라테스</option>
+   								<option value="spinning">스피닝</option>
+   								<option value="crossfit">크로스핏</option>
+						</select>
+				<div hidden="">
+                	<input type="text" class="form-control" id="kind"name="kind" value="health" >
+                </div>
+                </div>
+                
                 <div class="form-group">
                     <label for="inputEmailReceiveYn" class="col-lg-2 control-label">출장유무</label>
                     <div class="col-lg-10">
@@ -143,6 +160,7 @@
                 	 <input type="file" class="form-control" id="photo" data-rule-required="true" name="photo">
                 	 </div>
                 </div>
+               
          	 </c:if>
                 <div class="form-group">
                     <label for="inputEmailReceiveYn" class="col-lg-2 control-label">성별</label>
@@ -182,7 +200,13 @@
 			var addressCheck=false;
 			var gymCheck = false;
 			var ch = $("#title").val();
-		
+		//******************************트레이너 주종목**************************************************
+		$("#divKind").on("change","#kindbox",function(){
+				var kind = $(this).val();
+				$("#kind").val(kind);
+			
+
+			});
 		
 		//******************************이메일 한글 사용 불가능***********************************************
 		function nonKoreanSpecialKey(event) {
@@ -382,7 +406,7 @@
 				}	         
             </script>
             <!-- 푸터 들어가는 부분 -->
-            
+            <c:import url="../template/footer.jsp"></c:import>
          
             <!--// 푸터 들어가는 부분 -->
        

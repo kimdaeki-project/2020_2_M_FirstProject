@@ -11,7 +11,7 @@ import org.springframework.web.multipart.MultipartFile;
 public class FileSaver {
 
 	public String saver(File dest, MultipartFile multipartFile) throws Exception{
-		if(dest.exists()) {
+		if(!dest.exists()) {
 			dest.mkdirs();
 		}
 		Calendar ca = Calendar.getInstance();
