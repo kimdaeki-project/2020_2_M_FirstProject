@@ -7,5 +7,5 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface NoticeDAO {
 		public List<NoticeDTO> list();
-		public void NoticeWrite(NoticeDTO dto);
+		public void insert(NoticeDTO dto);
 }

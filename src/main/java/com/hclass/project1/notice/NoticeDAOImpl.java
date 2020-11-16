@@ -12,19 +12,15 @@ public class NoticeDAOImpl implements NoticeDAO {
 
 	@Inject
 	SqlSession SqlSession;
-	
+
 	@Override
 	public List<NoticeDTO> list() {
 		return SqlSession.selectList("notice.list");
 	}
 
 	@Override
-	public void NoticeWrite(NoticeDTO dto) {
-		// TODO Auto-generated method stub
-		
-	}
-
-
-	}
-
+	public void insert(NoticeDTO dto) {
+		SqlSession.insert("notice.insert",dto);
+	}		
+}
 

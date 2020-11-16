@@ -67,7 +67,7 @@
  <c:import url="../template/footer.jsp"></c:import>
 
 
-<input type="button" value="글쓰기" onclick="location.href='/notice/noticeWrite.do'">
+<input type="button" value="글쓰기" onclick="location.href='./noticeWrite'">
 <table border="1" width="700px">
 	<tr>
 		<td>글번호</td>

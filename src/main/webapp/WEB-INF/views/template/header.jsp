@@ -54,17 +54,17 @@
             </ol>
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <img class="slide" src="./resources/img/main/fc_16.jpg" alt="First slide">
+                    <img class="slide" src="${pageContext.request.contextPath}/resources/img/main/fc_16.jpg" alt="First slide">
                     
                 </div>
                 <div class="carousel-item">
-                    <img class="slide" src="./resources/img/main/fc_main.png" alt="Second slide">
+                    <img class="slide" src="${pageContext.request.contextPath}/resources/img/main/fc_main.png" alt="Second slide">
                     <div class="container">
                         
                     </div>
                 </div>
                 <div class="carousel-item">
-                    <img class="slide" src=./resources/img/main/fc_slide.jpg alt="Third slide">
+                    <img class="slide" src="${pageContext.request.contextPath}/resources/img/main/fc_slide.jpg" alt="Third slide">
                     
                 </div>
             </div>
