@@ -21,6 +21,21 @@ public class NoticeDAOImpl implements NoticeDAO {
 	@Override
 	public void insert(NoticeDTO dto) {
 		SqlSession.insert("notice.insert",dto);
-	}		
+	}
+
+	@Override
+	public NoticeDTO detail(String title) {
+		return SqlSession.selectOne("notice.detail", title);
+	}
+
+	@Override
+	public void delete(long bno) {
+		SqlSession.delete("notice.delete", bno);
+	}
+
+	@Override
+	public void update(NoticeDTO dto) {
+		SqlSession.update("notice.update", dto);
+	}	
 }
 

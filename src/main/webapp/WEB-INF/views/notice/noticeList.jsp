@@ -73,7 +73,6 @@
 		<td>글번호</td>
 		<td>아이디</td>
 		<td>제목</td>
-		<td>본문</td>
 		<td>날짜</td>
 		<td>조회수</td>
 	</tr>
@@ -85,8 +84,7 @@
 	<tr>
 		<td>${row.bno}</td>
 		<td>${row.writer}</td>
-		<td>${row.title}</td>
-		<td>${row.content}</td>
+		<td><a href="${path}view.do?title=${row.title}">${row.title}</a></td>
 		<td><fmt:formatDate value="${row.regDate}" pattern="yyyy-MM-dd HH:mm:ss" />
 		<td>${row.viewcnt}</td>
 	</tr>

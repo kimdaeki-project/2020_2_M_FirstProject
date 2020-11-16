@@ -10,6 +10,7 @@ public class NoticeDTO {
 	private String content;
 	private Date regDate;
 	private long viewcnt;
+	
 	public long getBno() {
 		return bno;
 	}
