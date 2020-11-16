@@ -7,5 +7,10 @@
   	<typeAliases>
   			<typeAlias type="com.hclass.project1.member.MemberDTO" alias="MemberDTO"/>
   			<typeAlias type="com.hclass.project1.member.memberfile.MemberFileDTO" alias="MemberFileDTO"/>
+  			
+  			<!-- Trainer -->
+  			<typeAlias type="java.lang.Long" alias="Long"/>
+  			<typeAlias type="com.hclass.project1.util.Pager" alias="Pager"/>
+  			<typeAlias type="com.hclass.project1.trainer.TrainerDTO" alias="TrainerDTO"/>
   	</typeAliases>
   </configuration>
