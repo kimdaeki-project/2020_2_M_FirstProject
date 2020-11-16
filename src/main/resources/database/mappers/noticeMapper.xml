@@ -29,4 +29,10 @@
 		set title=#{title}, content=#{content}
 		where bno=#{bno}
 	</update>
+	
+	<!-- 공지사항 삭제 -->
+	<delete id="delete">
+		delete from notice
+		where bno=#{bno}
+	</delete>
 </mapper>

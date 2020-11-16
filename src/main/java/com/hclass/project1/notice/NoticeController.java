@@ -52,5 +52,11 @@ public class NoticeController {
 			noticeDAO.update(dto);
 			return "redirect:/notice/noticeList";
 	}
+	
+	@RequestMapping("notice/delete.do")
+	public String delete(@RequestParam long bno, Model model) {
+		noticeDAO.delete(bno);
+		return "redirect:/notice/noticeList";
+	}
 
 }
