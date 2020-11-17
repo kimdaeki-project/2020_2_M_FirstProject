@@ -23,11 +23,32 @@
 	}
 	input[_date]{
 		margin-top: 20px;
-		margin-right: 30px;
 	}
 	#reserve_btn{
 		display:block;
 		margin: 0 auto;
+	}
+	.date_style{
+		font-size: 16px;
+		color: navy;
+		margin-top: 5px;
+	}
+	#member_id-text{
+		border:none;
+		border-right:0px;
+		border-top:0px; 
+		boder-left:0px; 
+		boder-bottom:0px;
+		text-align: center;
+	}
+	input:invalid+span:after{
+		content: "지정된 시간을 선택해주세요.";
+		font-size:14px;
+		padding-left: 5px;
+	}
+	input:valid+span:after{
+		content: "";
+		padding-left: 5px;
 	}
 </style>
 </head>
@@ -35,31 +56,42 @@
 <body>
 	<h1 class="cash_h1">PayMent Page</h1>
 	<div id="cash-div">
-		<form action="./paymentPage" method="post" id="frm">
+		<form action="./paymentPage" method="post" id="frm_pay">
 			<h1 class="cash_h1" style="font-size: 16px;">예약은 현재날짜 기준 30일 이내만 가능합니다.</h1>
 		
-			<div class="container" id="cashDiv">		
-			
-				<label for="sel1">Date</label>	
-				TEST : <input type="text" id="id" name="id">
-				<input _date type="date" id="date" name="regDate">	
+			<div class="container" id="cashDiv">					
+				<input type="text" value="${member.name}" name="id" id="member_id-text" readonly="readonly">회원님
+				<div class="date_style">예약하실 날짜와 시간을 선택해주세요.</div>
+				<div class="date_style">(Time 08:00 to 21:00)</div>
+				<input _date type="date" id="date" name="regDate">
+				<input type="time" id="time" value="08:00" min="08:00" max="21:00" required="required" name="time">
+				<span class="validity"></span>
 			</div>		
 		</form>
 		<input type="button" value="예약하기" class="btn btn-primary" id="reserve_btn">
 	</div>
+	<!-- Time Test -->
+	<input type="button" value="시간테스트" id="time-test">
 <c:import url="../template/footer.jsp"></c:import>
 </body>
 
 <script type="text/javascript">
 	$("#reserve_btn").click(function() {
 		var d = $("#date").val();
-		d = confirm(d+"일이 맞으십니까?")
-		if(d){
-			alert("결제 페이지로 이동합니다.");
-			$("#frm").submit();
-		}
 		
+		var td = document.getElementById("time");
+		if(!td.checkValidity()){
+			alert("지정된 시간을 선택해주세요.");
+		}else{
+			d = confirm(d+"일이 맞으십니까?");	
+			if(d){
+				alert("결제 페이지로 이동합니다.");
+				$("#frm_pay").submit();
+			}
+		}
 	});
+	
+	
 
 	var dateToday = document.getElementById("date");
 	var date = new Date();

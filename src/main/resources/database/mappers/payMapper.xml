@@ -5,6 +5,6 @@
     
 <mapper namespace="com.hclass.project1.pay.PayDAO">
 	<insert id="setCharge" parameterType="PayDTO">
-		insert into pay_test values(pay_test_seq.nextval, #{id}, #{regDate})
+		insert into pay_test values(pay_test_seq.nextval, #{id}, #{regDate}, #{time})
 	</insert>
 </mapper>

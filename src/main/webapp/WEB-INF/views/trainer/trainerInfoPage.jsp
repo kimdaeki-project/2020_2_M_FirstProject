@@ -1,3 +1,4 @@
+<%@page import="com.hclass.project1.member.MemberDTO"%>
 <%@page import="oracle.sql.JAVA_STRUCT"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
@@ -68,7 +69,7 @@
 			<h3>트레이너</h3>
 			<img alt="" src="../resources/img/trainer/trainer.jpg">
 		</div>
-		<div class="container" id="reserveDiv"> 
+		<div class="container" id="reserveDiv">
 			<input id="reserveBtn" type="button" value="예약하기" class="btn btn-info">
 		</div>
 
@@ -80,7 +81,7 @@
 	
 	$("#reserveBtn").click(function() {
 		var re = ($('input:radio[name=reserve]').is(':checked'));
-			
+
 		if(re==true){
 			$("#frm_reserve").submit();
 		}else{

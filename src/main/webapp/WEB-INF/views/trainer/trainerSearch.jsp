@@ -63,6 +63,12 @@
 		<label class="radio-inline">
 			<input type="radio" name="kind" value="yoga"> 요가
 		</label>
+		<label class="radio-inline">
+			<input type="radio" name="kind" value="spinning"> 스피닝
+		</label>
+		<label class="radio-inline">
+			<input type="radio" name="kind" value="crossfit"> 크로스핏 
+		</label>
 		<hr>
 		<h4 style="font-size: 18px;"> ★장소★ </h4>
 		<label class="radio-inline">

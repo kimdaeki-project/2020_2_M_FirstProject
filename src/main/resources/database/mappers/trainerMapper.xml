@@ -64,7 +64,10 @@
 			<when test="kind=='yoga'">
 				kind in #{kind}
 			</when>
-			<when test="kind=='health'">
+			<when test="kind=='spinning'">
+				kind in #{kind}
+			</when>
+			<when test="kind=='crossfit'">
 				kind in #{kind}
 			</when>
 			<when test="kind==null">
