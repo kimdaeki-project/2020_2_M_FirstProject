@@ -8,13 +8,8 @@
 <title>Insert title here</title>
 <link rel="stylesheet" href="../resources/css/default.css">
 <c:import url="../template/bootStrap.jsp"></c:import>
-<style type="text/css">
-	#search-h2{
-		text-align: center;
-		margin-top: 40px;
-	}
+<c:import url="../template/slide.jsp"></c:import>
 
-</style>
 </head>
 <c:import url="../template/header.jsp"></c:import>
 <body>

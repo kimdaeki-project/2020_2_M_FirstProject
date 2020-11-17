@@ -7,6 +7,7 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <c:import url="../template/bootStrap.jsp"></c:import>
+<c:import url="../template/slide.jsp"></c:import>
 <style type="text/css">
 	#cash-h1{
 		text-align: center;
@@ -18,8 +19,9 @@
 	}
 </style>
 </head>
+<c:import url="../template/header.jsp"></c:import>
 <body>
-	<h1 id="cash-h1">Cashing Page</h1>
+	<h1 id="cash-h1">PayMentIng Page</h1>
 	
 	<input type="button" value="결제하기" id="cashing_btn">
 <c:import url="../template/footer.jsp"></c:import>	

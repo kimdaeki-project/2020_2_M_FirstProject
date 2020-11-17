@@ -9,6 +9,7 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <c:import url="../template/bootStrap.jsp"></c:import>
+<c:import url="../template/slide.jsp"></c:import>
 <style type="text/css">
 	#h1{
 		margin-top: 50px;

@@ -11,6 +11,10 @@
   			<!-- Trainer -->
   			<typeAlias type="java.lang.Long" alias="Long"/>
   			<typeAlias type="com.hclass.project1.util.Pager" alias="Pager"/>
+  			
   			<typeAlias type="com.hclass.project1.trainer.TrainerDTO" alias="TrainerDTO"/>
+  			<!-- Pay -->
+  			<typeAlias type="com.hclass.project1.pay.PayDTO" alias="PayDTO"/>
+  	
   	</typeAliases>
   </configuration>

@@ -7,6 +7,7 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <c:import url="../template/bootStrap.jsp"></c:import>
+<c:import url="../template/slide.jsp"></c:import>
 <style type="text/css">
 	#cash-div{
 		height: auto;
@@ -32,15 +33,15 @@
 </head>
 <c:import url="../template/header.jsp"></c:import>
 <body>
-	<h1 class="cash_h1">Cash Page</h1>
+	<h1 class="cash_h1">PayMent Page</h1>
 	<div id="cash-div">
-		<form action="./cashPage" method="post" id="frm">
+		<form action="./paymentPage" method="post" id="frm">
 			<h1 class="cash_h1" style="font-size: 16px;">예약은 현재날짜 기준 30일 이내만 가능합니다.</h1>
 		
 			<div class="container" id="cashDiv">		
 			
 				<label for="sel1">Date</label>	
-				TEST : <input type="text" id="name" name="name">
+				TEST : <input type="text" id="id" name="id">
 				<input _date type="date" id="date" name="regDate">	
 			</div>		
 		</form>
