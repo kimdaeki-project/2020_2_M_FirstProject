@@ -6,10 +6,7 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <style type="text/css">
-	#search-h2{
-		text-align: center;
-		margin-top: 40px;
-	}
+
 	.slide{
 		height: 450px;
 		width: 100%;
