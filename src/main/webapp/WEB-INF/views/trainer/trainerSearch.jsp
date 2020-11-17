@@ -6,9 +6,11 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+
 <link rel="stylesheet" href="../resources/css/default.css">
 <c:import url="../template/bootStrap.jsp"></c:import>
 <c:import url="../template/slide.jsp"></c:import>
+
 <style type="text/css">
 	#search-h2{
 		text-align: center;
@@ -17,7 +19,9 @@
 </style>		
 </head>
 <c:import url="../template/header.jsp"></c:import>
+
 <body>
+	<!-- 검색창 -->
 <div class="container" id="div2">
 	<h2 id="search-h2">Trainer Search</h2>
 	<form class="example" style="margin: 25px;" action="./trainerWindowSearch">
@@ -34,8 +38,9 @@
 	</form>
 </div>
 
+<!-- 상세조건 검색 -->
 <div style="margin-top: 25px;" class="list-group" id="div1" >
-	<form id="frm" action="./trainerDetailSearch">
+	<form id="frm_trainer" action="./trainerDetailSearch">
 		<hr>
 		<h4> 성별 </h4>
 		<label class="radio-inline">
@@ -88,7 +93,7 @@
 		if(bu == false || ki == false){
 			alert("종목과 장소를 선택하여주세요.");
 		}else{
-			$("#frm").submit();
+			$("#frm_trainer").submit();
 		}
 	});
 	

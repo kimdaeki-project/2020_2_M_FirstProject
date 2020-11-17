@@ -47,7 +47,7 @@
 <c:import url="../template/header.jsp"></c:import>
 <body>
 	<h1 id="h1">Trainer Page</h1>
-	<form id="frm" action="./trainerReserve">
+	<form id="frm_reserve" action="./trainerReserve">
 	<div id="pageSize_div">
 		<div id="tip_div">↓ 버튼 클릭</div>
 		<table class="table table-condensed" style="width: 70%; margin: 0 auto;">
@@ -82,7 +82,7 @@
 		var re = ($('input:radio[name=reserve]').is(':checked'));
 			
 		if(re==true){
-			$("#frm").submit();
+			$("#frm_reserve").submit();
 		}else{
 			alert("트레이너를 선택해주세요.");
 		}
