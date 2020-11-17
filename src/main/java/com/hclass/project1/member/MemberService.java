@@ -42,19 +42,14 @@ public class MemberService {
 			memberfileDTO.setId(memberDTO.getId());
 			memberfileDTO.setFileName(fileName);
 			memberfileDTO.setOriName(photo.getOriginalFilename());
-			byte[] ar = photo.getBytes();
-			FileCopyUtils.copy(ar,file2);
-			
+
 			result = memberfileDAO.setFileOne(memberfileDTO);
 			
 		}
 		
 		return result;
 	}
-	private void FileCopyUtils(byte[] ar, File file2) {
-		// TODO Auto-generated method stub
-		
-	}
+	
 	public MemberDTO getOne(MemberDTO memberDTO) throws Exception{
 		
 		return memberDAO.getOne(memberDTO);

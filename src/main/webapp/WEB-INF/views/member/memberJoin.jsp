@@ -28,10 +28,46 @@
 		
 	}
 
-left: 10px;
+	.emailbox{
+		display:inline-block;
+		width : 220px;
+	}
+	.slide{
+	height: 450px;
+	width: 100%;
+}
+.symbol{
+	height: 40px;
+	width: 50px;
+}
+.img-circle{
+	width: 160px;
+	height: 160px;
+	
+}
+.best{
+	list-style: none;
+	float: left;
+}
+.trainer{
+	float: left;
+	margin-left: 10px;
+}
+.gym{
+	float: left;
+	margin-left: 10px;
+}
+
+.food{
+	float: left;
+	margin-left: 10px;
 }
 	
-	
+	body {
+		font-size: small; 
+		font-family: Arial, '맑은 고딕';
+		background-color: rgb(245,246,247);
+	}
 </style>
     </head>
     <body>
@@ -131,6 +167,7 @@ left: 10px;
                 
                  <div id = "divKind" class="form-group">
                     <label for="inputKind" class="col-lg-2 control-label">주종목</label>
+                    <span></span>
                 	<select name="kindbox" id="kindbox">
     							<option value="health" selected="selected">헬스</option>
    								<option value="yoga">요가</option>
@@ -216,10 +253,8 @@ left: 10px;
   						return;
  						}
 					}
-
-		//******************************셀렉트박스 선택시 이메일 도메인넘겨줌**************************************
 			
-		//***************************************회원가입시에 트레이너와 일반회원 구분*****************************************
+		//***************************************회원가입시에 트레이너와 일반회원 구분*****************************
 			if(ch=='trainer'){
 				$("#trainer").val("T");
 				}
