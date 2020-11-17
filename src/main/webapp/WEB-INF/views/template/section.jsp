@@ -4,7 +4,7 @@
     <div class="row">
       <div class="col-lg-8 col-md-10 mx-auto">
         <div class="post-preview">
-            <h2 class="post-title">
+            <h2 class="post-title" style="margin-top: 15px;">
             <img  class = "symbol"alt="" src="./resources/img/main/first.png">
              	Best Trainer
             </h2>
