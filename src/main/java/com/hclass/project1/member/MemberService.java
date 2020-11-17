@@ -6,6 +6,7 @@ import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.util.FileCopyUtils;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.hclass.project1.member.memberfile.MemberFileDAO;
@@ -40,15 +41,15 @@ public class MemberService {
 			MemberFileDTO memberfileDTO =new MemberFileDTO();
 			memberfileDTO.setId(memberDTO.getId());
 			memberfileDTO.setFileName(fileName);
-			System.out.println(fileName);
 			memberfileDTO.setOriName(photo.getOriginalFilename());
-			System.out.println(photo.getOriginalFilename());
+
 			result = memberfileDAO.setFileOne(memberfileDTO);
 			
 		}
 		
 		return result;
 	}
+	
 	public MemberDTO getOne(MemberDTO memberDTO) throws Exception{
 		
 		return memberDAO.getOne(memberDTO);

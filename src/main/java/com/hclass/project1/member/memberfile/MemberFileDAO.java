@@ -9,7 +9,7 @@ public class MemberFileDAO {
 
 	@Autowired
 	 private SqlSession sqlSession;
-	private final String namespace ="com.hclass.project1.member.membetrainerfile.MemberFileDAO.";
+	private final String namespace ="com.hclass.project1.member.memberfile.MemberFileDAO.";
 	
 	public int setFileOne(MemberFileDTO memberfileDTO)throws Exception{
 		return sqlSession.insert(namespace+"setFileOne",memberfileDTO);

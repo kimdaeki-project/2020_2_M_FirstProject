@@ -13,7 +13,13 @@ private String address;
 private String gym;
 private String business;
 private String trainer;
-
+private String kind;
+public String getKind() {
+	return kind;
+}
+public void setKind(String kind) {
+	this.kind = kind;
+}
 public String getEmail() {
 	return email;
 }

@@ -22,6 +22,7 @@
 	}
 
 </style>
+<c:import url="../template/bootStrap.jsp"></c:import>
 </head>
 <body>
 <div class="container box">
@@ -87,6 +88,8 @@
        <a href ="${pageContext.request.contextPath}/member/memberUpdate"><button type="button"class="btn btn-primary">변경하기</button></a> 
         <a href ="./memberDelete"><button type="button" class="btn btn-danger">회원탈퇴</button></a>
     </div>
+    
 </div>
+<c:import url="../template/footer.jsp"></c:import>
 </body>
 </html>

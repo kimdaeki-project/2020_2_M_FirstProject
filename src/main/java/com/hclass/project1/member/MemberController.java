@@ -26,25 +26,41 @@ public class MemberController {
 		memberDTO=(MemberDTO) session.getAttribute("member");
 		int result = memberService.memberDelete(memberDTO);
 		session.invalidate();
-		mv.setViewName("redirect:../");
+		if(result>0) {
+			mv.addObject("msg","탈퇴 성공");
+			mv.addObject("path","redirect:../");
+			mv.setViewName("common/result");
+		}
 		
-	
 		return mv;
 	}
 	
 	@PostMapping("memberUpdate")
-	public ModelAndView memberUpdate(MemberDTO memberDTO)throws Exception{
+	public ModelAndView memberUpdate(MemberDTO memberDTO,HttpSession session)throws Exception{
 		ModelAndView mv =new ModelAndView();
+		MemberDTO md = new MemberDTO();
+		md=(MemberDTO) session.getAttribute("member");
+		memberDTO.setId(md.getId());
+		if(memberDTO.getTrainer().equals("M")) {
+			memberDTO.setAddress("");
+			memberDTO.setGym("");
+		}
 		memberService.memberUpdate(memberDTO);
-		mv.setViewName("member/memberUpdate");
+		mv.setViewName("redirect:../");
 		return mv;
 	}
 	
 	@GetMapping("memberUpdate")
 	public ModelAndView memberUpdate(HttpSession session)throws Exception{
 		ModelAndView mv =new ModelAndView();
-		MemberDTO memberDTO = (MemberDTO)session.getAttribute("member");
-		mv.setViewName("member/memberUpdate");
+		if(session==null) {
+			mv.setViewName("redirect:../");
+		}
+		else {
+			MemberDTO memberDTO = (MemberDTO)session.getAttribute("member");
+			mv.setViewName("member/memberUpdate");
+		}
+		
 		return mv;
 	}
 	@GetMapping("memberPage")
@@ -59,14 +75,12 @@ public class MemberController {
 		}
 		return mv;
 	}
-	
 	@GetMapping("memberLogout")
 	public ModelAndView memberLogout(HttpSession session) throws Exception{
 		ModelAndView mv =new ModelAndView();
 		session.invalidate();
 		mv.setViewName("redirect:../");
 		return mv;
-		
 	}
 	@GetMapping("memberAgrement")
 	public ModelAndView memberAgrememnt() throws Exception{
@@ -166,12 +180,13 @@ public class MemberController {
 	@PostMapping("memberJoin")
 	public ModelAndView setOne(MemberDTO memberDTO, MultipartFile photo,HttpSession session) throws Exception{
 		ModelAndView mv = new ModelAndView();
-		System.out.println(memberDTO.getTrainer());
 		int result=0;
+		System.out.println(memberDTO.getEmail());
 		if(memberDTO.getTrainer().equals("M")) {
 			memberDTO.setAddress("");
 			memberDTO.setGym("");
 			memberDTO.setBusiness("");	
+			memberDTO.setKind("");
 			result = memberService.setOne(memberDTO);
 		}
 		else {

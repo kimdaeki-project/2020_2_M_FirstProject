@@ -14,12 +14,21 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
  
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
- 
+ <style type="text/css">
+ 		.idCheck0 {
+		color: blue;
+	}
+	
+	.idCheck1 {
+		color: red;
+		}
+ 	
+ </style>
 <script src="http://dmaps.daum.net/map_js_init/postcode.v2.js"></script> 
 </head>
 <body>
 <div class="container">
-    <form name="f" method="post" action="./memberUpdate">
+    <form name="f" method="post" action="./memberUpdate" id="frm">
  
         <div class="col-sm-12 pt-3">
             <div class="card">
@@ -39,8 +48,9 @@
                                 </td>
                                 <td>비밀번호 확인</td>
                                 <td>
-                                    <input type="text" name="pw" class="form-control" id="pw2">
-                                </td>                        
+                                    <input type="text" name="pwChk" class="form-control" id="pwChk">
+                         			<div id="pwResult"></div>
+                                </td>         
                             </tr>
                             <tr>
                                 <td>전화번호</td>
@@ -53,6 +63,30 @@
                                     <input type="text" name="name" class="form-control" maxlength="10" value="${member.name}" id="name">                                    
                                 </td>
                             </tr>  
+                            <tr>
+                            	<td>이메일</td>
+                            	<td>
+                            		 <input type="text" class="form-control emailbox" id="emailid" data-rule-required="true" placeholder="이메일" maxlength="40" name ="emailid" style="ime-mode:disabled">
+                            		 <div id = "emailResult"></div>
+                     			</td>
+                     			<td>
+                     				 <input type="text" class="form-control emailbox" id="domain" data-rule-required="true" placeholder="도메인" maxlength="40" name ="domain" readonly="readonly">
+                     			</td>
+                     			<td>
+                     				 <input type="text" class="form-control emailbox" id="email" data-rule-required="true" placeholder="이메일" maxlength="40" value="${member.email }" name ="email" readonly="readonly">
+                     			</td>
+                     			<td>
+                    			  <span>
+                       			 <select name="emailbox" id="domainbox">
+    							<option value="notSelected" selected="selected">이메일선택</option>
+   								<option value="gmail.com">gmail.com</option>
+   								<option value="naver.com">naver.com</option>
+   								<option value="hanmail.com">hanmail.com</option>
+   								<option value="direct">직접입력</option>
+	   								</select>
+							</span>
+                            	</td>
+                            </tr>
                             <tr hidden="">
                                 <td>회원구분</td>
                                 <td>
@@ -63,12 +97,12 @@
                             <tr id="trainerinfo">
                              <td>체육관이름</td>
                                 <td>
-                                     <input type="text" name="trainer" class="form-control" maxlength="10" value="${member.gym}" id="gym">
+                                     <input type="text" name="gym" class="form-control" maxlength="10" value="${member.gym}" id="gym">
                                 </td>
                                 <td>주소</td>
                                 <td colspan="3">
-                                    <input type="text" name="address1" id="address1" class="form-control mb-3" value="">
-                                    <input type="text" name="address2" id="address2" class="form-control" value="">
+                                    <input type="text" name="address" id="address1" class="form-control mb-3" value="">
+                               
                                 </td>
                             </tr>
                             </tbody>
@@ -83,17 +117,96 @@
     </form>
  
     <div class="text-center mt-3">
-        <a><button type="button" class="btn btn-success">변경하기</button></a>
+        <button type="button" class="btn btn-success" id="upbtn">변경하기</button>
+        <a href ="./memberPage"><button type="button" class="btn btn-danger">취소</button></a>
     </div>
 </div>
 <script type="text/javascript">
 var trainer = $("#trainer").val();
-var phoneCheck =false;
+var pwCheck =true;
+
+//************************** 최종 수정******************************************************
+$("#upbtn").click(function(){
+	$("#frm").submit();
+});
+
+//**************************이메일 중복 확인**************************************************
+			var domain='';
+			var emailid='';
+			var email='';
+			var str = "중복된 email 입니다";
+			$("#domainbox").change(function(){
+					domain = $(this).val();
+					if(domain=='direct'){
+						$("#domain").removeAttr("readonly","readonly");
+						$("#domain").blur(function(){
+							domain=$(this).val();
+							emailChk();
+							});
+						}
+					else if(emailid!=''&&domain!='direct'){
+						$("#domain").attr("readonly","readonly");
+						emailChk();
+					}
+					});
+			$("#emailid").blur(function(){
+			
+				
+				emailid = $(this).val();
+				if(domain!=''&&domain!='direct'){
+					emailChk();
+					}
+				});	
+			//**************************이메일 체크 함수************************************
+			function emailChk(){
+			email=emailid+'@'+domain;
+					$("#email").val(email);
+					if(email != ''){
+						$.get("./memberEmailCheck?email="+email,function(data){
+							data=data.trim();
+							
+							$("#emailResult").removeClass("idCheck0").addClass("idCheck1");
+							if(data==0){
+								str = "사용 가능한 email 입니다"
+								$("#emailResult").removeClass("idCheck1").addClass("idCheck0");
+								emailCheck=true;
+							}
+							$("#emailResult").html(str);
+						});
+					}
+			}
+
+
+
+//**************************비밀번호 체크*****************************************************
+  $("#pwChk").blur(function(){
+	  				var pw = $("#pw").val();
+					var pw2=$(this).val();
+					var str = "비밀번호가 일치하지 않습니다.";
+					$("#pwResult").removeClass("idCheck0").addClass("idCheck1");
+					if(pw==pw2){
+							str ="비밀번호가 일치합니다.";
+							$("#pwResult").removeClass("idCheck1").addClass("idCheck0");
+							pwCheck = true;
+							$("#pwResult").html(str);
+						}
+					else if(pw2!=''){
+						var str = "비밀번호가 일치하지 않습니다.";
+						pwCheck =false;
+						$("#pwResult").html(str);
+						}
+					
+					
+                });
 
 //************************트레이너회원만 보이게 하기*************************************************
 	if(trainer=='M'){
 			$("#trainerinfo").attr("hidden","hidden");
 			}
+//**************************트레이너 회원 아닐시**************************************************
+if(trainer=='M'){
+		
+}
 
 //*************************핸드퐅 번호 중복 확인***************************************************
 	$("#phone").blur(function(){
@@ -117,10 +230,6 @@ var phoneCheck =false;
 				$("#phoneResult").html(str);
 				
 			});
-		}else {
-			$("#phoneResult").html("전화번호는 필수 항목입니다");
-			$("#phoneResult").removeClass("idCheck0").addClass("idCheck1");
-			phoneCheck = false;
 		}
 		
 		});

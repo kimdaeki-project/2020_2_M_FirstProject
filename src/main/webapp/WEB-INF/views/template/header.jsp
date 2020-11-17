@@ -5,7 +5,7 @@
 <!-- Navigation -->
   <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
     <div class="container">
-      <a class="navbar-brand" href="index.html">Personal Training</a>
+      <a class="navbar-brand" href="${pageContext.request.contextPath}/">Personal Training</a>
       <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
         Menu
         <i class="fas fa-bars"></i>
@@ -32,7 +32,7 @@
           </c:when>
           <c:otherwise>
           <li class="nav-item">
-            <a class="nav-link" href="${pageContext.request.contextPath}/member/memberLogin">Login</a>
+            <a class="nav-link trigger-btn" href="#myModal" data-toggle="modal">Login</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="${pageContext.request.contextPath}/member/memberAgrement">Sign up</a>
@@ -80,3 +80,39 @@
 
     </header>
     <!-- 로그인 페이지	  -->
+ 
+
+    <div id="myModal" class="modal fade">
+	<div class="modal-dialog modal-login">
+		<div class="modal-content">
+			<div class="modal-header">
+				<div class="avatar">
+					<img src="/examples/images/avatar.png" alt="Avatar">
+				</div>				
+				<h4 class="modal-title">Member Login</h4>	
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+			</div>
+			<div class="modal-body">
+				<form action="${pageContext.request.contextPath}/member/memberLogin" method="post" id="frm">
+					<div class="form-group">
+						<input type="text" class="form-control" id="id" name="id" placeholder="Username" required="required">		
+					</div>
+					<div class="form-group">
+						<input type="password" class="form-control" id="pw" name="pw" placeholder="Password" required="required">
+						
+					</div>        
+					<div class="form-group">
+						<button type="submit" class="btn btn-primary btn-lg btn-block login-btn">Login</button>
+					</div>
+				</form>
+			</div>
+			<div class="modal-footer">
+				<a href="#">Forgot Password?</a>
+			</div>
+		</div>
+	</div>
+</div>     
+
+   <style type="text/css">
+	 @import url("${pageContext.request.contextPath}/resources/css/login.css");
+    </style>
