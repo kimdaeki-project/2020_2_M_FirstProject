@@ -2,6 +2,7 @@
 <!DOCTYPE mapper
     PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
     "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<<<<<<< Updated upstream
 
 <mapper namespace="com.hclass.project1.notice.NoticeDAO">
 
@@ -48,3 +49,6 @@
 	</select>
 
 </mapper>
+=======
+    
+>>>>>>> Stashed changes

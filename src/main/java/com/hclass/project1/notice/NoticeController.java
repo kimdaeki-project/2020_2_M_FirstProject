@@ -1,5 +1,6 @@
 package com.hclass.project1.notice;
 
+<<<<<<< Updated upstream
 import java.util.ArrayList;
 import java.util.List;
 
@@ -41,6 +42,18 @@ public class NoticeController {
 		mv.addObject("pager", pager);
 
 		mv.setViewName("notice/noticeList");
+=======
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+@Controller
+@RequestMapping("/notice/**")
+public class NoticeController {
+
+	@Autowired
+	private NoticeService noticeservice;
+>>>>>>> Stashed changes
 
 		return mv;
 	}

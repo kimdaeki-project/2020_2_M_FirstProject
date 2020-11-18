@@ -1,5 +1,6 @@
 package com.hclass.project1.notice;
 
+<<<<<<< Updated upstream
 import java.sql.Date;
 
 public class NoticeDTO {
@@ -50,4 +51,8 @@ public class NoticeDTO {
 	
 	
 	
+=======
+public class NoticeDTO {
+
+>>>>>>> Stashed changes
 }

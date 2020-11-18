@@ -1,5 +1,6 @@
 package com.hclass.project1.notice;
 
+<<<<<<< Updated upstream
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -30,4 +31,8 @@ public class NoticeService {
 		
 		return noticeDAO.noticeList(pager);
 	}
+=======
+public class NoticeService {
+
+>>>>>>> Stashed changes
 }

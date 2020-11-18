@@ -1,7 +1,8 @@
 package com.hclass.project1.notice;
 
-import java.util.List;
+public class NoticeDAO {
 
+<<<<<<< Updated upstream
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -29,4 +30,6 @@ public class NoticeDAO {
 		return sqlSession.selectOne(namespace+"noticeCount", pager);
 	}
 
+=======
+>>>>>>> Stashed changes
 }

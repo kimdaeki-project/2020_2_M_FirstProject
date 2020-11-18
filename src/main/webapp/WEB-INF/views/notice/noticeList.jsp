@@ -1,7 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<<<<<<< Updated upstream
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>    
 
+=======
+>>>>>>> Stashed changes
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,6 +12,7 @@
 <title>Insert title here</title>
 </head>
 <body>
+<<<<<<< Updated upstream
 
 <div class="container">
   <h3>Notice List</h3>
@@ -80,6 +84,8 @@
 </div>
 
 
+=======
+>>>>>>> Stashed changes
 
 </body>
 </html>
