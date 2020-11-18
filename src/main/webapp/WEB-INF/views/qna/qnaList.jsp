@@ -52,7 +52,7 @@
   	</tr>
   	<c:forEach items="${list}" var="dto" varStatus="vs">
   		<tr>
-  			<td>${dto.num}  : ${vs.first} </td>
+  			<td>${dto.num}</td>
   			<td>
   				<a href="./qnaSelect?num=${dto.num}">
   				<c:catch>

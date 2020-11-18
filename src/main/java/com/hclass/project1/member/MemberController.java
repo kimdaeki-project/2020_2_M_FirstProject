@@ -106,7 +106,14 @@ public class MemberController {
 		}
 		return mv;
 	}
-
+		@GetMapping("memberLogin")
+		public ModelAndView memberLogin(MemberDTO memberDTO) throws Exception{
+			ModelAndView mv =new ModelAndView();
+			mv.setViewName("member/memberLogin");
+			
+			return mv;
+			
+		}
 	//회원가입시 중복되는 값 체크
 	@GetMapping("memberEmailCheck")
 	public ModelAndView getEmail(MemberDTO memberDTO) throws Exception{
