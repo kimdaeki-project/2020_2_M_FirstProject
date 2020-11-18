@@ -34,8 +34,10 @@
 		<div class="col-xs-10">
 			<input type="text" placeholder="Search..." name="search" id="search-text">
 			<button id="search-blank"><i class="fa fa-search"></i></button>
+			
 		</div>
 	</form>
+	
 </div>
 
 <!-- 상세조건 검색 -->
@@ -82,6 +84,7 @@
 			<div>
 				<input type="button" id="btn" value="검색하기" class="btn btn-default" style="border:2px solid #4040bf;">
 				<input type="reset" class="btn btn-danger" value="초기화" id="reset">
+				<a href = "./trainer/map"><input type = "button" value = "지도에서 찾기"></a>
 			</div>
 		</div>
 	</form>
