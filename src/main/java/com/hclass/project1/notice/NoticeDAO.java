@@ -25,4 +25,8 @@ public class NoticeDAO {
    public long getCount(Pager pager) throws Exception {
       return sqlSession.selectOne(namespace+"getCount", pager);
    }
+   
+   public int noticeWrite(NoticeDTO noticeDTO)throws Exception{
+      return sqlSession.insert(namespace+"noticeWrite", noticeDTO);
+   }
 }
