@@ -21,14 +21,14 @@
 </style>
 </head>
 <body>
-	<h3 class="info_h3">PayMent Info</h3>
+	<h3 class="info_h3">예약 현황</h3>
 	<table class="table table-condensed info_table">
 		<tr>
 			<th>회원이름</th><th>날짜</th><th>시간</th>
 		</tr>
 	<c:forEach items="${payinfo}" var="paydto">
 		<tr>
-			<td>${member.name} </td>
+			<td>${paydto.id} </td>
 			<td> ${paydto.regDate} </td>
 			<td> ${paydto.time}</td>
 		</tr>
