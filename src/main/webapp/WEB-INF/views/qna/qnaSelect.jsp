@@ -33,9 +33,19 @@
   		<td>${qna.hit }</td>
   	</tr>
 </table>
-<a><input type="button" id="upbtn"  class="btn btn-primary" value="update"></a>
-<a><input type="button" id="debtn"  class="btn btn-danger" value ="delete"></a>
-<a><input type="button" id="rebtn"  class="btn btn-primary" value="reply"></a>
+<a href="./qnaUpdate"><input type="button" id="upbtn"  class="btn btn-primary member" value="update"></a>
+<a><input type="button" id="debtn"  class="btn btn-danger member" value ="delete"></a>
+<a><input type="button" id="rebtn"  class="btn btn-primary admin" value="reply"></a>
 </div>
+<script type="text/javascript">
+	var writer = "${qna.writer}";
+	var idCheck= "${member.id}";
+	if(writer!=idCheck){
+			$(".member").remove();
+		}
+	if(idCheck!='admin'){
+		$(".admin").remove();
+		}
+</script>
 </body>
 </html>
