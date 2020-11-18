@@ -1,14 +1,22 @@
 package com.hclass.project1.notice;
 
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.ModelAndView;
 
+import com.hclass.project1.member.MemberDTO;
+import com.hclass.project1.qna.QnaDTO;
+import com.hclass.project1.util.Pager;
 
 import java.util.List;
 
 import javax.inject.Inject;
+import javax.servlet.http.HttpSession;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 
@@ -16,47 +24,19 @@ import org.springframework.ui.Model;
 @RequestMapping ("/notice/**")
 public class NoticeController {
 
-	@Inject
-	NoticeDAO noticeDAO;
-
-	@RequestMapping ("noticeList")
-	public String noticeList (Model model) {
-		List<NoticeDTO> list = noticeDAO.list();
-
-		model.addAttribute("items", list);
-		return "notice/noticeList";
-	}
-
-	// 공지 쓰기로 이동
-	@RequestMapping("notice/noticeWrite")
-	public String noticeWrite() {
-		return "notice/noticeWrite";
-	}
-
-	@RequestMapping("notice/insert.do")
-	public String insert(@ModelAttribute NoticeDTO dto) {
-		noticeDAO.insert(dto);
-		return "redirect:/notice/noticeList";
-	}
-
-	@RequestMapping("notice/view.do")
-	public String view(@RequestParam String title, Model model) {
-		model.addAttribute("dto", noticeDAO.detail(title));
-		// 회원 정보를 model에 저장 변수명은 dto로...
-		return "notice/noticeDetail";
-		// detail.jsp로 포워딩
-	}
-
-	@RequestMapping("notice/update.do")
-	public String update(@ModelAttribute NoticeDTO dto, Model model) {
-			noticeDAO.update(dto);
-			return "redirect:/notice/noticeList";
-	}
-	
-	@RequestMapping("notice/delete.do")
-	public String delete(@RequestParam long bno, Model model) {
-		noticeDAO.delete(bno);
-		return "redirect:/notice/noticeList";
-	}
-
+   @Autowired
+   private NoticeService noticeservice;
+   
+   
+   @GetMapping("noticeList")
+   public ModelAndView getList(Pager pager) throws Exception{
+      ModelAndView mv = new ModelAndView();
+      List<NoticeDTO> ar = noticeservice.getList(pager);
+      mv.addObject("list", ar);
+      mv.addObject("pager", pager);
+      mv.setViewName("notice/noticeList");
+      return mv;
+      
+   }
+   
 }
