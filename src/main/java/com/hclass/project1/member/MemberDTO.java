@@ -1,14 +1,14 @@
 package com.hclass.project1.member;
 
 public class MemberDTO {
-public long num;
-public String id;
-public String pw;
-public String name;
-public String phone;
-public String email;
-public String gender;
-public int age;
+private long num;
+private String id;
+private String pw;
+private String name;
+private String phone;
+private String email;
+private String gender;
+private int age;
 private String address;
 private String gym;
 private String business;

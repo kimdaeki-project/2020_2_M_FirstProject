@@ -19,7 +19,7 @@
 	body{position: relative;width: 100%;height: 100%;}
 	.center{
 			height:700px;
-			width:  800	px;
+			width:  800px;
 			border: 1px solid rgb(245,246,247);
 			border-radius :20px 20px 20px 20px;
 	position: absolute;top: 30%;left: 45%;margin:-150px 0 0 -150px}
@@ -30,10 +30,10 @@
 </style>
 </head>
 <body>
+<div class = "center">
 	
 <form action="./memberJoin" method="get" id="form1">
 
-<div class = "center">
 
 <h1>약관동의</h1>
 	
@@ -72,7 +72,9 @@
 		</div>
 		</label>
 	</p>
-	<div class="form-group">
+
+<p>
+<div>
                     <label for="inputEmailReceiveYn" class="col-lg-2 control-label">트레이너입니까?</label>
                     <div class="col-lg-10">
                         <label class="radio-inline">
@@ -82,16 +84,20 @@
                             <input type="radio" id="division" name="division" value="N"> 아니오
                         </label>
                     </div>
-                </div>
+                    </div>
+
 	<p id="input">
+	
 		<input type="submit" value="동의" id="member">
-		<input type="reset" value="미동의">
+		<input type="reset" value="미동의" id="reset" onload="">
 	</p>
 	
-</div>
-</form>
 
+</form>
+</div>
 <script>
+
+
 	var doc = document; 
 	var form1 = doc.getElementById('form1'); 
 	var inputs = form1.getElementsByTagName('INPUT'); 
@@ -100,6 +106,22 @@
 		"c2": false, 
 		"c3": false
 	}; 
+
+	window.onpageshow = function(event) {
+		if ( event.persisted || (window.performance && window.performance.navigation.type == 2)) {
+			form1_data = {
+					"c1": true, 
+					"c2": true, 
+					"c3": true
+				}
+		
+		        }
+		}
+		
+
+	
+
+		
 
 	var c1 = doc.getElementById('c1'); 
 	var c2 = doc.getElementById('c2'); 
