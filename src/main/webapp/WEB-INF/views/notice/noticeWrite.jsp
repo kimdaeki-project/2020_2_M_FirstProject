@@ -104,16 +104,16 @@
   <script type="text/javascript">
    
 
-   $("#btn").click(function(){
-      var title = $("#title").val();
-      var contents = $("#contents").val();
-      if(title==''&&contents==''){
-         alert("필수 항목을 입력하세요");
-         }
-      else{
-            $("#frm").submit();
-         }
-      });
+	$("#btn").click(function(){
+		var title = $("#title").val();
+		var contents = $("#contents").val();
+		if(title==''&&contents==''){
+			alert("필수 항목을 입력하세요");
+			}
+		else{
+				$("#frm").submit();
+			}
+		});
 
   </script>
   

@@ -63,7 +63,6 @@
  <c:import url="../template/header.jsp"></c:import>
 
 <div class="container">
-  <h3>notice List</h3>
   <div class="row">
   <div class="col-sm-8">
   <form action="./noticeList">
@@ -88,11 +87,11 @@
   <div>
   <table class="table table-hober">
      <tr>
-        <td>Num</td>
-        <td>Title</td>
-        <td>Writer</td>
-        <td>Date</td>
-        <td>Hit</td>
+        <td>글번호</td>
+        <td>제목</td>
+        <td>작성자</td>
+        <td>작성일</td>
+        <td>조회수</td>
 
      </tr>
      <c:forEach items="${list}" var="dto" varStatus="vs">
@@ -124,7 +123,7 @@
      </c:if>
   </div>
   
-   <a href="./noticeWrite" class="btn btn-danger">Write</a>
+   <!-- <a href="./noticeWrite" class="btn btn-danger">Write</a> -->
 
    <c:choose>
      <c:when test="${board eq 'notice'}">
@@ -133,7 +132,7 @@
         </c:if>
      </c:when>
      <c:otherwise>
-          <c:if test="${not empty member}">        
+          <c:if test="${not empty member and member.id eq 'admin'}">        
         <a href="./noticeWrite" class="btn btn-danger">Write</a>
         </c:if>
      </c:otherwise>   
