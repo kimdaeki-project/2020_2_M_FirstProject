@@ -23,6 +23,9 @@
           <c:choose>
           <c:when test="${ not empty member}">
           <li class="nav-item">
+            <a class="nav-link" href="${pageContext.request.contextPath}/payment/paymentInfo">Reserve</a>
+          </li>
+          <li class="nav-item">
             <a class="nav-link" href="${pageContext.request.contextPath}/member/memberPage">member</a>
           </li>
           <li class="nav-item">

@@ -7,4 +7,8 @@
 	<insert id="setCharge" parameterType="PayDTO">
 		insert into pay_test values(pay_test_seq.nextval, #{id}, #{regDate}, #{time})
 	</insert>
+	
+	<select id="getPaymentList" resultType="PayDTO" parameterType="PayDTO">
+		select * from pay_test
+	</select>
 </mapper>

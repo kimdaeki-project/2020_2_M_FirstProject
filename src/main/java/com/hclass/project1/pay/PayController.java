@@ -1,5 +1,7 @@
 package com.hclass.project1.pay;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -13,6 +15,19 @@ public class PayController {
 
 	@Autowired
 	private PayService payService;
+	
+	
+	@GetMapping("paymentInfo")
+	public ModelAndView getPaymentInfo(PayDTO payDTO) throws Exception{
+		ModelAndView mv = new ModelAndView();
+		
+		List<PayDTO> ar = payService.getPaymentList(payDTO);
+		
+		mv.addObject("payinfo", ar);
+		
+		mv.setViewName("payment/paymentInfo");
+		return mv;
+	}
 	
 	@GetMapping("paymentIng")
 	public ModelAndView setCash() throws Exception{
