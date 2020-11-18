@@ -1,22 +1,21 @@
 package com.hclass.project1.notice;
 
-import java.util.Date;
+import java.sql.Date;
 
 public class NoticeDTO {
 
-	private long bno;
+	private long num;
 	private String title;
 	private String writer;
-	private String content;
+	private String contents;
 	private Date regDate;
-	private long viewcnt;
+	private long hit;
 	
-	public long getBno() {
-		return bno;
+	public long getNum() {
+		return num;
 	}
-	
-	public void setBno(long bno) {
-		this.bno = bno;
+	public void setNum(long num) {
+		this.num = num;
 	}
 	public String getTitle() {
 		return title;
@@ -30,11 +29,11 @@ public class NoticeDTO {
 	public void setWriter(String writer) {
 		this.writer = writer;
 	}
-	public String getContent() {
-		return content;
+	public String getContents() {
+		return contents;
 	}
-	public void setContent(String content) {
-		this.content = content;
+	public void setContents(String contents) {
+		this.contents = contents;
 	}
 	public Date getRegDate() {
 		return regDate;
@@ -42,12 +41,13 @@ public class NoticeDTO {
 	public void setRegDate(Date regDate) {
 		this.regDate = regDate;
 	}
-	public long getViewcnt() {
-		return viewcnt;
+	public long getHit() {
+		return hit;
 	}
-	public void setViewcnt(long viewcnt) {
-		this.viewcnt = viewcnt;
+	public void setHit(long hit) {
+		this.hit = hit;
 	}
+	
 	
 	
 }

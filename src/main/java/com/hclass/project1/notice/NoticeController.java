@@ -1,62 +1,47 @@
 package com.hclass.project1.notice;
 
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-
-
+import java.util.ArrayList;
 import java.util.List;
 
-import javax.inject.Inject;
-
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.servlet.ModelAndView;
+
+import com.hclass.project1.util.Pager;
+import com.hclass.project1.notice.NoticeDTO;
+
 
 @Controller
-@RequestMapping ("/notice/**")
+@RequestMapping(value = "/notice/**")
 public class NoticeController {
 
-	@Inject
-	NoticeDAO noticeDAO;
+	@Autowired
+	private NoticeService noticeService;
 
-	@RequestMapping ("noticeList")
-	public String noticeList (Model model) {
-		List<NoticeDTO> list = noticeDAO.list();
-
-		model.addAttribute("items", list);
-		return "notice/noticeList";
-	}
-
-	// 공지 쓰기로 이동
-	@RequestMapping("notice/noticeWrite")
-	public String noticeWrite() {
-		return "notice/noticeWrite";
-	}
-
-	@RequestMapping("notice/insert.do")
-	public String insert(@ModelAttribute NoticeDTO dto) {
-		noticeDAO.insert(dto);
-		return "redirect:/notice/noticeList";
-	}
-
-	@RequestMapping("notice/view.do")
-	public String view(@RequestParam String title, Model model) {
-		model.addAttribute("dto", noticeDAO.detail(title));
-		// 회원 정보를 model에 저장 변수명은 dto로...
-		return "notice/noticeDetail";
-		// detail.jsp로 포워딩
-	}
-
-	@RequestMapping("notice/update.do")
-	public String update(@ModelAttribute NoticeDTO dto, Model model) {
-			noticeDAO.update(dto);
-			return "redirect:/notice/noticeList";
+	
+	@RequestMapping(value = "noticeSelect")
+	public void noticeSelect(long num, Model model) throws Exception {
+		System.out.println("notice Select");
+		NoticeDTO noticeDTO = noticeService.noticeSelect(num);
+		model.addAttribute("dto", noticeDTO);
 	}
 	
-	@RequestMapping("notice/delete.do")
-	public String delete(@RequestParam long bno, Model model) {
-		noticeDAO.delete(bno);
-		return "redirect:/notice/noticeList";
-	}
+	@RequestMapping(value = "noticeList")
+	public ModelAndView noticeList(Pager pager) throws Exception {
 
+		System.out.println("kind : "+pager.getKind());
+		System.out.println("search : "+pager.getSearch());
+
+		ModelAndView mv= new ModelAndView();
+		List<NoticeDTO> ar = noticeService.noticeList(pager);
+
+		mv.addObject("lists", ar);
+		mv.addObject("pager", pager);
+
+		mv.setViewName("notice/noticeList");
+
+		return mv;
+	}
 }
