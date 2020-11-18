@@ -24,11 +24,18 @@
 	<h1 id="cash-h1">PayMentIng Page</h1>
 	
 	<input type="button" value="결제하기" id="cashing_btn">
+	
+	<input type="button" value="UPADTE" id="update_btn">
 <c:import url="../template/footer.jsp"></c:import>	
 </body>
 <script type="text/javascript">
 	$("#cashing_btn").click(function() {
 		alert("결제완료");
 	});
+	
+	$("#update_btn").click(function() {
+		location.href="./paymentUpdate";
+	});
+	
 </script>
 </html>
