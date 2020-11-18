@@ -7,7 +7,7 @@
   	<typeAliases>
   			<typeAlias type="com.hclass.project1.member.MemberDTO" alias="MemberDTO"/>
   			<typeAlias type="com.hclass.project1.member.memberfile.MemberFileDTO" alias="MemberFileDTO"/>
-  			<typeAlias type="com.hclass.porject1.qna.QnaDTO" alias="QnaDTO"/>
+  			<typeAlias type="com.hclass.project1.qna.QnaDTO" alias="QnaDTO"/>
   			<typeAlias type="java.lang.Long" alias="Long"/>
   	</typeAliases>
   </configuration>

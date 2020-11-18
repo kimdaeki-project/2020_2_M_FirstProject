@@ -1,8 +1,11 @@
-package com.hclass.porject1.qna;
+package com.hclass.project1.qna;
 
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
+
+
+
 
 @Repository
 public class QnaDAO {

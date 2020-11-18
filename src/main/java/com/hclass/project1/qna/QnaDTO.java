@@ -1,4 +1,4 @@
-package com.hclass.porject1.qna;
+package com.hclass.project1.qna;
 
 import java.sql.Date;
 
