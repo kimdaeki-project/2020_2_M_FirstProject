@@ -6,7 +6,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>NoticePage</title>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 
 <!-- jQuery library -->
@@ -14,10 +14,53 @@
 
 <!-- Latest compiled JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+
+<style type="text/css">
+.slide{
+	height: 450px;
+	width: 100%;
+}
+.symbol{
+	height: 40px;
+	width: 50px;
+}
+.img-circle{
+	width: 160px;
+	height: 160px;
+	
+}
+.best{
+	list-style: none;
+	float: left;
+}
+.trainer{
+	float: left;
+	margin-left: 10px;
+}
+.gym{
+	float: left;
+	margin-left: 10px;
+}
+
+.food{
+	float: left;
+	margin-left: 10px;
+}
+
+	</style>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+<c:import url="../template/bootStrap.jsp"></c:import>
 </head>
 <body>
 
-
+ <!-- Navigation -->
+ <c:import url="../template/header.jsp"></c:import>
 
 <div class="container">
   <h3>notice List</h3>
@@ -96,7 +139,8 @@
      </c:otherwise>   
    </c:choose>
   
-     
+ <!-- Footer -->
+ <c:import url="../template/footer.jsp"></c:import>
   
 </div>
 
