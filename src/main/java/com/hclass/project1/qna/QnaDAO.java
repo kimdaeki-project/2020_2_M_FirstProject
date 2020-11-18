@@ -18,6 +18,9 @@ public class QnaDAO {
 	private SqlSession sqlSession;
 	private final String namespace="com.hclass.porject1.qna.QnaDAO.";
 	
+	public QnaDTO getOne(QnaDTO qnaDTO) throws Exception{
+		return sqlSession.selectOne(namespace+"getOne",qnaDTO);
+	}
 	public List<QnaDTO> getList(Pager pager) throws Exception{
 		
 		return sqlSession.selectList(namespace+"getList",pager);

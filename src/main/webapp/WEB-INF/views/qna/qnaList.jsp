@@ -54,7 +54,7 @@
   		<tr>
   			<td>${dto.num}  : ${vs.first} </td>
   			<td>
-  				<a href="./${board}Select?num=${dto.num}">
+  				<a href="./qnaSelect?num=${dto.num}">
   				<c:catch>
   				<%-- jsp 주석  --%>
   				<c:forEach begin="1" end="${dto.depth}">--</c:forEach>

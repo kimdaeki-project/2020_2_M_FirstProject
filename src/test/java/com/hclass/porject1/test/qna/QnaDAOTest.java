@@ -15,7 +15,7 @@ public class QnaDAOTest extends MyTestCase {
 	@Autowired
 	private QnaDAO qnaDAO;
 	
-	@Test
+	//@Test
 	public void SetOnetest() throws Exception{
 		QnaDTO qnaDTO =new QnaDTO();
 		for(int i =0;i <100;i++) {
@@ -24,9 +24,16 @@ public class QnaDAOTest extends MyTestCase {
 			qnaDTO.setContents("contents"+i);
 			int result=qnaDAO.setOne(qnaDTO);
 		}
-	
+
 
 	
 	}
-
+	@Test
+	public void getOne() throws Exception{
+		QnaDTO qnaDTO =new QnaDTO();
+		qnaDTO.setNum(3);
+		qnaDTO = qnaDAO.getOne(qnaDTO);
+		assertNotNull(qnaDTO);
+		
+	}
 }

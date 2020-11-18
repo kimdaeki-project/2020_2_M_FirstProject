@@ -23,6 +23,13 @@ public class QnaController {
 	@Autowired
 	private QnaService qnaService ;
 	
+	public ModelAndView getOne(QnaDTO qnaDTO) throws Exception{
+		ModelAndView mv = new ModelAndView();
+			
+		
+		return mv;
+	}
+	
 	@GetMapping("qnaList")
 	public ModelAndView getList(Pager pager) throws Exception{
 		ModelAndView mv = new ModelAndView();

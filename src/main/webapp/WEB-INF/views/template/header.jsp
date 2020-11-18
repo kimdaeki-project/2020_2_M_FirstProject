@@ -13,7 +13,7 @@
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item">
-            <a class="nav-link" href="index.html">Search</a>
+           <a class="nav-link" href="${pageContext.request.contextPath}/trainer/trainerSearch">Search</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="${pageContext.request.contextPath}/notice/noticeList">Notice</a>
@@ -23,6 +23,9 @@
           </li>
           <c:choose>
           <c:when test="${ not empty member}">
+          <li class="nav-item">
+            <a class="nav-link" href="${pageContext.request.contextPath}/payment/paymentInfo">Reserve</a>
+          </li>
           <li class="nav-item">
             <a class="nav-link" href="${pageContext.request.contextPath}/member/memberPage">member</a>
           </li>
