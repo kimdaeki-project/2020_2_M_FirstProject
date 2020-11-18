@@ -23,7 +23,7 @@
 <body>
 	<h1 id="cash-h1">PayMentIng Page</h1>
 	
-	<input type="button" value="결제하기" id="cashing_btn">
+	<a href = "./payment/pay"><input type="button" value="결제하기" id="cashing_btn"></a>
 	
 	<input type="button" value="UPADTE" id="update_btn">
 <c:import url="../template/footer.jsp"></c:import>	
