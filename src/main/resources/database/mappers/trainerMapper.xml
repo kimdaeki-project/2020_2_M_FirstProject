@@ -17,7 +17,7 @@
 				name
 			</when>
 			<otherwise>
-				location
+				address
 			</otherwise>
 		</choose> 
 		like '%'||#{search}||'%' order by num desc)N)
@@ -31,7 +31,7 @@
 				name
 			</when>
 			<otherwise>
-				location
+				address
 			</otherwise>
 		</choose>
 		like '%'||#{search}||'%'
