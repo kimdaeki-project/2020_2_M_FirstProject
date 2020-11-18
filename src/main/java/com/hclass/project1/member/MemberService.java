@@ -1,6 +1,7 @@
 package com.hclass.project1.member;
 
 import java.io.File;
+import java.util.List;
 
 import javax.servlet.http.HttpSession;
 
@@ -67,5 +68,8 @@ public class MemberService {
 	}
 	public int memberUpdate(MemberDTO memberDTO) throws Exception{
 		return memberDAO.memberUpdate(memberDTO);
+	}
+	public MemberDTO pwCheck(MemberDTO memberDTO) throws Exception{
+		return memberDAO.pwCheck(memberDTO);
 	}
 }

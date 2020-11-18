@@ -92,8 +92,6 @@ public class MemberController {
 	@PostMapping("memberLogin")
 	public ModelAndView memberLogin(MemberDTO memberDTO,HttpSession session) throws Exception{
 		ModelAndView mv = new ModelAndView();
-		System.out.println(memberDTO.getId());
-		System.out.println(memberDTO.getPw());
 		memberDTO=memberService.memberLogin(memberDTO);
 		String message = "로그인 실패";
 		if(memberDTO!=null) {
@@ -105,18 +103,10 @@ public class MemberController {
 		}
 		else {
 			mv.addObject("msg",message);
-			mv.addObject("path", "../");
-			mv.setViewName("common/result");
 		}
-		System.out.println(session.getId());
 		return mv;
 	}
-	@GetMapping("memberLogin")
-	public ModelAndView memberLogin()throws Exception{
-		ModelAndView mv = new ModelAndView();
-		mv.setViewName("member/memberLogin");
-		return mv;
-	}
+
 	//회원가입시 중복되는 값 체크
 	@GetMapping("memberEmailCheck")
 	public ModelAndView getEmail(MemberDTO memberDTO) throws Exception{
@@ -161,6 +151,24 @@ public class MemberController {
 		System.out.println(result);
 		mv.addObject("msg",result);
 		mv.setViewName("common/ajaxResult");
+		System.out.println("확인");
+		return mv;
+	}
+	@GetMapping("memberpwCheck")
+	public ModelAndView getpwCheck(MemberDTO memberDTO) throws Exception{
+		ModelAndView mv = new ModelAndView();
+		String idCheck ;
+		System.out.println(memberDTO.getId());
+		if(memberDTO.getId()!=null&&memberDTO.getPw()!=null) {
+		memberDTO=memberService.memberLogin(memberDTO);
+		int result=1;
+		if(memberDTO==null) {
+			result=0;
+		}
+		System.out.println(result);
+		mv.addObject("msg",result);
+		mv.setViewName("common/ajaxResult");
+		}
 		return mv;
 	}
 	@GetMapping("memberJoin")

@@ -2,6 +2,7 @@
     pageEncoding="UTF-8"%>
  
   <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>  
+
 <!-- Navigation -->
   <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
     <div class="container">
@@ -94,19 +95,20 @@
 			</div>
 			<div class="modal-body">
 				<form action="${pageContext.request.contextPath}/member/memberLogin" method="post" id="frm">
-					<div class="form-group">
+					<div class="form-group" id="divId">
 						<input type="text" class="form-control" id="id" name="id" placeholder="Username" required="required">		
 					</div>
-					<div class="form-group">
+					<div class="form-group" id="divPw">
 						<input type="password" class="form-control" id="pw" name="pw" placeholder="Password" required="required">
-						
+						<div id ="loginResult"></div>
 					</div>        
-					<div class="form-group">
-						<button type="submit" class="btn btn-primary btn-lg btn-block login-btn">Login</button>
+					<div class="form-group" id="divLogin">
+						<input type="button" class="btn btn-primary btn-lg btn-block login-btn" id="login" value="Login">
 					</div>
+					
 				</form>
 			</div>
-			<div class="modal-footer">
+			<div>
 				<a href="#">Forgot Password?</a>
 			</div>
 		</div>
@@ -116,3 +118,30 @@
    <style type="text/css">
 	 @import url("${pageContext.request.contextPath}/resources/css/login.css");
     </style>
+	<script type="text/javascript">
+	var idCheck = false;
+	var pwCheck = false;
+	$("#divId").on("blur", "#id", function(){
+		$("#loginResult").html("");
+	});
+	$("#divPw").on("blur", "#pw", function(){
+		var pw= $(this).val();
+		var id = $("#id").val();
+		if(pw!=''){
+		$.get("${pageContext.request.contextPath}/member/memberpwCheck?pw="+pw+"&"+"id="+id,function(data){
+			data=data.trim();
+			if(data==1){
+				idCheck=true;
+				pwCheck=true;
+			}
+		
+	});}
+});
+		$("#divLogin").on("click","#login",function(){
+			if(idCheck==false&&pwCheck==false){
+					$("#loginResult").html("로그인실패");
+				}
+			else{
+				$("#frm").submit();}
+		});
+	</script>

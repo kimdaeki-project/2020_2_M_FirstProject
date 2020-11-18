@@ -167,7 +167,7 @@
                 
                  <div id = "divKind" class="form-group">
                     <label for="inputKind" class="col-lg-2 control-label">주종목</label>
-                    <span></span>
+                    <div class="col-lg-10">
                 	<select name="kindbox" id="kindbox">
     							<option value="health" selected="selected">헬스</option>
    								<option value="yoga">요가</option>
@@ -175,6 +175,7 @@
    								<option value="spinning">스피닝</option>
    								<option value="crossfit">크로스핏</option>
 						</select>
+						</div>
 				<div hidden="">
                 	<input type="text" class="form-control" id="kind"name="kind" value="health" >
                 </div>
@@ -218,7 +219,7 @@
                 </div>
                 <div class="form-group" id="divsingIn"> 
                      <div class="col-lg-offset-2 col-lg-10">
-                    	<input type ="button" class="btn btn-primary" value="회원가입" id="signIn" > 
+                    	<input type ="button" value="회원가입" id="signIn" style="WIDTH: 70px; HEIGHT: 50px"> 
                     </div>
                 </div>
                 </form>

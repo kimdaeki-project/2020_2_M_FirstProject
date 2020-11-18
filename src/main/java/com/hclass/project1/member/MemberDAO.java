@@ -45,4 +45,7 @@ public int memberDelete(MemberDTO memberDTO) throws Exception{
 	public int memberUpdate(MemberDTO memberDTO)throws Exception{
 		return sqlSession.update(namespace+"memberUpdate",memberDTO);
 	}
+	public MemberDTO pwCheck(MemberDTO memberDTO)throws Exception{
+		return sqlSession.selectOne(namespace+"pwCheck",memberDTO);
+	}
 }
