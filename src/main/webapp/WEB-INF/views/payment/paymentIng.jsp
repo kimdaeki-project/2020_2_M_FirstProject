@@ -29,9 +29,7 @@
 <c:import url="../template/footer.jsp"></c:import>	
 </body>
 <script type="text/javascript">
-	$("#cashing_btn").click(function() {
-		alert("결제완료");
-	});
+
 	
 	$("#update_btn").click(function() {
 		location.href="./paymentUpdate";

@@ -74,4 +74,14 @@ public class TrainerController {
 		
 		return mv;
 	}
+	
+	@GetMapping("map")
+	public ModelAndView getMap()throws Exception{
+		
+		ModelAndView mv =new ModelAndView();
+		
+		mv.setViewName("trainer/map");
+		
+		return mv;
+	}
 }
