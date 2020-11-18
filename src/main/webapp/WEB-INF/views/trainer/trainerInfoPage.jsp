@@ -60,7 +60,7 @@
 				<td> <input type="radio" name="reserve"> </td>
 				<td>${page.name}</td>
 				<td>${page.gender}</td>
-				<td>${page.kind}</td>
+				<td>${page.healthKind}</td>
 				<td>${page.address}</td>
 				<td>${page.business}</td>
 			</tr>

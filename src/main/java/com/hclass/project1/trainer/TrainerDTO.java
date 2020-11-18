@@ -5,7 +5,7 @@ public class TrainerDTO {
 	private long num;
 	private String name;
 	private String gender;
-	private String kind;
+	private String healthKind;
 	private String address;
 	private String business;
 	
@@ -28,11 +28,12 @@ public class TrainerDTO {
 	public void setGender(String gender) {
 		this.gender = gender;
 	}
-	public String getKind() {
-		return kind;
+
+	public String getHealthKind() {
+		return healthKind;
 	}
-	public void setKind(String kind) {
-		this.kind = kind;
+	public void setHealthKind(String healthKind) {
+		this.healthKind = healthKind;
 	}
 	public String getAddress() {
 		return address;

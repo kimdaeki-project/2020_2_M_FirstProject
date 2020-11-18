@@ -40,7 +40,7 @@
 		<tr class="t_tr">
 			<td><a href="./trainerInfoPage?num=${dto.num}">${dto.name}</a></td>
 			<td>${dto.gender}</td>
-			<td>${dto.kind}</td>
+			<td>${dto.healthKind}</td>
 			<td>${dto.address}</td>
 			<td>${dto.business}</td>
 		</tr>
