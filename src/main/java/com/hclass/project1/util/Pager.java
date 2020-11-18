@@ -6,6 +6,10 @@ public class Pager {
 	private String kind;
 	private String search;
 	
+	private String select;
+	private String gender;
+	private String healthKind;
+	private String business;
 	
 	private Integer curPage;
 	
@@ -87,6 +91,46 @@ public class Pager {
 	
 	public long getStartNum() {
 		return startNum;
+	}
+
+
+	public String getSelect() {
+		return select;
+	}
+
+
+	public void setSelect(String select) {
+		this.select = select;
+	}
+
+
+	public String getGender() {
+		return gender;
+	}
+
+
+	public void setGender(String gender) {
+		this.gender = gender;
+	}
+
+
+	public String getHealthkind() {
+		return healthKind;
+	}
+
+
+	public void setHealthkind(String healthkind) {
+		this.healthKind = healthKind;
+	}
+
+
+	public String getBusiness() {
+		return business;
+	}
+
+
+	public void setBusiness(String business) {
+		this.business = business;
 	}
 
 

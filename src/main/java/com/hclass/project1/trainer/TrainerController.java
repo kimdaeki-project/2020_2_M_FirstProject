@@ -5,7 +5,9 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.hclass.project1.util.Pager;
@@ -19,6 +21,7 @@ public class TrainerController {
 	private TrainerService trainerService;
 	
 	@GetMapping("trainerReserve")
+	@RequestMapping(value="trainerReserve", method = {RequestMethod.GET,RequestMethod.POST})
 	public ModelAndView setTrainerReserve()throws Exception{
 		ModelAndView mv = new ModelAndView();
 		
