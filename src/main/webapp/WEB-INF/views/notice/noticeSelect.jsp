@@ -8,6 +8,7 @@
 </head>
 <body>
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
   
 <div class="container">
   <h3>Notice Select Page</h3>
@@ -33,6 +34,8 @@
 	});
 
 </script>
+=======
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
 

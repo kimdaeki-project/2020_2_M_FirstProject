@@ -1,10 +1,17 @@
 package com.hclass.project1.notice;
 
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 import java.sql.Date;
 
 public class NoticeDTO {
 
+=======
+import java.sql.Date;
+
+public class NoticeDTO {
+	
+>>>>>>> Stashed changes
 	private long num;
 	private String title;
 	private String writer;
@@ -12,6 +19,10 @@ public class NoticeDTO {
 	private Date regDate;
 	private long hit;
 	
+<<<<<<< Updated upstream
+=======
+	
+>>>>>>> Stashed changes
 	public long getNum() {
 		return num;
 	}
@@ -48,11 +59,16 @@ public class NoticeDTO {
 	public void setHit(long hit) {
 		this.hit = hit;
 	}
+<<<<<<< Updated upstream
 	
 	
 	
 =======
 public class NoticeDTO {
+
+>>>>>>> Stashed changes
+=======
+
 
 >>>>>>> Stashed changes
 }

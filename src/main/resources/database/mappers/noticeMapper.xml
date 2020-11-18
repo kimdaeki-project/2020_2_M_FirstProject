@@ -3,6 +3,7 @@
     PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
     "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 
 <mapper namespace="com.hclass.project1.notice.NoticeDAO">
 
@@ -11,6 +12,11 @@
 	</select>
 
 <select id="noticeList" resultType="com.hclass.project1.notice.NoticeDTO" parameterType="com.hclass.project1.util.Pager">
+=======
+    
+ <mapper namespace="com.hclass.porject1.notice.NoticeDAO" >
+ 		<select id="getList" parameterType="Pager" resultType="NoticeDTO">
+>>>>>>> Stashed changes
 		select * from
 		(select rownum R, N.* from 
 		(select * from notice where 
@@ -29,6 +35,7 @@
 		</choose>
 		like '%'||#{search}||'%' order by num desc) N)
 		where R between #{startRow} and #{lastRow}
+<<<<<<< Updated upstream
 	</select>
 	
 	<select id="noticeCount" resultType="java.lang.Long" parameterType="com.hclass.project1.util.Pager">
@@ -51,4 +58,27 @@
 </mapper>
 =======
     
+>>>>>>> Stashed changes
+=======
+	</select>
+	
+	
+	<select id="getCount" resultType="Long" parameterType="Pager">
+		select count(num) from notice
+		where 
+		<choose>
+			<when test="kind == 'tt'">
+				title
+			</when>
+			<when test="kind == 'wr'">
+				writer
+			</when>
+			<otherwise>
+				contents
+			</otherwise>
+		</choose>
+		like '%' || #{search} || '%'
+	
+	</select>
+</mapper>
 >>>>>>> Stashed changes
