@@ -9,5 +9,12 @@
   			<typeAlias type="com.hclass.project1.member.memberfile.MemberFileDTO" alias="MemberFileDTO"/>
   			<typeAlias type="com.hclass.porject1.qna.QnaDTO" alias="QnaDTO"/>
   			<typeAlias type="java.lang.Long" alias="Long"/>
+  			
+  			<!-- Trainer -->
+  			<typeAlias type="com.hclass.project1.util.Pager" alias="Pager"/>
+  			
+  			<typeAlias type="com.hclass.project1.trainer.TrainerDTO" alias="TrainerDTO"/>
+  			<!-- Pay -->
+  			<typeAlias type="com.hclass.project1.pay.PayDTO" alias="PayDTO"/>
   	</typeAliases>
   </configuration>
