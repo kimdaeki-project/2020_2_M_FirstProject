@@ -4,7 +4,6 @@
     PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
     "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
     <mapper namespace="com.hclass.porject1.notice.NoticeDAO" >
-
  		<select id="getList" parameterType="Pager" resultType="NoticeDTO">
 		select * from
 		(select rownum R, N.* from 
