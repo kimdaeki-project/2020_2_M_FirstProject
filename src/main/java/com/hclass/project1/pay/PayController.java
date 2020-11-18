@@ -63,4 +63,13 @@ public class PayController {
 		
 		return mv;
 	}
+	
+	@GetMapping("pay")
+	public ModelAndView pay()throws Exception{
+		ModelAndView mv = new ModelAndView();
+		
+		mv.setViewName("payment/pay");
+		
+		return mv;
+	}
 }
