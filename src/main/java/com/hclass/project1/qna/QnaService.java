@@ -13,6 +13,9 @@ public class QnaService {
 	@Autowired
 	private QnaDAO qnaDAO;
 	
+	public QnaDTO getOne(QnaDTO qnaDTO) throws Exception{
+		return qnaDAO.getOne(qnaDTO);
+	}
 	public List<QnaDTO> getList(Pager pager) throws Exception{
 		
 		pager.makeRow();
