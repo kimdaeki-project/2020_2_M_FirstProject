@@ -18,11 +18,14 @@ public class QnaDAOTest extends MyTestCase {
 	@Test
 	public void SetOnetest() throws Exception{
 		QnaDTO qnaDTO =new QnaDTO();
-		qnaDTO.setTitle("title3");
-		qnaDTO.setWriter("popo12");
-		qnaDTO.setContents("contents3");
-		int result=qnaDAO.setOne(qnaDTO);
-		assertEquals(1, result);
+		for(int i =0;i <100;i++) {
+			qnaDTO.setTitle("title"+i);
+			qnaDTO.setWriter("popo12");
+			qnaDTO.setContents("contents"+i);
+			int result=qnaDAO.setOne(qnaDTO);
+		}
+	
+
 	
 	}
 

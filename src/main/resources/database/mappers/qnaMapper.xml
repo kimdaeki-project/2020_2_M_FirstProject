@@ -10,4 +10,43 @@
  		</selectKey>
  			insert into qna values(#{num},sysdate,#{title},#{writer},#{contents},0,qna_seq.currval,0,0)
  		</insert>
+ 		<select id="getList" parameterType="Pager" resultType="QnaDTO">
+		select * from
+		(select rownum R, N.* from 
+		(select * from qna where 
+		<choose>
+			<when test="kind == 'tt'">
+				title
+			</when>
+			
+			<when test="kind == 'wr'">
+				writer
+			</when>
+			
+			<otherwise>
+				contents
+			</otherwise>
+		</choose>
+		like '%'||#{search}||'%' order by ref desc, step asc) N)
+		where R between #{startRow} and #{lastRow}
+	</select>
+	
+	<select id="getCount" resultType="Long" parameterType="Pager">
+		select count(num) from qna
+		where 
+		<choose>
+			<when test="kind == 'tt'">
+				title
+			</when>
+			<when test="kind == 'wr'">
+				writer
+			</when>
+			<otherwise>
+				contents
+			</otherwise>
+		</choose>
+		like '%' || #{search} || '%'
+	
+	</select>
+	
     </mapper>

@@ -1,5 +1,7 @@
 package com.hclass.project1.qna;
 
+import java.util.List;
+
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,7 +12,9 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
+
 import com.hclass.project1.member.MemberDTO;
+import com.hclass.project1.util.Pager;
 
 @Controller
 @RequestMapping("/qna/**")
@@ -18,6 +22,17 @@ public class QnaController {
 
 	@Autowired
 	private QnaService qnaService ;
+	
+	@GetMapping("qnaList")
+	public ModelAndView getList(Pager pager) throws Exception{
+		ModelAndView mv = new ModelAndView();
+		List<QnaDTO> ar = qnaService.getList(pager);
+		mv.addObject("list", ar);
+		mv.addObject("pager", pager);
+		mv.setViewName("qna/qnaList");
+		return mv;
+		
+	}
 	
 	@PostMapping("qnaWrite")
 	public ModelAndView setOne(QnaDTO qnaDTO) throws Exception{
@@ -32,6 +47,7 @@ public class QnaController {
 		mv.setViewName("common/result");
 		return mv;
 	}
+	
 	
 	@GetMapping("qnaWrite")
 	public ModelAndView setOne(HttpSession Session) throws Exception {

@@ -6,16 +6,22 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </head>
 <body>
 
 
 <div class="container">
-  <h3>${board} List</h3>
+  <h3>qna List</h3>
   <div class="row">
   <div class="col-sm-8">
-  <form action="./${board}List">
+  <form action="./qnaList">
   	 <div class="input-group">
     	 <select class="input-group-sm" id="sel1" name="kind">
     		<option value="tt">Title</option>
@@ -71,29 +77,29 @@
   <div>
   
   	<c:if test="${pager.beforeCheck}">
-  	<a href="./${board}List?curPage=${pager.startNum-1}&kind=${pager.kind}&search=${search}">[이전]</a>
+  	<a href="./qnaList?curPage=${pager.startNum-1}&kind=${pager.kind}&search=${search}">[이전]</a>
   	</c:if>
   
   	<c:forEach begin="${pager.startNum}" end="${pager.lastNum}" var="i">
-  		<a href="./${board}List?curPage=${i}&kind=${pager.kind}&search=${pager.search}">${i}</a>
+  		<a href="./qnaList?curPage=${i}&kind=${pager.kind}&search=${pager.search}">${i}</a>
   	</c:forEach>
   	
   	<c:if test="${pager.nextCheck}">
-  	<a href="./${board}List?curPage=${pager.lastNum+1}&kind=${pager.kind}&search=${pager.search}">[다음]</a>
+  	<a href="./qnaList?curPage=${pager.lastNum+1}&kind=${pager.kind}&search=${pager.search}">[다음]</a>
   	</c:if>
   </div>
   
-	<a href="./${board}Write" class="btn btn-danger">Write</a>
+	<a href="./qnaWrite" class="btn btn-danger">Write</a>
 
 	<c:choose>
 	  <c:when test="${board eq 'notice'}">
 		  <c:if test="${not empty member and member.id eq 'admin'}">		  
-		  <a href="./${board}Write" class="btn btn-danger">Write</a>
+		  <a href="./qnaWrite" class="btn btn-danger">Write</a>
 		  </c:if>
 	  </c:when>
 	  <c:otherwise>
 	  	  <c:if test="${not empty member}">		  
-		  <a href="./${board}Write" class="btn btn-danger">Write</a>
+		  <a href="./qnaWrite" class="btn btn-danger">Write</a>
 		  </c:if>
 	  </c:otherwise>	
 	</c:choose>

@@ -19,7 +19,7 @@
             <a class="nav-link" href="${pageContext.request.contextPath}/notice/noticeList">Notice</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="${pageContext.request.contextPath}/qna/qnaWrite">Q&A</a>
+            <a class="nav-link" href="${pageContext.request.contextPath}/qna/qnaList">Q&A</a>
           </li>
           <c:choose>
           <c:when test="${ not empty member}">
