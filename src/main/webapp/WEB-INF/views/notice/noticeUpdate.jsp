@@ -21,37 +21,37 @@
 
 <style type="text/css">
 .slide{
-	height: 450px;
-	width: 100%;
+   height: 450px;
+   width: 100%;
 }
 .symbol{
-	height: 40px;
-	width: 50px;
+   height: 40px;
+   width: 50px;
 }
 .img-circle{
-	width: 160px;
-	height: 160px;
-	
+   width: 160px;
+   height: 160px;
+   
 }
 .best{
-	list-style: none;
-	float: left;
+   list-style: none;
+   float: left;
 }
 .trainer{
-	float: left;
-	margin-left: 10px;
+   float: left;
+   margin-left: 10px;
 }
 .gym{
-	float: left;
-	margin-left: 10px;
+   float: left;
+   margin-left: 10px;
 }
 
 .food{
-	float: left;
-	margin-left: 10px;
+   float: left;
+   margin-left: 10px;
 }
 
-	</style>
+   </style>
 
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="">
@@ -84,39 +84,39 @@
       <textarea class="form-control" rows="20" cols="30" id="contents" name="contents" >${notice.contents}</textarea>
     </div>
     
-	<input type="button" value="FileAdd" id="fileAdd" class="btn btn-info">
+   <input type="button" value="FileAdd" id="fileAdd" class="btn btn-info">
 
-	<div id="files">
+   <div id="files">
 
-	</div>  
+   </div>  
  
  
- 	<div class="form-group">
- 	<label></label>
+    <div class="form-group">
+    <label></label>
     <input type="button" class="btn btn-primary form-control" value="Write" id="btn">
     </div>
   </form>
   
   <div id="f">
-  	  <div class="input-group">
+       <div class="input-group">
         <input id="files" type="file" class="form-control" name="files">
         <span class="input-group-addon del">DEL</span>
       </div>
   </div>
   <script type="text/javascript">
-	
+   
 
-	$("#btn").click(function(){
-		var title = $("#title").val();
-		var contents = $("#contents").val();
-		if(title==''&&contents==''){
-			alert("필수 항목을 입력하세요");
-			}
-		else{
-				$("#frm").submit();
-			}
-		});
-	
+   $("#btn").click(function(){
+      var title = $("#title").val();
+      var contents = $("#contents").val();
+      if(title==''&&contents==''){
+         alert("필수 항목을 입력하세요");
+         }
+      else{
+            $("#frm").submit();
+         }
+      });
+   
 
   </script>
   
