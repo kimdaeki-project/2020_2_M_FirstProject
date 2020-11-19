@@ -12,4 +12,20 @@
 	<select id="getPaymentList" resultType="PayDTO" parameterType="PayDTO">
 		select * from pay_test
 	</select>
+<<<<<<< HEAD
+=======
+	
+	<!-- 나의 정보 확인 -->
+	<select id="getPaymentMyInfo" resultType="PayDTO" parameterType="MemberDTO">
+		select * from pay_test1 where id = #{id}
+	</select>
+	<!-- 예약 중복 확인 -->
+	<select id="getMemberIdCheck" resultType="PayDTO" parameterType="MemberDTO">
+		select id from pay_test1 where id = #{id} 
+	</select>
+	<!-- 예약 취소 -->
+	<delete id="setPaymentDelete" parameterType="PayDTO">
+		delete pay_test1 where id = #{id}
+	</delete>
+>>>>>>> gb_1119
 </mapper>

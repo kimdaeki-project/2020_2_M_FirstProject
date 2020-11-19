@@ -14,6 +14,19 @@ private String gym;
 private String business;
 private String trainer;
 private String kind;
+<<<<<<< HEAD
+=======
+
+//*************** pay **********
+private PayDTO payDTO;
+public PayDTO getPayDTO() {
+	return payDTO;
+}
+public void setPayDTO(PayDTO payDTO) {
+	this.payDTO = payDTO;
+}
+// ****************************
+>>>>>>> gb_1119
 public String getKind() {
 	return kind;
 }

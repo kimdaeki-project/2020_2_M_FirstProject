@@ -80,6 +80,13 @@
 	$("#reserve_btn").click(function() {
 		var d = $("#date").val();
 		var t = $("#time").val();
+<<<<<<< HEAD
+=======
+		
+		var id = $("#member_id-text").val();
+		
+		var td = document.getElementById("time");
+>>>>>>> gb_1119
 		
 		var td = document.getElementById("time");
 		if(!td.checkValidity()){
