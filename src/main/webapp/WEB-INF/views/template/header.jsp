@@ -105,7 +105,7 @@
                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
 			</div>
 			<div class="modal-body">
-				<form action="${pageContext.request.contextPath}/member/memberLogin" method="post" id="frm">
+				<form action="${pageContext.request.contextPath}/member/memberLogin" method="post" id="loginfrm">
 					<div class="form-group" id="divId">
 						<input type="text" class="form-control" id="id" name="id" placeholder="Username" required="required">		
 					</div>
@@ -147,10 +147,10 @@
 			data=data.trim();
 			data1=data;
 			if(data1==1){
-					$("#frm").submit();
+					$("#loginfrm").submit();
 				}
 			else{
-				$("#loginResult").html("로그인실패");
+				$("#loginResult").html("아이디 또는 비밀번호가 틀렸습니다.");
 			}
 			});
 		}
