@@ -99,13 +99,10 @@
 </style>
 </head>
 <body>
-<div class="text-center">
-	<!-- Button HTML (to Trigger Modal) -->
-	<a href="#myModal" class="trigger-btn" data-toggle="modal">Click to Open Login Modal</a>
-</div>
+
 
 <!-- Modal HTML -->
-<div id="myModal" class="modal fade">
+<div id="myModal">
 	<div class="modal-dialog modal-login">
 		<div class="modal-content">
 			<div class="modal-header">

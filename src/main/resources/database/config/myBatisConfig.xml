@@ -10,7 +10,7 @@
   			<typeAlias type="com.hclass.project1.qna.QnaDTO" alias="QnaDTO"/>
   			<typeAlias type="com.hclass.project1.notice.NoticeDTO" alias="NoticeDTO"/>
   			<typeAlias type="java.lang.Long" alias="Long"/>
-  			
+  			<typeAlias type="com.hclass.project1.notice.NoticeDTO" alias="NoticeDTO"/>
   			<!-- Trainer -->
   			<typeAlias type="com.hclass.project1.util.Pager" alias="Pager"/>
   			
