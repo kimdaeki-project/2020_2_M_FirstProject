@@ -1,10 +1,18 @@
 package com.hclass.project1.qna;
 
+import java.io.File;
 import java.util.List;
+
+import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.multipart.MultipartFile;
 
+import com.hclass.project1.member.MemberDTO;
+import com.hclass.project1.qna.qnafile.QnaFileDAO;
+import com.hclass.project1.qna.qnafile.QnaFileDTO;
+import com.hclass.project1.util.FileSaver;
 import com.hclass.project1.util.Pager;
 
 @Service
@@ -12,6 +20,10 @@ public class QnaService {
 	
 	@Autowired
 	private QnaDAO qnaDAO;
+	@Autowired
+	private FileSaver filesaver;
+	@Autowired
+	private QnaFileDAO qnafileDAO;
 	
 	public QnaDTO getOne(QnaDTO qnaDTO) throws Exception{
 		return qnaDAO.getOne(qnaDTO);
@@ -24,9 +36,23 @@ public class QnaService {
 		return qnaDAO.getList(pager);
 	}
 	
-	public int setOne(QnaDTO qnaDTO) throws Exception{
+	public int setOne(QnaDTO qnaDTO,MultipartFile photo, HttpSession session) throws Exception{
+		String path =session.getServletContext().getRealPath("/resources/upload/Qna");
+		File file2 = new File(path);
+		String fileName="";
+		int result = qnaDAO.setOne(qnaDTO);
+		if(photo.getSize()!=0) {
+			fileName = filesaver.saver(file2, photo);
+			MemberDTO memberDTO =new MemberDTO();
+			memberDTO = (MemberDTO) session.getAttribute("member");
+			QnaFileDTO qnafileDTO = new QnaFileDTO();
+			qnafileDTO.setId(memberDTO.getId());
+			qnafileDTO.setOriName(photo.getOriginalFilename());
+			qnafileDTO.setFileName(fileName);
+			result = qnafileDAO.setFileOne(qnafileDTO);
+		}
 		
-		return qnaDAO.setOne(qnaDTO);
+		return result;
 	}
 	public int setUpdate(QnaDTO qnaDTO) throws Exception{
 		
