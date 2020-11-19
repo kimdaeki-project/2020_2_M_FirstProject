@@ -25,13 +25,13 @@ public class NoticeService {
       return noticeDAO.setOne(noticeDTO);
    }
 
-	public NoticeDTO getOne(NoticeDTO noticeDTO) throws Exception{
-		return noticeDAO.getOne(noticeDTO);
-	}
+   public NoticeDTO getOne(NoticeDTO noticeDTO) throws Exception{
+      return noticeDAO.getOne(noticeDTO);
+   }
    
-	/*
-	 * public int noticeWrite(NoticeDTO noticeDTO)throws Exception{ return
-	 * noticeDAO.noticeWrite(noticeDTO); }
-	 */
+   /*
+    * public int noticeWrite(NoticeDTO noticeDTO)throws Exception{ return
+    * noticeDAO.noticeWrite(noticeDTO); }
+    */
 
 }

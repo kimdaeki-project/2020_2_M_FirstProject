@@ -18,37 +18,37 @@
 
 <style type="text/css">
 .slide{
-	height: 450px;
-	width: 100%;
+   height: 450px;
+   width: 100%;
 }
 .symbol{
-	height: 40px;
-	width: 50px;
+   height: 40px;
+   width: 50px;
 }
 .img-circle{
-	width: 160px;
-	height: 160px;
-	
+   width: 160px;
+   height: 160px;
+   
 }
 .best{
-	list-style: none;
-	float: left;
+   list-style: none;
+   float: left;
 }
 .trainer{
-	float: left;
-	margin-left: 10px;
+   float: left;
+   margin-left: 10px;
 }
 .gym{
-	float: left;
-	margin-left: 10px;
+   float: left;
+   margin-left: 10px;
 }
 
 .food{
-	float: left;
-	margin-left: 10px;
+   float: left;
+   margin-left: 10px;
 }
 
-	</style>
+   </style>
 
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -87,11 +87,11 @@
   <div>
   <table class="table table-hober">
      <tr>
-  		<td>글번호</td>
-  		<td>제목</td>
-  		<td>작성자</td>
-  		<td>작성 일시</td>
-  		<td>글 제목</td>
+        <td>글번호</td>
+        <td>제목</td>
+        <td>작성자</td>
+        <td>작성 일시</td>
+        <td>글 제목</td>
 
      </tr>
      <c:forEach items="${list}" var="dto" varStatus="vs">

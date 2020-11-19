@@ -26,26 +26,26 @@ public class NoticeController {
    @Autowired
    private NoticeService noticeservice;
    
-	@GetMapping("noticeUpdate")
-	public ModelAndView setUpdate(NoticeDTO noticeDTO) throws Exception{
-		ModelAndView mv =new ModelAndView();
-		mv.addObject("notice",noticeDTO);
-		mv.setViewName("notice/noticeUpdate");
-		return mv;
-		
-	}
-	@GetMapping("noticeSelect")
-	public ModelAndView getOne(NoticeDTO noticeDTO,HttpSession session) throws Exception{
-		ModelAndView mv = new ModelAndView();
-		MemberDTO memberDTO =new MemberDTO();
-		memberDTO=(MemberDTO) session.getAttribute("member");
-		noticeDTO=noticeservice.getOne(noticeDTO);
-		mv.addObject("member", memberDTO);
-		mv.addObject("notice",noticeDTO);
-		mv.setViewName("notice/noticeSelect");
-		return mv;
-	}
-	
+   @GetMapping("noticeUpdate")
+   public ModelAndView setUpdate(NoticeDTO noticeDTO) throws Exception{
+      ModelAndView mv =new ModelAndView();
+      mv.addObject("notice",noticeDTO);
+      mv.setViewName("notice/noticeUpdate");
+      return mv;
+      
+   }
+   @GetMapping("noticeSelect")
+   public ModelAndView getOne(NoticeDTO noticeDTO,HttpSession session) throws Exception{
+      ModelAndView mv = new ModelAndView();
+      MemberDTO memberDTO =new MemberDTO();
+      memberDTO=(MemberDTO) session.getAttribute("member");
+      noticeDTO=noticeservice.getOne(noticeDTO);
+      mv.addObject("member", memberDTO);
+      mv.addObject("notice",noticeDTO);
+      mv.setViewName("notice/noticeSelect");
+      return mv;
+   }
+   
    @GetMapping("noticeList")
    public ModelAndView getList(Pager pager) throws Exception{
       ModelAndView mv = new ModelAndView();

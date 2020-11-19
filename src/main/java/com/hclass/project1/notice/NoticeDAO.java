@@ -24,10 +24,10 @@ public class NoticeDAO {
       return sqlSession.insert(namespace+"setOne",noticeDTO);
    }
    
-	public NoticeDTO getOne(NoticeDTO noticeDTO) throws Exception{
-		return sqlSession.selectOne(namespace+"getOne",noticeDTO);
-	}
-	
+   public NoticeDTO getOne(NoticeDTO noticeDTO) throws Exception{
+      return sqlSession.selectOne(namespace+"getOne",noticeDTO);
+   }
+   
    public long getCount(Pager pager) throws Exception {
       return sqlSession.selectOne(namespace+"getCount", pager);
    }
