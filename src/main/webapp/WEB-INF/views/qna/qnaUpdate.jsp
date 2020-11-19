@@ -16,7 +16,11 @@
 <body>
 <div class="container">
   <h2>qna Write Form</h2>
-  <form id="frm" action="./qnaWrite" method="post" enctype="multipart/form-data">
+  <form id="frm" action="./qnaUpdate" method="post" enctype="multipart/form-data">
+  	<div class="form-group" hidden="">
+      <label for="title">num</label>
+      <input type="text" class="form-control" id="num" placeholder="Enter Title" name="num" value=${qna.num }>
+    </div>
   
     <div class="form-group">
       <label for="title">Title:</label>

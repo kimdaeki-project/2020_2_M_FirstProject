@@ -28,5 +28,16 @@ public class QnaService {
 		
 		return qnaDAO.setOne(qnaDTO);
 	}
+	public int setUpdate(QnaDTO qnaDTO) throws Exception{
+		
+		return qnaDAO.setUpdate(qnaDTO);
+	}
+	public int setDelete(QnaDTO qnaDTO)throws Exception{
+		return qnaDAO.setDelete(qnaDTO);
+	}
 	
+	public int setReply(QnaDTO qnaDTO)throws Exception{
+		
+		return qnaDAO.setReply(qnaDTO);
+	}
 }

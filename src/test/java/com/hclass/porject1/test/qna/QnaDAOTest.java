@@ -2,7 +2,7 @@ package com.hclass.porject1.test.qna;
 
 import static org.junit.Assert.*;
 
-import org.apache.ibatis.session.SqlSession;
+
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -18,15 +18,12 @@ public class QnaDAOTest extends MyTestCase {
 	@Test
 	public void SetOnetest() throws Exception{
 		QnaDTO qnaDTO =new QnaDTO();
-		for(int i =0;i <100;i++) {
-			qnaDTO.setTitle("title"+i);
-			qnaDTO.setWriter("mjtas20");
-			qnaDTO.setContents("contents"+i);
-			int result=qnaDAO.setOne(qnaDTO);
-		}
-
-
-	
+			for(int i=1; i<100;i++) {
+				qnaDTO.setTitle("title"+1);
+				qnaDTO.setWriter("popo12");
+				qnaDTO.setContents("contents"+1);
+				int result=qnaDAO.setOne(qnaDTO);
+			}
 	}
 	//@Test
 	public void getOne() throws Exception{

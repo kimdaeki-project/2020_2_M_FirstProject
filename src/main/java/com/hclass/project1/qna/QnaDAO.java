@@ -33,4 +33,17 @@ public class QnaDAO {
 		// TODO Auto-generated method stub
 		return sqlSession.selectOne(namespace+"getCount", pager);
 	}
+	
+	public int setUpdate(QnaDTO qnaDTO) throws Exception{
+		return sqlSession.update(namespace+"setUpdate",qnaDTO);
+	}
+	public int setDelete(QnaDTO qnaDTO) throws Exception{
+		return sqlSession.delete(namespace+"setDelete",qnaDTO);
+	}
+	
+	public int setReply(QnaDTO qnaDTO) throws Exception{
+		
+		return sqlSession.selectOne(namespace+"setReply",qnaDTO);
+	}
+	
 }
