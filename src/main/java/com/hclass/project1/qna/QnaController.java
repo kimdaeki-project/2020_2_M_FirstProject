@@ -2,7 +2,7 @@ package com.hclass.project1.qna;
 
 import java.util.List;
 
-//import javax.annotation.processing.Generated;
+import javax.annotation.processing.Generated;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
