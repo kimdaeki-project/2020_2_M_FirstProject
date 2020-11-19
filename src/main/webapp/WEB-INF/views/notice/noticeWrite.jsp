@@ -117,7 +117,6 @@
 
   </script>
   
-</div>
 
  <!-- Footer -->
  <c:import url="../template/footer.jsp"></c:import>

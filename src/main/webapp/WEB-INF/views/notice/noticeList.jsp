@@ -63,7 +63,6 @@
  <c:import url="../template/header.jsp"></c:import>
 
 <div class="container">
-  <h3>notice List</h3>
   <div class="row">
   <div class="col-sm-8">
   <form action="./noticeList">
@@ -88,11 +87,11 @@
   <div>
   <table class="table table-hober">
      <tr>
-        <td>Num</td>
-        <td>Title</td>
-        <td>Writer</td>
-        <td>Date</td>
-        <td>Hit</td>
+  		<td>글번호</td>
+  		<td>제목</td>
+  		<td>작성자</td>
+  		<td>작성 일시</td>
+  		<td>글 제목</td>
 
      </tr>
      <c:forEach items="${list}" var="dto" varStatus="vs">
