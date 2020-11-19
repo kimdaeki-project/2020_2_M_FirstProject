@@ -14,89 +14,7 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-<style>
-    body {
-		font-family: 'Varela Round', sans-serif;
-	}
-	.modal-login {		
-		color: #636363;
-		width: 350px;
-		margin: 80px auto 0;
-	}
-	.modal-login .modal-content {
-		padding: 20px;
-		border-radius: 5px;
-		border: none;
-	}
-	.modal-login .modal-header {
-		border-bottom: none;   
-        position: relative;
-        justify-content: center;
-	}
-	.modal-login h4 {
-		text-align: center;
-		font-size: 26px;
-		margin: 30px 0 -15px;
-	}
-	.modal-login .form-control:focus {
-		border-color: #70c5c0;
-	}
-	.modal-login .form-control, .modal-login .btn {
-		min-height: 40px;
-		border-radius: 3px; 
-	}
-	.modal-login .close {
-        position: absolute;
-		top: -5px;
-		right: -5px;
-	}	
-	.modal-login .modal-footer {
-		background: #ecf0f1;
-		border-color: #dee4e7;
-		text-align: center;
-        justify-content: center;
-		margin: 0 -20px -20px;
-		border-radius: 5px;
-		font-size: 13px;
-	}
-	.modal-login .modal-footer a {
-		color: #999;
-	}		
-	.modal-login .avatar {
-		position: absolute;
-		margin: 0 auto;
-		left: 0;
-		right: 0;
-		top: -70px;
-		width: 95px;
-		height: 95px;
-		border-radius: 50%;
-		z-index: 9;
-		background: #60c7c1;
-		padding: 15px;
-		box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.1);
-	}
-	.modal-login .avatar img {
-		width: 100%;
-	}
-    .modal-login .btn {
-        color: #fff;
-        border-radius: 4px;
-		background: #60c7c1;
-		text-decoration: none;
-		transition: all 0.4s;
-        line-height: normal;
-        border: none;
-    }
-	.modal-login .btn:hover, .modal-login .btn:focus {
-		background: #45aba6;
-		outline: none;
-	}
-	.trigger-btn {
-		display: inline-block;
-		margin: 100px auto;
-	}
-</style>
+<link href="${pageContext.request.contextPath}/resources/css/login.css" rel="stylesheet">
 </head>
 <body>
 
@@ -114,15 +32,15 @@
 			</div>
 			<div class="modal-body">
 				<form action="./memberLogin" method="post" id="frm">
-					<div class="form-group">
+					<div class="form-group" id="divId">
 						<input type="text" class="form-control" id="id" name="id" placeholder="Username" required="required">		
 					</div>
-					<div class="form-group">
+					<div class="form-group" id="divPw" >
 						<input type="password" class="form-control" id="pw" name="pw" placeholder="Password" required="required">
-						
+						<div id ="loginResult"></div>
 					</div>        
-					<div class="form-group">
-						<button type="submit" class="btn btn-primary btn-lg btn-block login-btn">Login</button>
+					<div class="form-group" id ="divLogin">
+						<input type="button" id="login" class="btn btn-primary btn-lg btn-block login-btn" value="Login">
 					</div>
 				</form>
 			</div>
@@ -133,6 +51,33 @@
 	</div>
 </div>     
 <script type="text/javascript">	
+var data1 = 0;
+$("#divId").on("blur", "#id", function(){
+	$("#loginResult").html("");
+});
+$("#divPW").on("blur", "#pw", function(){
+	$("#loginResult").html("");
+});
+
+$("#divLogin").on("click","#login",function(){
+	var pw = $("#pw").val();
+	var id = $("#id").val();
+	if(id!=''&&pw!=''){
+	$.get("${pageContext.request.contextPath}/member/memberpwCheck?pw="+pw+"&"+"id="+id,function(data){
+		data=data.trim();
+		data1=data;
+		if(data1==1){
+				$("#frm").submit();
+			}
+		else{
+			$("#loginResult").html("아이디 또는 비밀번호가 틀렸습니다.");
+		}
+		});
+	}
+	else
+		{$("#loginResult").html("아이디 또는 비밀번호를 입력하세요");}
+
+	});
 </script>
 </body>
 </html>

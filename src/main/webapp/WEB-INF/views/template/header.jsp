@@ -23,9 +23,18 @@
           </li>
           <c:choose>
           <c:when test="${ not empty member}">
-          <li class="nav-item">
-            <a class="nav-link" href="${pageContext.request.contextPath}/payment/paymentInfo">Reserve</a>
-          </li>
+         	<!-- 로그인 정보가 트레이너인 경우 -->
+         	<c:if test="${ member.trainer eq 'T' }">
+	          <li class="nav-item">
+	            <a class="nav-link" href="${pageContext.request.contextPath}/payment/paymentInfo">status of members</a>
+	          </li>
+	         </c:if>
+	         <!-- 로그인 정보가 회원인 경우 -->
+	         <c:if test="${ member.trainer eq 'M' }">
+	          <li class="nav-item">
+	            <a class="nav-link" href="${pageContext.request.contextPath}/payment/paymentMyInfo?id=${member.id}">My Reserve</a>
+	          </li>
+	         </c:if>  
           <li class="nav-item">
             <a class="nav-link" href="${pageContext.request.contextPath}/member/memberPage">member</a>
           </li>
@@ -96,7 +105,7 @@
                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
 			</div>
 			<div class="modal-body">
-				<form action="${pageContext.request.contextPath}/member/memberLogin" method="post" id="frm">
+				<form action="${pageContext.request.contextPath}/member/memberLogin" method="post" id="loginfrm">
 					<div class="form-group" id="divId">
 						<input type="text" class="form-control" id="id" name="id" placeholder="Username" required="required">		
 					</div>
@@ -138,10 +147,10 @@
 			data=data.trim();
 			data1=data;
 			if(data1==1){
-					$("#frm").submit();
+					$("#loginfrm").submit();
 				}
 			else{
-				$("#loginResult").html("로그인실패");
+				$("#loginResult").html("아이디 또는 비밀번호가 틀렸습니다.");
 			}
 			});
 		}

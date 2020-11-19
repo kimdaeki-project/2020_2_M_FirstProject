@@ -7,10 +7,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import com.hclass.project1.util.Pager;
-
-
-
-
 @Repository
 public class QnaDAO {
 	
@@ -43,7 +39,7 @@ public class QnaDAO {
 	
 	public int setReply(QnaDTO qnaDTO) throws Exception{
 		
-		return sqlSession.selectOne(namespace+"setReply",qnaDTO);
+		return sqlSession.insert(namespace+"setReply",qnaDTO);
 	}
 	
 }

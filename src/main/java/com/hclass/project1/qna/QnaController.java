@@ -12,6 +12,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
 
@@ -115,9 +116,9 @@ public class QnaController {
 	}
 	
 	@PostMapping("qnaWrite")
-	public ModelAndView setOne(QnaDTO qnaDTO) throws Exception{
+	public ModelAndView setOne(QnaDTO qnaDTO,MultipartFile photo, HttpSession session) throws Exception{
 		ModelAndView mv = new ModelAndView();
-		int result = qnaService.setOne(qnaDTO);
+		int result = qnaService.setOne(qnaDTO, photo, session);
 		String message ="입력 실패";
 		if(result>0) {
 			message ="입력 성공";

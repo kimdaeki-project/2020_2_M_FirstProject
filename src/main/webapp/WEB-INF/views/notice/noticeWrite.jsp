@@ -65,7 +65,7 @@
  <c:import url="../template/header.jsp"></c:import>
 
 <div class="container">
-  <form id="frm" action="./noticeWrite" method="post" enctype="multipart/form-data">
+  <form id="frm2" action="./noticeWrite" method="post"  id="btn">
   
     <div class="form-group">
       <label for="title">Title:</label>
@@ -83,7 +83,7 @@
     </div>
     
    <input type="button" value="FileAdd" id="fileAdd" class="btn btn-info">
-
+	
    <div id="files">
 
    </div>  
@@ -91,7 +91,8 @@
  
     <div class="form-group">
     <label></label>
-    <input type="button" class="btn btn-primary form-control" value="Write" id="btn">
+    <input type="button" class="btn btn-primary form-control" value="Write"  id="btn">
+    <button class="btn btn-primary form-control"  id="btn">Write</button>
     </div>
   </form>
   
@@ -111,7 +112,7 @@
          alert("필수 항목을 입력하세요");
          }
       else{
-            $("#frm").submit();
+            $("#frm2").submit();
          }
       });
 
