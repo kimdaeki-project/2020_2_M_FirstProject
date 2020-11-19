@@ -121,8 +121,7 @@
 	 @import url("${pageContext.request.contextPath}/resources/css/login.css");
     </style>
 	<script type="text/javascript">
-	var idCheck = false;
-	var pwCheck = false;
+
 	var data1 = 0;
 	$("#divId").on("blur", "#id", function(){
 		$("#loginResult").html("");
@@ -139,8 +138,6 @@
 			data=data.trim();
 			data1=data;
 			if(data1==1){
-				idCheck = true;
-				 pwCheck = true;
 					$("#frm").submit();
 				}
 			else{
