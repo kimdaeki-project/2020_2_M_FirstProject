@@ -149,7 +149,11 @@
 });
 	
 	$("#divLogin").on("click","#login",function(){
-			if(data1==0){
+			if(data1==1){
+				idCheck = true;
+				 pwCheck = true;
+				}
+			if(idCheck ==false&&pwCheck == false){
 					$("#loginResult").html("로그인실패");
 				}
 			else{
