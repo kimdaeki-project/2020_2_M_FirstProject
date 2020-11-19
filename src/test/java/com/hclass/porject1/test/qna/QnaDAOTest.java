@@ -15,12 +15,12 @@ public class QnaDAOTest extends MyTestCase {
 	@Autowired
 	private QnaDAO qnaDAO;
 	
-	//@Test
+	@Test
 	public void SetOnetest() throws Exception{
 		QnaDTO qnaDTO =new QnaDTO();
 		for(int i =0;i <100;i++) {
 			qnaDTO.setTitle("title"+i);
-			qnaDTO.setWriter("popo12");
+			qnaDTO.setWriter("mjtas20");
 			qnaDTO.setContents("contents"+i);
 			int result=qnaDAO.setOne(qnaDTO);
 		}
@@ -28,7 +28,7 @@ public class QnaDAOTest extends MyTestCase {
 
 	
 	}
-	@Test
+	//@Test
 	public void getOne() throws Exception{
 		QnaDTO qnaDTO =new QnaDTO();
 		qnaDTO.setNum(3);
