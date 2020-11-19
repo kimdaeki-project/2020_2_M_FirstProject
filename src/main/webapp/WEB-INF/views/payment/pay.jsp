@@ -20,7 +20,7 @@ IMP.request_pay({
     pg : 'kakaopay',
     pay_method : 'card',
     merchant_uid : 'merchant_' + new Date().getTime(),
-    name : 'KH Books 도서 결제',
+    name : '(주)PT Matching',
     amount : '100',
     buyer_email : 'dnfka311@naver.com',
     buyer_name : '강우람',
@@ -53,14 +53,14 @@ IMP.request_pay({
             }
         });
         //성공시 이동할 페이지
-        location.href='<%=request.getContextPath()%>/home';
+        location.href='<%=request.getContextPath()%>/paymentMyInfo';
         msg = '결제 완료!'
         	 alert(msg);
     } else {
         msg = '결제에 실패하였습니다.';
         msg += '에러내용 : ' + rsp.error_msg;
         //실패시 이동할 페이지
-        location.href="<%=request.getContextPath()%>/home";
+        location.href="<%=request.getContextPath()%>/paymentMyInfo";
         alert(msg);
     }
 });
