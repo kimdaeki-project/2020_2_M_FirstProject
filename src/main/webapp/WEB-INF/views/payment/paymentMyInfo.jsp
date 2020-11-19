@@ -7,6 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-
+	<h1>나의 예약정보</h1>
 </body>
 </html>
