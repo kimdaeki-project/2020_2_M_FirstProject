@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.hclass.project1.qna.QnaDTO;
 import com.hclass.project1.util.Pager;
 
 @Service
@@ -14,7 +15,6 @@ public class NoticeService {
    private NoticeDAO noticeDAO;
 
    public List<NoticeDTO> getList(Pager pager) throws Exception{
-
       pager.makeRow();
       pager.setTotalCount(noticeDAO.getCount(pager));
       pager.makePage();
@@ -25,8 +25,13 @@ public class NoticeService {
       return noticeDAO.setOne(noticeDTO);
    }
 
-   public int noticeWrite(NoticeDTO noticeDTO)throws Exception{
-      return noticeDAO.noticeWrite(noticeDTO);
-   }
+	public NoticeDTO getOne(NoticeDTO noticeDTO) throws Exception{
+		return noticeDAO.getOne(noticeDTO);
+	}
+   
+	/*
+	 * public int noticeWrite(NoticeDTO noticeDTO)throws Exception{ return
+	 * noticeDAO.noticeWrite(noticeDTO); }
+	 */
 
 }
