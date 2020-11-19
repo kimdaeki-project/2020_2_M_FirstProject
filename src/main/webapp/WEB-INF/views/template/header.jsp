@@ -127,36 +127,29 @@
 	$("#divId").on("blur", "#id", function(){
 		$("#loginResult").html("");
 	});
-	$("#divId").on("blur", "#id", function(){
-		var pw= $(this).val();
-		var id = $("#pw").val();
-		if(pw!=''){
-		$.get("${pageContext.request.contextPath}/member/memberpwCheck?pw="+pw+"&"+"id="+id,function(data){
-			data=data.trim();
-			data1=data;
-	});}
-});
-	
-
-	$("#divPw").on("blur", "#pw", function(){
-		var pw= $(this).val();
-		var id = $("#id").val();
-		if(id!=''){
-		$.get("${pageContext.request.contextPath}/member/memberpwCheck?pw="+pw+"&"+"id="+id,function(data){
-			data=data.trim();
-			data1=data;
-	});}
-});
+	$("#divPW").on("blur", "#pw", function(){
+		$("#loginResult").html("");
+	});
 	
 	$("#divLogin").on("click","#login",function(){
+		var pw = $("#pw").val();
+		var id = $("#id").val();
+		if(id!=''&&pw!=''){
+		$.get("${pageContext.request.contextPath}/member/memberpwCheck?pw="+pw+"&"+"id="+id,function(data){
+			data=data.trim();
+			data1=data;
 			if(data1==1){
 				idCheck = true;
 				 pwCheck = true;
-				}
-			if(idCheck ==false&&pwCheck == false){
-					$("#loginResult").html("로그인실패");
+					$("#frm").submit();
 				}
 			else{
-				$("#frm").submit();}
+				$("#loginResult").html("로그인실패");
+			}
+			});
+		}
+		else
+			{$("#loginResult").html("아이디 또는 비밀번호를 입력하세요");}
+	
 		});
 	</script>

@@ -47,6 +47,9 @@
 	$("#debtn").click(function(){
 		location.href="./qnaDelete?num=${qna.num}";
 		});
+	$("#rebtn").click(function(){
+		location.href="./qnaReply?num=${qna.num}";
+		});
 	if(writer!=idCheck){
 			$(".member").remove();
 		}

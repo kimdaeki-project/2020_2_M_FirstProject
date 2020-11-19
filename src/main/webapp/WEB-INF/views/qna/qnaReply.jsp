@@ -31,7 +31,7 @@
     
     <div class="form-group">
       <label for="writer">Writer:</label>
-      <input type="text" class="form-control" id="writer" placeholder="Enter Writer" name="writer">
+      <input type="text" class="form-control" id="writer" placeholder="Enter Writer" name="writer" value="${member.id}" readonly="readonly">
     </div> 
     
      <div class="form-group">
@@ -41,7 +41,7 @@
  
  	
     <input type="button" class="btn btn-primary" value="Write" id="btn">
-    <button type="submit" class="btn btn-default">Update</button>
+    <button type="submit" class="btn btn-primary">Update</button>
   </form>
 </div>
 <script type="text/javascript" src="../common/result.js">

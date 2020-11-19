@@ -25,12 +25,32 @@ public class QnaController {
 	@Autowired
 	private QnaService qnaService ;
 	
-	@GetMapping("setReply")
+	@PostMapping("qnaReply")
 	public ModelAndView setReply(QnaDTO qnaDTO) throws Exception{
 		ModelAndView mv = new ModelAndView();
-		
-		mv.addObject("");
-		mv.setViewName("qna/qnaWrite");
+		System.out.println(qnaDTO.getContents());
+		System.out.println(qnaDTO.getTitle());
+		System.out.println(qnaDTO.getWriter());
+		int result = qnaService.setReply(qnaDTO);
+		System.out.println("확인");
+		String message = "입력 실패";
+		if(result>0) {
+			message = "입력 성공";
+		}
+		mv.addObject("msg",message);
+		mv.addObject("path", "./qnaList");
+		mv.setViewName("common/result");
+		return mv;	
+	}
+	
+	
+	@GetMapping("qnaReply")
+	public ModelAndView setReply(QnaDTO qnaDTO,HttpSession session) throws Exception{
+		ModelAndView mv = new ModelAndView();
+		MemberDTO memberDTO= new MemberDTO();
+		memberDTO = (MemberDTO) session.getAttribute("member");
+		mv.addObject("member",memberDTO);
+		mv.setViewName("qna/qnaReply");
 		return mv;
 		
 	}
