@@ -2,6 +2,7 @@ package com.hclass.project1.qna;
 
 import java.util.List;
 
+//import javax.annotation.processing.Generated;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,12 +24,22 @@ public class QnaController {
 	@Autowired
 	private QnaService qnaService ;
 	
-	
-	@GetMapping("qnaSelect")
-	public ModelAndView getOne(QnaDTO qnaDTO) throws Exception{
-		ModelAndView mv = new ModelAndView();
-		qnaDTO = qnaService.getOne(qnaDTO);
+	@GetMapping("qnaUpdate")
+	public ModelAndView setUpdate(QnaDTO qnaDTO) throws Exception{
+		ModelAndView mv =new ModelAndView();
 		mv.addObject("qna",qnaDTO);
+		mv.setViewName("qna/qnaUpdate");
+		return mv;
+	}
+	@GetMapping("qnaSelect")
+	public ModelAndView getOne(QnaDTO qnaDTO,HttpSession session) throws Exception{
+		ModelAndView mv = new ModelAndView();
+		MemberDTO memberDTO =new MemberDTO();
+		memberDTO=(MemberDTO) session.getAttribute("member");
+		qnaDTO = qnaService.getOne(qnaDTO);
+		mv.addObject("member", memberDTO);
+		mv.addObject("qna",qnaDTO);
+		mv.setViewName("qna/qnaSelect");
 		return mv;
 	}
 	
