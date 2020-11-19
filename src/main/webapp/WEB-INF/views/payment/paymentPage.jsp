@@ -53,7 +53,7 @@
 </style>
 </head>
 <c:import url="../template/header.jsp"></c:import>
-<body onload="printClock()">
+<body>
 	<h1 class="cash_h1">PayMent Page</h1>
 	<div id="cash-div">
 		<form action="./paymentPage" method="post" id="frm_pay">

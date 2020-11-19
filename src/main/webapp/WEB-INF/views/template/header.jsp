@@ -23,9 +23,18 @@
           </li>
           <c:choose>
           <c:when test="${ not empty member}">
-          <li class="nav-item">
-            <a class="nav-link" href="${pageContext.request.contextPath}/payment/paymentInfo">Reserve</a>
-          </li>
+         	<!-- 로그인 정보가 트레이너인 경우 -->
+         	<c:if test="${ member.trainer eq 'T' }">
+	          <li class="nav-item">
+	            <a class="nav-link" href="${pageContext.request.contextPath}/payment/paymentInfo">status of members</a>
+	          </li>
+	         </c:if>
+	         <!-- 로그인 정보가 회원인 경우 -->
+	         <c:if test="${ member.trainer eq 'M' }">
+	          <li class="nav-item">
+	            <a class="nav-link" href="${pageContext.request.contextPath}/payment/paymentMyInfo?id=${member.id}">My Reserve</a>
+	          </li>
+	         </c:if>  
           <li class="nav-item">
             <a class="nav-link" href="${pageContext.request.contextPath}/member/memberPage">member</a>
           </li>
