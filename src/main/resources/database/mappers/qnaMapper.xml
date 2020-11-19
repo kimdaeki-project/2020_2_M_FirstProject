@@ -60,11 +60,11 @@
 	</delete>
     <insert id ="setReply" parameterType="QnaDTO">
 		insert into qna values(qna_seq.nextval
-		,#{title},#{writer}, #{contents}, sysdate,
+		, sysdate,#{title},#{writer}, #{contents},
 		(select ref from qna where num =#{num}),
 		(select step+1 from qna where num =#{num}),
-		(select depth+1 from qna where num =#{num})
-		.0
+		(select depth+1 from qna where num =#{num}),
+		0
 		)
 	</insert>
     </mapper>
