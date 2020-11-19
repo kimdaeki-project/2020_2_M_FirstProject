@@ -14,15 +14,19 @@ public class PayService {
 	public int setCharge(PayDTO payDTO)throws Exception{
 		return payDAO.setCharge(payDTO);
 	}
+	
 	public List<PayDTO> getPaymentList(PayDTO payDTO)throws Exception{
 		return payDAO.getPaymentList(payDTO);
 	}
+	
 	public PayDTO getPaymentMyInfo(PayDTO payDTO) throws Exception{
 		return payDAO.getPaymentMyInfo(payDTO);
 	}
+	
 	public PayDTO getMemberIdCheck(PayDTO payDTO) throws Exception{
 		return payDAO.getMemberIdCheck(payDTO);
 	}
+	
 	public int setPaymentDelete(PayDTO payDTO) throws Exception{
 		return payDAO.setPaymentDelte(payDTO); 
 	}

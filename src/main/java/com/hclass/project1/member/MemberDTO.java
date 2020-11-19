@@ -17,7 +17,7 @@ private String business;
 private String trainer;
 private String kind;
 
-//*********************************** pay
+//*********************** pay **********
 private PayDTO payDTO;
 public PayDTO getPayDTO() {
 	return payDTO;

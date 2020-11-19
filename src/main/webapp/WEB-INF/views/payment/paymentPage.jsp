@@ -78,6 +78,7 @@
 </body>
 
 <script type="text/javascript">
+
 	$("#reserve_btn").click(function() {
 		var d = $("#date").val();
 		var t = $("#time").val();
@@ -96,11 +97,11 @@
 					alert("결제 페이지로 이동합니다.");
 					$("#frm_pay").submit();
 				}else{
-					alert("취소하셨습니다.");
+					alert("취소하셨습니다..");
 				}
 				
 			}else{
-				alert("이미 예약을 하셨습니다.");
+				alert("회원님은 이미 예약을 하셨습니다.");
 			}
 		});	
 	});
