@@ -82,7 +82,6 @@ public class PayController {
 	public ModelAndView setCash() throws Exception{
 		ModelAndView mv = new ModelAndView();
 		mv.setViewName("payment/paymentIng");
-		
 		return mv;
 	}
 	

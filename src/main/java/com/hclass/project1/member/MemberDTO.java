@@ -19,7 +19,6 @@ private String kind;
 
 //*********************************** pay
 private PayDTO payDTO;
-
 public PayDTO getPayDTO() {
 	return payDTO;
 }

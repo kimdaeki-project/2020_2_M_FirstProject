@@ -46,13 +46,14 @@
 	<c:if test="${empty pay.regDate}">
 		<h3 class="info-h3">예약현황이 없습니다.</h3>
 	</c:if>
+
 	
 <c:import url="../template/footer.jsp"></c:import>	
 </body>
 <script type="text/javascript">
 	$("#info-delete").click(function() {
 		var id = $(this).attr("title");
-		var re = confirm("정말 예약을 취소 하시겠습니까?");
+		var re = confirm("정말 예약을 취소하시겠습니까?");
 		if(re){
 			window.location.href="./paymentDelete?id="+id;
 		}

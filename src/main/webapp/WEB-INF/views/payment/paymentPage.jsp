@@ -73,6 +73,7 @@
 		</form>
 		<input type="button" value="예약하기" class="btn btn-primary" id="reserve_btn">
 	</div>
+
 <c:import url="../template/footer.jsp"></c:import>
 </body>
 
