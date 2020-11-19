@@ -32,7 +32,7 @@
 	         <!-- 로그인 정보가 회원인 경우만 허용 -->
 	         <c:if test="${ member.trainer eq 'M' }">
 	          <li class="nav-item">
-	            <a class="nav-link" href="${pageContext.request.contextPath}/payment/paymentInfo">My Reserve</a>
+	            <a class="nav-link" href="${pageContext.request.contextPath}/payment/paymentMyInfo?id=${member.id}">My Reserve</a>
 	          </li>
 	         </c:if>  
           <li class="nav-item">

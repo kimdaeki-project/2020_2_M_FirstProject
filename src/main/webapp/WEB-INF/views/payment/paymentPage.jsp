@@ -53,7 +53,7 @@
 </style>
 </head>
 <c:import url="../template/header.jsp"></c:import>
-<body onload="printClock()">
+<body>
 	<h1 class="cash_h1">PayMent Page</h1>
 	<div id="cash-div">
 		<form action="./paymentPage" method="post" id="frm_pay">
@@ -68,11 +68,11 @@
 				<input type="time" id="time" value="08:00" min="08:00" max="21:00" step="900" required="required" name="time">
 				<span class="validity"></span>
 				</div>
+				<div id="idCheck"></div>
 			</div>		
 		</form>
 		<input type="button" value="예약하기" class="btn btn-primary" id="reserve_btn">
 	</div>
-
 <c:import url="../template/footer.jsp"></c:import>
 </body>
 
@@ -80,19 +80,30 @@
 	$("#reserve_btn").click(function() {
 		var d = $("#date").val();
 		var t = $("#time").val();
-		
+		var id = $("#member_id-text").val();
 		var td = document.getElementById("time");
-		if(!td.checkValidity()){
-			alert("지정된 시간을 선택해주세요.");
-		}else{
-			d = confirm(d+"일 "+ t+"분이 맞습니까?");	
-			if(d){
-				alert("결제 페이지로 이동합니다.");
-				$("#frm_pay").submit();
-			}
-		}
 		
+		$.get("./memberIdCheck?id="+id, function(data) {
+			data = data.trim();
+			
+			if(!td.checkValidity()){
+				alert("지정된 시간을 선택해주세요.");
+			}else if(data == 0){
+				d = confirm(d+"일 "+ t+"분이 맞습니까?");	
+				
+				if(d){
+					alert("결제 페이지로 이동합니다.");
+					$("#frm_pay").submit();
+				}else{
+					alert("취소하셨습니다.");
+				}
+				
+			}else{
+				alert("이미 예약을 하셨습니다.");
+			}
+		});	
 	});
+
 
 	var dateToday = document.getElementById("date");
 	var timeNow = document.getElementById("time")
