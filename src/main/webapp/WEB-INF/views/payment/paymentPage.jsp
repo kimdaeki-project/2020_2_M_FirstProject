@@ -82,7 +82,9 @@
 	$("#reserve_btn").click(function() {
 		var d = $("#date").val();
 		var t = $("#time").val();
+		
 		var id = $("#member_id-text").val();
+		
 		var td = document.getElementById("time");
 		
 		$.get("./memberIdCheck?id="+id, function(data) {

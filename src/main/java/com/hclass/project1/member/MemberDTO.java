@@ -17,7 +17,7 @@ private String business;
 private String trainer;
 private String kind;
 
-//*********************** pay **********
+//*************** pay **********
 private PayDTO payDTO;
 public PayDTO getPayDTO() {
 	return payDTO;
@@ -25,7 +25,7 @@ public PayDTO getPayDTO() {
 public void setPayDTO(PayDTO payDTO) {
 	this.payDTO = payDTO;
 }
-// **************************************
+// ****************************
 public String getKind() {
 	return kind;
 }
