@@ -12,15 +12,7 @@
 		select * from pay_test1
 	</select>
 	
-	<select id="getPaymentMyInfo" resultType="PayDTO" parameterType="MemberDTO">
+	<select id="getPaymentOne" resultType="PayDTO" parameterType="PayDTO">
 		select * from pay_test1 where id = #{id}
 	</select>
-	
-	<select id="getMemberIdCheck" resultType="PayDTO" parameterType="MemberDTO">
-		select id from pay_test1 where id = #{id} 
-	</select>
-	
-	<delete id="setPaymentDelete" parameterType="PayDTO">
-		delete pay_test1 where id = #{id}
-	</delete>
 </mapper>
