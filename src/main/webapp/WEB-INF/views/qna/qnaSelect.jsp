@@ -25,7 +25,7 @@
   		<td>Hit</td>
   	</tr>
   	<tr>
-  		<td>${qna.num }</td>
+  		<td>${qna.num}</td>
   		<td>${qna.writer }</td>
   		<td>${qna.contents }</td>
   		<td>${qna.title }</td>
@@ -33,19 +33,24 @@
   		<td>${qna.hit }</td>
   	</tr>
 </table>
-<a href="./qnaUpdate"><input type="button" id="upbtn"  class="btn btn-primary member" value="update"></a>
+<input type="button" id="upbtn"  class="btn btn-primary member" value="update">
 <a><input type="button" id="debtn"  class="btn btn-danger member" value ="delete"></a>
 <a><input type="button" id="rebtn"  class="btn btn-primary admin" value="reply"></a>
 </div>
 <script type="text/javascript">
 	var writer = "${qna.writer}";
 	var idCheck= "${member.id}";
+	var num ="${qna.num}";
+	$("#upbtn").click(function(){
+		location.href="./qnaUpdate?num=${qna.num}";
+		});
 	if(writer!=idCheck){
 			$(".member").remove();
 		}
 	if(idCheck!='admin'){
 		$(".admin").remove();
 		}
+	
 </script>
 </body>
 </html>

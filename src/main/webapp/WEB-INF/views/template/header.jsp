@@ -123,24 +123,33 @@
 	<script type="text/javascript">
 	var idCheck = false;
 	var pwCheck = false;
+	var data1 = 0;
 	$("#divId").on("blur", "#id", function(){
 		$("#loginResult").html("");
 	});
-	$("#divPw").on("blur", "#pw", function(){
+	$("#divId").on("blur", "#id", function(){
 		var pw= $(this).val();
-		var id = $("#id").val();
+		var id = $("#pw").val();
 		if(pw!=''){
 		$.get("${pageContext.request.contextPath}/member/memberpwCheck?pw="+pw+"&"+"id="+id,function(data){
 			data=data.trim();
-			if(data==1){
-				idCheck=true;
-				pwCheck=true;
-			}
-		
+			data1=data;
 	});}
 });
-		$("#divLogin").on("click","#login",function(){
-			if(idCheck==false&&pwCheck==false){
+	
+
+	$("#divPw").on("blur", "#pw", function(){
+		var pw= $(this).val();
+		var id = $("#id").val();
+		if(id!=''){
+		$.get("${pageContext.request.contextPath}/member/memberpwCheck?pw="+pw+"&"+"id="+id,function(data){
+			data=data.trim();
+			data1=data;
+	});}
+});
+	
+	$("#divLogin").on("click","#login",function(){
+			if(data1==0){
 					$("#loginResult").html("로그인실패");
 				}
 			else{
