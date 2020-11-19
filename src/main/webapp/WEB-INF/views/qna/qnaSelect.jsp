@@ -44,6 +44,9 @@
 	$("#upbtn").click(function(){
 		location.href="./qnaUpdate?num=${qna.num}";
 		});
+	$("#debtn").click(function(){
+		location.href="./qnaDelete?num=${qna.num}";
+		});
 	if(writer!=idCheck){
 			$(".member").remove();
 		}
