@@ -16,6 +16,16 @@ public class PayController {
 	@Autowired
 	private PayService payService;
 	
+	@GetMapping("paymentSelect")
+	public ModelAndView getPaymentOne(PayDTO payDTO) throws Exception{
+		ModelAndView mv = new ModelAndView();
+		
+		payDTO = payService.getPaymentOne(payDTO);
+		
+		mv.addObject("payOne", payDTO);
+		mv.setViewName("payment/paymentSelect");
+		return mv;
+	}
 	
 	@GetMapping("paymentInfo")
 	public ModelAndView getPaymentInfo(PayDTO payDTO) throws Exception{

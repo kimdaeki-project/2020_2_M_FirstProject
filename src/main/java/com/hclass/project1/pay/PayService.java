@@ -19,4 +19,8 @@ public class PayService {
 		return payDAO.getPaymentList(payDTO);
 	}
 	
+	public PayDTO getPaymentOne(PayDTO payDTO) throws Exception{
+		return payDAO.getPaymentOne(payDTO);
+	}
+	
 }

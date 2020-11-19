@@ -60,7 +60,7 @@
 			<h1 class="cash_h1" style="font-size: 16px;">예약은 현재날짜 기준 30일 이내만 가능합니다.</h1>
 		
 			<div class="container" id="cashDiv">					
-				<input type="text" value="${member.name}" name="id" id="member_id-text" readonly="readonly">회원님
+				<input type="text" value="${member.id}" name="id" id="member_id-text" readonly="readonly">회원님
 				<div class="date_style">예약하실 날짜와 시간을 선택해주세요.(당일예약 불가)</div>
 				<div class="date_style">(Time 08:00 to 21:00)</div>
 				<div>
@@ -88,7 +88,7 @@
 			d = confirm(d+"일 "+ t+"분이 맞습니까?");	
 			if(d){
 				alert("결제 페이지로 이동합니다.");
-				//$("#frm_pay").submit();
+				$("#frm_pay").submit();
 			}
 		}
 		

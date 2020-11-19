@@ -21,14 +21,15 @@
 </style>
 </head>
 <body>
-	<h3 class="info_h3">예약 현황</h3>
+	<h3 class="info_h3">회원들의 예약 현황</h3>
+	<h3 class="info_h3"></h3>
 	<table class="table table-condensed info_table">
 		<tr>
 			<th>회원이름</th><th>날짜</th><th>시간</th>
 		</tr>
 	<c:forEach items="${payinfo}" var="paydto">
 		<tr>
-			<td>${paydto.id} </td>
+			<td> ${paydto.id} </td>
 			<td> ${paydto.regDate} </td>
 			<td> ${paydto.time}</td>
 		</tr>
@@ -36,5 +37,8 @@
 	</table>
 <c:import url="../template/footer.jsp"></c:import>	
 </body>
+<script type="text/javascript">
+	
+</script>
 
 </html>

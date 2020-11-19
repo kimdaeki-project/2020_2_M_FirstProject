@@ -21,4 +21,8 @@ public class PayDAO {
 		return sqlSession.selectList(NAMESPACE+"getPaymentList", payDTO);
 	}
 	
+	public PayDTO getPaymentOne(PayDTO payDTO) throws Exception{
+		return sqlSession.selectOne(NAMESPACE+"getPaymentOne", payDTO);
+	}
+	
 }
