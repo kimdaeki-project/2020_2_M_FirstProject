@@ -12,7 +12,6 @@
 	#cash-div{
 		height: auto;
 	}
-
 	#cashDiv{
 		text-align: center;
 		padding: 50px 0 30px 0;
@@ -60,7 +59,7 @@
 			<h1 class="cash_h1" style="font-size: 16px;">예약은 현재날짜 기준 30일 이내만 가능합니다.</h1>
 		
 			<div class="container" id="cashDiv">					
-				<input type="text" value="${member.name}" name="id" id="member_id-text" readonly="readonly">회원님
+				<input type="text" value="${member.id}" name="id" id="member_id-text" readonly="readonly">회원님
 				<div class="date_style">예약하실 날짜와 시간을 선택해주세요.(당일예약 불가)</div>
 				<div class="date_style">(Time 08:00 to 21:00)</div>
 				<div>
@@ -68,6 +67,7 @@
 				<input type="time" id="time" value="08:00" min="08:00" max="21:00" step="900" required="required" name="time">
 				<span class="validity"></span>
 				</div>
+				<div id="idCheck"></div>
 			</div>		
 		</form>
 		<input type="button" value="예약하기" class="btn btn-primary" id="reserve_btn">
@@ -80,27 +80,31 @@
 	$("#reserve_btn").click(function() {
 		var d = $("#date").val();
 		var t = $("#time").val();
-<<<<<<< HEAD
-=======
 		
 		var id = $("#member_id-text").val();
 		
 		var td = document.getElementById("time");
->>>>>>> gb_1119
 		
-		var td = document.getElementById("time");
-		if(!td.checkValidity()){
-			alert("지정된 시간을 선택해주세요.");
-		}else{
-			d = confirm(d+"일 "+ t+"분이 맞습니까?");	
-			if(d){
-				alert("결제 페이지로 이동합니다.");
-				location.href="./pay";
+		$.get("./memberIdCheck?id="+id, function(data) {
+			data = data.trim();
+			
+			if(!td.checkValidity()){
+				alert("지정된 시간을 선택해주세요.");
+			}else if(data == 0){
+				d = confirm(d+"일 "+ t+"분이 맞습니까?");	
+				
+				if(d){
+					alert("결제 페이지로 이동합니다.");
+					$("#frm_pay").submit();
+				}else{
+					alert("취소하셨습니다..");
+				}
+				
+			}else{
+				alert("회원님은 이미 예약을 하셨습니다.");
 			}
-		}
-		
+		});	
 	});
-
 	var dateToday = document.getElementById("date");
 	var timeNow = document.getElementById("time")
 	var date = new Date();

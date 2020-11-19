@@ -1,5 +1,7 @@
 package com.hclass.project1.member;
 
+import com.hclass.project1.pay.PayDTO;
+
 public class MemberDTO {
 private long num;
 private String id;
@@ -14,8 +16,6 @@ private String gym;
 private String business;
 private String trainer;
 private String kind;
-<<<<<<< HEAD
-=======
 
 //*************** pay **********
 private PayDTO payDTO;
@@ -26,7 +26,7 @@ public void setPayDTO(PayDTO payDTO) {
 	this.payDTO = payDTO;
 }
 // ****************************
->>>>>>> gb_1119
+
 public String getKind() {
 	return kind;
 }

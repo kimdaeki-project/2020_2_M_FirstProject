@@ -20,4 +20,16 @@ public class PayDAO {
 		return sqlSession.selectList(NAMESPACE+"getPaymentList", payDTO);
 	}
 	
+	public PayDTO getPaymentMyInfo(PayDTO payDTO) throws Exception{
+		return sqlSession.selectOne(NAMESPACE+"getPaymentMyInfo", payDTO);
+	}
+	
+	public PayDTO getMemberIdCheck(PayDTO payDTO) throws Exception{
+		return sqlSession.selectOne(NAMESPACE+"getMemberIdCheck", payDTO);
+	}
+	
+	public int setPaymentDelete(PayDTO payDTO) throws Exception{
+		return sqlSession.delete(NAMESPACE+"setPaymentDelete", payDTO);
+	}
+	
 }

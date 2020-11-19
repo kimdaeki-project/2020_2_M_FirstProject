@@ -6,14 +6,12 @@
 <mapper namespace="com.hclass.project1.pay.PayDAO">
 	
 	<insert id="setCharge" parameterType="PayDTO">
-		insert into pay_test values(pay_test_seq.nextval, #{id}, #{regDate}, #{time})
+		insert into pay_test1 values(pay_test_seq.nextval, #{id}, #{regDate}, #{time})
 	</insert>
 	
 	<select id="getPaymentList" resultType="PayDTO" parameterType="PayDTO">
-		select * from pay_test
+		select * from pay_test1
 	</select>
-<<<<<<< HEAD
-=======
 	
 	<!-- 나의 정보 확인 -->
 	<select id="getPaymentMyInfo" resultType="PayDTO" parameterType="MemberDTO">
@@ -27,5 +25,5 @@
 	<delete id="setPaymentDelete" parameterType="PayDTO">
 		delete pay_test1 where id = #{id}
 	</delete>
->>>>>>> gb_1119
+
 </mapper>

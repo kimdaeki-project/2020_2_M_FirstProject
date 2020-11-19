@@ -18,4 +18,16 @@ public class PayService {
 		return payDAO.getPaymentList(payDTO);
 	}
 	
+	public PayDTO getPaymentMyInfo(PayDTO payDTO) throws Exception{
+		return payDAO.getPaymentMyInfo(payDTO);
+	}
+	
+	public PayDTO getMemberIdCheck(PayDTO payDTO) throws Exception{
+		return payDAO.getMemberIdCheck(payDTO);
+	}
+	
+	public int setPaymentDelete(PayDTO payDTO) throws Exception{
+		return payDAO.setPaymentDelete(payDTO); 
+	}
+	
 }
