@@ -40,11 +40,11 @@
 	.info img{
 		width:500px;
 		height:500px;
-		
 		vertical-align: middle;
 		display: inline;
 		clear: both;
 		float: left;
+		margin-right: 30px;
 	}	 
 	.info{
 		display: inline-block;
@@ -54,6 +54,7 @@
 		font-size: 15px;
 		margin-left: 30px;
 		padding-left: 20px;
+		color:#58595b;
 	}
 
 </style>
@@ -61,40 +62,23 @@
 <c:import url="../template/header.jsp"></c:import>
 <body>
 
-	<form id="frm_reserve" action="./trainerReserve">
-	<div id="pageSize_div">
-		<div id="tip_div">↓ 버튼 클릭</div>
-		<table class="table table-condensed" style="width: 70%; margin: 0 auto;">
-			<tr style="font-size: 17px;">
-				<th></th><th>이름 </th><th>성별 </th><th>종류 </th><th>장소 </th>
-			</tr>
-	
-			<tr class="t_tr">
-				<td> <input type="radio" name="reserve"> </td>
-				<td>${page.name}</td>
-				<td>${page.gender}</td>
-				<td>${page.healthKind}</td>
-				<td>${page.business}</td>
-				
-			</tr>
-		</table>
-		</div>
+		
 		<div class="trainer_info">
 			<h3>트레이너 정보</h3>
 		<div>	
 		<p class = "info">
 		<img alt="" src="../resources/img/trainer/trainer.jpg"> 
 				
-					이름<br>
+					<strong>이름</strong><br>
 					${page.name}<br>
-					주소<br>
+					<br>
+					<strong>주소</strong><br>
 					${page.address}<br>
 					<br>
-					
-					학력<br>
+					<strong>학력</strong><br>
 					군산대학교 체육학과 졸업 학사<br>
 					<br>	
-					자격<br>
+					<strong>자격</strong><br>
 					MES(Medical Exercise Specialist) 운동처방사<br>
 					생활스포츠지도사 2급 (보디빌딩)<br>
 					육상경기심판자격 2급<br>
@@ -104,7 +88,7 @@
 					대한적십사 CPR, 응급처지 교육 수료<br>
 					Stretchbang Semivar 수료(MBT ACADEMY)<br>
 					<br>
-					경력<br>
+					<strong>경력</strong><br>
 					前)더스토리짐 PT전문 트레이너
 					前)이룸헬스짐 트레이너
 					前)터닝포인트짐 퍼스널트레이너
@@ -118,19 +102,13 @@
 		</div>
 
 	
-	</form>
 	
 <c:import url="../template/footer.jsp"></c:import>
 <script type="text/javascript">
 	
 	$("#reserveBtn").click(function() {
-		var re = ($('input:radio[name=reserve]').is(':checked'));
-
-		if(re==true){
-			$("#frm_reserve").submit();
-		}else{
-			alert("트레이너를 선택해주세요.");
-		}
+			location.href= "./trainerReserve";	
+	
 	});
 	
 </script>	

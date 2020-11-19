@@ -87,4 +87,13 @@ public class TrainerController {
 		
 		return mv;
 	}
+	
+	@PostMapping("trainerReserve")
+	public ModelAndView getReserve()throws Exception{
+		
+		ModelAndView mv = new ModelAndView();
+		mv.setViewName("trainer/trainerReserve");
+		
+		return mv;
+	}
 }

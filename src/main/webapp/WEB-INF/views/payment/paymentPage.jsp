@@ -88,7 +88,7 @@
 			d = confirm(d+"일 "+ t+"분이 맞습니까?");	
 			if(d){
 				alert("결제 페이지로 이동합니다.");
-				//$("#frm_pay").submit();
+				location.href="./pay";
 			}
 		}
 		
