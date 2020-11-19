@@ -2,7 +2,14 @@ package com.hclass.project1.qna;
 
 import java.util.List;
 
+<<<<<<< Updated upstream
 //import javax.annotation.processing.Generated;
+=======
+import javax.annotation.processing.Generated;
+
+import javax.annotation.processing.Generated;
+
+>>>>>>> Stashed changes
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,9 +31,30 @@ public class QnaController {
 	@Autowired
 	private QnaService qnaService ;
 	
+<<<<<<< Updated upstream
+=======
+
+	@PostMapping("qnaUpdate")
+	public ModelAndView setUpdate(QnaDTO qnaDTO)throws Exception{
+		ModelAndView mv = new ModelAndView();
+		
+		return mv;
+	}
+>>>>>>> Stashed changes
 	@GetMapping("qnaUpdate")
 	public ModelAndView setUpdate(QnaDTO qnaDTO) throws Exception{
 		ModelAndView mv =new ModelAndView();
+<<<<<<< Updated upstream
+=======
+		QnaDTO qnaDTO =new QnaDTO();
+		qnaDTO.setNum(num);
+		qnaDTO = qnaService.getOne(qnaDTO);
+
+	@GetMapping("qnaUpdate")
+	public ModelAndView setUpdate(QnaDTO qnaDTO) throws Exception{
+		ModelAndView mv =new ModelAndView();
+
+>>>>>>> Stashed changes
 		mv.addObject("qna",qnaDTO);
 		mv.setViewName("qna/qnaUpdate");
 		return mv;
