@@ -5,6 +5,7 @@ import java.util.List;
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
+import org.springframework.web.bind.annotation.SessionAttribute;
 
 import com.hclass.project1.qna.QnaDTO;
 import com.hclass.project1.util.Pager;
@@ -35,4 +36,9 @@ public class NoticeDAO {
 //   public int noticeWrite(NoticeDTO noticeDTO)throws Exception{
 //      return sqlSession.insert(namespace+"noticeWrite", noticeDTO);
 //   }
+   
+	/*
+	 * public void noticeHitUpdate(int num) throws Exception {
+	 * sqlSession.update(namespace+".noticeHitUpdate", num); }
+	 */
 }
