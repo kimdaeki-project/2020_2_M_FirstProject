@@ -23,7 +23,7 @@
 	input[_date]{
 		margin-top: 20px;
 	}
-	#reserve_btn{
+	#change_btn{
 		display:block;
 		margin: 0 auto;
 	}
@@ -72,6 +72,7 @@
 		</form>
 		<input type="button" value="예약 변경하기" class="btn btn-primary" id="change_btn">
 	</div>
+<c:import url="../template/footer.jsp"></c:import>	
 </body>
 <script type="text/javascript">
 	$("#change_btn").click(function() {
