@@ -18,10 +18,12 @@
 		position: relative;
 		top: 50%;
 		left: 40%;
+		color : white;
 	}
 	#info-table{
 		width: 60%;
 		margin: 30px auto;
+		
 	}
 </style>
 </head>
@@ -40,11 +42,11 @@
 	</table>	
 		<input type="button" value="예약 변경하기" class="btn btn-primary info-btn">
 		<input type="button" value="예약 취소하기" class="btn btn-danger info-btn" id="info-delete" title="${member.id}">
-	
+		<input type="button" value="결제하기" class="btn btn-warning info-btn"  title="${member.id}">
 	</c:if>
 	
 	<c:if test="${empty pay.regDate}">
-		<h3 class="info-h3">예약현황이 없습니다.</h3>
+		<h3 class="info-h3">예약현황이 없습니다.</h3>	
 	</c:if>
 
 	
@@ -58,5 +60,12 @@
 			window.location.href="./paymentDelete?id="+id;
 		}
 	});
+	$("#pay").click(function() {
+		var id = $(this).attr("title");
+		var str = confirm("결제하시겠습니까?");
+		if(str){
+			location.href="./pay?id="+id;
+		}
+	})
 </script>
 </html>
