@@ -37,8 +37,61 @@
 		like '%'||#{search}||'%'
 	</select>
 	
+	<select id="getDetailCount" resultType="Long" parameterType="Pager">
+		select count(num) from gb_test5 where
+		<choose>
+			<when test="gender=='man'">
+				gender like #{gender}||'%'
+			</when>
+			<when test="gender=='woman'">
+				gender like #{gender}||'%'
+			</when>
+			<when test="gender=='all'">
+				gender is not null
+			</when>
+			<when test="gender==null">
+				gender is not null
+			</when>
+		</choose>
+		and
+		<choose>
+			<when test="healthKind=='health'">
+				healthKind like #{healthKind}||'%'
+			</when>
+			<when test="healthKind=='pilates'">
+			 	healthKind like #{healthKind}||'%'
+			</when>
+			<when test="healthKind=='yoga'">
+				healthKind like #{healthKind}||'%'
+			</when>
+			<when test="healthKind=='spinning'">
+				healthKind like #{healthKind}||'%'
+			</when>
+			<when test="healthKind=='crossfit'">
+				healthKind like #{healthKind}||'%'
+			</when>
+			<when test="healthKind==null">
+				healthKind is not null
+			</when>
+		</choose>
+		and
+		<choose>
+			<when test="business=='healthplace'">
+				business like #{business}||'%'
+			</when>
+			<when test="business=='home'">
+				business like #{business}||'%'
+			</when>
+			<when test="business==null">
+				business is not null
+			</when>
+		</choose>
+	</select>
+	
 	<select id="getSearch" resultType="TrainerDTO" parameterType="Pager">
-		select * from gb_test5 where
+		select * from
+		(select rownum R, N.* from
+		(select * from gb_test5 where
 		<choose>
 			<when test="gender=='man'">
 				gender in #{gender}
@@ -86,6 +139,7 @@
 				business is not null
 			</when>
 		</choose>
-		order by num desc
+		order by num desc)N)
+		where R between #{startNum} and #{lastNum}
 	</select>
 </mapper>

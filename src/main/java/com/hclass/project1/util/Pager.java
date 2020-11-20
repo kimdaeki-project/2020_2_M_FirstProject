@@ -113,13 +113,13 @@ public class Pager {
 		this.gender = gender;
 	}
 
-
-	public String getHealthkind() {
+	
+	public String getHealthKind() {
 		return healthKind;
 	}
 
 
-	public void setHealthkind(String healthkind) {
+	public void setHealthKind(String healthKind) {
 		this.healthKind = healthKind;
 	}
 

@@ -28,6 +28,10 @@ public class TrainerDAO {
 		return sqlSession.selectOne(NAMESPACE+"getCount",pager);
 	}
 	
+	public long getDetailCount(Pager pager) throws Exception{
+		return sqlSession.selectOne(NAMESPACE+"getDetailCount",pager);
+	}
+	
 	public TrainerDTO getTrainerPage(TrainerDTO trainerDTO)throws Exception{
 		return sqlSession.selectOne(NAMESPACE+"getTrainerPage", trainerDTO);
 	}

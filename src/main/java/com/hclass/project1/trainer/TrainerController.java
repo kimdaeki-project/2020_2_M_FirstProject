@@ -73,6 +73,7 @@ public class TrainerController {
 		List<TrainerDTO> ar = trainerService.getSearch(pager);
 		
 		mv.addObject("search", ar);
+		mv.addObject("pager", pager);
 		mv.setViewName("trainer/trainerDetailSearch");
 		
 		return mv;
