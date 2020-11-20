@@ -140,6 +140,6 @@
 			</when>
 		</choose>
 		order by num desc)N)
-		where R between #{startNum} and #{lastNum}
+		where R between #{startRow} and #{lastRow}
 	</select>
 </mapper>

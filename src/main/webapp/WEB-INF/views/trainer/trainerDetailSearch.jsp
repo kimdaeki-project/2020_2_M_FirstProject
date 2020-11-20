@@ -55,15 +55,15 @@
 	
 	<div class="container" id="pager_div">
 	 	<c:if test="${pager.beforeCheck}">
-			<a href="./trainerDetailSearch?curPage=${pager.startRow-1}&gender=${pager.gender}&healthKind=${pager.healthKind}&business=${pager.business}&search=${pager.search}">[이전]</a>
+			<a href="./trainerDetailSearch?curPage=${pager.startRow-1}&gender=${pager.gender}&healthKind=${pager.healthKind}&business=${pager.business}">[이전]</a>
 		</c:if>
 
 		<c:forEach begin="${pager.startNum}" end="${pager.lastNum}" var="i">
-	  		<a href="./trainerDetailSearch?curPage=${i}&gender=${pager.gender}&healthKind=${pager.healthKind}&business=${pager.business}&search=${pager.search}">${i}</a>
+	  		<a href="./trainerDetailSearch?curPage=${i}&gender=${pager.gender}&healthKind=${pager.healthKind}&business=${pager.business}">${i}</a>
 	  	</c:forEach>
 	
 		<c:if test="${pager.nextCheck}">
-			<a href="./trainerDetailSearch?curPage=${pager.startRow+1}&gender=${pager.gender}&healthKind=${pager.healthKind}&business=${pager.business}&search=${pager.search}">[다음]</a>
+			<a href="./trainerDetailSearch?curPage=${pager.startRow+1}&gender=${pager.gender}&healthKind=${pager.healthKind}&business=${pager.business}">[다음]</a>
 		</c:if>
 
 	</div>
