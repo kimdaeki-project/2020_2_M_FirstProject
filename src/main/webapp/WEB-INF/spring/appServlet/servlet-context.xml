@@ -36,7 +36,7 @@
 		</interceptor>
 		
 		<interceptor>
-			<!-- (회원) 나의 예약현황 -->
+			<!-- (회원) 나의 예약현황, 예약변경, 예약취소 -->
 			<mapping path="/payment/paymentMyInfo"/>
 			<beans:ref bean="payMemberInterceptor"/>
 		</interceptor>
