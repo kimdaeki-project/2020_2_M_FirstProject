@@ -48,14 +48,14 @@
 	</table>
 	<div class="container" id="pager_div">
 		<c:if test="${pager.beforeCheck}">
-			<a href="./trainerWindowSearch?curPage=${pager.startRow-1}&select=${pager.select}&search=${pager.search}">[이전]</a>
+			<a href="./trainerWindowSearch?curPage=${pager.startNum-1}&select=${pager.select}&search=${pager.search}">◀◀</a>
 		</c:if>
 		<c:forEach begin="${pager.startNum}" end="${pager.lastNum}" var="i">
 	  		<a href="./trainerWindowSearch?curPage=${i}&select=${pager.select}&search=${pager.search}">${i}</a>
 	  	</c:forEach>
 	  	
 		<c:if test="${pager.nextCheck}">
-			<a href="./trainerWindowSearch?curPage=${pager.startRow+1}&select=${pager.select}&search=${pager.search}">[다음]</a>
+			<a href="./trainerWindowSearch?curPage=${pager.lastNum+1}&select=${pager.select}&search=${pager.search}">▶▶</a>
 		</c:if>
 	</div>
 <c:import url="../template/footer.jsp"></c:import>	
