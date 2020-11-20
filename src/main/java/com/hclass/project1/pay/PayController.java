@@ -20,6 +20,34 @@ public class PayController {
 	@Autowired
 	private PayService payService;
 	
+	@PostMapping("paymentUpdate")
+	public ModelAndView setPaymentUpdate(PayDTO payDTO) throws Exception{
+		ModelAndView mv = new ModelAndView();
+		int result = payService.setPaymentUpdate(payDTO);
+		if(result > 0 ) {
+			mv.addObject("msg", "예약이 변경되었습니다.");
+			mv.addObject("path", "../");
+		}else {
+			mv.addObject("msg", "실패");
+			mv.addObject("path", "../");
+		}
+		
+		mv.setViewName("common/result");
+		
+		return mv;
+	}
+	
+	@GetMapping("paymentUpdate")
+	public ModelAndView setPaymentUpdate(PayDTO payDTO, String id) throws Exception{
+		ModelAndView mv = new ModelAndView();
+		System.out.println(id);
+		payDTO = payService.getPaymentMyInfo(payDTO);
+		
+		mv.addObject("upDto", payDTO);
+		mv.setViewName("payment/paymentUpdate");
+		return mv;
+	}
+	
 	@GetMapping("paymentDelete")
 	public ModelAndView setPaymentDelete(PayDTO payDTO) throws Exception{
 		ModelAndView mv = new ModelAndView();

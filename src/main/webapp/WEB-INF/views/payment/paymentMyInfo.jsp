@@ -38,7 +38,7 @@
 			<td>${pay.time}</td>
 		</tr>
 	</table>	
-		<input type="button" value="예약 변경하기" class="btn btn-primary info-btn">
+		<input type="button" value="예약 변경하기" class="btn btn-primary info-btn" id="info-update" title="${member.id}">
 		<input type="button" value="예약 취소하기" class="btn btn-danger info-btn" id="info-delete" title="${member.id}">
 	
 	</c:if>
@@ -57,6 +57,11 @@
 		if(re){
 			window.location.href="./paymentDelete?id="+id;
 		}
+	});
+	
+	$("#info-update").click(function () {
+		var id = $(this).attr("title");
+		location.href="./paymentUpdate?id="+id;
 	});
 </script>
 </html>
