@@ -27,6 +27,7 @@
 		margin-top: 50px;
 		float: right;
 	}
+
 </style>
 </head>
 <c:import url="../template/header.jsp"></c:import>
@@ -48,7 +49,7 @@
 			</tr>
 		</c:forEach>
 	</table>
-	
+
 	<c:import url="../template/footer.jsp"></c:import>
 </body>
 </html>

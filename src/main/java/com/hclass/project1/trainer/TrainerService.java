@@ -21,7 +21,7 @@ public class TrainerService {
 		return trainerDAO.getSearchList(pager);
 	}
 	
-	public List<TrainerDTO> getSearch(Pager pager) throws Exception{
+	public List<TrainerDTO> getSearch(Pager pager) throws Exception{		
 		return trainerDAO.getSearch(pager);
 	}
 	
