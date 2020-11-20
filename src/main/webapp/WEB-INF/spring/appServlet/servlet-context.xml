@@ -25,6 +25,7 @@
  	
 	<interceptors>
 		<interceptor>
+			<!-- 트레이너 페이지, 결제(예약)페이지 -->
 			<mapping path="/trainer/*"/>
 			<mapping path="/payment/*"/>
 			<exclude-mapping path="/trainer/trainerSearch"/>
@@ -35,8 +36,15 @@
 		</interceptor>
 		
 		<interceptor>
+			<!-- (회원) 나의 예약현황 -->
 			<mapping path="/payment/paymentMyInfo"/>
 			<beans:ref bean="payMemberInterceptor"/>
+		</interceptor>
+		
+		<interceptor>
+			<!-- 트레이너 전용 예약현황 확인 -->
+			<mapping path="/payment/paymentInfo"/>
+			<beans:ref bean="payTrainerInterceptor"/>
 		</interceptor>
 	</interceptors>
 	
