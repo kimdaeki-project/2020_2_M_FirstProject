@@ -13,6 +13,16 @@
 <!-- Latest compiled JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 <meta charset="UTF-8">
+<style type="text/css">
+#f {
+		display: none;
+	}
+	.del {
+		color: red;
+		font-weight: bold;
+		cursor: pointer;
+	}
+</style>
 <title>Insert title here</title>
 </head>
 <body>
@@ -53,11 +63,11 @@
   <div id="f">
   	  <div class="input-group">
         <input id="files" type="file" class="form-control" name="files">
-        <span class="input-group-addon del">DEL</span>
+        <span class="input-group-addon del" id="btndel">DEL</span>
       </div>
   </div>
   <script type="text/javascript">
-	
+	var count =0;
 
 	$("#btn").click(function(){
 		var title = $("#title").val();
@@ -69,8 +79,20 @@
 				$("#frm").submit();
 			}
 		});
-	
-
+$("#fileAdd").click(function() {
+		
+		if(count<5){
+			var f = $("#f").html().trim();
+			$("#files").append(f);
+			count++;
+		}else {
+			alert("첨부파일은 최대 5개")			
+		}
+	});
+$("#files").on("click", ".del", function() {
+	$(this).parent().remove();
+	count--;
+});
   </script>
   
 </div>

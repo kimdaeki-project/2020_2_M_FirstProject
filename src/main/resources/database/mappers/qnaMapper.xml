@@ -5,6 +5,9 @@
     "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
     <mapper namespace="com.hclass.porject1.qna.QnaDAO" >
     
+    <select id ="getNum" resultType="QnaDTO" parameterType="QnaDTO">
+    	select * from qna where title=#{title} and contents=#{contents} and writer=#{writer}
+    </select>
     <select id="getOne" resultType="QnaDTO" parameterType="QnaDTO">
     	select * from qna where num=#{num}
     </select>
