@@ -33,6 +33,11 @@
 			<exclude-mapping path="/trainer/trainerInfoPage"/>
 			<beans:ref bean="trainerMemberInterceptor"/>
 		</interceptor>
+		
+		<interceptor>
+			<mapping path="/payment/paymentMyInfo"/>
+			<beans:ref bean="payMemberInterceptor"/>
+		</interceptor>
 	</interceptors>
 	
 	
