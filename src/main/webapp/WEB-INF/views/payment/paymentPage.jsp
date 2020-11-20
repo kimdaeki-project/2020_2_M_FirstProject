@@ -69,7 +69,7 @@
 				</div>
 			</div>		
 		</form>
-		<input type="button" value="예약하기" class="btn btn-primary" id="reserve_btn">
+		<input type="button" value="예약하기" class="btn btn-primary" id="reserve_btn" title="${member.id}" >
 	</div>
 
 <c:import url="../template/footer.jsp"></c:import>
@@ -95,6 +95,7 @@
 				if(d){
 					alert("결제 페이지로 이동합니다.");
 					$("#frm_pay").submit();
+					location.href("../");
 				}else{
 					alert("취소하셨습니다..");
 				}

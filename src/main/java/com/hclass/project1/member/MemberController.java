@@ -108,7 +108,7 @@ public class MemberController {
 	}
 		@GetMapping("memberLogin")
 		public ModelAndView memberLogin(MemberDTO memberDTO) throws Exception{
-			ModelAndView mv =new ModelAndView();
+			ModelAndView mv = new ModelAndView();
 			mv.setViewName("member/memberLogin");
 			
 			return mv;

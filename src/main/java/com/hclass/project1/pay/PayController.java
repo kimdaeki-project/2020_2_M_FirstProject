@@ -106,12 +106,7 @@ public class PayController {
 		return mv;
 	}
 	
-	@GetMapping("paymentIng")
-	public ModelAndView setCash() throws Exception{
-		ModelAndView mv = new ModelAndView();
-		mv.setViewName("payment/paymentIng");
-		return mv;
-	}
+
 	
 	@PostMapping("paymentPage")
 	public ModelAndView setCharge(PayDTO payDTO) throws Exception{
@@ -122,7 +117,7 @@ public class PayController {
 		if(result>0) {
 			String message = "예약 정보 입력완료";
 			mv.addObject("msg", message);
-			mv.addObject("path", "./paymentIng");
+			mv.addObject("path", "../");
 			mv.setViewName("common/result");
 		}else {
 			System.out.println("fail");
@@ -131,10 +126,14 @@ public class PayController {
 		return mv;
 	}
 	
+
+	
+	
 	@GetMapping("paymentPage")
 	public ModelAndView setCharge()throws Exception{
 		ModelAndView mv = new ModelAndView();
-		
+	
+	
 		mv.setViewName("payment/paymentPage");
 		
 		return mv;
@@ -148,4 +147,5 @@ public class PayController {
 		
 		return mv;
 	}
+	
 }
