@@ -41,7 +41,7 @@ public class PayMemberInterceptor extends HandlerInterceptorAdapter{
 			check = true;
 		}
 		else {
-			request.setAttribute("msg", "권한이 없는 경로입니다.");
+			request.setAttribute("msg", "권한이 없는 잘못된 경로입니다.");
 			request.setAttribute("path", "../");
 			RequestDispatcher view = request.getRequestDispatcher("../WEB-INF/views/common/result.jsp");
 			view.forward(request, response);
