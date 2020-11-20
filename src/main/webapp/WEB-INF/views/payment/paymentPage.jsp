@@ -63,7 +63,7 @@
 				<div class="date_style">예약하실 날짜와 시간을 선택해주세요.(당일예약 불가)</div>
 				<div class="date_style">(Time 08:00 to 21:00)</div>
 				<div>
-				<input _date type="date" id="date" name="regDate">
+				<input _date type="date" id="date" name="regDate" >
 				<input type="time" id="time" value="08:00" min="08:00" max="21:00" step="900" required="required" name="time">
 				<span class="validity"></span>
 				</div>
@@ -112,7 +112,7 @@
 	dateToday.value = date.toISOString().substring(0, 10);
 	
 	// min 현재 날짜 다음날부터
-	date.setDate(date.getDate()+1)
+	date.setDate(date.getDate())
 	dateToday.min = date.toISOString().substring(0, 10);
 	
 	date.setDate(date.getDate()+30);
