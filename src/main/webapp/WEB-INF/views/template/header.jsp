@@ -109,20 +109,21 @@
 			<div class="modal-body">
 				<form action="${pageContext.request.contextPath}/member/memberLogin" method="post" id="loginfrm">
 					<div class="form-group" id="divId">
-						<input type="text" class="form-control" id="id" name="id" placeholder="Username" required="required">		
+						<input type="text" class="form-control" id="id" name="id" placeholder="Username" required="required"  onkeydown="JavaScript:Enter_Check();">		
 					</div>
 					<div class="form-group" id="divPw">
-						<input type="password" class="form-control" id="pw" name="pw" placeholder="Password" required="required">
+						<input type="password" class="form-control" id="pw" name="pw" placeholder="Password" required="required"  onkeydown="JavaScript:Enter_Check();">
 						<div id ="loginResult"></div>
 					</div>        
 					<div class="form-group" id="divLogin">
-						<input type="button" class="btn btn-primary btn-lg btn-block login-btn" id="login" value="Login">
+						<input type="button" class="btn btn-primary btn-lg btn-block login-btn" id="login" value="Login" >
 					</div>
 					
 				</form>
 			</div>
 			<div>
 				<a href="#">Forgot Password?</a>
+				
 			</div>
 		</div>
 	</div>
@@ -140,8 +141,19 @@
 	$("#divPW").on("blur", "#pw", function(){
 		$("#loginResult").html("");
 	});
-	
+//**********************************로그인버튼*******************************************8
+	  function Enter_Check(){
+	        // 엔터키의 코드는 13입니다.
+		    if(event.keyCode == 13){
+		    	loginChk();
+		    }
+		}
+
 	$("#divLogin").on("click","#login",function(){
+		loginChk();
+	
+		});
+	function loginChk(event){
 		var pw = $("#pw").val();
 		var id = $("#id").val();
 		if(id!=''&&pw!=''){
@@ -157,7 +169,5 @@
 			});
 		}
 		else
-			{$("#loginResult").html("아이디 또는 비밀번호를 입력하세요");}
-	
-		});
+			{$("#loginResult").html("아이디 또는 비밀번호를 입력하세요");}}
 	</script>

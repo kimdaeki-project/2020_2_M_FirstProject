@@ -58,8 +58,19 @@ $("#divId").on("blur", "#id", function(){
 $("#divPW").on("blur", "#pw", function(){
 	$("#loginResult").html("");
 });
+//**********************************로그인버튼*******************************************8
+  function Enter_Check(){
+        // 엔터키의 코드는 13입니다.
+	    if(event.keyCode == 13){
+	    	loginChk();
+	    }
+	}
 
 $("#divLogin").on("click","#login",function(){
+	loginChk();
+
+	});
+function loginChk(event){
 	var pw = $("#pw").val();
 	var id = $("#id").val();
 	if(id!=''&&pw!=''){
@@ -67,7 +78,7 @@ $("#divLogin").on("click","#login",function(){
 		data=data.trim();
 		data1=data;
 		if(data1==1){
-				$("#frm").submit();
+				$("#loginfrm").submit();
 			}
 		else{
 			$("#loginResult").html("아이디 또는 비밀번호가 틀렸습니다.");
@@ -75,9 +86,7 @@ $("#divLogin").on("click","#login",function(){
 		});
 	}
 	else
-		{$("#loginResult").html("아이디 또는 비밀번호를 입력하세요");}
-
-	});
+		{$("#loginResult").html("아이디 또는 비밀번호를 입력하세요");}}
 </script>
 </body>
 </html>

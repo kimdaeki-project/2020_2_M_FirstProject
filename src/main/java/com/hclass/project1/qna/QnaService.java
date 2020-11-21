@@ -25,6 +25,9 @@ public class QnaService {
 	@Autowired
 	private QnaFileDAO qnafileDAO;
 	
+	public List<QnaFileDTO>getFile(QnaFileDTO qnafileDTO) throws Exception{
+		return qnafileDAO.getFile(qnafileDTO);
+	}
 	public QnaDTO getOne(QnaDTO qnaDTO) throws Exception{
 		return qnaDAO.getOne(qnaDTO);
 	}
@@ -36,22 +39,25 @@ public class QnaService {
 		return qnaDAO.getList(pager);
 	}
 	
-	public int setOne(QnaDTO qnaDTO,MultipartFile photo, HttpSession session) throws Exception{
+	public int setOne(QnaDTO qnaDTO,MultipartFile[] photo, HttpSession session) throws Exception{
 		String path =session.getServletContext().getRealPath("/resources/upload/Qna");
 		File file2 = new File(path);
 		String fileName="";
 		int result = qnaDAO.setOne(qnaDTO);
-		if(photo.getSize()!=0) {
-			fileName = filesaver.saver(file2, photo);
-			MemberDTO memberDTO =new MemberDTO();
-			memberDTO = (MemberDTO) session.getAttribute("member");
+		for(MultipartFile file :photo) {
+			System.out.println("확인");
+		if(file.getSize()!=0) {
+			fileName = filesaver.saver(file2, file);
 			QnaFileDTO qnafileDTO = new QnaFileDTO();
-			qnafileDTO.setId(memberDTO.getId());
-			qnafileDTO.setOriName(photo.getOriginalFilename());
+			qnafileDTO.setId(qnaDTO.getWriter());
+			qnafileDTO.setOriName(file.getOriginalFilename());
 			qnafileDTO.setFileName(fileName);
+			qnafileDTO.setNum(qnaDTO.getNum());
 			result = qnafileDAO.setFileOne(qnafileDTO);
+			System.out.println(result);
 		}
-		
+		}
+	
 		return result;
 	}
 	public int setUpdate(QnaDTO qnaDTO) throws Exception{

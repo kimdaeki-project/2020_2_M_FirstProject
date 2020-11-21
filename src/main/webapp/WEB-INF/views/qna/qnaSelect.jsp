@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@taglib  prefix="spring" uri="http://www.springframework.org/tags" %>    
 <!DOCTYPE html>
 <html>
 <head>
@@ -27,11 +29,18 @@
   	<tr>
   		<td>${qna.num}</td>
   		<td>${qna.writer }</td>
-  		<td>${qna.contents }</td>
+  		<td>${qna.contents}</td>
   		<td>${qna.title }</td>
   		<td>${qna.regDate}</td>
-  		<td>${qna.hit }</td>
+  		<td>${qna.hit } </td>
   	</tr>
+   	<c:forEach items="${list}" var="dto" varStatus="vs">
+  		<tr>
+  			<td>
+				<img src="/resources/upload/Qna/${dto.fileName}">
+  			</td>
+  		</tr>
+  	</c:forEach>
 </table>
 <input type="button" id="upbtn"  class="btn btn-primary member" value="update">
 <a><input type="button" id="debtn"  class="btn btn-danger member" value ="delete"></a>

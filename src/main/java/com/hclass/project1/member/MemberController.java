@@ -148,9 +148,7 @@ public class MemberController {
 	@GetMapping("memberIdCheck")
 	public ModelAndView getOne(MemberDTO memberDTO) throws Exception{
 		ModelAndView mv = new ModelAndView();
-		System.out.println(memberDTO.getId());
 		memberDTO=memberService.getOne(memberDTO);
-		
 		int result=1;
 		if(memberDTO==null) {
 			result=0;

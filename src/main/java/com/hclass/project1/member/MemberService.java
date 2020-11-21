@@ -37,13 +37,14 @@ public class MemberService {
 		File file2 = new File(path);
 		String fileName="";
 		int result =memberDAO.setOne(memberDTO);
+		memberDTO=memberDAO.getOne(memberDTO);
 		if(photo.getSize()!=0) {
 			fileName=filesaver.saver(file2, photo);
 			MemberFileDTO memberfileDTO =new MemberFileDTO();
 			memberfileDTO.setId(memberDTO.getId());
 			memberfileDTO.setFileName(fileName);
 			memberfileDTO.setOriName(photo.getOriginalFilename());
-
+			memberfileDTO.setNum(memberDTO.getNum());
 			result = memberfileDAO.setFileOne(memberfileDTO);
 			
 		}

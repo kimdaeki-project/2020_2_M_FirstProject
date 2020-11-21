@@ -17,6 +17,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 
 import com.hclass.project1.member.MemberDTO;
+import com.hclass.project1.qna.qnafile.QnaFileDTO;
 import com.hclass.project1.util.Pager;
 
 @Controller
@@ -96,8 +97,15 @@ public class QnaController {
 	public ModelAndView getOne(QnaDTO qnaDTO,HttpSession session) throws Exception{
 		ModelAndView mv = new ModelAndView();
 		MemberDTO memberDTO =new MemberDTO();
+		QnaFileDTO qnafileDTO =new QnaFileDTO();
+		qnafileDTO.setNum(qnaDTO.getNum());
+		List<QnaFileDTO> ar= qnaService.getFile(qnafileDTO);
 		memberDTO=(MemberDTO) session.getAttribute("member");
+		String path = session.getServletContext().getRealPath("/");
+		System.out.println(path);
 		qnaDTO = qnaService.getOne(qnaDTO);
+		mv.addObject("path", path);
+		mv.addObject("list",ar);
 		mv.addObject("member", memberDTO);
 		mv.addObject("qna",qnaDTO);
 		mv.setViewName("qna/qnaSelect");
@@ -116,9 +124,11 @@ public class QnaController {
 	}
 	
 	@PostMapping("qnaWrite")
-	public ModelAndView setOne(QnaDTO qnaDTO,MultipartFile photo, HttpSession session) throws Exception{
+	public ModelAndView setOne(QnaDTO qnaDTO,MultipartFile[] files, HttpSession session) throws Exception{
 		ModelAndView mv = new ModelAndView();
-		int result = qnaService.setOne(qnaDTO, photo, session);
+		int result =0;
+			result = qnaService.setOne(qnaDTO, files, session);
+		System.out.println(result);
 		String message ="입력 실패";
 		if(result>0) {
 			message ="입력 성공";

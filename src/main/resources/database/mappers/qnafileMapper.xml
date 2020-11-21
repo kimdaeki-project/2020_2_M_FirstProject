@@ -5,7 +5,10 @@
     "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
     <mapper namespace="com.hclass.project1.qna.qnafile.QnaFileDAO" >
     	<insert id="setFileOne" parameterType="QnaFileDTO">
- 				insert into qnafile values(qnafile_seq.nextval,#{id},#{fileName},#{oriName})
+ 				insert into qnafile values(#{num},#{id},#{fileName},#{oriName})
  		</insert>
+ 		<select id="getFileOne" parameterType="QnaFileDTO" resultType="QnaFileDTO"> 
+ 				select * from qnafile where num=#{num}
+ 		</select>
  
     </mapper>
