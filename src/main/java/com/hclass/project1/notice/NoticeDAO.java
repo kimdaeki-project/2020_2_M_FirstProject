@@ -7,7 +7,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.web.bind.annotation.SessionAttribute;
 
-import com.hclass.project1.qna.QnaDTO;
 import com.hclass.project1.util.Pager;
 
 @Repository
@@ -32,6 +31,14 @@ public class NoticeDAO {
    public long getCount(Pager pager) throws Exception {
       return sqlSession.selectOne(namespace+"getCount", pager);
    }
+   
+   public int setUpdate(NoticeDTO noticeDTO) throws Exception{
+		return sqlSession.update(namespace+"setUpdate",noticeDTO);
+	}
+   
+	public int setDelete(NoticeDTO noticeDTO) throws Exception{
+		return sqlSession.delete(namespace+"setDelete",noticeDTO);
+	}
    
 //   public int noticeWrite(NoticeDTO noticeDTO)throws Exception{
 //      return sqlSession.insert(namespace+"noticeWrite", noticeDTO);

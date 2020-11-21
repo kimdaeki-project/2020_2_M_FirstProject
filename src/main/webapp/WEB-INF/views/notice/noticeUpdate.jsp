@@ -70,17 +70,17 @@
   <form id="frm" action="./noticeWrite" method="post" enctype="multipart/form-data">
   
     <div class="form-group">
-      <label for="title">Title:</label>
+      <label for="title">글제목 </label>
       <input type="text" class="form-control" id="title" placeholder="Enter Title" name="title" value="${notice.title}">
     </div>
     
     <div class="form-group">
-      <label for="writer">Writer:</label>
+      <label for="writer">작성자 </label>
       <input type="text" class="form-control"  value="${notice.writer}" id="writer" placeholder="Enter Writer" name="writer" readonly="readonly">
     </div> 
     
      <div class="form-group">
-      <label for="contents">Contents:</label>
+      <label for="contents">내용 </label>
       <textarea class="form-control" rows="20" cols="30" id="contents" name="contents" >${notice.contents}</textarea>
     </div>
     
@@ -110,7 +110,7 @@
       var title = $("#title").val();
       var contents = $("#contents").val();
       if(title==''&&contents==''){
-         alert("필수 항목을 입력하세요");
+         alert("제목과 내용은 비워둘 수 없습니다.");
          }
       else{
             $("#frm").submit();

@@ -48,7 +48,7 @@
        </select>
    
       <insert id="setOne" parameterType="NoticeDTO">
-       <selectKey keyProperty="num" resultType="Long" order="BEFORE">
+      <selectKey keyProperty="num" resultType="Long" order="BEFORE">
           select notice_seq.nextval from dual
        </selectKey>
           insert into notice values(notice_seq_num.nextval,#{title},#{writer},#{contents},sysdate,0)
@@ -62,4 +62,12 @@
      	where num=#{num}
      </update>  
        -->
+       
+      <update id="setUpdate" parameterType="NoticeDTO">
+		update notice set title = #{title}, contents =#{contents} where num=#{num}
+	</update>
+	
+	<delete id="setDelete" parameterType="NoticeDTO">
+		delete notice where num =#{num}
+	</delete>
     </mapper>

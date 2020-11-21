@@ -71,7 +71,8 @@
         <td>제목</td>
         <td>작성자</td>
         <td>작성 일시</td>
-        <td>글 제목</td>
+        <td>작성 일시</td>
+        <td>조회수</td>
      </tr>
      <tr>
         <td>${notice.num}</td>
