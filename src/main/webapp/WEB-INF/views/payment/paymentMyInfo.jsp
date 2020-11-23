@@ -1,3 +1,4 @@
+<%@page import="com.hclass.project1.member.MemberDTO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
@@ -25,6 +26,10 @@
 		margin: 30px auto;
 		
 	}
+	#pay{
+		position: relative;
+		left: 53%;
+	}
 </style>
 </head>
 <body>
@@ -42,13 +47,16 @@
 	</table>	
 		<input type="button" value="예약 변경하기" class="btn btn-primary info-btn" id="info-update" title="${member.id}">
 		<input type="button" value="예약 취소하기" class="btn btn-danger info-btn" id="info-delete" title="${member.id}">
+<<<<<<< HEAD
 		<input type="button" value="결제하기" class="btn btn-warning info-btn"  id= "pay" title="${member.id}">
+=======
+		<input type="button" value="결제하기" class="btn btn-warning info-btn" id="pay"  title="${member.id}">
+>>>>>>> gb_1123
 	</c:if>
 	
 	<c:if test="${empty pay.regDate}">
 		<h3 class="info-h3">예약현황이 없습니다.</h3>	
 	</c:if>
-
 	
 <c:import url="../template/footer.jsp"></c:import>	
 </body>
@@ -57,11 +65,10 @@
 		var id = $(this).attr("title");
 		var re = confirm("정말 예약을 취소하시겠습니까?");
 		if(re){
-			window.location.href="./paymentDelete?id="+id;
+			location.href="./memberPwCheck";
 		}
 	});
-
-	
+		
 	$("#info-update").click(function () {
 		var id = $(this).attr("title");
 		location.href="./paymentUpdate?id="+id;

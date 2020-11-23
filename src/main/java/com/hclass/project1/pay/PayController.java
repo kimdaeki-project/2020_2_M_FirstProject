@@ -81,6 +81,30 @@ public class PayController {
 		
 		return mv;
 	}
+	@PostMapping("memberPwCheck")
+	public ModelAndView getMemberPwCheck(MemberDTO memberDTO) throws Exception{
+		ModelAndView mv = new ModelAndView();
+		memberDTO = payService.getMemberPwCheck(memberDTO);
+		
+		int pwResult = 1; // 맞는 정보
+		if(memberDTO == null) {
+			pwResult = 0; // 틀린 정보
+		}
+		
+		mv.addObject("msg", pwResult);
+		mv.setViewName("common/ajaxResult");
+		
+		return mv;
+	}
+	
+	@GetMapping("memberPwCheck")
+	public ModelAndView getMemberPwCheck() throws Exception{
+		ModelAndView mv = new ModelAndView();
+		
+		mv.setViewName("payment/memberPwCheck");
+		
+		return mv;
+	}
 	
 	@GetMapping("paymentMyInfo")
 	public ModelAndView getPaymentMyInfo(PayDTO payDTO,HttpSession session)throws Exception{

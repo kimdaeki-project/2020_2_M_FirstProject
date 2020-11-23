@@ -29,4 +29,10 @@
 	<update id="setPaymentUpdate" parameterType="PayDTO">
 		update pay_test1 set regDate = #{regDate}, time = #{time} where id = #{id}
 	</update>
+
+	<!-- 삭제 시 비밀번호 체크 -->
+	<select id="getMemberPwCheck" resultType="MemberDTO" parameterType="MemberDTO">
+		select id, pw from member where id = #{id} and pw = #{pw}
+	</select>
+
 </mapper>

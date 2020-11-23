@@ -6,6 +6,8 @@ import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import com.hclass.project1.member.MemberDTO;
+
 @Repository
 public class PayDAO {
 	@Autowired
@@ -35,6 +37,11 @@ public class PayDAO {
 	// 예약 변경
 	public int setPaymentUpdate(PayDTO payDTO) throws Exception{
 		return sqlSession.update(NAMESPACE+"setPaymentUpdate", payDTO);
+	}
+
+	// 삭제 시 비밀번호 재 확인
+	public MemberDTO getMemberPwCheck(MemberDTO memberDTO) throws Exception{
+		return sqlSession.selectOne(NAMESPACE+"getMemberPwCheck", memberDTO);
 	}
 	
 }

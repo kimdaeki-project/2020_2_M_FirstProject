@@ -3,6 +3,8 @@ package com.hclass.project1.trainer;
 import java.nio.channels.SeekableByteChannel;
 import java.util.List;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -33,10 +35,11 @@ public class TrainerController {
 	}
 	
 	@GetMapping("trainerInfoPage")
-	public ModelAndView getTrainerPage(TrainerDTO trainerDTO)throws Exception{
+	public ModelAndView getTrainerPage(TrainerDTO trainerDTO, HttpSession session)throws Exception{
 		ModelAndView mv = new ModelAndView();
 		
 		trainerDTO = trainerService.getTrainerPage(trainerDTO);
+		session.setAttribute("trainer", trainerDTO);
 		if(trainerDTO != null) {
 			mv.addObject("page", trainerDTO);
 			mv.setViewName("trainer/trainerInfoPage");
