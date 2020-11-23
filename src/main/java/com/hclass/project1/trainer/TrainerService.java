@@ -1,9 +1,13 @@
 package com.hclass.project1.trainer;
 
+import java.io.File;
 import java.util.List;
+
+import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.multipart.MultipartFile;
 
 import com.hclass.project1.util.Pager;
 
@@ -28,8 +32,13 @@ public class TrainerService {
 		
 		return trainerDAO.getSearch(pager);
 	}
+
 	
 	public TrainerDTO getTrainerPage(TrainerDTO trainerDTO)throws Exception{
+	
 		return trainerDAO.getTrainerPage(trainerDTO);
 	}
+	
+	
+	
 }
