@@ -109,12 +109,17 @@
 			<div class="modal-body">
 				<form action="${pageContext.request.contextPath}/member/memberLogin" method="post" id="loginfrm">
 					<div class="form-group" id="divId">
-						<input type="text" class="form-control" id="id" name="id" placeholder="Username" required="required"  onkeydown="JavaScript:Enter_Check();">		
+						<input type="text" class="form-control" id="id" name="id" placeholder="Username" required="required" value="${cookie.remember.value}"  onkeydown="JavaScript:Enter_Check();">		
 					</div>
 					<div class="form-group" id="divPw">
 						<input type="password" class="form-control" id="pw" name="pw" placeholder="Password" required="required"  onkeydown="JavaScript:Enter_Check();">
 						<div id ="loginResult"></div>
-					</div>        
+					</div>
+					<div>
+					<label class="font-weight-bold text-black"> 
+						<input type="checkbox" id="remember" name="remember" ${checked}> 아이디 기억하기
+					</label>
+					</div>
 					<div class="form-group" id="divLogin">
 						<input type="button" class="btn btn-primary btn-lg btn-block login-btn" id="login" value="Login" >
 					</div>
@@ -133,10 +138,22 @@
 	 @import url("${pageContext.request.contextPath}/resources/css/login.css");
     </style>
 	<script type="text/javascript">
+	var id='';
+	
 
+
+	$("input:checkbox").on('click', function() {
+	 if ( $(this).prop('checked') ) 
+		{ 
+			if(id!=''){
+				$(this).val("true");
+				}
+		 }
+		 });
 	var data1 = 0;
 	$("#divId").on("blur", "#id", function(){
 		$("#loginResult").html("");
+		id = $("#id").val();
 	});
 	$("#divPW").on("blur", "#pw", function(){
 		$("#loginResult").html("");
@@ -155,7 +172,7 @@
 		});
 	function loginChk(event){
 		var pw = $("#pw").val();
-		var id = $("#id").val();
+		id = $("#id").val();
 		if(id!=''&&pw!=''){
 		$.get("${pageContext.request.contextPath}/member/memberpwCheck?pw="+pw+"&"+"id="+id,function(data){
 			data=data.trim();
@@ -171,3 +188,8 @@
 		else
 			{$("#loginResult").html("아이디 또는 비밀번호를 입력하세요");}}
 	</script>
+
+
+
+
+

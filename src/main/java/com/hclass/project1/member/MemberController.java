@@ -1,5 +1,11 @@
 package com.hclass.project1.member;
 
+import java.io.PrintWriter;
+import java.net.CookieStore;
+
+import javax.servlet.http.Cookie;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -90,19 +96,28 @@ public class MemberController {
 		return mv;
 	}
 	@PostMapping("memberLogin")
-	public ModelAndView memberLogin(MemberDTO memberDTO,HttpSession session) throws Exception{
+	public ModelAndView memberLogin(MemberDTO memberDTO,HttpSession session,String remember,HttpServletResponse response,HttpServletRequest request) throws Exception{
 		ModelAndView mv = new ModelAndView();
+		if(remember!=null) {
+			Cookie cookie =new Cookie("remember", memberDTO.getId());
+			cookie.setMaxAge(3600);
+			cookie.setPath("/");
+			response.addCookie(cookie);
+			
+		}
+		else {
+			Cookie cookie = new Cookie("remember", "");
+			cookie.setMaxAge(0);
+			response.addCookie(cookie);
+		}
 		memberDTO=memberService.memberLogin(memberDTO);
-		String message = "로그인 실패";
+		String message ="로그인실패";
 		if(memberDTO!=null) {
 			session.setAttribute("member", memberDTO);
 			message ="로그인성공";
 			mv.addObject("msg",message);
-			mv.addObject("path", "../");
+			mv.addObject("path","../");
 			mv.setViewName("common/result");
-		}
-		else {
-			mv.addObject("msg",message);
 		}
 		return mv;
 	}
@@ -182,6 +197,7 @@ public class MemberController {
 		System.out.println(division);
 		if(division.equals("Y")) {
 			mv.addObject("classification","trainer");
+			
 			mv.setViewName("member/memberJoin");
 		}
 		else {

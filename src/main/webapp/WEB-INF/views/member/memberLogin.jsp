@@ -31,16 +31,16 @@
                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
 			</div>
 			<div class="modal-body">
-				<form action="./memberLogin" method="post" id="frm">
+				<form action="./memberLogin" method="post" id="loginfrm">
 					<div class="form-group" id="divId">
-						<input type="text" class="form-control" id="id" name="id" placeholder="Username" required="required">		
+						<input type="text" class="form-control" id="id" name="id" value="${cookie.remember.value}" placeholder="Username" required="required"  onkeydown="JavaScript:Enter_Check();">		
 					</div>
 					<div class="form-group" id="divPw" >
 						<input type="password" class="form-control" id="pw" name="pw" placeholder="Password" required="required">
 						<div id ="loginResult"></div>
 					</div>        
 					<div class="form-group" id ="divLogin">
-						<input type="button" id="login" class="btn btn-primary btn-lg btn-block login-btn" value="Login">
+						<input type="button" id="login" class="btn btn-primary btn-lg btn-block login-btn" value="Login"  onkeydown="JavaScript:Enter_Check();">
 					</div>
 				</form>
 			</div>
