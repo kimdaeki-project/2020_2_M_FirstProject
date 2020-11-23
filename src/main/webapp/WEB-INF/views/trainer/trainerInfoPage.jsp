@@ -101,6 +101,7 @@
 			<input id="reserveBtn" type="button" value="예약하기" class="btn btn-info">
 		</div>
 
+		<input type="button" id="test-btn" value="테스트" title="${page.num}">
 	
 	
 <c:import url="../template/footer.jsp"></c:import>
@@ -109,6 +110,11 @@
 	$("#reserveBtn").click(function() {
 			location.href= "./trainerReserve";	
 	
+	});
+	
+	$("#test-btn").click(function() {
+		var testnum = $(this).attr("title")
+		location.href="../payment/paymentPage?num="+testnum;
 	});
 	
 </script>	

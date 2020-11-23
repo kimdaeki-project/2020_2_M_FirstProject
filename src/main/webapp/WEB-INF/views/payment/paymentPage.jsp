@@ -18,7 +18,7 @@
 	}
 	.cash_h1{
 		text-align: center;
-		margin-top: 80px;
+		margin-top: 40px;
 	}
 	input[_date]{
 		margin-top: 20px;
@@ -49,6 +49,11 @@
 		content: "";
 		padding-left: 5px;
 	}
+	.info-tr{
+		border: none;
+		margin-bottom: 24px;
+		text-align: center;
+	}
 </style>
 </head>
 <c:import url="../template/header.jsp"></c:import>
@@ -58,7 +63,14 @@
 		<form action="./paymentPage" method="post" id="frm_pay">
 			<h1 class="cash_h1" style="font-size: 16px;">예약은 현재날짜 기준 30일 이내만 가능합니다.</h1>
 		
-			<div class="container" id="cashDiv">					
+			<div class="container" id="cashDiv">
+				<h3 class="cash_h1">선택하신 트레이너 정보입니다.</h3>	
+				이름 : <input type="text" value="${trainer.name}" class="info-tr">
+				<br>
+				종류 : <input type="text" value="${trainer.healthKind}" class="info-tr">
+				<br>
+				장소 : <input type="text" value="${trainer.business}" class="info-tr">
+				<br>					
 				<input type="text" value="${member.id}" name="id" id="member_id-text" readonly="readonly">회원님
 				<div class="date_style">예약하실 날짜와 시간을 선택해주세요.(당일예약 불가)</div>
 				<div class="date_style">(Time 08:00 to 21:00)</div>
@@ -67,7 +79,8 @@
 				<input type="time" id="time" value="08:00" min="08:00" max="21:00" step="900" required="required" name="time">
 				<span class="validity"></span>
 				</div>
-			</div>		
+			</div>
+			
 		</form>
 		<input type="button" value="예약하기" class="btn btn-primary" id="reserve_btn" title="${member.id}" >
 	</div>

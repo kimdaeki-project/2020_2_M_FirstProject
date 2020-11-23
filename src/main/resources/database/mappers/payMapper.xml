@@ -34,4 +34,5 @@
 	<select id="getMemberPwCheck" resultType="MemberDTO" parameterType="MemberDTO">
 		select id, pw from member where id = #{id} and pw = #{pw}
 	</select>
+
 </mapper>
