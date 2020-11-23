@@ -75,20 +75,43 @@
         <td>조회수</td>
      </tr>
      <tr>
-        <td>${notice.num}</td>
-        <td>${notice.writer}</td>
-        <td>${notice.title}</td>
-        <td>${notice.contents}</td>
-        <td>${notice.regDate}</td>
-        <td>${notice.hit}</td>
+        <td>${dto.num}</td>
+        <td>${dto.writer}</td>
+        <td>${dto.title}</td>
+        <td>${dto.contents}</td>
+        <td>${dto.regDate}</td>
+        <td>${dto.hit}</td>
      </tr>
 </table>
-<a href="./noticeUpdate"><input type="button" id="upbtn"  class="btn btn-primary member" value="update"></a>
-<a><input type="button" id="debtn"  class="btn btn-danger member" value ="delete"></a>
+<c:choose>
+<c:when test="${board eq 'notice'}">
+ <c:if test="${not empty member and member.id eq 'admin'}">
+<a href="./${board}Update?num=${dto.num}"><input type="button" id="upbtn"  class="btn btn-primary member" value="update"></a>
+<a href="./${board}Delete?num=${dto.num}"><input type="button" id="debtn"  class="btn btn-danger member" value ="delete"></a>
+</c:if>
+</c:when>
+</c:choose>
+<c:choose>
+<c:when test="${board eq 'qna'}">
+ <c:if test="${not empty member and member.id eq dto.writer}">	
+<a href="./${board}Update?num=${dto.num}"><input type="button" id="upbtn"  class="btn btn-primary member" value="update"></a>
+<a href="./${board}Delete?num=${dto.num}"><input type="button" id="debtn"  class="btn btn-danger member" value ="delete"></a>
+</c:if>
+<c:if test="${not empty member and member.id eq 'admin'}">	
+<a href="./${board}Reply?num=${dto.num}"><input type="button" id="rebtn"  class="btn btn-primary admin" value="reply"></a>
+</c:if>
+</c:when>
+</c:choose>
 </div>
 <script type="text/javascript">
-   var writer =${notice.writer};
+   var writer =${dto.writer};
    var idCheck= ${member.id};
+   $("#upbtn").click(function(){
+		location.href="./noticeUpdate?num=${dto.num}";
+		});
+	$("#debtn").click(function(){
+		location.href="./noticeDelete?num=${dto.num}";
+		});
    if(writer!=idCheck){
          $(".member").remove();
       }

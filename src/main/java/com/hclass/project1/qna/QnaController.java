@@ -52,7 +52,7 @@ public class QnaController {
 		MemberDTO memberDTO= new MemberDTO();
 		memberDTO = (MemberDTO) session.getAttribute("member");
 		mv.addObject("member",memberDTO);
-		mv.setViewName("qna/qnaReply");
+		mv.setViewName("notice/qnaReply");
 		return mv;
 		
 	}
@@ -89,8 +89,9 @@ public class QnaController {
 		QnaDTO qnaDTO =new QnaDTO();
 		qnaDTO.setNum(num);
 		qnaDTO = qnaService.getOne(qnaDTO);
-		mv.addObject("qna",qnaDTO);
-		mv.setViewName("qna/qnaUpdate");
+		mv.addObject("dto",qnaDTO);
+		mv.addObject("board","qna");
+		mv.setViewName("notice/noticeUpdate");
 		return mv;
 	}
 	@GetMapping("qnaSelect")
@@ -101,14 +102,12 @@ public class QnaController {
 		qnafileDTO.setNum(qnaDTO.getNum());
 		List<QnaFileDTO> ar= qnaService.getFile(qnafileDTO);
 		memberDTO=(MemberDTO) session.getAttribute("member");
-		String path = session.getServletContext().getRealPath("/");
-		System.out.println(path);
 		qnaDTO = qnaService.getOne(qnaDTO);
-		mv.addObject("path", path);
 		mv.addObject("list",ar);
 		mv.addObject("member", memberDTO);
-		mv.addObject("qna",qnaDTO);
-		mv.setViewName("qna/qnaSelect");
+		mv.addObject("dto",qnaDTO);
+		mv.addObject("board","qna");
+		mv.setViewName("notice/noticeSelect");
 		return mv;
 	}
 	
@@ -118,7 +117,8 @@ public class QnaController {
 		List<QnaDTO> ar = qnaService.getList(pager);
 		mv.addObject("list", ar);
 		mv.addObject("pager", pager);
-		mv.setViewName("qna/qnaList");
+		mv.addObject("board","qna");
+		mv.setViewName("notice/noticeList");
 		return mv;
 		
 	}
@@ -127,7 +127,7 @@ public class QnaController {
 	public ModelAndView setOne(QnaDTO qnaDTO,MultipartFile[] files, HttpSession session) throws Exception{
 		ModelAndView mv = new ModelAndView();
 		int result =0;
-			result = qnaService.setOne(qnaDTO, files, session);
+		result = qnaService.setOne(qnaDTO, files, session);
 		System.out.println(result);
 		String message ="입력 실패";
 		if(result>0) {
@@ -146,7 +146,8 @@ public class QnaController {
 		MemberDTO memberdto = new MemberDTO();
 		memberdto = (MemberDTO) Session.getAttribute("member");
 		mv.addObject("member", memberdto);
-		mv.setViewName("qna/qnaWrite");
+		mv.addObject("board","qna");
+		mv.setViewName("notice/noticeWrite");
 		return mv;
 	}
 }

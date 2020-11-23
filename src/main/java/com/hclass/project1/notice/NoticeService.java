@@ -9,8 +9,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
-import com.hclass.project1.notice.NoticeFileDAO;
-import com.hclass.project1.notice.NoticeFileDTO;
+import com.hclass.project1.notice.noticefile.NoticeFileDAO;
+import com.hclass.project1.notice.noticefile.NoticeFileDTO;
+import com.hclass.project1.qna.qnafile.QnaFileDTO;
 import com.hclass.project1.util.Pager;
 import com.hclass.project1.util.FileSaver;
 
@@ -32,11 +33,9 @@ public class NoticeService {
 		return noticeDAO.getList(pager);
 	}
 
-	public int setOne(NoticeDTO noticeDTO) throws Exception{
-		return noticeDAO.setOne(noticeDTO);
-	}
 
 	public NoticeDTO getOne(NoticeDTO noticeDTO) throws Exception{
+		
 		return noticeDAO.getOne(noticeDTO);
 	}
 
@@ -45,20 +44,21 @@ public class NoticeService {
 	 * noticeDAO.noticeWrite(noticeDTO); }
 	 */
 
-	public int setOne(NoticeDTO noticeDTO,MultipartFile photo, HttpSession session) throws Exception{
+	public int setOne(NoticeDTO noticeDTO,MultipartFile[] photo, HttpSession session) throws Exception{
 		String path =session.getServletContext().getRealPath("/resources/upload/notice");
 		File file2 = new File(path);
 		String fileName="";
 		int result =noticeDAO.setOne(noticeDTO);
-		if(photo.getSize()!=0) {
-			fileName=filesaver.saver(file2, photo);
-			NoticeFileDTO noticeFileDTO =new NoticeFileDTO();
-			noticeFileDTO.setFileName(fileName);
-			noticeFileDTO.setOriName(photo.getOriginalFilename());
-
-			result = noticeFileDAO.setFileOne(noticeFileDTO);
+		for(MultipartFile file :photo) {
+		if(file.getSize()!=0) {
+			fileName = filesaver.saver(file2, file);
+			NoticeFileDTO noticefileDTO = new NoticeFileDTO();
+			noticefileDTO.setNum(noticeDTO.getNum());
+			noticefileDTO.setOriName(file.getOriginalFilename());
+			noticefileDTO.setFileName(fileName);
+			result = noticeFileDAO.setFileOne(noticefileDTO);
 		}
-
+		}
 		return result;
 	}
 	

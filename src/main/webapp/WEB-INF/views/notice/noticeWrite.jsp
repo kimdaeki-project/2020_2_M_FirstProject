@@ -54,6 +54,11 @@
 	float: left;
 	margin-left: 10px;
 }
+	.del {
+		color: red;
+		font-weight: bold;
+		cursor: pointer;
+	}
 </style>
 
 <meta charset="UTF-8">
@@ -72,7 +77,7 @@
 	<c:import url="../template/header.jsp"></c:import>
 
 	<div class="container">
-		<form id="frm2" action="./noticeWrite" method="post">
+		<form id="frm2" action="./${board}Write" method="post"  enctype="multipart/form-data">
 
 			<div class="form-group">
 				<label for="title">글제목 </label> <input type="text"
@@ -92,27 +97,25 @@
 			</div>
 
 			<input type="button" value="FileAdd" id="fileAdd" class="btn btn-info">
+				<div id="files">
 
-				<div class="col-lg-10">
-					<input type="file" class="form-control" id="photo"
-						data-rule-required="true" name="photo">
-				</div>
-			
+			</div>  
 			<div class="form-group">
 				<input type="button" class="btn btn-primary form-control" value="Write" id="btn">
 			<!-- 	<button class="btn btn-primary form-control" id="btn">Write</button> -->
 			</div>
 			
 		</form>
-
+		</div>
+		<div hidden="">
 		<div id="f">
 			<div class="input-group">
 				<input id="files" type="file" class="form-control" name="files">
 				<span class="input-group-addon del">DEL</span>
 			</div>
-		</div>
+		</div></div>
 		<script type="text/javascript">
-   
+   var count=0;
 
    $("#btn").click(function(){
       var title = $("#title").val();
@@ -124,7 +127,20 @@
             $("#frm2").submit();
          }
       });
-
+   $("#fileAdd").click(function() {
+		
+		if(count<5){
+			var f = $("#f").html().trim();
+			$("#files").append(f);
+			count++;
+		}else {
+			alert("첨부파일은 최대 5개")			
+		}
+	});
+   $("#files").on("click", ".del", function() {
+		$(this).parent().remove();
+		count--;
+	});
   </script>
 
 

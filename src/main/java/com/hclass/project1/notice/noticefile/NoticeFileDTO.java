@@ -1,4 +1,4 @@
-package com.hclass.project1.notice;
+package com.hclass.project1.notice.noticefile;
 
 public class NoticeFileDTO {
 	
