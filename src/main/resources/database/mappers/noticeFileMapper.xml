@@ -3,9 +3,8 @@
     PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
     "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<mapper namespace="com.hclass.project1.notice.NoticeFileDAO">
+<mapper namespace="com.hclass.project1.notice.noticefile.NoticeFileDAO">
 	<insert id="setFileOne" parameterType="NoticeFileDTO">
-		insert into noticeFile
-		values(noticefile_seq.nextval,#{fileName},#{oriName})
+		insert into noticeFile values(#{num},#{fileName},#{oriName})
 	</insert>
 </mapper>

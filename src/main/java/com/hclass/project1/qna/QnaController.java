@@ -127,7 +127,7 @@ public class QnaController {
 	public ModelAndView setOne(QnaDTO qnaDTO,MultipartFile[] files, HttpSession session) throws Exception{
 		ModelAndView mv = new ModelAndView();
 		int result =0;
-			result = qnaService.setOne(qnaDTO, files, session);
+		result = qnaService.setOne(qnaDTO, files, session);
 		System.out.println(result);
 		String message ="입력 실패";
 		if(result>0) {

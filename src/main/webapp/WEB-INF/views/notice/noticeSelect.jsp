@@ -83,12 +83,18 @@
         <td>${notice.hit}</td>
      </tr>
 </table>
-<a href="./noticeUpdate"><input type="button" id="upbtn"  class="btn btn-primary member" value="update"></a>
-<a><input type="button" id="debtn"  class="btn btn-danger member" value ="delete"></a>
+<a href="./noticeUpdate?num=${notice.num}"><input type="button" id="upbtn"  class="btn btn-primary member" value="update"></a>
+<a href="./noticeDelete?num=${notice.num}"><input type="button" id="debtn"  class="btn btn-danger member" value ="delete"></a>
 </div>
 <script type="text/javascript">
    var writer =${notice.writer};
    var idCheck= ${member.id};
+   $("#upbtn").click(function(){
+		location.href="./noticeUpdate?num=${notice.num}";
+		});
+	$("#debtn").click(function(){
+		location.href="./noticeDelete?num=${notice.num}";
+		});
    if(writer!=idCheck){
          $(".member").remove();
       }

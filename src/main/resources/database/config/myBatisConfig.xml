@@ -10,7 +10,7 @@
   			<typeAlias type="com.hclass.project1.member.memberfile.MemberFileDTO" alias="MemberFileDTO"/>
 			
 			<!-- Notice -->
-  			<typeAlias type="com.hclass.project1.notice.NoticeFileDTO" alias="NoticeFileDTO"/>
+  			<typeAlias type="com.hclass.project1.notice.noticefile.NoticeFileDTO" alias="NoticeFileDTO"/>
   			<typeAlias type="com.hclass.project1.notice.NoticeDTO" alias="NoticeDTO"/>
 			
 			<!-- QnA -->

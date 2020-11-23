@@ -67,8 +67,11 @@
 
 
 <div class="container">
-  <form id="frm" action="./noticeWrite" method="post" enctype="multipart/form-data">
-  
+  <form id="frm" action="./noticeUpdate" method="post" enctype="multipart/form-data">
+  <div class="form-group" hidden="">
+      <label for="title">num</label>
+      <input type="text" class="form-control" id="num" placeholder="Enter Title" name="num" value=${notice.num }>
+    </div>
     <div class="form-group">
       <label for="title">글제목 </label>
       <input type="text" class="form-control" id="title" placeholder="Enter Title" name="title" value="${notice.title}">

@@ -5,6 +5,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.hclass.project1.member.MemberDTO;
@@ -50,15 +51,15 @@ public class NoticeController {
    }
    
    @PostMapping("noticeWrite")
-   public ModelAndView setOne(NoticeDTO noticeDTO) throws Exception{
+   public ModelAndView setOne(NoticeDTO noticeDTO,MultipartFile[] files,HttpSession session) throws Exception{
       ModelAndView mv = new ModelAndView();
-      int result = noticeservice.setOne(noticeDTO);
+      int result = noticeservice.setOne(noticeDTO,files, session);
       String message ="입력 실패";
       if(result>0) {
          message ="입력 성공";
       }
       mv.addObject("msg",message);
-      mv.addObject("path", "../");
+      mv.addObject("path", "./noticeList");
       mv.setViewName("common/result");
       return mv;
    }
@@ -77,6 +78,7 @@ public class NoticeController {
 	public ModelAndView setUpdate(NoticeDTO noticeDTO)throws Exception{
 		ModelAndView mv = new ModelAndView();
 		int result =noticeservice.setUpdate(noticeDTO);
+		
 		String message = "글 수정 실패";
 		if(result>0) {
 			message = "글 수정 성공";
@@ -92,7 +94,9 @@ public class NoticeController {
 		ModelAndView mv =new ModelAndView();
 		NoticeDTO noticeDTO =new NoticeDTO();
 		/* noticeDTO.setNum(num); */
+		noticeDTO.setNum(num);
 		noticeDTO = noticeservice.getOne(noticeDTO);
+		System.out.println(noticeDTO.getWriter());
 		mv.addObject("notice",noticeDTO);
 		mv.setViewName("notice/noticeUpdate");
 		return mv;
@@ -102,6 +106,7 @@ public class NoticeController {
 	public ModelAndView setDelete(NoticeDTO noticeDTO)throws Exception{
 		ModelAndView mv = new ModelAndView();
 		int result = noticeservice.setDelete(noticeDTO);
+		System.out.println(result);
 		String message = "삭제 실패";
 		if(result>0) {
 			message = "삭제 성공";
