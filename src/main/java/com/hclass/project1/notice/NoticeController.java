@@ -26,14 +26,7 @@ public class NoticeController {
    @Autowired
    private NoticeService noticeservice;
    
-   @GetMapping("noticeUpdate")
-   public ModelAndView setUpdate(NoticeDTO noticeDTO) throws Exception{
-      ModelAndView mv =new ModelAndView();
-      mv.addObject("notice",noticeDTO);
-      mv.setViewName("notice/noticeUpdate");
-      return mv;
-      
-   }
+
    @GetMapping("noticeSelect")
    public ModelAndView getOne(NoticeDTO noticeDTO,HttpSession session) throws Exception{
       ModelAndView mv = new ModelAndView();
@@ -80,5 +73,45 @@ public class NoticeController {
       mv.setViewName("notice/noticeWrite");
       return mv;
    }
+   
+   @PostMapping("noticeUpdate")
+   public ModelAndView setUpdate(NoticeDTO noticeDTO) throws Exception{
+	   ModelAndView mv = new ModelAndView();
+	   int result =noticeservice.setUpdate(noticeDTO);
+	   String message = "글 수정 실패";
+		if(result>0) {
+			message = "글 수정 성공";
+		}
+		mv.addObject("msg", message);
+		mv.addObject("path", "./noticeList");
+		mv.setViewName("common/result");
+	
+		return mv;
+   }
+   
+   @GetMapping("noticeUpdate")
+   public ModelAndView setUpdate(Long num) throws Exception{
+		ModelAndView mv =new ModelAndView();
+		NoticeDTO noticeDTO =new NoticeDTO();
+		/* noticeDTO.setNum(num); */
+		noticeDTO = noticeservice.getOne(noticeDTO);
+		mv.addObject("notice",noticeDTO);
+		mv.setViewName("notice/noticeUpdate");
+		return mv;
+	}
+   
+   @GetMapping("noticeDelete")
+   public ModelAndView setDelete(NoticeDTO noticeDTO)throws Exception{
+		ModelAndView mv = new ModelAndView();
+		int result = noticeservice.setDelete(noticeDTO);
+		String message = "삭제 실패";
+		if(result>0) {
+			message = "삭제 성공";
+		}
+		mv.addObject("msg",message);
+		mv.addObject("path", "./noticeList");
+		mv.setViewName("common/result");
+		return mv;
+	}
    
 }

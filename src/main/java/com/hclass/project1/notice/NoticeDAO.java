@@ -32,6 +32,14 @@ public class NoticeDAO {
       return sqlSession.selectOne(namespace+"getCount", pager);
    }
    
+   public int setUpdate(NoticeDTO noticeDTO) throws Exception{
+		return sqlSession.update(namespace+"setUpdate",noticeDTO);
+	}
+  
+	public int setDelete(NoticeDTO noticeDTO) throws Exception{
+		return sqlSession.delete(namespace+"setDelete",noticeDTO);
+	}
+   
 //   public int noticeWrite(NoticeDTO noticeDTO)throws Exception{
 //      return sqlSession.insert(namespace+"noticeWrite", noticeDTO);
 //   }

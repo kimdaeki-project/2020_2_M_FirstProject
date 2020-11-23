@@ -33,7 +33,7 @@ public class MemberService {
 	}
 	
 	public int setOne(MemberDTO memberDTO,MultipartFile photo, HttpSession session) throws Exception{
-		String path =session.getServletContext().getRealPath("/resources/upload/member");
+		String path =session.getServletContext().getRealPath("/resources/img/trainer");
 		File file2 = new File(path);
 		String fileName="";
 		int result =memberDAO.setOne(memberDTO);
@@ -45,6 +45,7 @@ public class MemberService {
 			memberfileDTO.setOriName(photo.getOriginalFilename());
 
 			result = memberfileDAO.setFileOne(memberfileDTO);
+			System.out.println(path);
 			
 		}
 		

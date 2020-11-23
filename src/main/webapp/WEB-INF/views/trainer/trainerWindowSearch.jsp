@@ -6,6 +6,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<link rel="stylesheet" href="../resources/css/default.css">
 <c:import url="../template/bootStrap.jsp"></c:import>
 <c:import url="../template/slide.jsp"></c:import>
 <style type="text/css">
@@ -31,12 +32,26 @@
 <c:import url="../template/header.jsp"></c:import>
 <body>
 	<h1 id="h1">Trainer List</h1>
+	<form class="example" style="margin: 25px;width: 50%; margin: 0 auto;" action="./trainerWindowSearch">
+		<div class="col-xs-3">
+			<select style="font-size: 15px; margin-bottom: 5px;" class="form-control" name="select">
+				<option value="nm">이름</option>
+				<option value="loc">지역</option>
+			</select>
+		</div>
+		<div class="col-xs-10">
+			<input type="text" placeholder="Search..." name="search" id="search-text">
+			<button id="search-blank"><i class="fa fa-search"></i></button>
+			
+		</div>
+	</form>
 	<div id="tip_div">※ 이름을 클릭하시면 상세정보 페이지로 이동합니다.</div>
 	<table class="table table-condensed" style="width: 70%; margin: 0 auto;">
 	<tr style="font-size: 17px;">
 		<th>이름 </th><th>성별 </th><th>종류 </th><th>지역 </th><th>장소 </th>
 	</tr>
 	<c:forEach items="${list}" var="dto">
+		<c:if test="${member.trainer eq T}">
 		<tr class="t_tr">
 			<td><a href="./trainerInfoPage?num=${dto.num}">${dto.name}</a></td>
 			<td>${dto.gender}</td>
@@ -44,6 +59,7 @@
 			<td>${dto.address}</td>
 			<td>${dto.business}</td>
 		</tr>
+		</c:if>
 	</c:forEach>
 	</table>
 	<div class="container" id="pager_div">

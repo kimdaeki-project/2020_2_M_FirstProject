@@ -4,14 +4,42 @@
     "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
     
 <mapper namespace="com.hclass.project1.trainer.TrainerDAO">
-	<select id="getTrainerPage" resultType="TrainerDTO" parameterType="TrainerDTO">
-		select * from gb_test5 where num = #{num}
+
+	<resultMap type="MemberDTO" id="getTrainerResult">
+		<id column="num" property="num"/>
+		<result column="id" property="id"/>
+		<result column="pw" property="pw"/>
+		<result column="name" property="name"/>
+		<result column="phone" property="phone"/>
+		<result column="email" property="email"/>
+		<result column="gender" property="gender"/>
+		<result column="age" property="age"/>
+		<result column="gym" property="gym"/>
+		<result column="kind" property="kind"/>
+		<result column="address" property="address"/>
+		<result column="business" property="business"/>	
+		<result column="trainer" property="trainer"/>	
+		<association property="memberFileDTO" javaType="MemberFileDTO" resultMap="memberFileResult"></association>
+	</resultMap>
+	
+	<resultMap type="MemberFileDTO" id="memberFileResult">
+		<id column = "num" property="num"></id>
+		<result column="id" property="id"/>
+		<result column="filename" property="filename"/>
+		<result column="oriname" property="oriname"/>
+	</resultMap>
+	
+	<select id="getTrainerPage" parameterType="TrainerDTO" resultMap="getTrainerResult">
+		select M.id, TF.filename
+		from member M inner join trainerfile TF
+		on (M.id = TF.id)
+		where M.name=#{name}
 	</select>
 
 	<select id="getSearchList" resultType="TrainerDTO" parameterType="Pager">
 		select * from
 		(select rownum R, N.* from
-		(select * from gb_test5 where 
+		(select * from member where 
 		<choose>
 			<when test="select=='nm'">
 				name
@@ -25,7 +53,7 @@
 	</select>
 	
 	<select id="getCount" resultType="Long" parameterType="Pager">
-		select count(num) from gb_test5 where
+		select count(num) from member where
 		<choose>
 			<when test="select=='nm'">
 				name
