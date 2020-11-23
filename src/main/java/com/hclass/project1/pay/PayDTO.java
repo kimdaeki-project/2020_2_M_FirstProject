@@ -6,7 +6,28 @@ public class PayDTO {
 	private String id;
 	private String regDate;
 	private String time;
+	private String name;
+	private String healthKind;
+	private String business;
 	
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public String getHealthKind() {
+		return healthKind;
+	}
+	public void setHealthKind(String healthKind) {
+		this.healthKind = healthKind;
+	}
+	public String getBusiness() {
+		return business;
+	}
+	public void setBusiness(String business) {
+		this.business = business;
+	}
 	public String getTime() {
 		return time;
 	}

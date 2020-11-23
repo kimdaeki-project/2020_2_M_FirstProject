@@ -16,12 +16,12 @@
 	}
 	.info_h3{
 		text-align: center;
-		margin-top: 20px;
+		margin: 30px 0;
 	}
 </style>
 </head>
 <body>
-	<h3 class="info_h3">예약 현황</h3>
+	<h3 class="info_h3">회원 예약 현황</h3>
 	<table class="table table-condensed info_table">
 		<tr>
 			<th>회원이름</th><th>날짜</th><th>시간</th>
@@ -29,8 +29,8 @@
 	<c:forEach items="${payinfo}" var="paydto">
 		<tr>
 			<td>${paydto.id} </td>
-			<td> ${paydto.regDate} </td>
-			<td> ${paydto.time}</td>
+			<td>${paydto.regDate} </td>
+			<td>${paydto.time}</td>
 		</tr>
 	</c:forEach>
 	</table>
