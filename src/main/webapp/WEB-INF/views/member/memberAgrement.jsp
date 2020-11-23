@@ -7,6 +7,14 @@
 
 <c:import url="../template/bootStrap.jsp"></c:import>
 
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
 <meta charset="utf-8">
 <title>..</title>
 <style>
@@ -18,7 +26,9 @@
 	html{height: 100%;}
 	body{position: relative;width: 100%;height: 100%;}
 	.center{
-			height:700px;
+			margin:0;
+			padding:0;
+			height:70%;
 			width:  800px;
 			border: 1px solid rgb(245,246,247);
 			border-radius :20px 20px 20px 20px;
@@ -27,14 +37,15 @@
 		resize: none;
 	
 	}
+	.footer{
+	
 </style>
 </head>
 <body>
-<div class = "center">
+
 	
 <form action="./memberJoin" method="get" id="form1">
-
-
+<div class = "container center" id="main" >
 <h1>약관동의</h1>
 	
 	<p>
@@ -74,7 +85,7 @@
 	</p>
 
 <p>
-<div>
+			<div>
                     <label for="inputEmailReceiveYn" class="col-lg-2 control-label">트레이너입니까?</label>
                     <div class="col-lg-10">
                         <label class="radio-inline">
@@ -86,15 +97,17 @@
                     </div>
                     </div>
 
-	<p id="input">
 	
-		<input type="submit" value="동의" id="member">
-		<input type="reset" value="미동의" id="reset" onload="">
-	</p>
-	
-
-</form>
+	<div>
+		<p id="input">
+			<input type="submit" value="동의" id="member">
+			<input type="reset" value="미동의" id="reset" onload="">
+		</p>
+	</div>
 </div>
+</form>
+
+
 <script>
 
 
@@ -203,5 +216,8 @@
 	}; 
 	
 </script>
+<div class="footer">
+ <c:import url="../template/footer.jsp"></c:import>
+</div>    
 </body>
 </html>

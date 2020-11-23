@@ -17,6 +17,7 @@
  		</selectKey>
  			insert into qna values(#{num},sysdate,#{title},#{writer},#{contents},qna_seq.currval,0,0,0)
  		</insert>
+ 		
  		<select id="getList" parameterType="Pager" resultType="QnaDTO">
 		select * from
 		(select rownum R, N.* from 
@@ -34,7 +35,7 @@
 				contents
 			</otherwise>
 		</choose>
-		like '%'||#{search}||'%' order by ref desc, stsep asc) N)
+		like '%'||#{search}||'%' order by ref desc, step asc) N)
 		where R between #{startRow} and #{lastRow}
 	</select>
 	
