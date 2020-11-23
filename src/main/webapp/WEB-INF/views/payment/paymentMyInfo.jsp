@@ -47,11 +47,8 @@
 	</table>	
 		<input type="button" value="예약 변경하기" class="btn btn-primary info-btn" id="info-update" title="${member.id}">
 		<input type="button" value="예약 취소하기" class="btn btn-danger info-btn" id="info-delete" title="${member.id}">
-<<<<<<< HEAD
 		<input type="button" value="결제하기" class="btn btn-warning info-btn"  id= "pay" title="${member.id}">
-=======
-		<input type="button" value="결제하기" class="btn btn-warning info-btn" id="pay"  title="${member.id}">
->>>>>>> gb_1123
+
 	</c:if>
 	
 	<c:if test="${empty pay.regDate}">
