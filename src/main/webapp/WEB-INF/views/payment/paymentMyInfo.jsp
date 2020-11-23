@@ -25,6 +25,10 @@
 		margin: 30px auto;
 		
 	}
+	#pay{
+		position: relative;
+		left: 53%;
+	}
 </style>
 </head>
 <body>
@@ -42,7 +46,7 @@
 	</table>	
 		<input type="button" value="예약 변경하기" class="btn btn-primary info-btn" id="info-update" title="${member.id}">
 		<input type="button" value="예약 취소하기" class="btn btn-danger info-btn" id="info-delete" title="${member.id}">
-		<input type="button" value="결제하기" class="btn btn-warning info-btn"  title="${member.id}">
+		<input type="button" value="결제하기" class="btn btn-warning info-btn" id="pay"  title="${member.id}">
 	</c:if>
 	
 	<c:if test="${empty pay.regDate}">
@@ -57,7 +61,7 @@
 		var id = $(this).attr("title");
 		var re = confirm("정말 예약을 취소하시겠습니까?");
 		if(re){
-			window.location.href="./paymentDelete?id="+id;
+			location.href="./paymentDelete?id="+id;
 		}
 	});
 
