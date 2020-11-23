@@ -34,7 +34,8 @@ public class NoticeController {
       memberDTO=(MemberDTO) session.getAttribute("member");
       noticeDTO=noticeservice.getOne(noticeDTO);
       mv.addObject("member", memberDTO);
-      mv.addObject("notice",noticeDTO);
+      mv.addObject("dto",noticeDTO);
+      mv.addObject("board", "notice");
       mv.setViewName("notice/noticeSelect");
       return mv;
    }
@@ -44,6 +45,7 @@ public class NoticeController {
       ModelAndView mv = new ModelAndView();
       List<NoticeDTO> ar = noticeservice.getList(pager);
       mv.addObject("list", ar);
+      mv.addObject("board","notice");
       mv.addObject("pager", pager);
       mv.setViewName("notice/noticeList");
       return mv;
@@ -70,6 +72,7 @@ public class NoticeController {
       NoticeDTO noticeDTO = new NoticeDTO();
       noticeDTO = (NoticeDTO) Session.getAttribute("notice");
       mv.addObject("notice", noticeDTO);
+      mv.addObject("board","notice");
       mv.setViewName("notice/noticeWrite");
       return mv;
    }
@@ -97,7 +100,8 @@ public class NoticeController {
 		noticeDTO.setNum(num);
 		noticeDTO = noticeservice.getOne(noticeDTO);
 		System.out.println(noticeDTO.getWriter());
-		mv.addObject("notice",noticeDTO);
+		mv.addObject("dto",noticeDTO);
+		mv.addObject("board","notice");
 		mv.setViewName("notice/noticeUpdate");
 		return mv;
 	}

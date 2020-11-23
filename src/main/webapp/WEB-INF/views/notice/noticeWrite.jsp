@@ -77,7 +77,7 @@
 	<c:import url="../template/header.jsp"></c:import>
 
 	<div class="container">
-		<form id="frm2" action="./noticeWrite" method="post"  enctype="multipart/form-data">
+		<form id="frm2" action="./${board}Write" method="post"  enctype="multipart/form-data">
 
 			<div class="form-group">
 				<label for="title">글제목 </label> <input type="text"

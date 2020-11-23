@@ -6,7 +6,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>NoticePage</title>
+<title>${board} Page</title>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 
 <!-- jQuery library -->
@@ -62,6 +62,7 @@
  <!-- Navigation -->
  <c:import url="../template/header.jsp"></c:import>
 
+<h1>${board}</h1>
 <div class="container">
   <div class="row">
   <div class="col-sm-8">
@@ -97,7 +98,13 @@
      <c:forEach items="${list}" var="dto" varStatus="vs">
 <tr>
            <td>${dto.num}</td>
-           <td><a href="./noticeSelect?num=${dto.num}">${dto.title}</a></td>
+           <td><a href="./${board}Select?num=${dto.num}">
+  				<c:catch>
+  				<%-- jsp 주석  --%>
+  				<c:forEach begin="1" end="${dto.depth}">--</c:forEach>
+  				</c:catch>
+  				${dto.title}
+  				</a></td>
            <td>${dto.writer}</td>
            <td>${dto.regDate}</td>
            <td>${dto.hit}</td>
@@ -111,15 +118,15 @@
   <div>
   
      <c:if test="${pager.beforeCheck}">
-     <a href="./noticeList?curPage=${pager.startNum-1}&kind=${pager.kind}&search=${search}">[이전]</a>
+     <a href="./${board}List?curPage=${pager.startNum-1}&kind=${pager.kind}&search=${search}">[이전]</a>
      </c:if>
   
      <c:forEach begin="${pager.startNum}" end="${pager.lastNum}" var="i">
-        <a href="./noticeList?curPage=${i}&kind=${pager.kind}&search=${pager.search}">${i}</a>
+        <a href="./${board}List?curPage=${i}&kind=${pager.kind}&search=${pager.search}">${i}</a>
      </c:forEach>
      
      <c:if test="${pager.nextCheck}">
-     <a href="./noticeList?curPage=${pager.lastNum+1}&kind=${pager.kind}&search=${pager.search}">[다음]</a>
+     <a href="./${board}List?curPage=${pager.lastNum+1}&kind=${pager.kind}&search=${pager.search}">[다음]</a>
      </c:if>
   </div>
   
@@ -131,13 +138,15 @@
         <a href="./noticeWrite" class="btn btn-danger">Write</a>
         </c:if>
      </c:when>
-     <c:otherwise>
-          <c:if test="${not empty member and member.id eq 'admin'}">        
-        <a href="./noticeWrite" class="btn btn-danger">Write</a>
-        </c:if>
-     </c:otherwise>   
+
    </c:choose>
-  
+  <c:choose>
+	  <c:when test="${board eq 'qna'}">
+		  <c:if test="${not empty member}">		  
+		  <a href="./qnaWrite" class="btn btn-danger">Write</a>
+		  </c:if>
+	  </c:when>	
+	</c:choose>
  <!-- Footer -->
  <c:import url="../template/footer.jsp"></c:import>
   

@@ -40,7 +40,6 @@
     </div>	
  
  	
-    <input type="button" class="btn btn-primary" value="Write" id="btn">
     <button type="submit" class="btn btn-primary">Update</button>
   </form>
 </div>
