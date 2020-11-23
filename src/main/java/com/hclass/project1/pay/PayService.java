@@ -5,6 +5,8 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.hclass.project1.member.MemberDTO;
+
 @Service
 public class PayService {
 	@Autowired
@@ -35,4 +37,8 @@ public class PayService {
 		return payDAO.setPaymentUpdate(payDTO);
 	}
 	
+	// 삭제 시 비밀번호 재 확인
+	public MemberDTO getMemberPwCheck(MemberDTO memberDTO) throws Exception{
+		return payDAO.getMemberPwCheck(memberDTO);
+	}
 }

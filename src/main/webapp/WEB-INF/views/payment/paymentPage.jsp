@@ -86,7 +86,7 @@
 		
 		$.get("./memberIdCheck?id="+id, function(data) {
 			data = data.trim();
-			
+
 			if(!td.checkValidity()){
 				alert("지정된 시간을 선택해주세요.");
 			}else if(data == 0){
