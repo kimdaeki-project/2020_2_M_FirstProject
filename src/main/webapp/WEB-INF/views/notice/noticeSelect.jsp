@@ -68,17 +68,17 @@
 <table class="table table-hober">
    <tr>
         <td>글번호</td>
-        <td>제목</td>
         <td>작성자</td>
-        <td>작성 일시</td>
+        <td>제목</td>
+        <td>내용</td>
         <td>작성 일시</td>
         <td>조회수</td>
      </tr>
      <tr>
         <td>${notice.num}</td>
         <td>${notice.writer}</td>
-        <td>${notice.contents}</td>
         <td>${notice.title}</td>
+        <td>${notice.contents}</td>
         <td>${notice.regDate}</td>
         <td>${notice.hit}</td>
      </tr>
@@ -87,8 +87,8 @@
 <a><input type="button" id="debtn"  class="btn btn-danger member" value ="delete"></a>
 </div>
 <script type="text/javascript">
-   var writer = "${notice.writer}";
-   var idCheck= "${member.id}";
+   var writer =${notice.writer};
+   var idCheck= ${member.id};
    if(writer!=idCheck){
          $(".member").remove();
       }
