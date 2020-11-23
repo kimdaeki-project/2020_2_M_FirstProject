@@ -13,26 +13,41 @@
 		text-align: center;
 		margin-top: 30px;
 	}
-	.check-input{
-		text-align: center;
-		display: block;
-		margin: 20px auto;
-	}
+
 	#pwCheck-btn{
 		display: block;
 		margin: 10px auto;
+	}
+	.check-input{
+		text-align: center;
 	}
 </style>
 </head>
 <c:import url="../template/header.jsp"></c:import>
 <body>
-	<h3 class="cancel-h3">예약 취소를 위해 비밀번호를 다시 입력해주세요.</h3>
-	<form action="./memberPwCheck" method="post" id=pwCheck-frm>
-		<input type="text" value="ID : ${member.id}" name="id" id="idCheck" class="check-input" readonly="readonly">
-		<input type="password" name="pw" id="pwCheck" class="check-input" placeholder="Enter PW...">
+	<div class="container">
+  <h3 class="cancel-h3">예약 취소를 위해 비밀번호를 다시 입력해주세요.</h3>
+
+  <form action="./memberPwCheck" method="post" id=pwCheck-frm>
+    <div class="form-group">
+      <label for="idCheck">ID:</label>
+      <input type="text" value="${member.id}" name="id" id="idCheck" class="check-input form-control" readonly="readonly">
+    </div>
+    <div class="form-group">
+      <label for="pwCheck">PW :</label>
+      <input type="password" name="pw" id="pwCheck" class="check-input form-control" placeholder="Enter PW...">
+    </div>
+  </form>
+</div>
+
+
+	
+	
+		
+		
 		<!-- <button type="submit">삭제하기</button>  -->
-	</form>
-	<input type="button" id="pwCheck-btn" title="${member.id}" value="삭제하기" class="btn btn-danger">
+	
+	<input type="button" id="pwCheck-btn" value="삭제하기" class="btn btn-danger">
 	
 <c:import url="../template/footer.jsp"></c:import>	 
 </body>
@@ -42,6 +57,7 @@
 		var id = $("#idCheck").val();
 		$.post("./memberPwCheck?id="+id, {pw:pw}, function(result) {
 			result=result.trim();
+
 			if(result==1){
 				location.href="./paymentDelete?id="+id;
 			}else{
