@@ -42,7 +42,7 @@
 	</table>	
 		<input type="button" value="예약 변경하기" class="btn btn-primary info-btn">
 		<input type="button" value="예약 취소하기" class="btn btn-danger info-btn" id="info-delete" title="${member.id}">
-		<input type="button" value="결제하기" class="btn btn-warning info-btn"  title="${member.id}">
+		<input type="button" value="결제하기" class="btn btn-warning info-btn"  id= "pay" title="${member.id}">
 	</c:if>
 	
 	<c:if test="${empty pay.regDate}">
