@@ -29,8 +29,8 @@
 		<result column="oriname" property="oriname"/>
 	</resultMap>
 	
-	<select id="getTrainerPage" parameterType="TrainerDTO" resultMap="getTrainerResult">
-		select M.id, TF.filename
+	<select id="getTrainerPage" parameterType="TrainerDTO" resultType="TrainerDTO">
+		select M.name, TF.filename
 		from member M inner join trainerfile TF
 		on (M.id = TF.id)
 		where M.name=#{name}

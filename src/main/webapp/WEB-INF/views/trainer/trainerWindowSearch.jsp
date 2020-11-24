@@ -53,7 +53,7 @@
 	<c:forEach items="${list}" var="dto">
 		<c:if test="${member.trainer eq T}">
 		<tr class="t_tr">
-			<td><a href="./trainerInfoPage?num=${dto.num}">${dto.name}</a></td>
+			<td><a href="./trainerInfoPage?num=${dto.num}&name=${dto.name}">${dto.name}</a></td>
 			<td>${dto.gender}</td>
 			<td>${dto.healthKind}</td>
 			<td>${dto.address}</td>

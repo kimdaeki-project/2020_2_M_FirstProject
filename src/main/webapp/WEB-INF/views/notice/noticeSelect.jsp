@@ -81,6 +81,13 @@
         <td>${dto.contents}</td>
         <td>${dto.regDate}</td>
         <td>${dto.hit}</td>
+
+     </tr>
+     <tr>
+      <c:forEach items="${list}" var="images" varStatus="vs">
+        <td> 
+        <img src="../resources/upload/${board}/${images.fileName}">
+        </td></c:forEach>
      </tr>
 </table>
 <c:choose>
