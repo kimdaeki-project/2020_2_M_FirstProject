@@ -46,10 +46,10 @@
 		<hr>
 		<h4> 성별 </h4>
 		<label class="radio-inline">
-			<input type="radio" name="gender" value="man">남
+			<input type="radio" name="gender" value="M">남
 		</label>
 		<label class="radio-inline">
-			<input type="radio" name="gender" value="woman">여
+			<input type="radio" name="gender" value="W">여
 		</label>
 		<label class="radio-inline">
 			<input type="radio" name="gender" value="all" checked="checked">모두
