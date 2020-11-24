@@ -56,9 +56,10 @@ public class TrainerController {
 	}
 	
 	@GetMapping("trainerWindowSearch")
-	public ModelAndView getSearchList(Pager pager)throws Exception{
+	public ModelAndView getSearchList(Pager pager,MemberDTO memberDTO)throws Exception{
 		ModelAndView mv = new ModelAndView();
-
+		System.out.println(memberDTO.getAddress());
+		System.out.println(memberDTO.getName());
 		List<TrainerDTO> ar = trainerService.getSearchList(pager);
 		
 		mv.addObject("list", ar);
@@ -76,7 +77,7 @@ public class TrainerController {
 	}
 	
 	@GetMapping("trainerDetailSearch")
-	public ModelAndView getSearch(Pager pager)throws Exception{
+	public ModelAndView getSearch(Pager pager,TrainerDTO trainerDTO)throws Exception{
 		ModelAndView mv = new ModelAndView();
 		
 		List<TrainerDTO> ar = trainerService.getSearch(pager);

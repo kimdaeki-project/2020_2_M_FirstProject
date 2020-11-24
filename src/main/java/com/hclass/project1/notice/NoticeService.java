@@ -69,6 +69,10 @@ public class NoticeService {
 	public int setDelete(NoticeDTO noticeDTO)throws Exception{
 		return noticeDAO.setDelete(noticeDTO);
 	}
+	
+	public int hitUp(NoticeDTO noticeDTO) throws Exception{
+		return noticeDAO.hitUp(noticeDTO);
+	}
 
 }
 

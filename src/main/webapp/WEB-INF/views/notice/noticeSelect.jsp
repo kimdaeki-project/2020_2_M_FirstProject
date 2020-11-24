@@ -34,10 +34,16 @@
 			<tr>
 				<td>글번호</td>
 				<td>작성자</td>
-				<td>제목</td>
 				<td>내용</td>
 				<td>작성 일시</td>
 				<td>조회수</td>
+			</tr>
+			<tr>
+				<td>제목</td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
 			</tr>
 			<tr>
 				<td>${dto.num}</td>

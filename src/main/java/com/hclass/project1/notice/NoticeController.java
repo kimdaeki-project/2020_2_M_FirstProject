@@ -31,6 +31,7 @@ public class NoticeController {
    public ModelAndView getOne(NoticeDTO noticeDTO,HttpSession session) throws Exception{
       ModelAndView mv = new ModelAndView();
       MemberDTO memberDTO =new MemberDTO();
+      int result = noticeservice.hitUp(noticeDTO);
       memberDTO=(MemberDTO) session.getAttribute("member");
       noticeDTO=noticeservice.getOne(noticeDTO);
       mv.addObject("member", memberDTO);

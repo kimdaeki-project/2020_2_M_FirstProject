@@ -83,22 +83,22 @@
 		</choose>
 		and
 		<choose>
-			<when test="healthKind=='health'">
-				healthKind like #{healthKind}||'%'
+			<when test="kind=='health'">
+				healthKind like #{kind}||'%'
 			</when>
-			<when test="healthKind=='pilates'">
-			 	healthKind like #{healthKind}||'%'
+			<when test="kind=='pilates'">
+			 	healthKind like #{kind}||'%'
 			</when>
-			<when test="healthKind=='yoga'">
-				healthKind like #{healthKind}||'%'
+			<when test="kind=='yoga'">
+				healthKind like #{kind}||'%'
 			</when>
-			<when test="healthKind=='spinning'">
-				healthKind like #{healthKind}||'%'
+			<when test="kind=='spinning'">
+				healthKind like #{kind}||'%'
 			</when>
-			<when test="healthKind=='crossfit'">
-				healthKind like #{healthKind}||'%'
+			<when test="kind=='crossfit'">
+				healthKind like #{kind}||'%'
 			</when>
-			<when test="healthKind==null">
+			<when test="kind==null">
 				healthKind is not null
 			</when>
 		</choose>
@@ -136,22 +136,22 @@
 		</choose>
 		and
 		<choose>
-			<when test="healthKind=='health'">
-				healthKind in #{healthKind}
+			<when test="kind=='health'">
+				healthKind in #{kind}
 			</when>
-			<when test="healthKind=='pilates'">
-			 	healthKind in #{healthKind}
+			<when test="kind=='pilates'">
+			 	healthKind in #{kind}
 			</when>
-			<when test="healthKind=='yoga'">
-				healthKind in #{healthKind}
+			<when test="kind=='yoga'">
+				healthKind in #{kind}
 			</when>
-			<when test="healthKind=='spinning'">
-				healthKind in #{healthKind}
+			<when test="kind=='spinning'">
+				healthKind in #{kind}
 			</when>
-			<when test="healthKind=='crossfit'">
-				healthKind in #{healthKind}
+			<when test="kind=='crossfit'">
+				healthKind in #{kind}
 			</when>
-			<when test="healthKind==null">
+			<when test="kind==null">
 				healthKind is not null
 			</when>
 		</choose>

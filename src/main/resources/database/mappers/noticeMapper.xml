@@ -60,7 +60,9 @@
      	where num=#{num}
      </update>  
        -->
-       
+       <update id = "hitUp" parameterType="NoticeDTO">
+		 update notice set hit=hit+1 where num =#{num}
+	</update>
       <update id="setUpdate" parameterType="NoticeDTO">
 		update notice set title = #{title}, contents =#{contents} where num=#{num}
 	</update>

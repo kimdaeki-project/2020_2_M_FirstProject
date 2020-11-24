@@ -100,6 +100,7 @@ public class QnaController {
 		ModelAndView mv = new ModelAndView();
 		MemberDTO memberDTO =new MemberDTO();
 		QnaFileDTO qnafileDTO =new QnaFileDTO();
+		int result = qnaService.hitUp(qnaDTO);
 		qnafileDTO.setNum(qnaDTO.getNum());
 		List<QnaFileDTO> ar= qnaService.getFile(qnafileDTO);
 		memberDTO=(MemberDTO) session.getAttribute("member");

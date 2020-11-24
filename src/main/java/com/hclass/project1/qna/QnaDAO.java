@@ -41,5 +41,8 @@ public class QnaDAO {
 		
 		return sqlSession.insert(namespace+"setReply",qnaDTO);
 	}
+	public int hitUp(QnaDTO qnaDTO) throws Exception{
+		return sqlSession.update(namespace+"hitUp", qnaDTO);
+	}
 	
 }
