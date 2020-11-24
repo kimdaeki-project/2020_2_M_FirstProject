@@ -67,7 +67,7 @@
 			<h3>트레이너 정보</h3>
 		<div>	
 		<p class = "info">
-		<img alt="" src="../resources/img/trainer/${member.MemberFileDTO.fileName}"> 
+		<img alt="" src="../resources/img/trainer/${page.fileName}"> 
 				
 					<strong>이름</strong><br>
 					${page.name}<br>

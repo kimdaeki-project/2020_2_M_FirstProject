@@ -47,6 +47,19 @@
 				<td>${dto.regDate}</td>
 				<td>${dto.hit}</td>
 			</tr>
+			<tr>
+			<td>
+				<c:forEach items="${list}" var="img" varStatus="vs">
+					<tr>
+						
+					<td>
+						<img alt="" src="../resources/upload/${board}/${img.fileName}">
+					</td>
+						
+					</tr>
+				</c:forEach>
+				</td>
+			</tr>
 		</table>
 		<c:choose>
 			<c:when test="${board eq 'notice'}">
