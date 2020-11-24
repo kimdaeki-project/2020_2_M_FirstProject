@@ -66,7 +66,7 @@
 	</select>
 	
 	<select id="getDetailCount" resultType="Long" parameterType="Pager">
-		select count(num) from gb_test5 where
+		select count(num) from member where
 		<choose>
 			<when test="gender=='man'">
 				gender like #{gender}||'%'
@@ -84,22 +84,22 @@
 		and
 		<choose>
 			<when test="kind=='health'">
-				healthKind like #{kind}||'%'
+				kind like #{kind}||'%'
 			</when>
 			<when test="kind=='pilates'">
-			 	healthKind like #{kind}||'%'
+			 	kind like #{kind}||'%'
 			</when>
 			<when test="kind=='yoga'">
-				healthKind like #{kind}||'%'
+				kind like #{kind}||'%'
 			</when>
 			<when test="kind=='spinning'">
-				healthKind like #{kind}||'%'
+				kind like #{kind}||'%'
 			</when>
 			<when test="kind=='crossfit'">
-				healthKind like #{kind}||'%'
+				kind like #{kind}||'%'
 			</when>
 			<when test="kind==null">
-				healthKind is not null
+				kind is not null
 			</when>
 		</choose>
 		and
@@ -119,7 +119,7 @@
 	<select id="getSearch" resultType="TrainerDTO" parameterType="Pager">
 		select * from
 		(select rownum R, N.* from
-		(select * from gb_test5 where
+		(select * from member where
 		<choose>
 			<when test="gender=='man'">
 				gender in #{gender}
@@ -137,22 +137,22 @@
 		and
 		<choose>
 			<when test="kind=='health'">
-				healthKind in #{kind}
+				kind in #{kind}
 			</when>
 			<when test="kind=='pilates'">
-			 	healthKind in #{kind}
+			 	kind in #{kind}
 			</when>
 			<when test="kind=='yoga'">
-				healthKind in #{kind}
+				kind in #{kind}
 			</when>
 			<when test="kind=='spinning'">
-				healthKind in #{kind}
+				kind in #{kind}
 			</when>
 			<when test="kind=='crossfit'">
-				healthKind in #{kind}
+				kind in #{kind}
 			</when>
 			<when test="kind==null">
-				healthKind is not null
+				kind is not null
 			</when>
 		</choose>
 		and
