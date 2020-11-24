@@ -44,7 +44,7 @@
 	
 		<c:forEach items="${search}" var="dto">
 			<tr class="t_tr">
-				<td><a href="./trainerInfoPage?num=${dto.num}&name=${dto.name}">${dto.name}</a></td>
+				<td><a href="./trainerInfoPage?num=${dto.num}&${dto.id}">${dto.name}</a></td>
 				<td>${dto.gender}</td>
 				<td>${dto.kind}</td>
 				<td>${dto.address}</td>

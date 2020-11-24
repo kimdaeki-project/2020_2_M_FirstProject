@@ -33,7 +33,7 @@
 		select M.name, TF.filename
 		from member M inner join trainerfile TF
 		on (M.id = TF.id)
-		where M.name=#{name}
+		where M.id=#{id}
 	</select>
 
 	<select id="getSearchList" resultType="TrainerDTO" parameterType="Pager">
