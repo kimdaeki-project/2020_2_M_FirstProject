@@ -17,7 +17,7 @@
             </li>
            
             <li class="list-inline-item">
-              
+            <a href ="${pageContext.request.contextPath}/qna/qnaList"/>
                 <span class="fa-stack fa-lg">
                   <i class="fas fa-circle fa-stack-2x"></i>
                   <i class="fa fa-envelope-open fa-stack-1x fa-inverse"></i>
@@ -25,7 +25,7 @@
             
             </li>
             <li class="list-inline-item">
-             
+ 			<a href ="${pageContext.request.contextPath}/notice/noticeList"/>
                 <span class="fa-stack fa-lg">
                   <i class="fas fa-circle fa-stack-2x"></i>
                   <i class="fa fa-info fa-stack-1x fa-inverse"></i>

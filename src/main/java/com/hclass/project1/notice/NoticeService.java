@@ -45,7 +45,7 @@ public class NoticeService {
 	 */
 
 	public int setOne(NoticeDTO noticeDTO,MultipartFile[] photo, HttpSession session) throws Exception{
-		String path =session.getServletContext().getRealPath("/resources/upload/notice");
+		String path =session.getServletContext().getRealPath("/resources/img/notice");
 		File file2 = new File(path);
 		String fileName="";
 		int result =noticeDAO.setOne(noticeDTO);
