@@ -23,6 +23,8 @@
 
 </head>
 <body>
+	<!-- slide -->
+	<jsp:include page="../template/slide.jsp" />
 
 	<!-- Navigation -->
 	<c:import url="../template/header.jsp"></c:import>
