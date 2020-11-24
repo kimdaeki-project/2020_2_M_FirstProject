@@ -6,6 +6,7 @@ public class MemberFileDTO {
 	private String id;
 	private long num;
 	private String name;
+	
 	public String getName() {
 		return name;
 	}

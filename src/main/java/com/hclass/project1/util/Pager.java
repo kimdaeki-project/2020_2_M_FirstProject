@@ -10,6 +10,7 @@ public class Pager {
 	private String gender;
 	private String business;
 	
+
 	private Integer curPage;
 	
 	private int startRow;
@@ -112,16 +113,14 @@ public class Pager {
 		this.gender = gender;
 	}
 
-
-	public String getbusiness() {
+	public String getBusiness() {
 		return business;
 	}
 
 
-	public void setbusiness(String business) {
+	public void setBusiness(String business) {
 		this.business = business;
 	}
-
 
 	public String getKind() {
 

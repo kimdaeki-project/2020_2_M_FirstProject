@@ -36,7 +36,7 @@
 		where M.name=#{name}
 	</select>
 
-	<select id="getSearchList" resultType="MemberDTO" parameterType="Pager">
+	<select id="getSearchList" resultType="TrainerDTO" parameterType="Pager">
 		select * from
 		(select rownum R, N.* from
 		(select * from member where 
@@ -116,7 +116,7 @@
 		</choose>
 	</select>
 	
-	<select id="getSearch" resultType="MemberDTO" parameterType="Pager">
+	<select id="getSearch" resultType="TrainerDTO" parameterType="Pager">
 		select * from
 		(select rownum R, N.* from
 		(select * from member where
