@@ -39,7 +39,7 @@
 	<delete id="setPastDelete" parameterType="PayDTO">
 		delete from pay_test1
 		where regDate = to_char(sysdate, 'YYYY-MM-DD') and
-		time <![CDATA[<=]]> to_char(sysdate+9/24, 'HH:MI')
+		time <![CDATA[<=]]> to_char(sysdate+9/24, 'HH24:MI')
 	</delete>
 
 </mapper>
