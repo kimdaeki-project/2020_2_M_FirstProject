@@ -28,7 +28,7 @@
 		<div class="col-xs-3">
 			<select style="font-size: 15px; margin-bottom: 5px;" class="form-control" name="select">
 				<option value="nm">이름</option>
-				<option value="loc">지역</option>
+				<option value="loc" >지역</option>
 			</select>
 		</div>
 		<div class="col-xs-10">
@@ -74,10 +74,10 @@
 		<hr>
 		<h4 style="font-size: 18px;"> ★장소★ </h4>
 		<label class="radio-inline">
-			<input type="radio" name="buisiness" value="healthplace"> 헬스장
+			<input type="radio" name="business" value="healthplace"> 헬스장
 		</label>
 		<label class="radio-inline">
-			<input type="radio" name="buisiness" value="home"> 홈트레이닝
+			<input type="radio" name="business" value="home"> 홈트레이닝
 		</label>
 			
 		<div class="col-xs-12" id="div3">
@@ -98,7 +98,7 @@
 		
 		//var ge = ($('input:radio[name=gender]').is(':checked'));
 		var ki = ($('input:radio[name=kind]').is(':checked'));
-		var bu = ($('input:radio[name=buisiness]').is(':checked'));
+		var bu = ($('input:radio[name=business]').is(':checked'));
 		if(bu == false || ki == false){
 			alert("종목과 장소를 선택하여주세요.");
 		}else{

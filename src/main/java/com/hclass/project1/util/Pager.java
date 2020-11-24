@@ -9,8 +9,9 @@ public class Pager {
 	private String select;
 	private String gender;
 	private String business;
+	private long num;
 	
-
+	
 	private Integer curPage;
 	
 	private int startRow;
@@ -27,6 +28,14 @@ public class Pager {
 	
 	
 	
+	public long getNum() {
+		return num;
+	}
+
+
+	public void setNum(long num) {
+		this.num = num;
+	}
 	private long totalCount;
 	
 	public Pager() {

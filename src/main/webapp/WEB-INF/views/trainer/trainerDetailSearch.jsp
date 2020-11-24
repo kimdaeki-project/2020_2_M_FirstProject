@@ -43,6 +43,7 @@
 		</tr>
 	
 		<c:forEach items="${search}" var="dto">
+			
 			<tr class="t_tr">
 				<td><a href="./trainerInfoPage?num=${dto.num}&id=${dto.id}">${dto.name}</a></td>
 				<td>${dto.gender}</td>
@@ -50,6 +51,7 @@
 				<td>${dto.address}</td>
 				<td>${dto.business}</td>
 			</tr>
+		
 		</c:forEach>
 	</table>
 	
