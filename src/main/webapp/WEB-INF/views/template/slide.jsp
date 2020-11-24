@@ -5,24 +5,25 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+
 <style type="text/css">
 
 	.slide{
 		height: 450px;
 		width: 100%;
+		margin-bottom: 50px;
 	}
 	.best{
 		height: 50px;
 		width: 50px;
 	}
 </style>
-
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="">
   <meta name="author" content="">
 </head>
-<body>
 
+<body>
 </body>
 </html>
