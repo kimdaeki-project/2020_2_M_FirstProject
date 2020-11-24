@@ -2,6 +2,7 @@ package com.hclass.project1.qna;
 
 import java.util.List;
 
+import javax.servlet.http.HttpServletRequest;
 // import javax.annotation.processing.Generated;
 import javax.servlet.http.HttpSession;
 
@@ -106,7 +107,7 @@ public class QnaController {
 		mv.addObject("list",ar);
 		mv.addObject("member", memberDTO);
 		mv.addObject("dto",qnaDTO);
-		mv.addObject("board","qna");
+		mv.addObject("board","Qna");
 		mv.setViewName("notice/noticeSelect");
 		return mv;
 	}

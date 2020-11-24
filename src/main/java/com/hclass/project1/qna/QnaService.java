@@ -42,6 +42,7 @@ public class QnaService {
 	public int setOne(QnaDTO qnaDTO, MultipartFile[] photo, HttpSession session) throws Exception{
 		String path =session.getServletContext().getRealPath("/resources/upload/Qna");
 		File file2 = new File(path);
+		System.out.println(path);
 		String fileName="";
 		int result = qnaDAO.setOne(qnaDTO);
 		for(MultipartFile file :photo) {
