@@ -53,7 +53,7 @@
 	<c:forEach items="${list}" var="member">
 		
 		<tr class="t_tr">
-			<td><a href="./trainerInfoPage?num=${member.num}&name=${member.name}">${member.name}</a></td>
+			<td><a href="./trainerInfoPage?num=${member.num}&id=${member.id}">${member.name}</a></td>
 			<td>${member.gender}</td>
 			<td>${member.kind}</td>
 			<td>${member.address}</td>

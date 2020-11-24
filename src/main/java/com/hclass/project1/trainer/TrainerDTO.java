@@ -9,8 +9,15 @@ public class TrainerDTO {
 	private String address;
 	private String business;
 	private String fileName;
+	private String id;
 	
 	
+	public String getId() {
+		return id;
+	}
+	public void setId(String id) {
+		this.id = id;
+	}
 	public String getFileName() {
 		return fileName;
 	}
