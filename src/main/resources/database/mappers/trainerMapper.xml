@@ -29,14 +29,14 @@
 		<result column="oriname" property="oriname"/>
 	</resultMap>
 	
-	<select id="getTrainerPage" parameterType="TrainerDTO" resultMap="getTrainerResult">
-		select M.id, TF.filename
-		from member M inner join trainerfile TF
+	<select id="getTrainerPage" parameterType="TrainerDTO" resultType="TrainerDTO">
+		select M.name, M.address, TF.filename
+		from Member M inner join trainerfile TF
 		on (M.id = TF.id)
 		where M.name=#{name}
 	</select>
 
-	<select id="getSearchList" resultType="TrainerDTO" parameterType="Pager">
+	<select id="getSearchList" resultType="MemberDTO" parameterType="Pager">
 		select * from
 		(select rownum R, N.* from
 		(select * from member where 
@@ -66,7 +66,7 @@
 	</select>
 	
 	<select id="getDetailCount" resultType="Long" parameterType="Pager">
-		select count(num) from gb_test5 where
+		select count(num) from member where
 		<choose>
 			<when test="gender=='man'">
 				gender like #{gender}||'%'
@@ -83,23 +83,23 @@
 		</choose>
 		and
 		<choose>
-			<when test="healthKind=='health'">
-				healthKind like #{healthKind}||'%'
+			<when test="kind=='health'">
+				kind like #{kind}||'%'
 			</when>
-			<when test="healthKind=='pilates'">
-			 	healthKind like #{healthKind}||'%'
+			<when test="kind=='pilates'">
+			 	kind like #{kind}||'%'
 			</when>
-			<when test="healthKind=='yoga'">
-				healthKind like #{healthKind}||'%'
+			<when test="kind=='yoga'">
+				kind like #{kind}||'%'
 			</when>
-			<when test="healthKind=='spinning'">
-				healthKind like #{healthKind}||'%'
+			<when test="kind=='spinning'">
+				kind like #{kind}||'%'
 			</when>
-			<when test="healthKind=='crossfit'">
-				healthKind like #{healthKind}||'%'
+			<when test="kind=='crossfit'">
+				kind like #{kind}||'%'
 			</when>
-			<when test="healthKind==null">
-				healthKind is not null
+			<when test="kind==null">
+				kind is not null
 			</when>
 		</choose>
 		and
@@ -116,10 +116,10 @@
 		</choose>
 	</select>
 	
-	<select id="getSearch" resultType="TrainerDTO" parameterType="Pager">
+	<select id="getSearch" resultType="MemberDTO" parameterType="Pager">
 		select * from
 		(select rownum R, N.* from
-		(select * from gb_test5 where
+		(select * from member where
 		<choose>
 			<when test="gender=='man'">
 				gender in #{gender}
@@ -136,23 +136,23 @@
 		</choose>
 		and
 		<choose>
-			<when test="healthKind=='health'">
-				healthKind in #{healthKind}
+			<when test="kind=='health'">
+				kind in #{kind}
 			</when>
-			<when test="healthKind=='pilates'">
-			 	healthKind in #{healthKind}
+			<when test="kind=='pilates'">
+			 	kind in #{kind}
 			</when>
-			<when test="healthKind=='yoga'">
-				healthKind in #{healthKind}
+			<when test="kind=='yoga'">
+				kind in #{kind}
 			</when>
-			<when test="healthKind=='spinning'">
-				healthKind in #{healthKind}
+			<when test="kind=='spinning'">
+				kind in #{kind}
 			</when>
-			<when test="healthKind=='crossfit'">
-				healthKind in #{healthKind}
+			<when test="kind=='crossfit'">
+				kind in #{kind}
 			</when>
-			<when test="healthKind==null">
-				healthKind is not null
+			<when test="kind==null">
+				kind is not null
 			</when>
 		</choose>
 		and

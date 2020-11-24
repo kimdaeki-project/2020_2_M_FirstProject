@@ -8,7 +8,6 @@ public class Pager {
 	
 	private String select;
 	private String gender;
-	private String healthKind;
 	private String business;
 	
 	private Integer curPage;
@@ -113,23 +112,13 @@ public class Pager {
 		this.gender = gender;
 	}
 
-	
-	public String getHealthKind() {
-		return healthKind;
-	}
 
-
-	public void setHealthKind(String healthKind) {
-		this.healthKind = healthKind;
-	}
-
-
-	public String getBusiness() {
+	public String getbusiness() {
 		return business;
 	}
 
 
-	public void setBusiness(String business) {
+	public void setbusiness(String business) {
 		this.business = business;
 	}
 

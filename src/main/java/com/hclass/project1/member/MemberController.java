@@ -215,7 +215,7 @@ public class MemberController {
 		if(memberDTO.getTrainer().equals("M")) {
 			memberDTO.setAddress("");
 			memberDTO.setGym("");
-			memberDTO.setBusiness("");	
+			memberDTO.setbusiness("");	
 			memberDTO.setKind("");
 			result = memberService.setOne(memberDTO);
 		}

@@ -46,7 +46,7 @@
 			<tr class="t_tr">
 				<td><a href="./trainerInfoPage?num=${dto.num}">${dto.name}</a></td>
 				<td>${dto.gender}</td>
-				<td>${dto.healthKind}</td>
+				<td>${dto.kind}</td>
 				<td>${dto.address}</td>
 				<td>${dto.business}</td>
 			</tr>
@@ -55,15 +55,15 @@
 	
 	<div class="container" id="pager_div">
 	 	<c:if test="${pager.beforeCheck}">
-			<a href="./trainerDetailSearch?curPage=${pager.startNum-1}&gender=${pager.gender}&healthKind=${pager.healthKind}&business=${pager.business}">◀◀</a>
+			<a href="./trainerDetailSearch?curPage=${pager.startNum-1}&gender=${pager.gender}&kind=${pager.kind}&business=${pager.business}">◀◀</a>
 		</c:if>
 
 		<c:forEach begin="${pager.startNum}" end="${pager.lastNum}" var="i">
-	  		<a href="./trainerDetailSearch?curPage=${i}&gender=${pager.gender}&healthKind=${pager.healthKind}&business=${pager.business}">${i}</a>
+	  		<a href="./trainerDetailSearch?curPage=${i}&gender=${pager.gender}&kind=${pager.kind}&business=${pager.business}">${i}</a>
 	  	</c:forEach>
 	
 		<c:if test="${pager.nextCheck}">
-			<a href="./trainerDetailSearch?curPage=${pager.startNum+1}&gender=${pager.gender}&healthKind=${pager.healthKind}&business=${pager.business}">▶▶</a>
+			<a href="./trainerDetailSearch?curPage=${pager.startNum+1}&gender=${pager.gender}&kind=${pager.kind}&business=${pager.business}">▶▶</a>
 		</c:if>
 
 	</div>

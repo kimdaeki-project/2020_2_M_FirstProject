@@ -94,10 +94,10 @@ public String getGym() {
 public void setGym(String gym) {
 	this.gym = gym;
 }
-public String getBusiness() {
+public String getbusiness() {
 	return business;
 }
-public void setBusiness(String business) {
+public void setbusiness(String business) {
 	this.business = business;
 }
 public String getTrainer() {

@@ -57,27 +57,27 @@
 		<hr>
 		<h4 style="font-size: 18px;"> ★종목★ </h4>
 		<label class="radio-inline">
-			<input type="radio" name="healthKind" value="health"> 헬스
+			<input type="radio" name="kind" value="health"> 헬스
 		</label>
 		<label class="radio-inline">
-			<input type="radio" name="healthKind" value="pilates"> 필라테스
+			<input type="radio" name="kind" value="pilates"> 필라테스
 		</label>
 		<label class="radio-inline">
-			<input type="radio" name="healthKind" value="yoga"> 요가
+			<input type="radio" name="kind" value="yoga"> 요가
 		</label>
 		<label class="radio-inline">
-			<input type="radio" name="healthKind" value="spinning"> 스피닝
+			<input type="radio" name="kind" value="spinning"> 스피닝
 		</label>
 		<label class="radio-inline">
-			<input type="radio" name="healthKind" value="crossfit"> 크로스핏 
+			<input type="radio" name="kind" value="crossfit"> 크로스핏 
 		</label>
 		<hr>
 		<h4 style="font-size: 18px;"> ★장소★ </h4>
 		<label class="radio-inline">
-			<input type="radio" name="business" value="healthplace"> 헬스장
+			<input type="radio" name="buisiness" value="healthplace"> 헬스장
 		</label>
 		<label class="radio-inline">
-			<input type="radio" name="business" value="home"> 홈트레이닝
+			<input type="radio" name="buisiness" value="home"> 홈트레이닝
 		</label>
 			
 		<div class="col-xs-12" id="div3">
@@ -97,8 +97,8 @@
 	$("#btn").click(function() {
 		
 		//var ge = ($('input:radio[name=gender]').is(':checked'));
-		var ki = ($('input:radio[name=healthKind]').is(':checked'));
-		var bu = ($('input:radio[name=business]').is(':checked'));
+		var ki = ($('input:radio[name=kind]').is(':checked'));
+		var bu = ($('input:radio[name=buisiness]').is(':checked'));
 		if(bu == false || ki == false){
 			alert("종목과 장소를 선택하여주세요.");
 		}else{
