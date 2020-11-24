@@ -70,10 +70,11 @@
 		<img alt="" src="../resources/img/trainer/${page.fileName}"> 
 				
 					<strong>이름</strong><br>
-					${page.name}<br>
+					${member.num}
+					${member.name}<br>
 					<br>
 					<strong>주소</strong><br>
-					${page.address}<br>
+					${member.address}<br>
 					<br>
 					<strong>학력</strong><br>
 					군산대학교 체육학과 졸업 학사<br>
@@ -98,7 +99,7 @@
 			</div>
 		</div>
 		<div class="container" id="reserveDiv">
-			<input id="reserveBtn" type="button" value="예약하기" class="btn btn-info" title="${page.num}">
+			<input id="reserveBtn" type="button" value="예약하기" class="btn btn-info" title="${member.num}">
 		</div>	
 	
 <c:import url="../template/footer.jsp"></c:import>
