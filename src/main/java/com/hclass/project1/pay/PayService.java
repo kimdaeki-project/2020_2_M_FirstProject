@@ -41,4 +41,9 @@ public class PayService {
 	public MemberDTO getMemberPwCheck(MemberDTO memberDTO) throws Exception{
 		return payDAO.getMemberPwCheck(memberDTO);
 	}
+	
+	// 날짜 지난 데이터 삭제
+	public int setPastDelete(PayDTO payDTO) throws Exception{
+		return payDAO.setPastDelete(payDTO);
+	}
 }

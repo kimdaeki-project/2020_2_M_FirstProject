@@ -52,7 +52,7 @@
 			<input type="radio" name="gender" value="woman">여
 		</label>
 		<label class="radio-inline">
-			<input type="radio" name="gender" value="all">모두
+			<input type="radio" name="gender" value="all" checked="checked">모두
 		</label>	
 		<hr>
 		<h4 style="font-size: 18px;"> ★종목★ </h4>

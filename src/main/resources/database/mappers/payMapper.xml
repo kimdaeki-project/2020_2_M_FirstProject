@@ -34,5 +34,12 @@
 	<select id="getMemberPwCheck" resultType="MemberDTO" parameterType="MemberDTO">
 		select id, pw from member where id = #{id} and pw = #{pw}
 	</select>
+	
+	<!-- ㅣ현재 날짜, 시간 ㅣ 기준 지난 데이터 삭제 -->
+	<delete id="setPastDelete" parameterType="PayDTO">
+		delete from pay_test1
+		where regDate = to_char(sysdate, 'YYYY-MM-DD') and
+		time <![CDATA[<=]]> to_char(sysdate+9/24, 'HH:MI')
+	</delete>
 
 </mapper>
