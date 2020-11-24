@@ -5,17 +5,16 @@ public class TrainerDTO {
 	private long num;
 	private String name;
 	private String gender;
-	private String kind;
+	private String healthKind;
 	private String address;
 	private String business;
-	private String fileName;
+	private String filename;
 	
-	
-	public String getFileName() {
-		return fileName;
+	public String getFilename() {
+		return filename;
 	}
-	public void setFileName(String fileName) {
-		this.fileName = fileName;
+	public void setFilename(String filename) {
+		this.filename = filename;
 	}
 	public long getNum() {
 		return num;
@@ -36,26 +35,24 @@ public class TrainerDTO {
 		this.gender = gender;
 	}
 
-
+	public String getHealthKind() {
+		return healthKind;
+	}
+	public void setHealthKind(String healthKind) {
+		this.healthKind = healthKind;
+	}
 	public String getAddress() {
 		return address;
 	}
 	public void setAddress(String address) {
 		this.address = address;
 	}
-	public String getKind() {
-		return kind;
-	}
-	public void setKind(String kind) {
-		this.kind = kind;
-	}
-	public String getbusiness() {
+	public String getBusiness() {
 		return business;
 	}
-	public void setbusiness(String business) {
+	public void setBusiness(String business) {
 		this.business = business;
 	}
-
 	
 	
 }

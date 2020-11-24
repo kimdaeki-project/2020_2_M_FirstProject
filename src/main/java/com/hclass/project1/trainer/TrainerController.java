@@ -16,6 +16,8 @@ import org.springframework.web.servlet.ModelAndView;
 import com.hclass.project1.member.MemberDTO;
 import com.hclass.project1.util.Pager;
 
+import oracle.security.crypto.core.SHA1RandomBitsSource;
+
 
 @Controller
 @RequestMapping(value="/trainer/**")
@@ -39,6 +41,7 @@ public class TrainerController {
 		ModelAndView mv = new ModelAndView();
 		System.out.println(trainerDTO.getName());
 		trainerDTO = trainerService.getTrainerPage(trainerDTO);
+		
 		session.setAttribute("trainer", trainerDTO);
 		if(trainerDTO != null) {
 			mv.addObject("page", trainerDTO);
@@ -48,6 +51,7 @@ public class TrainerController {
 			mv.addObject("path", "./trainerSearch");
 			mv.setViewName("common/result");
 		}
+		System.out.println(trainerDTO.getName());
 		return mv;
 	}
 	
