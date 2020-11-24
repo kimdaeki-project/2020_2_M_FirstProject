@@ -70,11 +70,10 @@
 		<img alt="" src="../resources/img/trainer/${page.fileName}"> 
 				
 					<strong>이름</strong><br>
-					${member.num}
-					${member.name}<br>
+					${page.name}<br>
 					<br>
 					<strong>주소</strong><br>
-					${member.address}<br>
+					${page.address}<br>
 					<br>
 					<strong>학력</strong><br>
 					군산대학교 체육학과 졸업 학사<br>

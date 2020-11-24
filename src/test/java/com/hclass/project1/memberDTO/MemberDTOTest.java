@@ -36,7 +36,7 @@ public class MemberDTOTest extends MyTestCase {
 		trDTO.setTrainer("M");
 		trDTO.setAddress("");
 		trDTO.setGym("");
-		trDTO.setBusiness("");
+		//trDTO.setBusiness("");
 		int result = memberDAO.setOne(trDTO);
 		assertEquals(1, result);
 	}

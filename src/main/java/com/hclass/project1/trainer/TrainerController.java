@@ -39,7 +39,7 @@ public class TrainerController {
 	@GetMapping("trainerInfoPage")
 	public ModelAndView getTrainerPage(TrainerDTO trainerDTO, HttpSession session)throws Exception{
 		ModelAndView mv = new ModelAndView();
-		System.out.println(trainerDTO.getName());
+
 		trainerDTO = trainerService.getTrainerPage(trainerDTO);
 		
 		session.setAttribute("trainer", trainerDTO);
@@ -52,6 +52,7 @@ public class TrainerController {
 			mv.setViewName("common/result");
 		}
 		System.out.println(trainerDTO.getName());
+		System.out.println(trainerDTO.getAddress());
 		return mv;
 	}
 	
