@@ -42,6 +42,7 @@ public class MemberService {
 			fileName=filesaver.saver(file2, photo);
 			MemberFileDTO memberfileDTO =new MemberFileDTO();
 			memberfileDTO.setId(memberDTO.getId());
+			memberfileDTO.setName(memberDTO.getName());
 			memberfileDTO.setFileName(fileName);
 			memberfileDTO.setOriName(photo.getOriginalFilename());
 			memberfileDTO.setNum(memberDTO.getNum());

@@ -108,6 +108,7 @@ public class MemberController {
 		else {
 			Cookie cookie = new Cookie("remember", "");
 			cookie.setMaxAge(0);
+			cookie.setPath("/");
 			response.addCookie(cookie);
 		}
 		memberDTO=memberService.memberLogin(memberDTO);

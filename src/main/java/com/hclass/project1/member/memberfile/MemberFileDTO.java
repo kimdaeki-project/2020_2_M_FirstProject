@@ -5,7 +5,13 @@ public class MemberFileDTO {
 	private String fileName;
 	private String id;
 	private long num;
-
+	private String name;
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
 	public String getId() {
 		return id;
 	}

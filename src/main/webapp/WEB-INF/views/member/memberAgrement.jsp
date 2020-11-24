@@ -45,7 +45,7 @@
 
 	
 <form action="./memberJoin" method="get" id="form1">
-<div class = "container center" id="main" >
+<div class = "center" id="main" >
 <h1>약관동의</h1>
 	
 	<p>
