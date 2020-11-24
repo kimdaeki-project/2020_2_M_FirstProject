@@ -28,7 +28,7 @@
 	}
 	#pay{
 		position: relative;
-		left: 53%;
+		left: 56.7%;
 	}
 
 </style>

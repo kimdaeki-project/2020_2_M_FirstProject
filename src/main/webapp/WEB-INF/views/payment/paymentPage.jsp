@@ -83,7 +83,7 @@
 			</div>
 			
 		</form>
-		<input type="button" value="예약하기" class="btn btn-primary" id="reserve_btn" title="${member.id}" >
+		<input type="button" value="예약하기" class="btn btn-primary" id="reserve_btn" title="${member.id}">
 	</div>
 
 <c:import url="../template/footer.jsp"></c:import>
@@ -107,9 +107,7 @@
 				d = confirm(d+"일 "+ t+"분이 맞습니까?");	
 				
 				if(d){
-					alert("결제 페이지로 이동합니다.");
 					$("#frm_pay").submit();
-					location.href("../");
 				}else{
 					alert("취소하셨습니다..");
 				}
