@@ -1,5 +1,6 @@
 package com.hclass.project1.trainer;
 
+
 public class TrainerDTO {
 
 	private long num;
@@ -11,8 +12,7 @@ public class TrainerDTO {
 	private String filename;
 	private String id;
 	
-	
-	
+
 	public String getId() {
 		return id;
 	}

@@ -42,9 +42,9 @@ public class TrainerController {
 
 		trainerDTO = trainerService.getTrainerPage(trainerDTO);
 		
-		session.setAttribute("trainer", trainerDTO);
 		if(trainerDTO != null) {
-			mv.addObject("page", trainerDTO);
+			session.setAttribute("trainer", trainerDTO);
+			//	mv.addObject("page", trainerDTO);
 			mv.setViewName("trainer/trainerInfoPage");
 		}else {
 			mv.addObject("msg", "잘못된 경로입니다.");

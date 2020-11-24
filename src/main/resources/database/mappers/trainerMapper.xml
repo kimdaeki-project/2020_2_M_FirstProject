@@ -30,7 +30,7 @@
 	</resultMap>
 	
 	<select id="getTrainerPage" parameterType="TrainerDTO" resultType="TrainerDTO">
-		select M.name, M.address, M.business, M.kind, TF.filename
+		select M.name, M.address, M.business, M.kind, TF.filename, TF.oriname
 		from member M inner join trainerfile TF
 		on (M.id = TF.id)
 		where M.id=#{id}

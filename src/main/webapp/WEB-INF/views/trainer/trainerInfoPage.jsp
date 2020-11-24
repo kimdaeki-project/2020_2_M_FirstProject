@@ -67,13 +67,13 @@
 			<h3>트레이너 정보</h3>
 		<div>	
 		<p class = "info">
-		<img alt="" src="../resources/img/trainer/${page.fileName}"> 
+		<img alt="" src="../resources/img/trainer/${trainer.filename}"> 
 				
 					<strong>이름 </strong><br>
-					${page.name} <br>
+					${trainer.name} <br>
 					<br>
 					<strong>주소 </strong><br>
-					${page.address} <br>
+					${trainer.address} <br>
 					<br>
 					<strong>학력</strong><br>
 					군산대학교 체육학과 졸업 학사<br>
