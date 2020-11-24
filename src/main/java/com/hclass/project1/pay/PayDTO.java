@@ -7,7 +7,7 @@ public class PayDTO {
 	private String regDate;
 	private String time;
 	private String name;
-	private String healthKind;
+	private String kind;
 	private String business;
 	
 	public String getName() {
@@ -16,11 +16,12 @@ public class PayDTO {
 	public void setName(String name) {
 		this.name = name;
 	}
-	public String getHealthKind() {
-		return healthKind;
+	
+	public String getKind() {
+		return kind;
 	}
-	public void setHealthKind(String healthKind) {
-		this.healthKind = healthKind;
+	public void setKind(String kind) {
+		this.kind = kind;
 	}
 	public String getBusiness() {
 		return business;

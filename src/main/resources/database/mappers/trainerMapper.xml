@@ -30,7 +30,7 @@
 	</resultMap>
 	
 	<select id="getTrainerPage" parameterType="TrainerDTO" resultType="TrainerDTO">
-		select M.name, TF.filename
+		select M.name, M.address, M.business, M.kind, TF.filename
 		from member M inner join trainerfile TF
 		on (M.id = TF.id)
 		where M.name=#{name}
@@ -104,10 +104,10 @@
 		</choose>
 		and
 		<choose>
-			<when test="business=='healthplace'">
+			<when test='business=="N"'>
 				business like #{business}||'%'
 			</when>
-			<when test="business=='home'">
+			<when test='business=="Y"'>
 				business like #{business}||'%'
 			</when>
 			<when test="business==null">
@@ -157,10 +157,10 @@
 		</choose>
 		and
 		<choose>
-			<when test="business=='healthplace'">
+			<when test='business=="N"'>
 				business in #{business}
 			</when>
-			<when test="business=='home'">
+			<when test='business=="Y"'>
 				business in #{business}
 			</when>
 			<when test="business==null">

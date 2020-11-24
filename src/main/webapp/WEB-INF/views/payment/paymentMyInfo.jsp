@@ -47,9 +47,9 @@
 			<td>${pay.regDate}</td>
 			<td>${pay.time}</td>
 			<td>l</td>
-			<td>${pay.name}</td>
-			<td>${pay.healthKind}</td>
-			<td>${pay.business}</td>
+			<td>${trainer.name}</td>
+			<td>${trainer.kind}</td>
+			<td>${trainer.business}</td>
 		</tr>
 	</table>	
 		<input type="button" value="날짜 변경하기" class="btn btn-primary info-btn" id="info-update" title="${member.id}">

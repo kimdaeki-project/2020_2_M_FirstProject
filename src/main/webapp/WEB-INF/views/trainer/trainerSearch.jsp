@@ -28,7 +28,7 @@
 		<div class="col-xs-3">
 			<select style="font-size: 15px; margin-bottom: 5px;" class="form-control" name="select">
 				<option value="nm">이름</option>
-				<option value="loc" >지역</option>
+				<option value="loc">지역</option>
 			</select>
 		</div>
 		<div class="col-xs-10">
@@ -52,7 +52,7 @@
 			<input type="radio" name="gender" value="woman">여
 		</label>
 		<label class="radio-inline">
-			<input type="radio" name="gender" value="all">모두
+			<input type="radio" name="gender" value="all" checked="checked">모두
 		</label>	
 		<hr>
 		<h4 style="font-size: 18px;"> ★종목★ </h4>
@@ -74,10 +74,10 @@
 		<hr>
 		<h4 style="font-size: 18px;"> ★장소★ </h4>
 		<label class="radio-inline">
-			<input type="radio" name="business" value="healthplace"> 헬스장
+			<input type="radio" name="business" value="N"> 헬스장
 		</label>
 		<label class="radio-inline">
-			<input type="radio" name="business" value="home"> 홈트레이닝
+			<input type="radio" name="business" value="Y"> 홈트레이닝
 		</label>
 			
 		<div class="col-xs-12" id="div3">
@@ -93,7 +93,6 @@
 </div>
 
 <script type="text/javascript">
-
 	$("#btn").click(function() {
 		
 		//var ge = ($('input:radio[name=gender]').is(':checked'));

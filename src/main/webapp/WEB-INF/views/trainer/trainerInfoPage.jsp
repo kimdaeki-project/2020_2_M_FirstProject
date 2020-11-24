@@ -98,7 +98,7 @@
 			</div>
 		</div>
 		<div class="container" id="reserveDiv">
-			<input id="reserveBtn" type="button" value="예약하기" class="btn btn-info" title="${page.num}">
+			<input id="reserveBtn" type="button" value="예약하기" class="btn btn-info" title="${member.num}">
 		</div>	
 	
 <c:import url="../template/footer.jsp"></c:import>
