@@ -68,10 +68,10 @@
 	<select id="getDetailCount" resultType="Long" parameterType="Pager">
 		select count(num) from member where
 		<choose>
-			<when test="gender=='man'">
+			<when test='gender=="M"'>
 				gender like #{gender}||'%'
 			</when>
-			<when test="gender=='woman'">
+			<when test='gender=="W"'>
 				gender like #{gender}||'%'
 			</when>
 			<when test="gender=='all'">
@@ -121,10 +121,10 @@
 		(select rownum R, N.* from
 		(select * from member where
 		<choose>
-			<when test="gender=='man'">
+			<when test='gender=="M"'>
 				gender in #{gender}
 			</when>
-			<when test="gender=='woman'">
+			<when test='gender=="W"'>
 				gender in #{gender}
 			</when>
 			<when test="gender=='all'">
