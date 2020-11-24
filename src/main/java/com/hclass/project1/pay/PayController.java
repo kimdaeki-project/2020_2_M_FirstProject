@@ -19,24 +19,7 @@ public class PayController {
 
 	@Autowired
 	private PayService payService;
-	
-	@GetMapping("pastDelete")
-	public ModelAndView setPastDelete(PayDTO payDTO) throws Exception{
-		ModelAndView mv = new ModelAndView();
 		
-		int result = payService.setPastDelete(payDTO);
-		if(result > 0) {
-			mv.addObject("msg", "삭제완료");
-			mv.addObject("path", "../");
-		}else {
-			mv.addObject("msg", "데이터 없음");
-			mv.addObject("path", "../");
-		}
-		mv.setViewName("common/result");
-		
-		return mv;
-	}
-	
 	@PostMapping("paymentUpdate")
 	public ModelAndView setPaymentUpdate(PayDTO payDTO) throws Exception{
 		ModelAndView mv = new ModelAndView();

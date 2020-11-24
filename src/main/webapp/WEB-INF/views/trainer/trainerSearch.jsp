@@ -88,16 +88,11 @@
 			</div>
 		</div>
 	</form>
-<input type="button" value="TEST" id="test-btn">
+
 <c:import url="../template/footer.jsp"></c:import>
 </div>
 
 <script type="text/javascript">
-
-	$("#test-btn").click(function() {
-		location.href="../payment/pastDelete";
-	});
-
 	$("#btn").click(function() {
 		
 		//var ge = ($('input:radio[name=gender]').is(':checked'));
