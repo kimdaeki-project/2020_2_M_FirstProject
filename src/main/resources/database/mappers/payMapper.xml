@@ -6,7 +6,7 @@
 <mapper namespace="com.hclass.project1.pay.PayDAO">
 	<!-- 예약하기 -->
 	<insert id="setCharge" parameterType="PayDTO">
-		insert into pay_test1 values(pay_test_seq.nextval, #{id}, #{regDate}, #{time})
+		insert into pay_test1 values(pay_test_seq.nextval, #{id}, #{regDate}, #{time}, #{name}, #{healthKind},#{business})
 	</insert>
 	<!-- 이건뭐지 -->
 	<select id="getPaymentList" resultType="PayDTO" parameterType="PayDTO">

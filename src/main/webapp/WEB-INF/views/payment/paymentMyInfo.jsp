@@ -22,7 +22,7 @@
 		color : white;
 	}
 	#info-table{
-		width: 60%;
+		width: 70%;
 		margin: 30px auto;
 		
 	}
@@ -30,22 +30,29 @@
 		position: relative;
 		left: 53%;
 	}
+
 </style>
 </head>
 <body>
 	<h3 class="info-h3">My Reserve Info</h3>
 	<c:if test="${not empty pay.regDate}">
+
+	<h3 class="info-h3" style="color:#bf4080;" >나의 예약정보</h3>
 	<table class="table table-condensed" id="info-table">
-		<tr class="th-tr">
-			<th>아이디</th><th>날짜</th><th>시간</th>
+		<tr>
+			<th>아이디</th><th>예약날짜</th><th>시간</th><th>l</th><th>트레이너</th><th>운동</th><th>장소</th>
 		</tr>
 		<tr>
 			<td>${member.id}</td>
 			<td>${pay.regDate}</td>
 			<td>${pay.time}</td>
+			<td>l</td>
+			<td>${pay.name}</td>
+			<td>${pay.healthKind}</td>
+			<td>${pay.business}</td>
 		</tr>
 	</table>	
-		<input type="button" value="예약 변경하기" class="btn btn-primary info-btn" id="info-update" title="${member.id}">
+		<input type="button" value="날짜 변경하기" class="btn btn-primary info-btn" id="info-update" title="${member.id}">
 		<input type="button" value="예약 취소하기" class="btn btn-danger info-btn" id="info-delete" title="${member.id}">
 		<input type="button" value="결제하기" class="btn btn-warning info-btn" id="pay"  title="${member.id}">
 	</c:if>
