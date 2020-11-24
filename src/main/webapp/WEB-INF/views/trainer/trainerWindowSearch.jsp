@@ -50,14 +50,14 @@
 	<tr style="font-size: 17px;">
 		<th>이름 </th><th>성별 </th><th>종류 </th><th>지역 </th><th>장소 </th>
 	</tr>
-	<c:forEach items="${list}" var="dto">
+	<c:forEach items="${list}" var="member">
 		
 		<tr class="t_tr">
-			<td><a href="./trainerInfoPage?num=${dto.num}&name=${dto.name}">${dto.name}</a></td>
-			<td>${dto.gender}</td>
-			<td>${dto.healthKind}</td>
-			<td>${dto.address}</td>
-			<td>${dto.business}</td>
+			<td><a href="./trainerInfoPage?num=${member.num}&name=${member.name}">${member.name}</a></td>
+			<td>${member.gender}</td>
+			<td>${member.kind}</td>
+			<td>${member.address}</td>
+			<td>${member.business}</td>
 		</tr>
 		
 	</c:forEach>
