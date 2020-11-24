@@ -33,11 +33,14 @@
 <body>
 	<h1 id="h1">Trainer List</h1>
 	<form class="example" style="margin: 25px;width: 50%; margin: 0 auto;" action="./trainerWindowSearch">
-		<div class="col-xs-3">
-			<select style="font-size: 15px; margin-bottom: 5px;" class="form-control" name="select">
-				<option value="nm">이름</option>
-				<option value="loc">지역</option>
+		<div class="col-xs-3" id="divSelect">
+			<select style="font-size: 15px; margin-bottom: 5px;" class="form-control" name="select" id="selectBox">
+				<option value="name">이름</option>
+				<option value="address">지역</option>
 			</select>
+		</div>
+		<div id= "divSelect" hidden="">
+			<input type="text" id="selectText">
 		</div>
 		<div class="col-xs-10">
 			<input type="text" placeholder="Search..." name="search" id="search-text">
@@ -75,5 +78,13 @@
 		</c:if>
 	</div>
 <c:import url="../template/footer.jsp"></c:import>	
+<script type="text/javascript">
+$("#divSelect").on("change","#selectBox",function(){
+	var kind = $(this).val();
+	alert(kind);
+	$("#kind").val(kind);
+});
+
+</script>
 </body>
 </html>

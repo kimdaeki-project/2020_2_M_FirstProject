@@ -62,7 +62,7 @@
 				<c:forEach items="${list}" var="dto" varStatus="vs">
 					<tr>
 						<td>${dto.num}</td>
-						<td><a href="./${board}Select?num=${dto.num}"> <c:catch>
+						<td><a href="./${board}Select?num=${dto.num}" id="link"> <c:catch>
 									<%-- jsp 주석  --%>
 									<c:forEach begin="1" end="${dto.depth}">--</c:forEach>
 								</c:catch> ${dto.title}
@@ -107,6 +107,7 @@
 		<c:import url="../template/footer.jsp"></c:import>
 
 	</div>
-
+<script type="text/javascript">
+</script>
 </body>
 </html>

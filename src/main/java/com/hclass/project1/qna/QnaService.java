@@ -73,4 +73,7 @@ public class QnaService {
 		
 		return qnaDAO.setReply(qnaDTO);
 	}
+	public int hitUp(QnaDTO qnaDTO) throws Exception{
+		return qnaDAO.hitUp(qnaDTO);
+	}
 }

@@ -33,7 +33,7 @@
 		select M.name, TF.filename
 		from member M inner join trainerfile TF
 		on (M.id = TF.id)
-		where M.id=#{id}
+		where M.name=#{name}
 	</select>
 
 	<select id="getSearchList" resultType="TrainerDTO" parameterType="Pager">
@@ -66,7 +66,7 @@
 	</select>
 	
 	<select id="getDetailCount" resultType="Long" parameterType="Pager">
-		select count(num) from member where
+		select count(num) from gb_test5 where
 		<choose>
 			<when test="gender=='man'">
 				gender like #{gender}||'%'
@@ -84,22 +84,22 @@
 		and
 		<choose>
 			<when test="kind=='health'">
-				kind like #{kind}||'%'
+				healthKind like #{kind}||'%'
 			</when>
 			<when test="kind=='pilates'">
-			 	kind like #{kind}||'%'
+			 	healthKind like #{kind}||'%'
 			</when>
 			<when test="kind=='yoga'">
-				kind like #{kind}||'%'
+				healthKind like #{kind}||'%'
 			</when>
 			<when test="kind=='spinning'">
-				kind like #{kind}||'%'
+				healthKind like #{kind}||'%'
 			</when>
 			<when test="kind=='crossfit'">
-				kind like #{kind}||'%'
+				healthKind like #{kind}||'%'
 			</when>
 			<when test="kind==null">
-				kind is not null
+				healthKind is not null
 			</when>
 		</choose>
 		and
@@ -119,7 +119,7 @@
 	<select id="getSearch" resultType="TrainerDTO" parameterType="Pager">
 		select * from
 		(select rownum R, N.* from
-		(select * from member where
+		(select * from gb_test5 where
 		<choose>
 			<when test="gender=='man'">
 				gender in #{gender}
@@ -137,22 +137,22 @@
 		and
 		<choose>
 			<when test="kind=='health'">
-				kind in #{kind}
+				healthKind in #{kind}
 			</when>
 			<when test="kind=='pilates'">
-			 	kind in #{kind}
+			 	healthKind in #{kind}
 			</when>
 			<when test="kind=='yoga'">
-				kind in #{kind}
+				healthKind in #{kind}
 			</when>
 			<when test="kind=='spinning'">
-				kind in #{kind}
+				healthKind in #{kind}
 			</when>
 			<when test="kind=='crossfit'">
-				kind in #{kind}
+				healthKind in #{kind}
 			</when>
 			<when test="kind==null">
-				kind is not null
+				healthKind is not null
 			</when>
 		</choose>
 		and

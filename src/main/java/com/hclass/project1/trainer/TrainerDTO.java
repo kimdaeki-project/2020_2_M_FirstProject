@@ -8,21 +8,13 @@ public class TrainerDTO {
 	private String kind;
 	private String address;
 	private String business;
-	private String fileName;
-	private String id;
+	private String filename;
 	
-	
-	public String getId() {
-		return id;
+	public String getFilename() {
+		return filename;
 	}
-	public void setId(String id) {
-		this.id = id;
-	}
-	public String getFileName() {
-		return fileName;
-	}
-	public void setFileName(String fileName) {
-		this.fileName = fileName;
+	public void setFilename(String filename) {
+		this.filename = filename;
 	}
 	public long getNum() {
 		return num;
@@ -44,25 +36,24 @@ public class TrainerDTO {
 	}
 
 
-	public String getAddress() {
-		return address;
-	}
-	public void setAddress(String address) {
-		this.address = address;
-	}
 	public String getKind() {
 		return kind;
 	}
 	public void setKind(String kind) {
 		this.kind = kind;
 	}
-	public String getbusiness() {
+	public String getAddress() {
+		return address;
+	}
+	public void setAddress(String address) {
+		this.address = address;
+	}
+	public String getBusiness() {
 		return business;
 	}
-	public void setbusiness(String business) {
+	public void setBusiness(String business) {
 		this.business = business;
 	}
-
 	
 	
 }
