@@ -44,4 +44,8 @@ public class PayDAO {
 		return sqlSession.selectOne(NAMESPACE+"getMemberPwCheck", memberDTO);
 	}
 	
+	// 예약 기간 지난 것 삭제
+	public int setPastDelete(PayDTO payDTO) throws Exception{
+		return sqlSession.delete(NAMESPACE+"setPastDelete", payDTO);
+	}
 }

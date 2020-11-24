@@ -98,23 +98,15 @@
 			</div>
 		</div>
 		<div class="container" id="reserveDiv">
-			<input id="reserveBtn" type="button" value="예약하기" class="btn btn-info">
-		</div>
-
-		<input type="button" id="test-btn" value="테스트" title="${page.num}">
-	
+			<input id="reserveBtn" type="button" value="예약하기" class="btn btn-info" title="${page.num}">
+		</div>	
 	
 <c:import url="../template/footer.jsp"></c:import>
 <script type="text/javascript">
 	
 	$("#reserveBtn").click(function() {
-			location.href= "./trainerReserve";	
-	
-	});
-	
-	$("#test-btn").click(function() {
 		var testnum = $(this).attr("title")
-		location.href="../payment/paymentPage?num="+testnum;
+		location.href="../payment/paymentPage?num="+testnum;	
 	});
 	
 </script>	

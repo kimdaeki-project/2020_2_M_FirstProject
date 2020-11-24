@@ -14,11 +14,11 @@
 	}
 	#cashDiv{
 		text-align: center;
-		padding: 50px 0 30px 0;
+		padding: 25px 0 30px 0;
 	}
 	.cash_h1{
 		text-align: center;
-		margin-top: 40px;
+		margin-top: 20px;
 	}
 	input[_date]{
 		margin-top: 20px;
@@ -39,6 +39,7 @@
 		boder-left:0px; 
 		boder-bottom:0px;
 		text-align: center;
+		margin-top: 20px;
 	}
 	input:invalid+span:after{
 		content: "지정된 시간을 선택해주세요.";
@@ -64,12 +65,12 @@
 			<h1 class="cash_h1" style="font-size: 16px;">예약은 현재날짜 기준 30일 이내만 가능합니다.</h1>
 		
 			<div class="container" id="cashDiv">
-				<h3 class="cash_h1">선택하신 트레이너 정보입니다.</h3>	
-				이름 : <input type="text" value="${trainer.name}" class="info-tr">
+				<h3 class="cash_h1" style="padding:15px; background-color: #f2d9e6;">선택하신 트레이너 정보입니다.</h3>	
+				이름 : <input type="text" value="${trainer.name}" class="info-tr" name="name">
 				<br>
-				종류 : <input type="text" value="${trainer.healthKind}" class="info-tr">
+				종류 : <input type="text" value="${trainer.healthKind}" class="info-tr" name="healthKind">
 				<br>
-				장소 : <input type="text" value="${trainer.business}" class="info-tr">
+				장소 : <input type="text" value="${trainer.business}" class="info-tr" name="business">
 				<br>					
 				<input type="text" value="${member.id}" name="id" id="member_id-text" readonly="readonly">회원님
 				<div class="date_style">예약하실 날짜와 시간을 선택해주세요.(당일예약 불가)</div>
@@ -82,7 +83,7 @@
 			</div>
 			
 		</form>
-		<input type="button" value="예약하기" class="btn btn-primary" id="reserve_btn" title="${member.id}" >
+		<input type="button" value="예약하기" class="btn btn-primary" id="reserve_btn" title="${member.id}">
 	</div>
 
 <c:import url="../template/footer.jsp"></c:import>
@@ -106,9 +107,7 @@
 				d = confirm(d+"일 "+ t+"분이 맞습니까?");	
 				
 				if(d){
-					alert("결제 페이지로 이동합니다.");
 					$("#frm_pay").submit();
-					location.href("../");
 				}else{
 					alert("취소하셨습니다..");
 				}

@@ -19,7 +19,7 @@ public class PayController {
 
 	@Autowired
 	private PayService payService;
-	
+		
 	@PostMapping("paymentUpdate")
 	public ModelAndView setPaymentUpdate(PayDTO payDTO) throws Exception{
 		ModelAndView mv = new ModelAndView();
@@ -107,12 +107,11 @@ public class PayController {
 	}
 	
 	@GetMapping("paymentMyInfo")
-	public ModelAndView getPaymentMyInfo(PayDTO payDTO,HttpSession session)throws Exception{
+	public ModelAndView getPaymentMyInfo(PayDTO payDTO)throws Exception{
 		ModelAndView mv = new ModelAndView();
-		MemberDTO memberDTO = new MemberDTO();
-		memberDTO = (MemberDTO)session.getAttribute("member");
+
 		payDTO = payService.getPaymentMyInfo(payDTO);
-		mv.addObject("myInfo", memberDTO);
+
 		mv.addObject("pay", payDTO);
 		mv.setViewName("payment/paymentMyInfo");
 		return mv;
@@ -133,15 +132,18 @@ public class PayController {
 
 	
 	@PostMapping("paymentPage")
-	public ModelAndView setCharge(PayDTO payDTO) throws Exception{
+	public ModelAndView setCharge(PayDTO payDTO,HttpSession session) throws Exception{
 		ModelAndView mv = new ModelAndView();
+		MemberDTO memberDTO = new MemberDTO();
+		memberDTO = (MemberDTO)session.getAttribute("member");
+		
 		
 		int result = payService.setCharge(payDTO);
 		
 		if(result>0) {
 			String message = "예약 정보 입력완료";
 			mv.addObject("msg", message);
-			mv.addObject("path", "../");
+			mv.addObject("path", "./paymentMyInfo?id="+memberDTO.getId());
 			mv.setViewName("common/result");
 		}else {
 			System.out.println("fail");
