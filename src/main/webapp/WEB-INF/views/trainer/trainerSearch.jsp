@@ -24,20 +24,17 @@
 	<!-- 검색창 -->
 <div class="container" id="div2">
 	<h2 id="search-h2">Trainer Search</h2>
-	<form class="example" style="margin: 25px;" action="./trainerWindowSearch" id="divSelect">
+	<form class="example" style="margin: 25px;" action="./trainerWindowSearch">
 		<div class="col-xs-3">
-			<select style="font-size: 15px; margin-bottom: 5px;" class="form-control" name="select" id="selectBox">
-				<option value="name">이름</option>
-				<option value="address">지역</option>
+			<select style="font-size: 15px; margin-bottom: 5px;" class="form-control" name="select">
+				<option value="nm">이름</option>
+				<option value="loc" >지역</option>
 			</select>
 		</div>
 		<div class="col-xs-10">
 			<input type="text" placeholder="Search..." name="search" id="search-text">
 			<button id="search-blank"><i class="fa fa-search"></i></button>
 			
-		</div>
-		<div id= "divSelect">
-			<input type="text" id="selectText" value ="name" name="name">
 		</div>
 	</form>
 	
@@ -55,7 +52,7 @@
 			<input type="radio" name="gender" value="woman">여
 		</label>
 		<label class="radio-inline">
-			<input type="radio" name="gender" value="all" checked="checked">모두
+			<input type="radio" name="gender" value="all">모두
 		</label>	
 		<hr>
 		<h4 style="font-size: 18px;"> ★종목★ </h4>
@@ -96,6 +93,7 @@
 </div>
 
 <script type="text/javascript">
+
 	$("#btn").click(function() {
 		
 		//var ge = ($('input:radio[name=gender]').is(':checked'));
@@ -119,11 +117,7 @@
 			return false;
 		}
 	});
-	$("#divSelect").on("change","#selectBox",function(){
-		var select = $(this).val();
-		$("#selectText").val(select);
-		$("#selectText").attr("name",select);
-	});
+	
 </script>
 </body>
 </html>

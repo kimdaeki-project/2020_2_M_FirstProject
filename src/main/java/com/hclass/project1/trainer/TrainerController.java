@@ -16,8 +16,6 @@ import org.springframework.web.servlet.ModelAndView;
 import com.hclass.project1.member.MemberDTO;
 import com.hclass.project1.util.Pager;
 
-import oracle.security.crypto.core.SHA1RandomBitsSource;
-
 
 @Controller
 @RequestMapping(value="/trainer/**")
@@ -41,7 +39,6 @@ public class TrainerController {
 		ModelAndView mv = new ModelAndView();
 		System.out.println(trainerDTO.getName());
 		trainerDTO = trainerService.getTrainerPage(trainerDTO);
-		
 		session.setAttribute("trainer", trainerDTO);
 		if(trainerDTO != null) {
 			mv.addObject("page", trainerDTO);
@@ -51,14 +48,12 @@ public class TrainerController {
 			mv.addObject("path", "./trainerSearch");
 			mv.setViewName("common/result");
 		}
-		System.out.println(trainerDTO.getName());
 		return mv;
 	}
 	
 	@GetMapping("trainerWindowSearch")
 	public ModelAndView getSearchList(Pager pager,MemberDTO memberDTO)throws Exception{
 		ModelAndView mv = new ModelAndView();
-		System.out.println(memberDTO.getAddress());
 		System.out.println(memberDTO.getName());
 		List<TrainerDTO> ar = trainerService.getSearchList(pager);
 		
@@ -77,7 +72,7 @@ public class TrainerController {
 	}
 	
 	@GetMapping("trainerDetailSearch")
-	public ModelAndView getSearch(Pager pager,TrainerDTO trainerDTO)throws Exception{
+	public ModelAndView getSearch(Pager pager)throws Exception{
 		ModelAndView mv = new ModelAndView();
 		
 		List<TrainerDTO> ar = trainerService.getSearch(pager);
@@ -92,7 +87,7 @@ public class TrainerController {
 	@GetMapping("map")
 	public ModelAndView getMap()throws Exception{
 		
-		ModelAndView mv =new ModelAndView();
+		ModelAndView mv = new ModelAndView();
 		
 		mv.setViewName("trainer/map");
 		
