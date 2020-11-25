@@ -35,8 +35,8 @@
 	<form class="example" style="margin: 25px;width: 50%; margin: 0 auto;" action="./trainerWindowSearch">
 		<div class="col-xs-3" id="divSelect">
 			<select style="font-size: 15px; margin-bottom: 5px;" class="form-control" name="select" id="selectBox">
-				<option value="name">이름</option>
-				<option value="address">지역</option>
+				<option value="nm">이름</option>
+				<option value="loc">지역</option>
 			</select>
 		</div>
 		<div id= "divSelect" hidden="">
@@ -54,15 +54,15 @@
 		<th>이름 </th><th>성별 </th><th>종류 </th><th>지역 </th><th>장소 </th>
 	</tr>
 	<c:forEach items="${list}" var="member">
-
-		<tr class="t_tr">
-			<td><a href="./trainerInfoPage?num=${member.num}&id=${member.id}">${member.name}</a></td>
-			<td>${member.gender}</td>
-			<td>${member.kind}</td>
-			<td>${member.address}</td>
-			<td>${member.business}</td>
-		</tr>
-
+		<c:if test="${not empty member.kind}">
+			<tr class="t_tr">
+				<td><a href="./trainerInfoPage?num=${member.num}&id=${member.id}">${member.name}</a></td>
+				<td>${member.gender}</td>
+				<td>${member.kind}</td>
+				<td>${member.address}</td>
+				<td>${member.business}</td>
+			</tr>
+		</c:if>	
 	</c:forEach>
 	</table>
 	<div class="container" id="pager_div">

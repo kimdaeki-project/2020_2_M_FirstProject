@@ -43,15 +43,15 @@
 		</tr>
 	
 		<c:forEach items="${search}" var="dto">
-			
-			<tr class="t_tr">
-				<td><a href="./trainerInfoPage?num=${dto.num}&id=${dto.id}">${dto.name}</a></td>
-				<td>${dto.gender}</td>
-				<td>${dto.kind}</td>
-				<td>${dto.address}</td>
-				<td>${dto.business}</td>
-			</tr>
-		
+			<c:if test="${not empty ${dto.kind}">
+				<tr class="t_tr">
+					<td><a href="./trainerInfoPage?num=${dto.num}&id=${dto.id}">${dto.name}</a></td>
+					<td>${dto.gender}</td>
+					<td>${dto.kind}</td>
+					<td>${dto.address}</td>
+					<td>${dto.business}</td>
+				</tr>
+			</c:if>
 		</c:forEach>
 	</table>
 	
