@@ -43,7 +43,7 @@ public class TrainerController {
 		trainerDTO = trainerService.getTrainerPage(trainerDTO);
 		
 		if(trainerDTO != null) {
-			session.setAttribute("trainer", trainerDTO);
+			session.setAttribute("trainers", trainerDTO);
 			//	mv.addObject("page", trainerDTO);
 			mv.setViewName("trainer/trainerInfoPage");
 		}else {

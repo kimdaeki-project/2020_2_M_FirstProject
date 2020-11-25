@@ -66,11 +66,11 @@
 		
 			<div class="container" id="cashDiv">
 				<h3 class="cash_h1" style="padding:15px; background-color: #f2d9e6;">선택하신 트레이너 정보입니다.</h3>	
-				이름 : <input type="text" value="${trainer.name}" class="info-tr" name="name">
+				이름 : <input type="text" value="${trainers.name}" class="info-tr" name="name">
 				<br>
-				종류 : <input type="text" value="${trainer.kind}" class="info-tr" name="kind">
+				종류 : <input type="text" value="${trainers.kind}" class="info-tr" name="kind">
 				<br>
-				출장 : <input type="text" value="${trainer.business}" class="info-tr" name="business">
+				출장 : <input type="text" value="${trainers.business}" class="info-tr" name="business">
 				<br>					
 				<input type="text" value="${member.id}" name="id" id="member_id-text" readonly="readonly">회원님
 				<div class="date_style">예약하실 날짜와 시간을 선택해주세요.(당일예약 불가)</div>
