@@ -43,7 +43,7 @@
 		</tr>
 	
 		<c:forEach items="${search}" var="dto">
-			<c:if test="${not empty ${dto.kind}">
+			<c:if test="${not empty dto.kind}">
 				<tr class="t_tr">
 					<td><a href="./trainerInfoPage?num=${dto.num}&id=${dto.id}">${dto.name}</a></td>
 					<td>${dto.gender}</td>
