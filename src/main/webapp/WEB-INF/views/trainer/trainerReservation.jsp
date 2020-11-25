@@ -339,16 +339,6 @@
 						<img src="../resources/img/trainerIcon/pc_call.png" class="icon-pc-call">
 						<a href="#">02-111-1111</a>
 					</div>
-					
-					<div class="purchase-cont in-detail-border">
-						<div class="btns-wrap">
-							<div class="btn-multipay shadow-btn detail-btn">
-								<button class="shadow-btn detail-btn" id="reserve_btn">
-									<span class="span-label">결제 진행하기</span>
-								</button>
-							</div>
-						</div>
-					</div>
 				</div>
 			</div>
 			<div class="contents-window">

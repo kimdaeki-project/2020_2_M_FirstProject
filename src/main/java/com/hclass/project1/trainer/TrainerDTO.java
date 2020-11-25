@@ -10,7 +10,30 @@ public class TrainerDTO {
 	private String business;
 	private String filename;
 	private String id;
+	private String education;
+	private String certificate;
+	private String career;
 	
+	
+	
+	public String getEducation() {
+		return education;
+	}
+	public void setEducation(String education) {
+		this.education = education;
+	}
+	public String getCertificate() {
+		return certificate;
+	}
+	public void setCertificate(String certificate) {
+		this.certificate = certificate;
+	}
+	public String getCareer() {
+		return career;
+	}
+	public void setCareer(String career) {
+		this.career = career;
+	}
 	public String getId() {
 		return id;
 	}
