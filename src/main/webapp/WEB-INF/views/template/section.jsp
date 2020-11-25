@@ -86,7 +86,7 @@
             				<a href = "https://www.gpnmall.kr/product/list.html?cate_no=71"><img  src="./resources/img/food/fd_3.jpg" class="img-circle drink" alt="Cinque Terre"></a>
             		</li>
             		<li class = "food">
-            				<a href = "https://www.whey10.co.kr/goods/view?no=79"><img  src="./resources/img/food/food.png" class="img-circle drink" alt="Cinque Terre"></a>
+            				<a href = "https://www.whey10.co.kr/goods/view?no=79"><img  src="./resources/img/food/food.jpg" class="img-circle drink" alt="Cinque Terre"></a>
             		</li>
             	</ul>
             
