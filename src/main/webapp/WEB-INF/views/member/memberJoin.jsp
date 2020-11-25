@@ -16,6 +16,20 @@
         <meta charset="UTF-8">
         
   <style type="text/css">
+  #title{
+  	width : 350px;
+  	height : 30px;
+  	margin: 0px auto;
+  	margin-bottom: 30px;
+  }
+  #main{
+	width :600px;
+	height: 90%;
+  	
+  }
+  #footer{
+  	height: 70px;
+  }
 	.idCheck0 {
 		color: blue;
 	}
@@ -67,6 +81,7 @@
 		font-size: small; 
 		font-family: Arial, '맑은 고딕';
 		background-color: rgb(245,246,247);
+		height: 100%;
 	}
 </style>
     </head>
@@ -84,10 +99,11 @@
             
             
             <div class="container center" id="joinbody">
+            <div id="title">
                <h1 >${classification} 회원가입</h1>
-              
+              </div>
                <input type="text" hidden="" value="${classification}" id="title">
- 		<div class="container">
+ 		<div class="container" id = "main">
             <form class="form-horizontal" id="frm" method="post" action="./memberJoin"  enctype="multipart/form-data">
                 <div class="form-group" id="divId">
                     <label for="id" class="col-lg-2  control-label">아이디</label>
@@ -463,10 +479,10 @@
 				}	         
             </script>
             <!-- 푸터 들어가는 부분 -->
+            <div id ="footer">
             <c:import url="../template/footer.jsp"></c:import>
-         
+         </div>
             <!--// 푸터 들어가는 부분 -->
-       
     </body>
 </html>
  

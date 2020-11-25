@@ -32,12 +32,16 @@
 			width:  800px;
 			border: 1px solid rgb(245,246,247);
 			border-radius :20px 20px 20px 20px;
-	position: absolute;top: 30%;left: 45%;margin:-150px 0 0 -150px}
+			position: absolute;top: 20%;left: 45%;
+			margin:-150px 0 0 -150px}
 	.noResize{
 		resize: none;
 	
 	}
-	.footer{
+	.area{
+	margin-top: 10px;
+	}
+	.footer{  margin: 0px auto;position: absolute;top: 80%; left: 20%}
 	
 </style>
 </head>
@@ -45,7 +49,8 @@
 
 	
 <form action="./memberJoin" method="get" id="form1">
-<div class = "center" id="main" >
+<div id="main" >
+<div class = "center">
 <h1>약관동의</h1>
 	
 	<p>
@@ -57,7 +62,7 @@
 	<p>
 		<textarea rows="7" cols="70" readonly="readonly" class="noResize">필수 약관동의1</textarea>
 		<label>
-		<div>
+		<div class ="area">
 			<input type="checkbox" name="c1" id="c1"> 
 			이용약관 동의(필수)
 		</div>
@@ -66,7 +71,7 @@
 	<p>
 	<textarea rows="7" cols="70" readonly="readonly" class="noResize">필수 약관동의2</textarea>
 		<label>
-		<div>
+		<div class ="area">
 			<input type="checkbox" name="c2" id="c2"> 
 			개인정보 수집 및 이용에 대한 안내(필수)
 		</div>
@@ -75,17 +80,19 @@
 	
 
 	<p>
+
 		<label>
 		<textarea rows="7" cols="70" readonly="readonly"  class="noResize">선택 약관동의</textarea>
-		<div>
-			<input type="checkbox" name="c3" id="c3"> 
+		<div class ="area">
+			<input type="checkbox" name="c3" id="c3" value="위치정보 이용약관 동의(선택)"> 
 			위치정보 이용약관 동의(선택)
 		</div>
 		</label>
+		
 	</p>
 
 <p>
-			<div>
+			<div class ="area">
                     <label for="inputEmailReceiveYn" class="col-lg-2 control-label">트레이너입니까?</label>
                     <div class="col-lg-10">
                         <label class="radio-inline">
@@ -94,20 +101,19 @@
                         <label class="radio-inline">
                             <input type="radio" id="division" name="division" value="N"> 아니오
                         </label>
-                    </div>
-                    </div>
+                </div>
+   </div>
 
 	
-	<div>
+	<div class ="area">
 		<p id="input">
 			<input type="submit" value="동의" id="member">
 			<input type="reset" value="미동의" id="reset" onload="">
 		</p>
 	</div>
+
+
 </div>
-</form>
-
-
 <script>
 
 
@@ -218,6 +224,8 @@
 </script>
 <div class="footer">
  <c:import url="../template/footer.jsp"></c:import>
-</div>    
+</div>  
+</div>
+</form>  
 </body>
 </html>
