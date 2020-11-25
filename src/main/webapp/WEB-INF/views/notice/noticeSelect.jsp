@@ -29,9 +29,10 @@
 }
 img { display: block; margin: 0px auto; }
 #contentsBox{
-
-	background-color: white;
-	border: none;
+	background-color :white;
+	border:none;
+	width :900px;
+	margin: 0px auto
 }
 </style>
 </head>
@@ -107,7 +108,7 @@ img { display: block; margin: 0px auto; }
 			</tr>
 		</table>
 		<div id = "middle"></div>
-		<div id ="images">
+		<div class ="contentsView">
 		<c:forEach items="${list}" var="img" varStatus="vs">
 					<tr>
 						
@@ -117,12 +118,14 @@ img { display: block; margin: 0px auto; }
 						
 					</tr>
 				</c:forEach>
-				</div>
-				<div>
-				<pre id = "contentsBox">${dto.contents}
+				<div class ="contentsView">
+				<pre id = "contentsBox"  class ="contentsView">${dto.contents}
 				</pre>
-				
 				</div>
+				</div>
+	
+				<div>
+			
 		<c:choose>
 			<c:when test="${board eq 'notice'}">
 				<c:if test="${not empty member and member.id eq 'admin'}">
@@ -147,7 +150,7 @@ img { display: block; margin: 0px auto; }
 		</c:choose>
 	
 	</div>
-	
+	</div>
 
 	<!-- Footer -->
 	<c:import url="../template/footer.jsp"></c:import>

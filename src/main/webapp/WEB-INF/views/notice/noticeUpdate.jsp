@@ -23,13 +23,14 @@
 
 </head>
 <body>
+<jsp:include page="../template/slide.jsp" />
 
 	<!-- Navigation -->
 	<c:import url="../template/header.jsp"></c:import>
 
 
 	<div class="container">
-		<form id="frm" action="./${board }Update" method="post"
+		<form id="frm" action="./${board}Update" method="post"
 			enctype="multipart/form-data">
 			<div class="form-group" hidden="">
 				<label for="title">num</label> <input type="text"

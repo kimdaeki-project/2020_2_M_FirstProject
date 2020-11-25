@@ -7,26 +7,24 @@
 <meta charset="UTF-8">
 <title>QnA Reply</title>
 <c:import url="../template/bootStrap.jsp"></c:import>
+
 <style type="text/css">
 table {
 	margin-top: 10px;
 }
 </style>
 
-<link rel="stylesheet"
-	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 
 <!-- jQuery library -->
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
 <!-- Latest compiled JavaScript -->
-<script
-	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-
-</head>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 <body>
 	<jsp:include page="../template/slide.jsp" />
+	
 	<c:import url="../template/header.jsp"></c:import>
 
 
@@ -48,16 +46,15 @@ table {
 
 			<div class="form-group">
 				<label for="contents">내용</label>
-				<textarea class="form-control" rows="10" id="contents"
-					name="contents"></textarea>
+				<textarea class="form-control summernote" rows="10" id="summernote" name="contents" ></textarea>
 			</div>
 
 
 			<button type="submit" class="btn btn-primary">Update</button>
 		</form>
 	</div>
-	<script type="text/javascript" src="../common/result.js">
-</script>
+	<script type="text/javascript" src="">
+	</script>
 
 	<!-- Footer -->
 	<c:import url="../template/footer.jsp"></c:import>
