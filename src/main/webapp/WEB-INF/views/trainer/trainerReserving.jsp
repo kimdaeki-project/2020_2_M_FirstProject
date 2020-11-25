@@ -332,12 +332,12 @@
 				</div>
 				<div class="gym-info">
 					<div class="title">
-						<div class="ts-sxl"><strong>서대문 VIP 휘트니스</strong></div>
+						<div class="ts-sxl"><strong>홍대입구역 짐티피 2호점</strong></div>
 					</div>
 					<div class="info-text in-detail-border">
-						<div style="margin-bottom: 10px;">서울특별시 서대문구 경기대로 68 동신빌딩 3층(2층,지하 1층)</div>
+						<div style="margin-bottom: 10px;">서울특별시 마포구 신촌로 12 동우빌딩 지하1층</div>
 						<img src="../resources/img/trainerIcon/pc_call.png" class="icon-pc-call">
-						<a href="#">02-111-1111</a>
+						<a href="#">0504-3172-6828</a>
 					</div>
 				</div>
 			</div>
@@ -350,25 +350,11 @@
 			</div>
 			<div class="center-introduce-container">
 				<div class="membershipAnchor">
-					<p class="introduce-container-p"> [VIP휘트니스는 정부 방역지침을 준수합니다!]
-					✅ 출입구 발열 / 호흡기 증상여부 확인
-					✅ 시설 내 손 소독제 비치
-					✅ 회원 및 관리자 마스크 착용
-					✅ 운동복, 수건 등 공용물품 제공하지 않음
-					✅ 탈의실, 샤워실, 대기실 소독
-					✅ 운동기구 사용자간 1~2m 간격 유지
-					✅ 감염관리 책임자 지정 및 출입자명단 관리
-					
-					고객님들의 안전한 운동을 위해 최선을 다하겠습니다.
-					-------------------------------
-					
-					서대문역 1번출구 5분거리!! 3개 각 층 넓고 쾌적한 VIP휘트니스!!
-					▶3층 프리 웨이트(렉3대) 및 P.T존! 
-					▶2층 유산소존! 
-					▶B1층 찜질방 및 G.X존 
-					
-					쾌적하고 후회없는 결정을 원한다면 
-					지금바로 VIP휘트니스로 다짐하세요!   
+					<p class="introduce-container-p"> 여기가 홍대에서 젤로 hot하다는...
+					괴물래퍼 Swi*gs가 운영하는 헬스장?
+					(가격, 시설 실화? ㄷㄷ)
+
+					#2호점은 최고급 IMPULSE 머신 풀세트
 					</p>
 				</div>
 			</div>
@@ -397,31 +383,31 @@
 								<tr _table-tr class="price original">
 									<td _table-td>정상가</td>
 									<td _table-td class="ng-star-inserted">
-										<div _table-div>90,000원</div>
-									</td>
-									<td _table-td class="ng-star-inserted">
-										<div _table-div>120,000원</div>
+										<div _table-div>110,000원</div>
 									</td>
 									<td _table-td class="ng-star-inserted">
 										<div _table-div>220,000원</div>
 									</td>
 									<td _table-td class="ng-star-inserted">
-										<div _table-div>410,000원</div>
+										<div _table-div>330,000원</div>
+									</td>
+									<td _table-td class="ng-star-inserted">
+										<div _table-div>440,000원</div>
 									</td>
 								</tr>
 								<tr _table-tr class="price mem ng-star-inserted">
 									<td _table-td>회원가</td>
 									<td _table-td class="ng-star-inserted">
-										<div _table-div>78,000원</div>
+										<div _table-div>99,000원</div>
 									</td>
 									<td _table-td class="ng-star-inserted">
-										<div _table-div>109,000원</div>
+										<div _table-div>179,000원</div>
 									</td>
 									<td _table-td class="ng-star-inserted">
-										<div _table-div></div>
+										<div _table-div>279,000원</div>
 									</td>
 									<td _table-td class="ng-star-inserted">
-										<div _table-div></div>
+										<div _table-div>379,000원</div>
 									</td>
 								</tr>
 								<tr class="price lowest ng-star-inserted">
@@ -432,76 +418,7 @@
 										<div _table-div>66,000원</div>
 									</td>
 									<td _table-td class="bold ng-star-inserted">
-										<div _table-div>88,000원</div>
-									</td>
-									<td _table-td class="bold ng-star-inserted">
-										<div _table-div></div>
-									</td>
-									<td _table-td class="bold ng-star-inserted">
-										<div _table-div></div>
-									</td>
-								</tr>
-							</table>
-						</div>
-					</div>
-					<div class="item ng-star-inserted">
-						<h4 class="item-title">요가</h4>
-						<div class="item-contents">
-							<table class="price-table membershipAnchor" id="item-table">
-								<tr _table-tr class="header-row">
-									<td _table-td></td>
-									<td _table-td>
-										<div _table-div>1개월</div>
-									</td>
-									<td _table-td>
-										<div _table-div>3개월</div>
-									</td>
-									<td _table-td>
-										<div _table-div>6개월</div>
-									</td>
-									<td _table-td>
-										<div _table-div>12개월</div>
-									</td>
-								</tr>
-								<tr _table-tr class="price original">
-									<td _table-td>정상가</td>
-									<td _table-td class="ng-star-inserted">
-										<div _table-div>60,000원</div>
-									</td>
-									<td _table-td class="ng-star-inserted">
-										<div _table-div>100,000원</div>
-									</td>
-									<td _table-td class="ng-star-inserted">
-										<div _table-div>180,000원</div>
-									</td>
-									<td _table-td class="ng-star-inserted">
-										<div _table-div>370,000원</div>
-									</td>
-								</tr>
-								<tr _table-tr class="price mem ng-star-inserted">
-									<td _table-td>회원가</td>
-									<td _table-td class="ng-star-inserted">
-										<div _table-div>55,000원</div>
-									</td>
-									<td _table-td class="ng-star-inserted">
-										<div _table-div>89,000원</div>
-									</td>
-									<td _table-td class="ng-star-inserted">
-										<div _table-div></div>
-									</td>
-									<td _table-td class="ng-star-inserted">
-										<div _table-div></div>
-									</td>
-								</tr>
-								<tr class="price lowest ng-star-inserted">
-									<td _table-td class="universe">
-										선착순 우주최저가
-									</td>
-									<td _table-td class="bold ng-star-inserted">
-										<div _table-div>43,000원</div>
-									</td>
-									<td _table-td class="bold ng-star-inserted">
-										<div _table-div>73,000원</div>
+										<div _table-div>145,000원</div>
 									</td>
 									<td _table-td class="bold ng-star-inserted">
 										<div _table-div></div>
@@ -518,18 +435,23 @@
 			<section _se-content class="notice-container ng-star-inserted">
 				<h3 _h3-h3>공지사항</h3>
 				<div _table-div>
-					※ONLY 트레이너 매칭에서 가능한 VIP 선착순 우주 최저가 혜택 !
-					단기권 1개월,3개월 회원권 할인가 각 선착순 50명 
-					(조기소진시 정상가전환)
+					ONLY 트레이너 매칭에서만 준비한 짐티피 다짐 우주최저가 FLEX!
+					3개월 15%할인 선착순 30명
+					12개월 20%할인 선착순 30명
+					(단, 조기소진시 정상가 전환)
+					
+					※ 짐티피 1,2,3호점 프리패스 회원권 안내사항 (※4호점은 이용불가)
+					3개월: 50,000원 / 6개월: 80,000원 / 12개월: 100,000원
+					현장에서 추가 결제시 1,2,3호점 이용가능합니다. (단, 1개월 고객은 프리패스 적용이 불가합니다.)
+					* 2,3호점은 운동복+수건 이용료가 별도로 존재합니다.
 				</div>
 			</section>
 			<section _se-content class="time-container ng-star-inserted">
 				<h3 _h3-h3>운영시간</h3>
 				<p>
-				[평	일] 06:00 ~ 23:00
-				[토요일] 09:00 ~ 19:00
-				[일요일] 12:00 ~ 18:00
-				[휴관일] 둘째 ,넷째 주 일요일 
+					[평　일] 06:00 ~ 24:00
+					[주　말] 10:00 ~ 20:00
+					[공휴일] 10:00 ~ 20:00(※명절 당일 제외)
 				</p>
 			</section>
 			<section _se-content class="comforts-container ng-star-inserted">
@@ -593,16 +515,6 @@
 	
 		</div>
 	</div>	
-	<input type="button" value="검색창으로 돌아가기" class="btn btn-primary" id="back_btn">
-	<div id="height_size"></div>
 	<c:import url="../template/footer.jsp"></c:import>
 </body>
-<script type="text/javascript">
-	$("#reserve_btn").click(function() {
-		location.href="../payment/paymentPage";
-	});
-	$("#back_btn").click(function() {
-		location.href="./trainerSearch";
-	});
-</script>
 </html>

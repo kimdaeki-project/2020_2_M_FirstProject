@@ -101,6 +101,9 @@
 							<div style="margin-bottom: 10px;"><strong>경력 : </strong>${trainers.career }</div>
 						</div>
 					</c:if>
+						<div class="info-text in-detail-border">
+							<div style="margin-bottom: 10px;"><strong>출장여부 : </strong>${trainers.business }</div>
+						</div>
 				</div>
 			</div>
 		</div>

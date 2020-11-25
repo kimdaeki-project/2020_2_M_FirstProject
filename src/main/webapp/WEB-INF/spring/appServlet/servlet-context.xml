@@ -32,6 +32,10 @@
 			<exclude-mapping path="/trainer/trainerDetailSearch"/>
 			<exclude-mapping path="/trainer/trainerWindowSearch"/>
 			<exclude-mapping path="/trainer/trainerInfoPage"/>
+			<exclude-mapping path="/trainer/trainerReservation"/>
+			<exclude-mapping path="/trainer/trainerReserve"/>
+			<exclude-mapping path="/trainer/trainerReserver"/>
+			<exclude-mapping path="/trainer/trainerReserving"/>
 			<beans:ref bean="trainerMemberInterceptor"/>
 		</interceptor>
 		

@@ -40,7 +40,7 @@
 	<h3 class="info-h3" style="color:#bf4080;" >나의 예약정보</h3>
 	<table class="table table-condensed" id="info-table">
 		<tr>
-			<th>아이디</th><th>예약날짜</th><th>시간</th><th>l</th><th>트레이너</th><th>운동</th><th>장소</th>
+			<th>아이디</th><th>예약날짜</th><th>시간</th><th>l</th><th>트레이너</th><th>운동</th><th>출장여부</th>
 		</tr>
 		<tr>
 			<td>${member.id}</td>

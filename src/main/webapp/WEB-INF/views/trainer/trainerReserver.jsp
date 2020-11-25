@@ -332,12 +332,12 @@
 				</div>
 				<div class="gym-info">
 					<div class="title">
-						<div class="ts-sxl"><strong>서대문 VIP 휘트니스</strong></div>
+						<div class="ts-sxl"><strong>역삼 MADFIT PRO</strong></div>
 					</div>
 					<div class="info-text in-detail-border">
-						<div style="margin-bottom: 10px;">서울특별시 서대문구 경기대로 68 동신빌딩 3층(2층,지하 1층)</div>
+						<div style="margin-bottom: 10px;">서울특별시 강남구 논현로 523 노바빌딩</div>
 						<img src="../resources/img/trainerIcon/pc_call.png" class="icon-pc-call">
-						<a href="#">02-111-1111</a>
+						<a href="#">0504-3172-6120</a>
 					</div>
 				</div>
 			</div>
@@ -350,25 +350,26 @@
 			</div>
 			<div class="center-introduce-container">
 				<div class="membershipAnchor">
-					<p class="introduce-container-p"> [VIP휘트니스는 정부 방역지침을 준수합니다!]
+					<p class="introduce-container-p"> [매드핏프로는 정부 방역지침을 준수합니다!]
 					✅ 출입구 발열 / 호흡기 증상여부 확인
 					✅ 시설 내 손 소독제 비치
 					✅ 회원 및 관리자 마스크 착용
-					✅ 운동복, 수건 등 공용물품 제공하지 않음
 					✅ 탈의실, 샤워실, 대기실 소독
-					✅ 운동기구 사용자간 1~2m 간격 유지
 					✅ 감염관리 책임자 지정 및 출입자명단 관리
 					
-					고객님들의 안전한 운동을 위해 최선을 다하겠습니다.
-					-------------------------------
+					고객님들의 안전한 운동을 위해 최선을 다 하겠습니다.
 					
-					서대문역 1번출구 5분거리!! 3개 각 층 넓고 쾌적한 VIP휘트니스!!
-					▶3층 프리 웨이트(렉3대) 및 P.T존! 
-					▶2층 유산소존! 
-					▶B1층 찜질방 및 G.X존 
+					---------------------------------------
 					
-					쾌적하고 후회없는 결정을 원한다면 
-					지금바로 VIP휘트니스로 다짐하세요!   
+					여기는 서울인데, 왜 당신은 "지방"에 사십니까?
+					연예인들이랑 같이 크로스핏 하는 그 곳!!
+					세상 제일 핫한 매드핏프로에서 다이어트 끝내보자!
+					
+					1. 매드핏 프로는 바쁜 직장인에게 반드시 필요한 펑셔널 트레이닝을 합니다 !
+					→ 자세 개선부터 다이어트와 근육쉐입 개선까지 !
+					
+					2. 즐거움과 행복이 가득한 커뮤니티 운동 !
+					→ 누구나 편하게 와서 운동할 수 있는 분위기 남녀노소 ! 불문 !   
 					</p>
 				</div>
 			</div>
@@ -376,7 +377,7 @@
 				<h3>가격정보</h3>
 				<div class="item-list">
 					<div class="item ng-star-inserted">
-						<h4 class="item-title">헬스</h4>
+						<h4 class="item-title">프로그램(무제한)</h4>
 						<div class="item-contents">
 							<table class="price-table membershipAnchor" id="item-table">
 								<tr _table-tr class="header-row">
@@ -397,28 +398,28 @@
 								<tr _table-tr class="price original">
 									<td _table-td>정상가</td>
 									<td _table-td class="ng-star-inserted">
-										<div _table-div>90,000원</div>
+										<div _table-div>300,000원</div>
 									</td>
 									<td _table-td class="ng-star-inserted">
-										<div _table-div>120,000원</div>
+										<div _table-div>810,000원</div>
 									</td>
 									<td _table-td class="ng-star-inserted">
-										<div _table-div>220,000원</div>
+										<div _table-div>1,530,000원</div>
 									</td>
 									<td _table-td class="ng-star-inserted">
-										<div _table-div>410,000원</div>
+										<div _table-div>2,376,000원</div>
 									</td>
 								</tr>
 								<tr _table-tr class="price mem ng-star-inserted">
 									<td _table-td>회원가</td>
 									<td _table-td class="ng-star-inserted">
-										<div _table-div>78,000원</div>
+										<div _table-div>275,000원</div>
 									</td>
 									<td _table-td class="ng-star-inserted">
-										<div _table-div>109,000원</div>
+										<div _table-div>693,000원</div>
 									</td>
 									<td _table-td class="ng-star-inserted">
-										<div _table-div></div>
+										<div _table-div>1,254,000원</div>
 									</td>
 									<td _table-td class="ng-star-inserted">
 										<div _table-div></div>
@@ -429,13 +430,13 @@
 										선착순 우주최저가
 									</td>
 									<td _table-td class="bold ng-star-inserted">
-										<div _table-div>66,000원</div>
+										<div _table-div>245,000원</div>
 									</td>
 									<td _table-td class="bold ng-star-inserted">
-										<div _table-div>88,000원</div>
+										<div _table-div>625,000원</div>
 									</td>
 									<td _table-td class="bold ng-star-inserted">
-										<div _table-div></div>
+										<div _table-div>1,135,000원</div>
 									</td>
 									<td _table-td class="bold ng-star-inserted">
 										<div _table-div></div>
@@ -445,7 +446,7 @@
 						</div>
 					</div>
 					<div class="item ng-star-inserted">
-						<h4 class="item-title">요가</h4>
+						<h4 class="item-title">프로그램(주 3회)</h4>
 						<div class="item-contents">
 							<table class="price-table membershipAnchor" id="item-table">
 								<tr _table-tr class="header-row">
@@ -466,28 +467,28 @@
 								<tr _table-tr class="price original">
 									<td _table-td>정상가</td>
 									<td _table-td class="ng-star-inserted">
-										<div _table-div>60,000원</div>
+										<div _table-div>220,000원</div>
 									</td>
 									<td _table-td class="ng-star-inserted">
-										<div _table-div>100,000원</div>
+										<div _table-div>560,000원</div>
 									</td>
 									<td _table-td class="ng-star-inserted">
-										<div _table-div>180,000원</div>
+										<div _table-div>1,0560,000원</div>
 									</td>
 									<td _table-td class="ng-star-inserted">
-										<div _table-div>370,000원</div>
+										<div _table-div>1,980,000원</div>
 									</td>
 								</tr>
 								<tr _table-tr class="price mem ng-star-inserted">
 									<td _table-td>회원가</td>
 									<td _table-td class="ng-star-inserted">
-										<div _table-div>55,000원</div>
+										<div _table-div>210,000원</div>
 									</td>
 									<td _table-td class="ng-star-inserted">
-										<div _table-div>89,000원</div>
+										<div _table-div>520,000원</div>
 									</td>
 									<td _table-td class="ng-star-inserted">
-										<div _table-div></div>
+										<div _table-div>960,000원</div>
 									</td>
 									<td _table-td class="ng-star-inserted">
 										<div _table-div></div>
@@ -498,13 +499,13 @@
 										선착순 우주최저가
 									</td>
 									<td _table-td class="bold ng-star-inserted">
-										<div _table-div>43,000원</div>
+										<div _table-div>200,000원</div>
 									</td>
 									<td _table-td class="bold ng-star-inserted">
-										<div _table-div>73,000원</div>
+										<div _table-div>505,000원</div>
 									</td>
 									<td _table-td class="bold ng-star-inserted">
-										<div _table-div></div>
+										<div _table-div>955,000원</div>
 									</td>
 									<td _table-td class="bold ng-star-inserted">
 										<div _table-div></div>
@@ -516,20 +517,23 @@
 				</div>
 			</section>
 			<section _se-content class="notice-container ng-star-inserted">
-				<h3 _h3-h3>공지사항</h3>
+				<h3 _h3-h3>운영프로그램</h3>
 				<div _table-div>
-					※ONLY 트레이너 매칭에서 가능한 VIP 선착순 우주 최저가 혜택 !
-					단기권 1개월,3개월 회원권 할인가 각 선착순 50명 
-					(조기소진시 정상가전환)
+					유료
+					P.T (가격 별도 문의)
+					필라테스 [X-Pine] (다짐 앱에서 엑스파인 필라테스 검색!)
+					
+					무료
+					MAD Time / 크로스핏
+					무료 O.T 1회
 				</div>
 			</section>
 			<section _se-content class="time-container ng-star-inserted">
 				<h3 _h3-h3>운영시간</h3>
 				<p>
-				[평	일] 06:00 ~ 23:00
-				[토요일] 09:00 ~ 19:00
-				[일요일] 12:00 ~ 18:00
-				[휴관일] 둘째 ,넷째 주 일요일 
+				[평　일] 06:00 ~ 23:00
+				[주　말] Open Gym (프로그램 없음)
+				[휴관일] 공휴일 
 				</p>
 			</section>
 			<section _se-content class="comforts-container ng-star-inserted">
@@ -579,30 +583,12 @@
 							<label _div-image>라커</label>
 						</div>
 					</div>
-					<!--  -->
-					<div _table-div class="comport col-2 ng-star-inserted" _div-image>
-						<div _div-image class="comfort ng-star-inserted">
-							<div _div-image class="icon-holder">
-								<img _div-image src="../resources/img/trainerIcon/wifi.png" alt="wifi">
-							</div>
-							<label _div-image>WI-FI</label>
-						</div>
-					</div>
 				</div>
 			</section>
 	
 		</div>
 	</div>	
-	<input type="button" value="검색창으로 돌아가기" class="btn btn-primary" id="back_btn">
-	<div id="height_size"></div>
 	<c:import url="../template/footer.jsp"></c:import>
 </body>
-<script type="text/javascript">
-	$("#reserve_btn").click(function() {
-		location.href="../payment/paymentPage";
-	});
-	$("#back_btn").click(function() {
-		location.href="./trainerSearch";
-	});
-</script>
+
 </html>
