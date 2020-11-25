@@ -27,7 +27,12 @@
 .select{
 	background-color: white;
 }
+img { display: block; margin: 0px auto; }
+#contentsBox{
 
+	background-color: white;
+	border: none;
+}
 </style>
 </head>
 <body>
@@ -112,6 +117,11 @@
 						
 					</tr>
 				</c:forEach>
+				</div>
+				<div>
+				<pre id = "contentsBox">${dto.contents}
+				</pre>
+				
 				</div>
 		<c:choose>
 		
