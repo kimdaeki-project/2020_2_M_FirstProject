@@ -66,7 +66,10 @@ img { display: block; margin: 0px auto; }
 				<td>조회수</td>
 			</tr>
 			<tr>
-				<td>${dto.title }</td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td>${dto.title}</td>
 				<td></td>
 				<td></td>
 				<td></td>
@@ -78,10 +81,7 @@ img { display: block; margin: 0px auto; }
 				<td></td>
 				<td></td>
 				<td></td>
-				<td></td>
-				<td></td>
-				<td></td>
-				<td>${dto.writer }</td>
+				<td>${dto.writer}</td>
 				<td>${dto.regDate}</td>
 				<td>${dto.hit}</td>
 			</tr>
@@ -124,7 +124,6 @@ img { display: block; margin: 0px auto; }
 				
 				</div>
 		<c:choose>
-		
 			<c:when test="${board eq 'notice'}">
 				<c:if test="${not empty member and member.id eq 'admin'}">
 					<a href="./${board}Update?num=${dto.num}"><input type="button"
@@ -133,44 +132,22 @@ img { display: block; margin: 0px auto; }
 						id="debtn" class="btn btn-danger member" value="delete"></a>
 				</c:if>
 			</c:when>
-		</c:choose>
-		<c:choose>
-			<c:when test="${board eq 'qna'}">
+				<c:when test="${board eq 'Qna'}">
 				<c:if test="${not empty member and member.id eq dto.writer}">
-					<a href="./${board}Update?num=${dto.num}"><input type="button"
+					<a href="./qnaUpdate?num=${dto.num}"><input type="button"
 						id="upbtn" class="btn btn-primary member" value="update"></a>
-					<a href="./${board}Delete?num=${dto.num}"><input type="button"
+					<a href="./qnaDelete?num=${dto.num}"><input type="button"
 						id="debtn" class="btn btn-danger member" value="delete"></a>
 				</c:if>
 				<c:if test="${not empty member and member.id eq 'admin'}">
-					<a href="./${board}Reply?num=${dto.num}"><input type="button"
+					<a href="./qnaReply?num=${dto.num}"><input type="button"
 						id="rebtn" class="btn btn-primary admin" value="reply"></a>
 				</c:if>
 			</c:when>
 		</c:choose>
+	
 	</div>
-	<script type="text/javascript">
-		var writer = $
-		{
-			dto.writer
-		};
-		var idCheck = $
-		{
-			member.id
-		};
-		$("#upbtn").click(function() {
-			location.href = "./noticeUpdate?num=${dto.num}";
-		});
-		$("#debtn").click(function() {
-			location.href = "./noticeDelete?num=${dto.num}";
-		});
-		if (writer != idCheck) {
-			$(".member").remove();
-		}
-		if (idCheck != 'admin') {
-			$(".admin").remove();
-		}
-	</script>
+	
 
 	<!-- Footer -->
 	<c:import url="../template/footer.jsp"></c:import>
