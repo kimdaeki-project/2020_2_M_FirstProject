@@ -7,9 +7,10 @@
  		<insert id="setFileOne" parameterType="MemberFileDTO">
  				insert into trainerFile values(#{num},#{id},#{fileName},#{oriName},#{name})
  		</insert>
-	
-	<select id="getOne" parameterType="MemberDTO" resultType="MemberFileDTO">
+ 		
+		<select id="getOne" parameterType="MemberDTO" resultType="MemberFileDTO">
 			select * from trainerFile where id = #{id}
-	</select>
+		</select>
+
 	
     </mapper>

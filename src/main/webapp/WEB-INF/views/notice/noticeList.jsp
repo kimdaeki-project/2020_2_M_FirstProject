@@ -31,7 +31,7 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-sm-8">
-				<form action="./noticeList">
+				<form action="./${board }List">
 					<div class="input-group">
 						<select class="input-group-sm" id="sel1" name="kind">
 							<option value="tt">글제목</option>

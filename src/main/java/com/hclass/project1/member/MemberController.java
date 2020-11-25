@@ -217,9 +217,21 @@ public class MemberController {
 			memberDTO.setGym("");
 			memberDTO.setbusiness("");	
 			memberDTO.setKind("");
+			memberDTO.setEducation("");
+			memberDTO.setCertificate("");
+			memberDTO.setCareer("");
 			result = memberService.setOne(memberDTO);
 		}
 		else {
+		if(memberDTO.getEducation()==null) {
+			memberDTO.setEducation("");
+		}
+		if(memberDTO.getCertificate()==null) {
+			memberDTO.setCertificate("");
+		}
+		if(memberDTO.getCareer()==null) {
+			memberDTO.setCareer("");
+		}
 		result = memberService.setOne(memberDTO,photo,session);
 		}
 		String message ="가입실패";

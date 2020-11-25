@@ -164,7 +164,24 @@
                          <div id="gymResult"></div>
                     </div>
                 </div>
-                
+                 <div class="form-group" id="divEducation">
+                    <label for="inputPhoneNumber" class="col-lg-2 control-label">학력</label>
+                    <div class="col-lg-10">
+                        <input type="tel" class="form-control onlyNumber" id="education" data-rule-required="true" placeholder="학력을 입력하세요" maxlength="11" name="education">
+                    </div>
+                </div>
+                 <div class="form-group" id="divCertificate">
+                    <label for="inputPhoneNumber" class="col-lg-2 control-label">자격증</label>
+                    <div class="col-lg-10">
+                        <input type="tel" class="form-control onlyNumber" id="certificate" data-rule-required="true" placeholder="자격증을 입력하세요" maxlength="11" name="certificate">
+                    </div>
+                </div>
+                 <div class="form-group" id="divCareer">
+                    <label for="inputPhoneNumber" class="col-lg-2 control-label">경력</label>
+                    <div class="col-lg-10">
+                        <input type="tel" class="form-control onlyNumber" id="career" data-rule-required="true" placeholder="경력을 입력하세요" maxlength="11" name="career">
+                    </div>
+                </div>
                  <div id = "divKind" class="form-group">
                     <label for="inputKind" class="col-lg-2 control-label">주종목</label>
                     <div class="col-lg-10">

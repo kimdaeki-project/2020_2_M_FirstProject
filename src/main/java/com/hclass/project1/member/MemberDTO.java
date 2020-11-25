@@ -16,7 +16,9 @@ private String gym;
 private String business;
 private String trainer;
 private String kind;
-
+private String education;
+private String certificate;
+private String career;
 //*************** pay **********
 private PayDTO payDTO;
 public PayDTO getPayDTO() {
@@ -105,6 +107,25 @@ public String getTrainer() {
 }
 public void setTrainer(String trainer) {
 	this.trainer = trainer;
+}
+
+public String getEducation() {
+	return education;
+}
+public void setEducation(String education) {
+	this.education = education;
+}
+public String getCertificate() {
+	return certificate;
+}
+public void setCertificate(String certificate) {
+	this.certificate = certificate;
+}
+public String getCareer() {
+	return career;
+}
+public void setCareer(String career) {
+	this.career = career;
 }
 
 

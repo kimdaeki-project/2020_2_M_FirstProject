@@ -19,7 +19,16 @@
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 
 <c:import url="../template/bootStrap.jsp"></c:import>
+<style type="text/css">
+#middle{
+	width: 10px;
+}
 
+.select{
+	background-color: white;
+}
+
+</style>
 </head>
 <body>
 	<jsp:include page="../template/slide.jsp" />
@@ -29,33 +38,72 @@
 	<c:import url="../template/header.jsp"></c:import>
 
 
-	<div class="container">
+	<div class="container select">
 		<table class="table table-hober">
 			<tr>
-				<td>글번호</td>
-				<td>작성자</td>
-				<td>내용</td>
-				<td>작성 일시</td>
-				<td>조회수</td>
-			</tr>
-			<tr>
+				<td></td>
+				<td></td>
+				<td></td>
 				<td>제목</td>
 				<td></td>
 				<td></td>
 				<td></td>
 				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td>작성자</td>
+				<td>작성 일시</td>
+				<td>조회수</td>
 			</tr>
 			<tr>
-				<td>${dto.num}</td>
-				<td>${dto.writer}</td>
-				<td>${dto.title}</td>
-				<td>${dto.contents}</td>
+				<td>${dto.title }</td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td>${dto.writer }</td>
 				<td>${dto.regDate}</td>
 				<td>${dto.hit}</td>
 			</tr>
 			<tr>
-			<td>
-				<c:forEach items="${list}" var="img" varStatus="vs">
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			</tr>
+		</table>
+		<div id = "middle"></div>
+		<div id ="images">
+		<c:forEach items="${list}" var="img" varStatus="vs">
 					<tr>
 						
 					<td>
@@ -64,10 +112,9 @@
 						
 					</tr>
 				</c:forEach>
-				</td>
-			</tr>
-		</table>
+				</div>
 		<c:choose>
+		
 			<c:when test="${board eq 'notice'}">
 				<c:if test="${not empty member and member.id eq 'admin'}">
 					<a href="./${board}Update?num=${dto.num}"><input type="button"

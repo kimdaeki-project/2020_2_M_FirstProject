@@ -10,7 +10,7 @@
     	update member set pw = #{pw},email=#{email}, phone = #{phone},address=#{address},gym=#{gym} where id=#{id}
     </update>
     <insert id ="setOne" parameterType="MemberDTO">
-    	insert into member values(member_seq.nextval,#{name},#{id},#{pw},#{phone},#{email},#{gender},#{age},#{address},#{gym},#{business},#{trainer},#{kind})
+    	insert into member values(member_seq.nextval,#{name},#{id},#{pw},#{phone},#{email},#{gender},#{age},#{address},#{gym},#{business},#{trainer},#{kind},#{education},#{certificate},#{career})
 	</insert>
 	<select id="getOne" resultType="MemberDTO" parameterType="MemberDTO">
 		select * from member where id=#{id}
