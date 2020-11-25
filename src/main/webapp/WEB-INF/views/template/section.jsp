@@ -11,16 +11,16 @@
             
           	<ul class = "best">
             	<li class ="trainer">         
-           			<img  src="./resources/img/trainer/tr_1.jpg" class="img-circle" alt="Cinque Terre">
+           			<a  href = "trainer/trainerInfoPage?num=88&id=trainer1">${dto.name}<img  src="./resources/img/trainer/trainer1.jpg" class="img-circle" alt="Cinque Terre"></a>
            		</li>
            		<li class = "trainer">
-           			<img  src="./resources/img/trainer/tr_7.jpg" class="img-circle" alt="Cinque Terre">
+           			<a  href = "trainer/trainerInfoPage?num=89&id=trainer2">${dto.name}<img  src="./resources/img/trainer/trainer2.jpg" class="img-circle" alt="Cinque Terre"></a>
            		</li>
            		<li class = "trainer">
-           			<img  src="./resources/img/trainer/tr_4.jpg" class="img-circle" alt="Cinque Terre">
+           			<a  href = "trainer/trainerInfoPage?num=112&id=trainer13">${dto.name}<img  src="./resources/img/trainer/trainer13.jpg" class="img-circle" alt="Cinque Terre"></a>
            		</li>
            		<li class = "trainer">
-           			<img  src="./resources/img/trainer/tr_6.jpg" class="img-circle" alt="Cinque Terre">
+           			<a href = "trainer/trainerInfoPage?num=115&id=trainer16">${dto.name}<img  src="./resources/img/trainer/trainer16.jpg" class="img-circle" alt="Cinque Terre"></a>
            		</li>          
            </ul>
       
