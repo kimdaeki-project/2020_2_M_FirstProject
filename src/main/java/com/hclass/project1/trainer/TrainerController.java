@@ -36,6 +36,37 @@ public class TrainerController {
 		return mv;
 	}
 	
+	@GetMapping("trainerReservation")
+	public ModelAndView getGymselect() throws Exception{
+		
+		ModelAndView mv = new ModelAndView();
+		
+		mv.setViewName("/trainer/trainerReservation");
+		
+		return mv;
+	}
+	@GetMapping("trainerReserving")
+	public ModelAndView getSelectgym() throws Exception{
+		
+		ModelAndView mv = new ModelAndView();
+		
+		mv.setViewName("/trainer/trainerReserving");
+		
+		return mv;
+	}
+	
+	@GetMapping("trainerReserver")
+	public ModelAndView getOnegym() throws Exception{
+		
+		ModelAndView mv = new ModelAndView();
+		
+		mv.setViewName("/trainer/trainerReserver");
+		
+		return mv;
+	}
+	
+
+	
 	@GetMapping("trainerInfoPage")
 	public ModelAndView getTrainerPage(TrainerDTO trainerDTO, HttpSession session)throws Exception{
 		ModelAndView mv = new ModelAndView();

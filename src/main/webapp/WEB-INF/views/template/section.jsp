@@ -44,16 +44,16 @@
             </h2>
             	<ul class = "best">
             		<li class = "gym">
-            				<img  src="./resources/img/gym/fc_3.jpg" class="img-circle" alt="Cinque Terre">
+            				<a href = "./trainer/trainerReserve"><img  src="./resources/img/gym/fc_13.jpg" class="img-circle" alt="Cinque Terre"></a>
             		</li>
             		<li class = "gym">
-            				<img  src="./resources/img/gym/fc_6.jpg" class="img-circle" alt="Cinque Terre">
+            				<a href = "./trainer/trainerReservation"><img  src="./resources/img/gym/fc_6.jpg" class="img-circle" alt="Cinque Terre"></a>
             		</li>
             		<li class = "gym">
-            				<img  src="./resources/img/gym/fc_8.jpg" class="img-circle" alt="Cinque Terre">
+            				<a href = "./trainer/trainerReserving"><img  src="./resources/img/gym/fc_8.jpg" class="img-circle" alt="Cinque Terre"></a>
             		</li>
             		<li class = "gym">
-            				<img  src="./resources/img/gym/fc_9.jpg" class="img-circle" alt="Cinque Terre">
+            				<a href = "./trainer/trainerReserver"><img  src="./resources/img/gym/fc_9.jpg" class="img-circle" alt="Cinque Terre"></a>
             		</li>
             	</ul>
             
@@ -77,16 +77,16 @@
             </h2>
             <ul class = "best">
             		<li class = "food">
-            				<img  src="./resources/img/food/fd_1.jpg" class="img-circle" alt="Cinque Terre">
+            				<a href = "https://healthhelper.kr/"><img  src="./resources/img/food/fd_1.jpg" class="img-circle drink" alt="Cinque Terre"></a>
             		</li>
             		<li class = "food">
-            				<img  src="./resources/img/food/fd_2.jpg" class="img-circle" alt="Cinque Terre">
+            				<a href = "https://www.gpnmall.kr/product/list.html?cate_no=68"><img  src="./resources/img/food/fd_2.jpg" class="img-circle drink" alt="Cinque Terre"></a>
             		</li>
             		<li class = "food">
-            				<img  src="./resources/img/food/fd_3.jpg" class="img-circle" alt="Cinque Terre">
+            				<a href = "https://www.gpnmall.kr/product/list.html?cate_no=71"><img  src="./resources/img/food/fd_3.jpg" class="img-circle drink" alt="Cinque Terre"></a>
             		</li>
             		<li class = "food">
-            				<img  src="./resources/img/food/fd_4.jpg" class="img-circle" alt="Cinque Terre">
+            				<a href = "https://www.whey10.co.kr/goods/view?no=79"><img  src="./resources/img/food/food.png" class="img-circle drink" alt="Cinque Terre"></a>
             		</li>
             	</ul>
             
