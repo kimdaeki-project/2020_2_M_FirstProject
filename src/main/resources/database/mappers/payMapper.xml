@@ -10,7 +10,7 @@
 	</insert>
 	<!-- 트레이너 전용 확인-->
 	<select id="getPaymentList" resultType="PayDTO" parameterType="PayDTO">
-		select * from pay_test1
+		select * from payment
 	</select>
 	
 	<!-- 나의 정보 확인 -->

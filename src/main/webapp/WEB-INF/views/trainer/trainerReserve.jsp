@@ -593,16 +593,7 @@
 	
 		</div>
 	</div>	
-	<input type="button" value="검색창으로 돌아가기" class="btn btn-primary" id="back_btn">
-	<div id="height_size"></div>
 	<c:import url="../template/footer.jsp"></c:import>
 </body>
-<script type="text/javascript">
-	$("#reserve_btn").click(function() {
-		location.href="../payment/paymentPage";
-	});
-	$("#back_btn").click(function() {
-		location.href="./trainerSearch";
-	});
-</script>
+
 </html>

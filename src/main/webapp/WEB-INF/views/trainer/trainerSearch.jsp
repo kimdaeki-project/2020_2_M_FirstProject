@@ -84,7 +84,7 @@
 			<div>
 				<input type="button" id="btn" value="검색하기" class="btn btn-primary" >
 				<input type="reset" class="btn btn-danger" value="초기화" id="reset">
-				<a href = "./trainer/map"><input type = "button" class = "map btn btn-success" value = "지도에서 찾기" ></a>
+				<a href = "./trainer/map"><input type = "button" class = "map btn btn-success" value = "헬스장  위치찾기" style="float: right;"></a>
 			</div>
 		</div>
 	</form>

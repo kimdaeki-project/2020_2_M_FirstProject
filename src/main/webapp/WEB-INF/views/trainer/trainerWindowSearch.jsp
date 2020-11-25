@@ -51,7 +51,7 @@
 	<div id="tip_div">※ 이름을 클릭하시면 상세정보 페이지로 이동합니다.</div>
 	<table class="table table-condensed" style="width: 70%; margin: 0 auto;">
 	<tr style="font-size: 17px;">
-		<th>이름 </th><th>성별 </th><th>종류 </th><th>지역 </th><th>장소 </th>
+		<th>이름 </th><th>성별 </th><th>종류 </th><th>지역 </th><th>출장여부 </th>
 	</tr>
 	<c:forEach items="${list}" var="member">
 		<c:if test="${not empty member.kind}">
