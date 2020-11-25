@@ -25,7 +25,7 @@
 		<div class="modal-content">
 			<div class="modal-header">
 				<div class="avatar">
-					<img src="/examples/images/avatar.png" alt="Avatar">
+					<img src="/resources/img/main/member.png" alt="Avatar">
 				</div>				
 				<h4 class="modal-title">Member Login</h4>	
                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
