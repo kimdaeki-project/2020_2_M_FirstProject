@@ -9,6 +9,7 @@ public class TrainerDTO {
 	private String address;
 	private String business;
 	private String filename;
+	private String oriname;
 	private String id;
 	private String education;
 	private String certificate;
@@ -16,6 +17,12 @@ public class TrainerDTO {
 	
 	
 	
+	public String getOriname() {
+		return oriname;
+	}
+	public void setOriname(String oriname) {
+		this.oriname = oriname;
+	}
 	public String getEducation() {
 		return education;
 	}
