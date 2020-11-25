@@ -98,12 +98,17 @@
 			</div>
 		</div>
 		<div class="container" id="reserveDiv">
-			<input id="reserveBtn" type="button" value="예약하기" class="btn btn-info" title="${member.num}">
+		
+			<!-- 비회원이거나, 로그인 정보가 회원인 사람들만 예약, 트레이너 정보는 비활성화 -->
+			<c:if test="${member.trainer eq 'M' or empty member.trainer }">
+				<input id="reserveBtn" type="button" value="예약하기" class="btn btn-info" title="${member.num}">
+			</c:if>
 		</div>	
 	
 <c:import url="../template/footer.jsp"></c:import>
 <script type="text/javascript">
 	
+	// 예약 페이지로 이동
 	$("#reserveBtn").click(function() {
 		var testnum = $(this).attr("title")
 		location.href="../payment/paymentPage?num="+testnum;	
