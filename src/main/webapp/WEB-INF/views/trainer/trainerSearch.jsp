@@ -15,6 +15,7 @@
 	#search-h2{
 		text-align: center;
 		margin-top: 40px;
+		margin-bottom: 40px;
 	}
 </style>		
 </head>
@@ -43,7 +44,7 @@
 
 <!-- 상세조건 검색 -->
 <div style="margin-top: 25px;" class="list-group" id="div1" >
-	<form id="frm_trainer" action="./trainerDetailSearch">
+	<form id="frm_trainer" action="./trainerDetailSearch" style="margin-top: 15px;">
 		<hr>
 		<h4> 성별 </h4>
 		<label class="radio-inline">
