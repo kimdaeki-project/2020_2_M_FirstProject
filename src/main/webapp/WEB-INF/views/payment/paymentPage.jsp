@@ -25,7 +25,7 @@
 	}
 	#reserve_btn{
 		display:block;
-		margin: 0 auto;
+		margin: 30px auto 0 auto;
 	}
 	.date_style{
 		font-size: 16px;
@@ -66,13 +66,14 @@
 		
 			<!-- 선택한 트레이너 정보 -->
 			<div class="container" id="cashDiv">
-				<h3 class="cash_h1" style="padding:15px; background-color: #f2d9e6;">선택하신 트레이너 정보입니다.</h3>	
+				<h3 class="cash_h1" style="padding:15px; background-color: #f2d9e6; margin-bottom: 30px;">선택하신 트레이너 정보입니다.</h3>	
 				이름 : <input type="text" value="${trainers.name}" class="info-tr" name="name">
 				<br>
 				종류 : <input type="text" value="${trainers.kind}" class="info-tr" name="kind">
 				<br>
 				출장 : <input type="text" value="${trainers.business}" class="info-tr" name="business">
 				<br>
+				<hr>
 			<!--  -->
 			
 			<!-- 나의 아이디 확인, 날짜, 시간 선택  -->						
@@ -121,7 +122,12 @@
 				}
 				
 			}else{
-				alert("회원님은 이미 예약을 하셨습니다.");
+				var a = confirm("회원님은 이미 예약을 하셨습니다. 확인 페이지로 이동하시겠습니까?");
+				if(a==true){
+					location.href = "./payment/paymentMyInfo?id="+id;
+				}else{
+					alert("다른 트레이너분을 원하시면 예약 취소 후 진행해주세요.");
+				}
 			}
 		});	
 	});

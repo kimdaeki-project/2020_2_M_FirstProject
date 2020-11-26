@@ -83,7 +83,7 @@
 				<div class="trainer-info">
 					<div class="title">
 						<div class="ts-sxl"><strong>트레이너 : </strong> ${trainers.name}</div>
-						<div class="ts-sxl" style="margin-left: 50px; color: #e60073;"><strong>＜</strong>${trainers.kind}<strong>＞</strong> </div>
+						<div class="ts-sxl" style="margin-left: 50px; color: #6666ff;"><strong>＜</strong>${trainers.kind}<strong>＞</strong> </div>
 					</div>
 					<div class="info-text in-detail-border">
 						<div style="margin-bottom: 10px;"><strong>주소 : </strong>${trainers.address }</div>

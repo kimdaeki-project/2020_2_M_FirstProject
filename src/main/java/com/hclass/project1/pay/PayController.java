@@ -22,12 +22,15 @@ public class PayController {
 		
 	// 예약 날짜 변경
 	@PostMapping("paymentUpdate")
-	public ModelAndView setPaymentUpdate(PayDTO payDTO) throws Exception{
+	public ModelAndView setPaymentUpdate(PayDTO payDTO,HttpSession session) throws Exception{
 		ModelAndView mv = new ModelAndView();
+		MemberDTO memberDTO = new MemberDTO();
+		memberDTO = (MemberDTO)session.getAttribute("member");
+
 		int result = payService.setPaymentUpdate(payDTO);
 		if(result > 0 ) {
 			mv.addObject("msg", "예약이 변경되었습니다.");
-			mv.addObject("path", "../");
+			mv.addObject("path", "./paymentMyInfo?id="+memberDTO.getId());
 		}else {
 			mv.addObject("msg", "실패");
 			mv.addObject("path", "../");
