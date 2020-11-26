@@ -18,11 +18,8 @@ public class PayMemberInterceptor extends HandlerInterceptorAdapter{
 	@Override
 	public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler)
 			throws Exception {
-		System.out.println("PayMemberInterceptor");
 		
 		String id = request.getParameter("id");
-		
-		System.out.println("Pay" + id);
 		
 		PayDTO payDTO = new PayDTO();
 		payDTO.setId(id);
