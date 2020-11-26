@@ -54,6 +54,12 @@
 		</interceptor>
 		
 		<interceptor>
+			<!-- 회원 전용 예약 페이지 -->
+			<mapping path="/payment/paymentPage"/>
+			<beans:ref bean="payPageInterceptor"/>
+		</interceptor>
+		
+		<interceptor>
 			<mapping path="/**/*"/>
 			<mapping path="/*"/>
 			<beans:ref bean="payPastDeleteInterceptor"/>
