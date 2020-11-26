@@ -6,13 +6,7 @@
 <head>
 <meta charset="UTF-8">
 <title>QnA Reply</title>
-<c:import url="../template/bootStrap.jsp"></c:import>
 
-<style type="text/css">
-table {
-	margin-top: 10px;
-}
-</style>
 
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 
@@ -22,6 +16,28 @@ table {
 
 <!-- Latest compiled JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<style type="text/css">
+table {
+	margin-top: 10px;
+}
+.btns{
+		background-color: black;
+		color:white;
+		font-size: large;
+		border-radius: 10px;
+	}
+	.noResize{
+		resize: none;
+	
+	}
+	.del {
+		color: red;
+		font-weight: bold;
+		cursor: pointer;
+	}
+</style>
+<c:import url="../template/bootStrap.jsp"></c:import>
+</head>
 <body>
 	<jsp:include page="../template/slide.jsp" />
 	
@@ -29,7 +45,7 @@ table {
 
 
 	<div class="container">
-		<form id="frm" action="./qnaReply" method="post">
+		<form id="frm" action="./qnaReply" method="post" enctype="multipart/form-data">
 
 			<input type="hidden" name="num" value="${param.num}">
 			<div class="form-group">
@@ -40,23 +56,22 @@ table {
 
 			<div class="form-group">
 				<label for="writer">작성자</label> <input type="text"
-					class="form-control" id="writer" placeholder="Enter Writer"
+					class="form-control noResize" id="writer" placeholder="Enter Writer"
 					name="writer" value="${member.id}" readonly="readonly">
 			</div>
 
 			<div class="form-group">
 				<label for="contents">내용</label>
-				<textarea class="form-control summernote" rows="10" id="summernote" name="contents" ></textarea>
+				<textarea class="form-control noResize" rows="10" name="contents" ></textarea>
 			</div>
-
-
-			<button type="submit" class="btn btn-primary">Update</button>
+			<button type="submit" class="btns">Update</button>
+			<div id="files"></div>
 		</form>
+		
 	</div>
-	<script type="text/javascript" src="">
-	</script>
-
+	</div>
 	<!-- Footer -->
 	<c:import url="../template/footer.jsp"></c:import>
+	<script src="../resources/js/noticeWrite.js"></script>
 </body>
 </html>

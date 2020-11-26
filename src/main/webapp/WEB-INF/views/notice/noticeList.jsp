@@ -20,6 +20,15 @@
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 
 <c:import url="../template/bootStrap.jsp"></c:import>
+<style type="text/css">
+	.wribtn{
+		background-color: black;
+		color:white;
+		font-size: large;
+		border-radius: 10px;
+	}
+
+</style>
 </head>
 <body>
 
@@ -91,7 +100,9 @@
 		<c:choose>
 			<c:when test="${board eq 'notice'}">
 				<c:if test="${not empty member and member.id eq 'admin'}">
-					<a href="./noticeWrite" class="btn btn-danger">Write</a>
+					<a href="./noticeWrite">
+					<input type="button" value="Write" class="wribtn">
+					</a>
 				</c:if>
 			</c:when>
 
@@ -99,7 +110,7 @@
 		<c:choose>
 			<c:when test="${board eq 'qna'}">
 				<c:if test="${not empty member}">
-					<a href="./qnaWrite" class="btn btn-danger">Write</a>
+					<a href="./qnaWrite"><input type="button" value="Write" class="wribtn"></a>
 				</c:if>
 			</c:when>
 		</c:choose>

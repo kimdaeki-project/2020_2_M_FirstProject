@@ -20,7 +20,12 @@
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 
 <c:import url="../template/bootStrap.jsp"></c:import>
-
+<style type="text/css">
+.noResize{
+		resize: none;
+	
+	}
+</style>
 </head>
 <body>
 <jsp:include page="../template/slide.jsp" />
@@ -51,8 +56,8 @@
 
 			<div class="form-group">
 				<label for="contents">내용 </label>
-				<textarea class="form-control" rows="20" cols="30" id="contents"
-					name="contents">${dto.contents}</textarea>
+				<textarea class="form-control noResize" rows="20" cols="30" id="contents"
+					name="contents"  >${dto.contents}</textarea>
 			</div>
 
 			<input type="button" value="FileAdd" id="fileAdd"

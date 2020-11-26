@@ -42,11 +42,9 @@ public class QnaService {
 	public int setOne(QnaDTO qnaDTO, MultipartFile[] photo, HttpSession session) throws Exception{
 		String path =session.getServletContext().getRealPath("/resources/upload/Qna");
 		File file2 = new File(path);
-		System.out.println(path);
 		String fileName="";
 		int result = qnaDAO.setOne(qnaDTO);
 		for(MultipartFile file :photo) {
-			System.out.println("확인");
 		if(file.getSize()!=0) {
 			fileName = filesaver.saver(file2, file);
 			QnaFileDTO qnafileDTO = new QnaFileDTO();
@@ -61,9 +59,27 @@ public class QnaService {
 	
 		return result;
 	}
-	public int setUpdate(QnaDTO qnaDTO) throws Exception{
+	public int setUpdate(QnaDTO qnaDTO, MultipartFile[] photo, HttpSession session) throws Exception{
+		String path =session.getServletContext().getRealPath("/resources/upload/Qna");
+		File file2 = new File(path);
+		String fileName="";
+		int result =qnaDAO.setUpdate(qnaDTO);
+		for(MultipartFile file :photo) {
+			if(file.getSize()!=0) {
+				fileName = filesaver.saver(file2, file);
+				QnaFileDTO qnafileDTO = new QnaFileDTO();
+				qnafileDTO.setId(qnaDTO.getWriter());
+				qnafileDTO.setOriName(file.getOriginalFilename());
+				qnafileDTO.setFileName(fileName);
+				qnafileDTO.setNum(qnaDTO.getNum());
+				result = qnafileDAO.setFileOne(qnafileDTO);
+				System.out.println(result);
+			}
+			}
 		
-		return qnaDAO.setUpdate(qnaDTO);
+		
+		
+		return result;
 	}
 	public int setDelete(QnaDTO qnaDTO)throws Exception{
 		return qnaDAO.setDelete(qnaDTO);
@@ -71,7 +87,9 @@ public class QnaService {
 	
 	public int setReply(QnaDTO qnaDTO)throws Exception{
 		
-		return qnaDAO.setReply(qnaDTO);
+		int result = qnaDAO.setReply(qnaDTO);
+		
+		return result;
 	}
 	public int hitUp(QnaDTO qnaDTO) throws Exception{
 		return qnaDAO.hitUp(qnaDTO);
