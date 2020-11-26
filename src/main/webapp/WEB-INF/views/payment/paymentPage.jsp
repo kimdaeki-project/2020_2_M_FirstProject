@@ -81,7 +81,7 @@
 				<div class="date_style">(Time 08:00 to 21:00)</div>
 				<div>
 				<input _date type="date" id="date" name="regDate" >
-				<input type="time" id="time" value="08:00" min="08:00" max="21:00" step="900" required="required" name="time">
+				<input type="time" id="time" value="08:00" min="08:00" max="21:00" required="required" name="time">
 			
 			<!-- 지정된 시간에 맞는 선택 시 "",X 결과 출력 -->	
 				<span class="validity"></span>

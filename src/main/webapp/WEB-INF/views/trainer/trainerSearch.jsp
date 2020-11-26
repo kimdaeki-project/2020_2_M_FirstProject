@@ -85,8 +85,7 @@
 		<div class="col-xs-12" id="div3">
 			<div>
 				<input type="button" id="btn" value="검색하기" class="btn btn-primary" >
-				<input type="reset" class="btn btn-danger" value="초기화" id="reset">
-				<a href = "./trainer/map"><input type = "button" class = "map btn btn-success" value = "헬스장  위치찾기" style="float: right;"></a>
+				<a href = "./trainer/map"><input type = "button" class = "map btn btn-success" value = "헬스장  위치안내" style="float: right;"></a>
 			</div>
 		</div>
 	</form>
@@ -107,11 +106,6 @@
 		}else{
 			$("#frm_trainer").submit();
 		}
-	});
-	
-	// 검색 조건 초기화 
-	$("#reset").click(function() {
-		location.href="./trainerSearch";
 	});
 
 	// 검색어 창 입력 유도
