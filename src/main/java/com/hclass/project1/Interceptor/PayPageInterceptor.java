@@ -9,36 +9,29 @@ import org.springframework.stereotype.Component;
 import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
 
 import com.hclass.project1.member.MemberDTO;
-import com.hclass.project1.pay.PayDTO;
 
 @Component
-public class PayMemberInterceptor extends HandlerInterceptorAdapter{
-	
-	// 개인 ID확인 예약 정보 권한 설정
+public class PayPageInterceptor extends HandlerInterceptorAdapter{
+
 	@Override
 	public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler)
 			throws Exception {
 		
-		String id = request.getParameter("id");
-		
-		PayDTO payDTO = new PayDTO();
-		payDTO.setId(id);
-		
-		
 		HttpSession session = request.getSession();
+		
 		MemberDTO memberDTO = (MemberDTO)session.getAttribute("member");
 		
-		
 		boolean check = false;
-		
-		if(payDTO.getId().equals(memberDTO.getId())) {
+		if(memberDTO.getTrainer().equals("M")) {
 			check = true;
 		}else {
-			request.setAttribute("msg", "권한이 없는 잘못된 경로입니다.");
+			request.setAttribute("msg", "회원 전용 페이지입니다.");
 			request.setAttribute("path", "../");
+			
 			RequestDispatcher view = request.getRequestDispatcher("../WEB-INF/views/common/result.jsp");
 			view.forward(request, response);
 		}
+		
 		return check;
 	}
 	

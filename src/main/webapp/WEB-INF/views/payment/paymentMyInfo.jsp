@@ -22,7 +22,7 @@
 		color : white;
 	}
 	#info-table{
-		width: 70%;
+		width: 1100px;
 		margin: 30px auto 100px auto;
 		
 	}

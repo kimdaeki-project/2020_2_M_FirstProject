@@ -25,7 +25,7 @@
 	}
 	#reserve_btn{
 		display:block;
-		margin: 0 auto;
+		margin: 30px auto 0 auto;
 	}
 	.date_style{
 		font-size: 16px;
@@ -66,13 +66,14 @@
 		
 			<!-- 선택한 트레이너 정보 -->
 			<div class="container" id="cashDiv">
-				<h3 class="cash_h1" style="padding:15px; background-color: #f2d9e6;">선택하신 트레이너 정보입니다.</h3>	
-				이름 : <input type="text" value="${trainers.name}" class="info-tr" name="name">
+				<h3 class="cash_h1" style="padding:15px; background-color: #f2d9e6; margin-bottom: 30px;">선택하신 트레이너 정보입니다.</h3>	
+				이름 : <input type="text" value="${trainers.name}" class="info-tr" name="name" id="trName">
 				<br>
 				종류 : <input type="text" value="${trainers.kind}" class="info-tr" name="kind">
 				<br>
 				출장 : <input type="text" value="${trainers.business}" class="info-tr" name="business">
 				<br>
+				<hr>
 			<!--  -->
 			
 			<!-- 나의 아이디 확인, 날짜, 시간 선택  -->						
@@ -99,6 +100,8 @@
 	
 	//**** 예약하기 - 지정된 시간 선택, confirm 재 확인, 예약이 이미 있을경우 예약 불가
 	$("#reserve_btn").click(function() {
+		var trName = $("#trName").val();
+		
 		var d = $("#date").val();
 		var t = $("#time").val();
 		
@@ -108,10 +111,13 @@
 		
 		$.get("./memberIdCheck?id="+id, function(data) {
 			data = data.trim();
-
-			if(!td.checkValidity()){
+			if(trName!=''){
+				
+			if(!td.checkValidity() && data == 0){
 				alert("지정된 시간을 선택해주세요.");
-			}if(data == 0){
+			}
+			
+			else if(data == 0){
 				d = confirm(d+"일 "+ t+"분이 맞습니까?");	
 				
 				if(d){
@@ -121,7 +127,15 @@
 				}
 				
 			}else{
-				alert("회원님은 이미 예약을 하셨습니다.");
+				var a = confirm("회원님은 이미 예약을 하셨습니다. 확인 페이지로 이동하시겠습니까?");
+				if(a==true){
+					location.href = "./paymentMyInfo?id="+id;
+				}else{
+					alert("다른 트레이너를 원하시면 예약 취소 후 진행해주세요.");
+				}
+			}
+			}else{
+				alert("잘못된 접근입니다.");
 			}
 		});	
 	});
