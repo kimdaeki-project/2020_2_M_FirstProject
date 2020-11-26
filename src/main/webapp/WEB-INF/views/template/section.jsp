@@ -11,16 +11,16 @@
             
           	<ul class = "best">
             	<li class ="trainer">         
-           			<a  href = "trainer/trainerInfoPage?num=88&id=trainer1">${dto.name}<img  src="./resources/img/trainer/trainer1.jpg" class="img-circle" alt="Cinque Terre"></a>
+           			<a  href = "trainer/trainerInfoPage?num=88&id=trainer1">${dto.name}<img  src="./resources/img/bestTrainer/trainer1.jpg" class="img-circle" alt="Cinque Terre"></a>
            		</li>
            		<li class = "trainer">
-           			<a  href = "trainer/trainerInfoPage?num=89&id=trainer2">${dto.name}<img  src="./resources/img/trainer/trainer2.jpg" class="img-circle" alt="Cinque Terre"></a>
+           			<a  href = "trainer/trainerInfoPage?num=89&id=trainer2">${dto.name}<img  src="./resources/img/bestTrainer/trainer2.jpg" class="img-circle" alt="Cinque Terre"></a>
            		</li>
            		<li class = "trainer">
-           			<a  href = "trainer/trainerInfoPage?num=112&id=trainer13">${dto.name}<img  src="./resources/img/trainer/trainer13.jpg" class="img-circle" alt="Cinque Terre"></a>
+           			<a  href = "trainer/trainerInfoPage?num=112&id=trainer13">${dto.name}<img  src="./resources/img/bestTrainer/trainer13.jpg" class="img-circle" alt="Cinque Terre"></a>
            		</li>
            		<li class = "trainer">
-           			<a href = "trainer/trainerInfoPage?num=115&id=trainer16">${dto.name}<img  src="./resources/img/trainer/trainer16.jpg" class="img-circle" alt="Cinque Terre"></a>
+           			<a href = "trainer/trainerInfoPage?num=115&id=trainer16">${dto.name}<img  src="./resources/img/bestTrainer/trainer16.jpg" class="img-circle" alt="Cinque Terre"></a>
            		</li>          
            </ul>
       
