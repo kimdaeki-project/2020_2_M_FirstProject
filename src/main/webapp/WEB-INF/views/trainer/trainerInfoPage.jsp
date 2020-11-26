@@ -13,11 +13,10 @@
 <c:import url="../template/slide.jsp"></c:import>
 <style type="text/css">
 	
-	#reserveDiv{
-		text-align:right;
-		position: fixed;
-		right: 100px;
-		bottom: 120px;
+
+	#reserveBtn{
+		width: 200px;
+		margin-left: 950px;
 	}
 	#reserve_h1{
 		text-align: center;
