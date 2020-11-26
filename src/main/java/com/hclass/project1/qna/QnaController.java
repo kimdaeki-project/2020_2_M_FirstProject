@@ -29,7 +29,7 @@ public class QnaController {
 	private QnaService qnaService ;
 	
 	@PostMapping("qnaReply")
-	public ModelAndView setReply(QnaDTO qnaDTO ) throws Exception{
+	public ModelAndView setReply(QnaDTO qnaDTO) throws Exception{
 		ModelAndView mv = new ModelAndView();
 		int result = qnaService.setReply(qnaDTO);
 		System.out.println("확인");
@@ -49,7 +49,6 @@ public class QnaController {
 		ModelAndView mv = new ModelAndView();
 		MemberDTO memberDTO= new MemberDTO();
 		qnaDTO = qnaService.getOne(qnaDTO);
-		
 		memberDTO = (MemberDTO) session.getAttribute("member");
 		mv.addObject("qnareply", qnaDTO);
 		mv.addObject("member",memberDTO);

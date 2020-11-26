@@ -47,7 +47,7 @@ table {
 	<div class="container">
 		<form id="frm" action="./qnaReply" method="post" enctype="multipart/form-data">
 
-			<input type="hidden" name="num" value="${param.num}">
+			<input hidden="" name="num" value="${qnareply.num}">
 			<div class="form-group">
 				<label for="title">글제목</label> <input type="text"
 					class="form-control" id="title" placeholder="Enter Title"

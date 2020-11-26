@@ -16,6 +16,7 @@
  			select qna_seq.nextval from dual
  		</selectKey>
  			insert into qna values(#{num},sysdate,#{title},#{writer},#{contents},qna_seq.currval,0,0,0)
+
  		</insert>
  		
  		<select id="getList" parameterType="Pager" resultType="QnaDTO">
@@ -35,7 +36,7 @@
 				contents
 			</otherwise>
 		</choose>
-		like '%'||#{search}||'%' order by ref desc, step asc) N)
+		like '%'||#{search}||'%' order by num asc,ref desc, step asc) N)
 		where R between #{startRow} and #{lastRow}
 	</select>
 	
@@ -63,7 +64,7 @@
 		delete qna where num =#{num}
 	</delete>
     <insert id ="setReply" parameterType="QnaDTO">
-		insert into qna values(qna_seq.nextval
+		insert into qna values(#{num}+1
 		, sysdate,#{title},#{writer}, #{contents},
 		(select ref from qna where num =#{num}),
 		(select step+1 from qna where num =#{num}),
