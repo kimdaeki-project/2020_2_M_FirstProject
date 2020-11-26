@@ -22,9 +22,6 @@ IMP.request_pay({
     merchant_uid : 'merchant_' + new Date().getTime(),
     name : '(주)PT Matching',
     amount : '100',
-    buyer_email : 'dnfka311@naver.com',
-    buyer_name : '강우람',
-    buyer_tel : '010-1234-5678'
     //m_redirect_url : 'http://www.naver.com'
 }, function(rsp) {
     if ( rsp.success ) {
