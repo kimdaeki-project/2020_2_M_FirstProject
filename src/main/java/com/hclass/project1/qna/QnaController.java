@@ -50,7 +50,7 @@ public class QnaController {
 		MemberDTO memberDTO= new MemberDTO();
 		memberDTO = (MemberDTO) session.getAttribute("member");
 		mv.addObject("member",memberDTO);
-		mv.setViewName("notice/qnaReply");
+		mv.setViewName("board/boardReply");
 		return mv;
 		
 	}
@@ -89,7 +89,7 @@ public class QnaController {
 		qnaDTO = qnaService.getOne(qnaDTO);
 		mv.addObject("dto",qnaDTO);
 		mv.addObject("board","qna");
-		mv.setViewName("notice/noticeUpdate");
+		mv.setViewName("board/boardUpdate");
 		return mv;
 	}
 	@GetMapping("qnaSelect")
@@ -106,7 +106,7 @@ public class QnaController {
 		mv.addObject("member", memberDTO);
 		mv.addObject("dto",qnaDTO);
 		mv.addObject("board","Qna");
-		mv.setViewName("notice/noticeSelect");
+		mv.setViewName("board/boardSelect");
 		return mv;
 	}
 	
@@ -117,7 +117,7 @@ public class QnaController {
 		mv.addObject("list", ar);
 		mv.addObject("pager", pager);
 		mv.addObject("board","qna");
-		mv.setViewName("notice/noticeList");
+		mv.setViewName("board/boardList");
 		return mv;
 		
 	}
@@ -147,7 +147,7 @@ public class QnaController {
 		memberdto = (MemberDTO) Session.getAttribute("member");
 		mv.addObject("member", memberdto);
 		mv.addObject("board","qna");
-		mv.setViewName("notice/noticeWrite");
+		mv.setViewName("board/boardWrite");
 		return mv;
 	}
 }

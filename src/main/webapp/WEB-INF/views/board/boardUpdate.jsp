@@ -25,6 +25,20 @@
 		resize: none;
 	
 	}
+	.btns{
+		background-color: black;
+		color:white;
+		font-size: large;
+		border-radius: 10px;
+	}
+		.divWrite{
+		display: inline-block;
+	}
+	.del {
+		color: red;
+		font-weight: bold;
+		cursor: pointer;
+	}
 </style>
 </head>
 <body>
@@ -61,18 +75,18 @@
 			</div>
 
 			<input type="button" value="FileAdd" id="fileAdd"
-				class="btn btn-info">
-
+				class="btns">
+			<div class="form-group divWrite">
+				<input type="button"
+					class="btns" value="Write" id="btn">
+			</div>
 			<div id="files"></div>
 
 
-			<div class="form-group">
-				<label></label> <input type="button"
-					class="btn btn-primary form-control" value="Write" id="btn">
-			</div>
+			
 		</form>
 
-		<div id="f">
+		<div id="f" hidden="">
 			<div class="input-group">
 				<input id="files" type="file" class="form-control" name="files">
 				<span class="input-group-addon del">DEL</span>
@@ -91,7 +105,7 @@
 				}
 			});
 		</script>
-
+		<script src="../resources/js/noticeWrite.js"></script>
 	</div>
 
 

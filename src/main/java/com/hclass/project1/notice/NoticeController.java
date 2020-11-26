@@ -42,7 +42,7 @@ public class NoticeController {
       mv.addObject("member", memberDTO);
       mv.addObject("dto",noticeDTO);
       mv.addObject("board", "notice");
-      mv.setViewName("notice/noticeSelect");
+      mv.setViewName("board/boardSelect");
       return mv;
    }
    
@@ -53,7 +53,7 @@ public class NoticeController {
       mv.addObject("list", ar);
       mv.addObject("board","notice");
       mv.addObject("pager", pager);
-      mv.setViewName("notice/noticeList");
+      mv.setViewName("board/boardList");
       return mv;
       
    }
@@ -80,14 +80,14 @@ public class NoticeController {
       noticeDTO = (NoticeDTO) Session.getAttribute("notice");
       mv.addObject("notice", noticeDTO);
       mv.addObject("board","notice");
-      mv.setViewName("notice/noticeWrite");
+      mv.setViewName("board/boadWrite");
       return mv;
    }
    
    @PostMapping("noticeUpdate")
-	public ModelAndView setUpdate(NoticeDTO noticeDTO)throws Exception{
+	public ModelAndView setUpdate(NoticeDTO noticeDTO,MultipartFile[] files, HttpSession session)throws Exception{
 		ModelAndView mv = new ModelAndView();
-		int result =noticeservice.setUpdate(noticeDTO);
+		int result =noticeservice.setUpdate(noticeDTO,files,session);
 		
 		String message = "글 수정 실패";
 		if(result>0) {
@@ -109,7 +109,7 @@ public class NoticeController {
 		System.out.println(noticeDTO.getWriter());
 		mv.addObject("dto",noticeDTO);
 		mv.addObject("board","notice");
-		mv.setViewName("notice/noticeUpdate");
+		mv.setViewName("board/boardUpdate");
 		return mv;
 	}
 	
