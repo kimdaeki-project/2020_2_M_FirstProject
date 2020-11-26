@@ -38,7 +38,7 @@ public class QnaController {
 		System.out.println("확인");
 		String message = "입력 실패";
 		if(result>0) {
-			message = "입력 성공";
+			message = "답글 입력 성공";
 		}
 		mv.addObject("msg",message);
 		mv.addObject("path", "./qnaList");
