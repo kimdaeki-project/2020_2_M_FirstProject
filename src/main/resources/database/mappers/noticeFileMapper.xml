@@ -7,4 +7,7 @@
 	<insert id="setFileOne" parameterType="NoticeFileDTO">
 		insert into noticeFile values(#{num},#{fileName},#{oriName})
 	</insert>
+	<select id="getFile" parameterType="NoticeFileDTO" resultType="NoticeFileDTO">
+	select * from noticeFile where num=#{num}
+	</select>
 </mapper>

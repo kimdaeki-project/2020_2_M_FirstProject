@@ -88,7 +88,7 @@
 				$("#files").append(f);
 				count++;
 			} else {
-				alert("첨부파일은 최대 5개")
+				alert("첨부파일은 최대 5개까지 입니다")
 			}
 		});
 		$("#files").on("click", ".del", function() {

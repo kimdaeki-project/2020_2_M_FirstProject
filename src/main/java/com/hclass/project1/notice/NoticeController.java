@@ -9,6 +9,7 @@ import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.hclass.project1.member.MemberDTO;
+import com.hclass.project1.notice.noticefile.NoticeFileDTO;
 import com.hclass.project1.util.Pager;
 
 import java.util.List;
@@ -32,8 +33,12 @@ public class NoticeController {
       ModelAndView mv = new ModelAndView();
       MemberDTO memberDTO =new MemberDTO();
       int result = noticeservice.hitUp(noticeDTO);
+      NoticeFileDTO noticefileDTO =new NoticeFileDTO();
+      noticefileDTO.setNum(noticeDTO.getNum());
+      List<NoticeFileDTO> ar = noticeservice.getFile(noticefileDTO);
       memberDTO=(MemberDTO) session.getAttribute("member");
       noticeDTO=noticeservice.getOne(noticeDTO);
+      mv.addObject("list", ar);
       mv.addObject("member", memberDTO);
       mv.addObject("dto",noticeDTO);
       mv.addObject("board", "notice");
@@ -56,7 +61,8 @@ public class NoticeController {
    @PostMapping("noticeWrite")
    public ModelAndView setOne(NoticeDTO noticeDTO,MultipartFile[] files,HttpSession session) throws Exception{
       ModelAndView mv = new ModelAndView();
-      int result = noticeservice.setOne(noticeDTO,files, session);
+      int result = noticeservice.setOne(noticeDTO, files, session);
+      System.out.println(noticeDTO.getNum());
       String message ="입력 실패";
       if(result>0) {
          message ="입력 성공";

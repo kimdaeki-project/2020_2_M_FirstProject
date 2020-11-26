@@ -29,7 +29,7 @@
 			margin:0;
 			padding:0;
 			height:70%;
-			width:  800px;
+			width:  600px;
 			border: 1px solid rgb(245,246,247);
 			border-radius :20px 20px 20px 20px;
 			position: absolute;top: 20%;left: 45%;
@@ -41,8 +41,6 @@
 	.area{
 	margin-top: 10px;
 	}
-	.footer{  margin: 0px auto;position: absolute;top: 80%; left: 20%}
-	
 </style>
 </head>
 <body>
@@ -222,9 +220,7 @@
 	}; 
 	
 </script>
-<div class="footer">
- <c:import url="../template/footer.jsp"></c:import>
-</div>  
+  
 </div>
 </form>  
 </body>

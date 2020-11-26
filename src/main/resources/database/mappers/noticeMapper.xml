@@ -48,9 +48,9 @@
    
       <insert id="setOne" parameterType="NoticeDTO">
       <selectKey keyProperty="num" resultType="Long" order="BEFORE">
-          select notice_seq.nextval from dual
+          select notice_seq_num.nextval from dual
        </selectKey>
-          insert into notice values(notice_seq_num.nextval,#{writer},#{title},#{contents},sysdate,0)
+          insert into notice values(#{num},#{writer},#{title},#{contents},sysdate,0)
        </insert>
        
      <!-- 조회수 기능 
