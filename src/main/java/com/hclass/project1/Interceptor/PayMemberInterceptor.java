@@ -1,6 +1,5 @@
 package com.hclass.project1.Interceptor;
 
-
 import javax.servlet.RequestDispatcher;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -37,8 +36,7 @@ public class PayMemberInterceptor extends HandlerInterceptorAdapter{
 		
 		if(payDTO.getId().equals(memberDTO.getId())) {
 			check = true;
-		}
-		else {
+		}else {
 			request.setAttribute("msg", "권한이 없는 잘못된 경로입니다.");
 			request.setAttribute("path", "../");
 			RequestDispatcher view = request.getRequestDispatcher("../WEB-INF/views/common/result.jsp");
