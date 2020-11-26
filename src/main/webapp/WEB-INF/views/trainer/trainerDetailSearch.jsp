@@ -41,7 +41,8 @@
 		<tr style="font-size: 18px;">
 			<th>이름 </th><th>성별 </th><th>종류 </th><th>지역 </th><th>출장여부 </th>
 		</tr>
-	
+		
+		<!-- 기존 회원일 경우 운동 종류가 없으므로 트레이너만 출력 -->
 		<c:forEach items="${search}" var="dto">
 			<c:if test="${not empty dto.kind}">
 				<tr class="t_tr">
@@ -53,7 +54,10 @@
 				</tr>
 			</c:if>
 		</c:forEach>
+		<!--  -->
 	</table>
+	
+	<!--  페이징 처리  -->
 	
 	<div class="container" id="pager_div">
 	 	<c:if test="${pager.beforeCheck}">

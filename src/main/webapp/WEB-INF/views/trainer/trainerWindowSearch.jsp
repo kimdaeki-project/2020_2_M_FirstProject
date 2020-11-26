@@ -32,6 +32,8 @@
 <c:import url="../template/header.jsp"></c:import>
 <body>
 	<h1 id="h1">Trainer List</h1>
+	
+	<!-- 검색어 창 입력 후 재검색 할 수 있게 -->
 	<form class="example" style="margin: 25px;width: 50%; margin: 0 auto;" action="./trainerWindowSearch">
 		<div class="col-xs-3" id="divSelect">
 			<select style="font-size: 15px; margin-bottom: 5px;" class="form-control" name="select" id="selectBox">
@@ -48,11 +50,13 @@
 			
 		</div>
 	</form>
+	
 	<div id="tip_div">※ 이름을 클릭하시면 상세정보 페이지로 이동합니다.</div>
 	<table class="table table-condensed" style="width: 70%; margin: 0 auto;">
 	<tr style="font-size: 17px;">
 		<th>이름 </th><th>성별 </th><th>종류 </th><th>지역 </th><th>출장여부 </th>
 	</tr>
+	<!-- 기존 회원들은 운동 종류가 없으므로 트레이너만 출력될 수 있게 -->
 	<c:forEach items="${list}" var="member">
 		<c:if test="${not empty member.kind}">
 			<tr class="t_tr">
@@ -64,7 +68,10 @@
 			</tr>
 		</c:if>	
 	</c:forEach>
+	<!--  -->
 	</table>
+	
+	<!--  페이징 처리  -->
 	<div class="container" id="pager_div">
 		<c:if test="${pager.beforeCheck}">
 			<a href="./trainerWindowSearch?curPage=${pager.startNum-1}&select=${pager.select}&search=${pager.search}">◀◀</a>
@@ -78,11 +85,15 @@
 		</c:if>
 	</div>
 <c:import url="../template/footer.jsp"></c:import>	
+
 <script type="text/javascript">
-$("#divSelect").on("change","#selectBox",function(){
-	var kind = $(this).val();
-	alert(kind);
-	$("#kind").val(kind);
+
+$("#search-blank").click(function() {
+	var b = $("#search-text").val();
+	if(b==''){
+		alert("검색어를 입력해주세요.");
+		return false;
+	}
 });
 
 </script>

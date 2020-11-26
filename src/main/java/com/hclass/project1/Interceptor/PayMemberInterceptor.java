@@ -1,23 +1,21 @@
 package com.hclass.project1.Interceptor;
 
-import java.util.Map;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
 
 import com.hclass.project1.member.MemberDTO;
-import com.hclass.project1.pay.PayDAO;
 import com.hclass.project1.pay.PayDTO;
 
 @Component
 public class PayMemberInterceptor extends HandlerInterceptorAdapter{
 	
+	// 개인 ID확인 예약 정보 권한 설정
 	@Override
 	public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler)
 			throws Exception {

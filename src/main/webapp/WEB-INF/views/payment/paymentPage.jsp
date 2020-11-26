@@ -64,6 +64,7 @@
 		<form action="./paymentPage" method="post" id="frm_pay">
 			<h1 class="cash_h1" style="font-size: 16px;">예약은 현재날짜 기준 30일 이내만 가능합니다.</h1>
 		
+			<!-- 선택한 트레이너 정보 -->
 			<div class="container" id="cashDiv">
 				<h3 class="cash_h1" style="padding:15px; background-color: #f2d9e6;">선택하신 트레이너 정보입니다.</h3>	
 				이름 : <input type="text" value="${trainers.name}" class="info-tr" name="name">
@@ -71,13 +72,18 @@
 				종류 : <input type="text" value="${trainers.kind}" class="info-tr" name="kind">
 				<br>
 				출장 : <input type="text" value="${trainers.business}" class="info-tr" name="business">
-				<br>					
+				<br>
+			<!--  -->
+			
+			<!-- 나의 아이디 확인, 날짜, 시간 선택  -->						
 				<input type="text" value="${member.id}" name="id" id="member_id-text" readonly="readonly">회원님
 				<div class="date_style">예약하실 날짜와 시간을 선택해주세요.(당일예약 불가)</div>
 				<div class="date_style">(Time 08:00 to 21:00)</div>
 				<div>
 				<input _date type="date" id="date" name="regDate" >
 				<input type="time" id="time" value="08:00" min="08:00" max="21:00" step="900" required="required" name="time">
+			
+			<!-- 지정된 시간에 맞는 선택 시 "",X 결과 출력 -->	
 				<span class="validity"></span>
 				</div>
 			</div>
@@ -90,6 +96,8 @@
 </body>
 
 <script type="text/javascript">
+	
+	//**** 예약하기 - 지정된 시간 선택, confirm 재 확인, 예약이 이미 있을경우 예약 불가
 	$("#reserve_btn").click(function() {
 		var d = $("#date").val();
 		var t = $("#time").val();
@@ -117,10 +125,13 @@
 			}
 		});	
 	});
+	//*************************************************************
+	
+	
 	var dateToday = document.getElementById("date");
 
 	var date = new Date();
-	// 현재 날짜
+	// date 기본값은 현재 날짜 기준 다음날부터 예약 가능
 	date.setDate(date.getDate()+1)
 	dateToday.value = date.toISOString().substring(0, 10);
 	
@@ -128,6 +139,7 @@
 	date.setDate(date.getDate())
 	dateToday.min = date.toISOString().substring(0, 10);
 	
+	// 선택 가능한 날짜 현재날짜 기준 30일 
 	date.setDate(date.getDate()+30);
 	dateToday.max = date.toISOString().substring(0, 10);
 	

@@ -23,6 +23,7 @@
 <body>
 	<!-- 검색창 -->
 <div class="container" id="div2">
+	<!--  트레이너의 이름이나 지역으로 검색  -->
 	<h2 id="search-h2">Trainer Search</h2>
 	<form class="example" style="margin: 25px;" action="./trainerWindowSearch">
 		<div class="col-xs-3">
@@ -95,6 +96,8 @@
 <script type="text/javascript">
 	$("#btn").click(function() {
 		
+		// 종목과 장소선택의 필수 사항
+		
 		//var ge = ($('input:radio[name=gender]').is(':checked'));
 		var ki = ($('input:radio[name=kind]').is(':checked'));
 		var bu = ($('input:radio[name=business]').is(':checked'));
@@ -105,10 +108,12 @@
 		}
 	});
 	
+	// 검색 조건 초기화 
 	$("#reset").click(function() {
 		location.href="./trainerSearch";
 	});
 
+	// 검색어 창 입력 유도
 	$("#search-blank").click(function() {
 		var b = $("#search-text").val();
 		if(b==''){

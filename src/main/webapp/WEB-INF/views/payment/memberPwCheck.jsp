@@ -25,19 +25,22 @@
 </head>
 <c:import url="../template/header.jsp"></c:import>
 <body>
-	<div class="container">
+						<!-- 예약 취소를 위한 비밀번호 확인 jsp -->
+						
+<div class="container">
   <h3 class="cancel-h3">예약 취소를 위해 비밀번호를 다시 입력해주세요.</h3>
 
-  <form action="./memberPwCheck" method="post" id=pwCheck-frm>
-    <div class="form-group">
-      <label for="idCheck">ID:</label>
-      <input type="text" value="${member.id}" name="id" id="idCheck" class="check-input form-control" readonly="readonly">
-    </div>
-    <div class="form-group">
-      <label for="pwCheck">PW :</label>
-      <input type="password" name="pw" id="pwCheck" class="check-input form-control" placeholder="Enter PW...">
-    </div>
-  </form>
+	<form action="./memberPwCheck" method="post" id=pwCheck-frm>
+		<div class="form-group">
+			<label for="idCheck">ID:</label>
+			<input type="text" value="${member.id}" name="id" id="idCheck" class="check-input form-control" readonly="readonly">
+		</div>
+    
+    	<div class="form-group">
+			<label for="pwCheck">PW :</label>
+			<input type="password" name="pw" id="pwCheck" class="check-input form-control" placeholder="Enter PW...">
+		</div>
+	</form>
 </div>
 
 

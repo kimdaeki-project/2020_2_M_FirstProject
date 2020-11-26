@@ -20,6 +20,7 @@ public class PayController {
 	@Autowired
 	private PayService payService;
 		
+	// 예약 날짜 변경
 	@PostMapping("paymentUpdate")
 	public ModelAndView setPaymentUpdate(PayDTO payDTO) throws Exception{
 		ModelAndView mv = new ModelAndView();
@@ -37,10 +38,10 @@ public class PayController {
 		return mv;
 	}
 	
+	// 날짜변경 폼 이동
 	@GetMapping("paymentUpdate")
 	public ModelAndView setPaymentUpdate(PayDTO payDTO, String id) throws Exception{
 		ModelAndView mv = new ModelAndView();
-		System.out.println(id);
 		payDTO = payService.getPaymentMyInfo(payDTO);
 		
 		mv.addObject("upDto", payDTO);
@@ -48,6 +49,7 @@ public class PayController {
 		return mv;
 	}
 	
+	// 예약 취소하기
 	@GetMapping("paymentDelete")
 	public ModelAndView setPaymentDelete(PayDTO payDTO) throws Exception{
 		ModelAndView mv = new ModelAndView();
@@ -64,6 +66,7 @@ public class PayController {
 		return mv;
 	}
 	
+	// 중복 예약 ID 체크하기
 	@GetMapping("memberIdCheck")
 	public ModelAndView getMemberIdCheck(PayDTO payDTO)throws Exception{
 		ModelAndView mv = new ModelAndView();
@@ -81,6 +84,8 @@ public class PayController {
 		
 		return mv;
 	}
+	
+	// 예약 취소시 비밀번호 재 확인
 	@PostMapping("memberPwCheck")
 	public ModelAndView getMemberPwCheck(MemberDTO memberDTO) throws Exception{
 		ModelAndView mv = new ModelAndView();
@@ -97,6 +102,7 @@ public class PayController {
 		return mv;
 	}
 	
+	// 예약 취소 폼 이동
 	@GetMapping("memberPwCheck")
 	public ModelAndView getMemberPwCheck() throws Exception{
 		ModelAndView mv = new ModelAndView();
@@ -106,6 +112,7 @@ public class PayController {
 		return mv;
 	}
 	
+	// 나의 예약 정보 확인
 	@GetMapping("paymentMyInfo")
 	public ModelAndView getPaymentMyInfo(PayDTO payDTO)throws Exception{
 		ModelAndView mv = new ModelAndView();
@@ -117,6 +124,7 @@ public class PayController {
 		return mv;
 	}
 	
+	// 트레이너 전용 (회원들 예약 현황) 확인
 	@GetMapping("paymentInfo")
 	public ModelAndView getPaymentInfo(PayDTO payDTO) throws Exception{
 		ModelAndView mv = new ModelAndView();
@@ -129,8 +137,7 @@ public class PayController {
 		return mv;
 	}
 	
-
-	
+	// 예약 정보 입력
 	@PostMapping("paymentPage")
 	public ModelAndView setCharge(PayDTO payDTO,HttpSession session) throws Exception{
 		ModelAndView mv = new ModelAndView();
@@ -152,9 +159,7 @@ public class PayController {
 		return mv;
 	}
 	
-
-	
-	
+	// 예약 정보 입력 폼 이동
 	@GetMapping("paymentPage")
 	public ModelAndView setCharge()throws Exception{
 		ModelAndView mv = new ModelAndView();
@@ -165,6 +170,7 @@ public class PayController {
 		return mv;
 	}
 	
+	// 결제 아임포트 API
 	@GetMapping("pay")
 	public ModelAndView pay()throws Exception{
 		ModelAndView mv = new ModelAndView();

@@ -14,6 +14,7 @@ public class TrainerService {
 	@Autowired
 	private TrainerDAO trainerDAO;
 	
+	// 검색창 검색
 	public List<TrainerDTO> getSearchList(Pager pager)throws Exception{
 		pager.makeRow();
 		pager.setTotalCount(trainerDAO.getCount(pager));
@@ -22,6 +23,7 @@ public class TrainerService {
 		return trainerDAO.getSearchList(pager);
 	}
 	
+	// 상세조건 검색 
 	public List<TrainerDTO> getSearch(Pager pager) throws Exception{
 		pager.makeRow();
 		pager.setTotalCount(trainerDAO.getDetailCount(pager));
@@ -30,7 +32,7 @@ public class TrainerService {
 		return trainerDAO.getSearch(pager);
 	}
 
-	
+	// 트레이너 상세 페이지
 	public TrainerDTO getTrainerPage(TrainerDTO trainerDTO)throws Exception{
 	
 		return trainerDAO.getTrainerPage(trainerDTO);

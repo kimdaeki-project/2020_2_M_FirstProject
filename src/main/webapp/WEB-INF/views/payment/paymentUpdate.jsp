@@ -53,7 +53,7 @@
 </head>
 <c:import url="../template/header.jsp"></c:import>
 <body>
-	<!-- 예약 변경 -->
+												<!--  날짜 변경    -->
 	<h1 class="cash_h1">예약 변경</h1>
 	<div id="cash-div">
 		<form action="./paymentUpdate" id="upfrm" method="post">

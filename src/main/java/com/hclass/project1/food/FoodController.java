@@ -9,6 +9,7 @@ import org.springframework.web.servlet.ModelAndView;
 @RequestMapping("/section/**")
 public class FoodController {
 	
+	// 메인 화면의 TOP4 HealthFood 판매 사이트 이동 서비스 ************************************************
 	
 	@GetMapping("getFood")
 	public ModelAndView getFood() throws Exception{

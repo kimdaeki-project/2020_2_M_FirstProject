@@ -17,6 +17,8 @@ public class PayPastDeleteInterceptor extends HandlerInterceptorAdapter {
 	@Autowired
 	private PayService payService;
 	
+	// 예약 현황으로 기간, 시간이 지난 정보 Controller 진입 후 최신화
+	
 	@Override
 	public void postHandle(HttpServletRequest request, HttpServletResponse response, Object handler,
 			ModelAndView modelAndView) throws Exception {

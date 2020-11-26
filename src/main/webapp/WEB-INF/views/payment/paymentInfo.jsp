@@ -21,6 +21,9 @@
 </style>
 </head>
 <body>
+
+		<!-- 트레이너 전용인 회원 예약 확인 -->
+
 	<h3 class="info_h3">회원 예약 현황</h3>
 	<table class="table table-condensed info_table">
 		<tr>

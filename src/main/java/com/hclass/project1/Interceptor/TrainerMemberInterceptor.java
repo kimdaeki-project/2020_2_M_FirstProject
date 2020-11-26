@@ -13,6 +13,7 @@ import com.hclass.project1.member.MemberDTO;
 @Component
 public class TrainerMemberInterceptor extends HandlerInterceptorAdapter {
 
+	// 회원이 아닐 경우 로그인 유도
 	@Override
 	public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler)
 			throws Exception {
