@@ -43,7 +43,6 @@
 	.pc-detail-header .trainer-info{
 		vertical-align: top;
 		display: inline-block;
-		max-width: 450px;
 		margin-top:50px;
 		padding-left: 100px;
 	}
@@ -51,7 +50,7 @@
 		display: inline-block;
 		font-size: 28px !important;
 		vertical-align: top;
-		max-width: 400px;
+		max-width: 550px;
 	}
 	.pc-detail-header .trainer-info .title{
 		height: 70px;
@@ -59,7 +58,7 @@
 	.pc-detail-header .trainer-info .info-text{
 		font-size: 16px;
 		padding: 20px 0;
-		color: #330066 !important;
+		color: #004d99 !important;
 	}
 	.pc-detail-header .trainer-info .in-detail-border{
 		border-top: 2px solid #f4f5f6;
@@ -84,6 +83,7 @@
 				<div class="trainer-info">
 					<div class="title">
 						<div class="ts-sxl"><strong>트레이너 : </strong> ${trainers.name}</div>
+						<div class="ts-sxl" style="margin-left: 50px; color: #e60073;"><strong>＜</strong>${trainers.kind}<strong>＞</strong> </div>
 					</div>
 					<div class="info-text in-detail-border">
 						<div style="margin-bottom: 10px;"><strong>주소 : </strong>${trainers.address }</div>
@@ -127,8 +127,8 @@
 	
 	// 예약 페이지로 이동
 	$("#reserveBtn").click(function() {
-		var testnum = $(this).attr("title")
-		location.href="../payment/paymentPage?num="+testnum;	
+		var num = $(this).attr("title")
+		location.href="../payment/paymentPage?num="+num;	
 	});
 	
 </script>	
