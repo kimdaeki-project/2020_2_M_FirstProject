@@ -25,6 +25,10 @@ public class NoticeService {
 	@Autowired
 	private NoticeFileDAO noticeFileDAO;
 
+	public List<NoticeFileDTO> getFile(NoticeFileDTO noticefileDTO) throws Exception{
+		
+		return noticeFileDAO.getFile(noticefileDTO);
+	}
 
 	public List<NoticeDTO> getList(Pager pager) throws Exception{
 		pager.makeRow();
@@ -45,7 +49,7 @@ public class NoticeService {
 	 */
 
 	public int setOne(NoticeDTO noticeDTO,MultipartFile[] photo, HttpSession session) throws Exception{
-		String path =session.getServletContext().getRealPath("/resources/img/notice");
+		String path =session.getServletContext().getRealPath("/resources/upload/notice");
 		File file2 = new File(path);
 		String fileName="";
 		int result =noticeDAO.setOne(noticeDTO);
@@ -53,9 +57,9 @@ public class NoticeService {
 		if(file.getSize()!=0) {
 			fileName = filesaver.saver(file2, file);
 			NoticeFileDTO noticefileDTO = new NoticeFileDTO();
-			noticefileDTO.setNum(noticeDTO.getNum());
 			noticefileDTO.setOriName(file.getOriginalFilename());
 			noticefileDTO.setFileName(fileName);
+			noticefileDTO.setNum(noticeDTO.getNum());
 			result = noticeFileDAO.setFileOne(noticefileDTO);
 		}
 		}
