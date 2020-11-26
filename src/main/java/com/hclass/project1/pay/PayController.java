@@ -104,9 +104,12 @@ public class PayController {
 	
 	// 예약 취소 폼 이동
 	@GetMapping("memberPwCheck")
-	public ModelAndView getMemberPwCheck() throws Exception{
+	public ModelAndView getMemberPwCheck(PayDTO payDTO) throws Exception{
 		ModelAndView mv = new ModelAndView();
 		
+		List<PayDTO> payConfirm = payService.getPaymentList(payDTO);
+		
+		mv.addObject("payConfirm", payConfirm);
 		mv.setViewName("payment/memberPwCheck");
 		
 		return mv;

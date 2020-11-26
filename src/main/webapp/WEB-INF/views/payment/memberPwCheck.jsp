@@ -16,7 +16,7 @@
 
 	#pwCheck-btn{
 		display: block;
-		margin: 10px auto;
+		margin: 50px auto;
 	}
 	.check-input{
 		text-align: center;
@@ -26,7 +26,8 @@
 <c:import url="../template/header.jsp"></c:import>
 <body>
 						<!-- 예약 취소를 위한 비밀번호 확인 jsp -->
-						
+<c:if test="${not empty payConfirm}">					
+
 <div class="container">
   <h3 class="cancel-h3">예약 취소를 위해 비밀번호를 다시 입력해주세요.</h3>
 
@@ -41,16 +42,18 @@
 			<input type="password" name="pw" id="pwCheck" class="check-input form-control" placeholder="Enter PW...">
 		</div>
 	</form>
-</div>
+</div>	
+	<!-- <button type="submit">삭제하기</button>  -->
+	<input type="button" id="pwCheck-btn" value="예약 취소하기" class="btn btn-danger">
 
+</c:if>
 
-	
-	
-		
-		
-		<!-- <button type="submit">삭제하기</button>  -->
-	
-	<input type="button" id="pwCheck-btn" value="삭제하기" class="btn btn-danger">
+<c:if test="${empty payConfirm }">
+	<h3 class="cancel-h3">
+		예약 현황이 없습니다.
+	</h3>	
+</c:if>
+
 	
 <c:import url="../template/footer.jsp"></c:import>	 
 </body>

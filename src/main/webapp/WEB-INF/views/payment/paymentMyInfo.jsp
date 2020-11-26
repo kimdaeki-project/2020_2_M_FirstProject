@@ -23,7 +23,7 @@
 	}
 	#info-table{
 		width: 70%;
-		margin: 30px auto;
+		margin: 30px auto 100px auto;
 		
 	}
 	#pay{
