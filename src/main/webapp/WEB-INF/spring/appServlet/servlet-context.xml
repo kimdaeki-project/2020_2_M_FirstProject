@@ -56,6 +56,7 @@
 		<interceptor>
 			<!-- 회원 전용 예약 페이지 -->
 			<mapping path="/payment/paymentPage"/>
+			<mapping path="/payment/paymentMyInfo"/>
 			<beans:ref bean="payPageInterceptor"/>
 		</interceptor>
 		
