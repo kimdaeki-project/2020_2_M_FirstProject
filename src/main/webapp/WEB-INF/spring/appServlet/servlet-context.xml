@@ -48,13 +48,13 @@
 		</interceptor>
 		
 		<interceptor>
-			<!-- 트레이너 전용 예약현황 확인 -->
+			<!-- 트레이너 전용 회원 예약 현황 페이지  -->
 			<mapping path="/payment/paymentInfo"/>
 			<beans:ref bean="payTrainerInterceptor"/>
 		</interceptor>
 		
 		<interceptor>
-			<!-- 회원 전용 예약 페이지 -->
+			<!-- 회원 전용 페이지 -->
 			<mapping path="/payment/paymentPage"/>
 			<mapping path="/payment/paymentMyInfo"/>
 			<beans:ref bean="payPageInterceptor"/>
