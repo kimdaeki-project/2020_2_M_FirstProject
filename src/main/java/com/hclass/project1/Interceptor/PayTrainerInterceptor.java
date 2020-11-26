@@ -13,6 +13,7 @@ import com.hclass.project1.member.MemberDTO;
 @Component
 public class PayTrainerInterceptor extends HandlerInterceptorAdapter{
 
+	// 트레이너 전용 회원 예약 현황 확인은 일반 회원 접근 불가
 	@Override
 	public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler)
 			throws Exception {

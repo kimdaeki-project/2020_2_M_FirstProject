@@ -53,7 +53,7 @@
 </head>
 <c:import url="../template/header.jsp"></c:import>
 <body>
-	<!-- 예약 변경 -->
+												<!--  날짜 변경    -->
 	<h1 class="cash_h1">예약 변경</h1>
 	<div id="cash-div">
 		<form action="./paymentUpdate" id="upfrm" method="post">
@@ -65,7 +65,7 @@
 					<div class="date_style">(Time 08:00 to 21:00)</div>
 					<div>
 					<input _date type="date" id="date" name="regDate" value="${upDto.regDate}">
-					<input type="time" id="time" value="${upDto.time}" min="08:00" max="21:00" step="900" required="required" name="time">
+					<input type="time" id="time" value="${upDto.time}" min="08:00" max="21:00" required="required" name="time">
 					<span class="validity"></span>
 					</div>
 				</div>

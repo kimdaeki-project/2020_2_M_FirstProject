@@ -23,7 +23,7 @@
 	}
 	#info-table{
 		width: 70%;
-		margin: 30px auto;
+		margin: 30px auto 100px auto;
 		
 	}
 	#pay{
@@ -34,10 +34,15 @@
 </style>
 </head>
 <body>
-	<h3 class="info-h3">My Reserve Info</h3>
-	<c:if test="${not empty pay.regDate}">
 
+	<!-- 개인의 예약 현황 확인 -->
+
+	<h3 class="info-h3">My Reserve Info</h3>
+	
+	<!-- 예약날짜가 있는 회원한테만 보이는 info -->
+	<c:if test="${not empty pay.regDate}">
 	<h3 class="info-h3" style="color:#bf4080;" >나의 예약정보</h3>
+	
 	<table class="table table-condensed" id="info-table">
 		<tr>
 			<th>아이디</th><th>예약날짜</th><th>시간</th><th>l</th><th>트레이너</th><th>운동</th><th>출장여부</th>
@@ -57,14 +62,20 @@
 		<input type="button" value="결제하기" class="btn btn-warning info-btn"  id= "pay" title="${member.id}">
 
 	</c:if>
+	<!--  -->
 	
+	<!-- 예약 정보가 없는 회원들 정보 -->
 	<c:if test="${empty pay.regDate}">
 		<h3 class="info-h3">예약현황이 없습니다.</h3>	
 	</c:if>
+	<!--  -->
 	
 <c:import url="../template/footer.jsp"></c:import>	
 </body>
 <script type="text/javascript">
+
+	// ******************* 예약취소를 위한 ID에 맞는 비밀번호 체크
+
 	$("#info-delete").click(function() {
 		var id = $(this).attr("title");
 		var re = confirm("정말 예약을 취소하시겠습니까?");
@@ -72,12 +83,17 @@
 			location.href="./memberPwCheck";
 		}
 	});
-		
+	//************************************************
+	
+	// ***************** 예약 날짜 변경 ******************
+	
 	$("#info-update").click(function () {
 		var id = $(this).attr("title");
 		location.href="./paymentUpdate?id="+id;
 	});
-
+	//**********************************************
+	
+	// **********아임포트 결제진행 ************************
 	$("#pay").click(function() {
 		var id = $(this).attr("title");
 		var str = confirm("결제하시겠습니까?");
@@ -85,6 +101,7 @@
 			location.href="./pay?id="+id;
 		}
 	})
+	//**********************************************
 
 </script>
 </html>

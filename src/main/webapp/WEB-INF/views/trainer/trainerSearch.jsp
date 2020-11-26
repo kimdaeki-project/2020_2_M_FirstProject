@@ -15,6 +15,7 @@
 	#search-h2{
 		text-align: center;
 		margin-top: 40px;
+		margin-bottom: 40px;
 	}
 </style>		
 </head>
@@ -23,6 +24,7 @@
 <body>
 	<!-- 검색창 -->
 <div class="container" id="div2">
+	<!--  트레이너의 이름이나 지역으로 검색  -->
 	<h2 id="search-h2">Trainer Search</h2>
 	<form class="example" style="margin: 25px;" action="./trainerWindowSearch">
 		<div class="col-xs-3">
@@ -42,7 +44,7 @@
 
 <!-- 상세조건 검색 -->
 <div style="margin-top: 25px;" class="list-group" id="div1" >
-	<form id="frm_trainer" action="./trainerDetailSearch">
+	<form id="frm_trainer" action="./trainerDetailSearch" style="margin-top: 15px;">
 		<hr>
 		<h4> 성별 </h4>
 		<label class="radio-inline">
@@ -83,8 +85,7 @@
 		<div class="col-xs-12" id="div3">
 			<div>
 				<input type="button" id="btn" value="검색하기" class="btn btn-primary" >
-				<input type="reset" class="btn btn-danger" value="초기화" id="reset">
-				<a href = "./trainer/map"><input type = "button" class = "map btn btn-success" value = "헬스장  위치찾기" style="float: right;"></a>
+				<a href = "./trainer/map"><input type = "button" class = "map btn btn-success" value = "헬스장  위치안내" style="float: right;"></a>
 			</div>
 		</div>
 	</form>
@@ -95,6 +96,8 @@
 <script type="text/javascript">
 	$("#btn").click(function() {
 		
+		// 종목과 장소선택의 필수 사항
+		
 		//var ge = ($('input:radio[name=gender]').is(':checked'));
 		var ki = ($('input:radio[name=kind]').is(':checked'));
 		var bu = ($('input:radio[name=business]').is(':checked'));
@@ -104,11 +107,8 @@
 			$("#frm_trainer").submit();
 		}
 	});
-	
-	$("#reset").click(function() {
-		location.href="./trainerSearch";
-	});
 
+	// 검색어 창 입력 유도
 	$("#search-blank").click(function() {
 		var b = $("#search-text").val();
 		if(b==''){

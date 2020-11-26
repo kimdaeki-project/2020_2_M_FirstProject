@@ -30,12 +30,13 @@
 	</resultMap>
 	
 	<select id="getTrainerPage" parameterType="TrainerDTO" resultType="TrainerDTO">
-		select M.*, TF.filename, TF.oriname
+		select M.*, TF.fileName, TF.oriName
 		from member M inner join trainerfile TF
 		on (M.id = TF.id)
 		where M.id=#{id}
 	</select>
 
+	<!-- 검색창에 맞는 이름, 지역 찾기 -->
 	<select id="getSearchList" resultType="TrainerDTO" parameterType="Pager">
 		select * from
 		(select rownum R, N.* from
@@ -52,6 +53,7 @@
 		where R between #{startRow} and #{lastRow} 
 	</select>
 	
+	<!-- 검색창에 맞는 이름, 지역 페이징 처리를 위한 count 조회 -->
 	<select id="getCount" resultType="Long" parameterType="Pager">
 		select count(num) from member where
 		<choose>
@@ -65,6 +67,7 @@
 		like '%'||#{search}||'%'
 	</select>
 	
+	<!-- 상세 조건 검색에 맞는 페이징 처리를 위한 count 조회 -->
 	<select id="getDetailCount" resultType="Long" parameterType="Pager">
 		select count(num) from member where
 		<choose>
@@ -116,6 +119,7 @@
 		</choose>
 	</select>
 	
+	<!-- 상세조건에 맞는 정보 출력하기 위한 조회 -->
 	<select id="getSearch" resultType="TrainerDTO" parameterType="Pager">
 		select * from
 		(select rownum R, N.* from
