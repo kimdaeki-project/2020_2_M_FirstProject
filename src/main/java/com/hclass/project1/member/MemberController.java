@@ -34,7 +34,7 @@ public class MemberController {
 		session.invalidate();
 		if(result>0) {
 			mv.addObject("msg","탈퇴 성공");
-			mv.addObject("path","redirect:../");
+			mv.addObject("path","../");
 			mv.setViewName("common/result");
 		}
 		

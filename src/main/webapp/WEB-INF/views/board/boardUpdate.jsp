@@ -20,7 +20,26 @@
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 
 <c:import url="../template/bootStrap.jsp"></c:import>
-
+<style type="text/css">
+.noResize{
+		resize: none;
+	
+	}
+	.btns{
+		background-color: black;
+		color:white;
+		font-size: large;
+		border-radius: 10px;
+	}
+		.divWrite{
+		display: inline-block;
+	}
+	.del {
+		color: red;
+		font-weight: bold;
+		cursor: pointer;
+	}
+</style>
 </head>
 <body>
 <jsp:include page="../template/slide.jsp" />
@@ -51,23 +70,23 @@
 
 			<div class="form-group">
 				<label for="contents">내용 </label>
-				<textarea class="form-control" rows="20" cols="30" id="contents"
-					name="contents">${dto.contents}</textarea>
+				<textarea class="form-control noResize" rows="20" cols="30" id="contents"
+					name="contents"  >${dto.contents}</textarea>
 			</div>
 
 			<input type="button" value="FileAdd" id="fileAdd"
-				class="btn btn-info">
-
+				class="btns">
+			<div class="form-group divWrite">
+				<input type="button"
+					class="btns" value="Write" id="btn">
+			</div>
 			<div id="files"></div>
 
 
-			<div class="form-group">
-				<label></label> <input type="button"
-					class="btn btn-primary form-control" value="Write" id="btn">
-			</div>
+			
 		</form>
 
-		<div id="f">
+		<div id="f" hidden="">
 			<div class="input-group">
 				<input id="files" type="file" class="form-control" name="files">
 				<span class="input-group-addon del">DEL</span>
@@ -86,7 +105,7 @@
 				}
 			});
 		</script>
-
+		<script src="../resources/js/noticeWrite.js"></script>
 	</div>
 
 

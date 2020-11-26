@@ -29,11 +29,8 @@ public class QnaController {
 	private QnaService qnaService ;
 	
 	@PostMapping("qnaReply")
-	public ModelAndView setReply(QnaDTO qnaDTO) throws Exception{
+	public ModelAndView setReply(QnaDTO qnaDTO ) throws Exception{
 		ModelAndView mv = new ModelAndView();
-		System.out.println(qnaDTO.getContents());
-		System.out.println(qnaDTO.getTitle());
-		System.out.println(qnaDTO.getWriter());
 		int result = qnaService.setReply(qnaDTO);
 		System.out.println("확인");
 		String message = "입력 실패";
@@ -51,9 +48,12 @@ public class QnaController {
 	public ModelAndView setReply(QnaDTO qnaDTO,HttpSession session) throws Exception{
 		ModelAndView mv = new ModelAndView();
 		MemberDTO memberDTO= new MemberDTO();
+		qnaDTO = qnaService.getOne(qnaDTO);
+		
 		memberDTO = (MemberDTO) session.getAttribute("member");
+		mv.addObject("qnareply", qnaDTO);
 		mv.addObject("member",memberDTO);
-		mv.setViewName("notice/qnaReply");
+		mv.setViewName("board/boardReply");
 		return mv;
 		
 	}
@@ -72,9 +72,9 @@ public class QnaController {
 	}
 	
 	@PostMapping("qnaUpdate")
-	public ModelAndView setUpdate(QnaDTO qnaDTO)throws Exception{
+	public ModelAndView setUpdate(QnaDTO qnaDTO,MultipartFile[] files,HttpSession session)throws Exception{
 		ModelAndView mv = new ModelAndView();
-		int result =qnaService.setUpdate(qnaDTO);
+		int result =qnaService.setUpdate(qnaDTO,files,session);
 		String message = "글 수정 실패";
 		if(result>0) {
 			message = "글 수정 성공";
@@ -92,7 +92,7 @@ public class QnaController {
 		qnaDTO = qnaService.getOne(qnaDTO);
 		mv.addObject("dto",qnaDTO);
 		mv.addObject("board","qna");
-		mv.setViewName("notice/noticeUpdate");
+		mv.setViewName("board/boardUpdate");
 		return mv;
 	}
 	@GetMapping("qnaSelect")
@@ -109,7 +109,7 @@ public class QnaController {
 		mv.addObject("member", memberDTO);
 		mv.addObject("dto",qnaDTO);
 		mv.addObject("board","Qna");
-		mv.setViewName("notice/noticeSelect");
+		mv.setViewName("board/boardSelect");
 		return mv;
 	}
 	
@@ -120,7 +120,7 @@ public class QnaController {
 		mv.addObject("list", ar);
 		mv.addObject("pager", pager);
 		mv.addObject("board","qna");
-		mv.setViewName("notice/noticeList");
+		mv.setViewName("board/boardList");
 		return mv;
 		
 	}
@@ -129,6 +129,7 @@ public class QnaController {
 	public ModelAndView setOne(QnaDTO qnaDTO,MultipartFile[] files, HttpSession session) throws Exception{
 		ModelAndView mv = new ModelAndView();
 		int result =0;
+		System.out.println("qnaWrite확인");
 		result = qnaService.setOne(qnaDTO, files, session);
 		System.out.println(result);
 		String message ="입력 실패";
@@ -149,7 +150,7 @@ public class QnaController {
 		memberdto = (MemberDTO) Session.getAttribute("member");
 		mv.addObject("member", memberdto);
 		mv.addObject("board","qna");
-		mv.setViewName("notice/noticeWrite");
+		mv.setViewName("board/boardWrite");
 		return mv;
 	}
 }

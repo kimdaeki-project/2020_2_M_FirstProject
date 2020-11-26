@@ -4,6 +4,7 @@ import java.sql.Date;
 
 public class QnaDTO {
 	private long num;
+	private long num2;
 	private Date regDate;
 	private String title;
 	private String writer;
@@ -65,6 +66,12 @@ public class QnaDTO {
 	}
 	public void setHit(long hit) {
 		this.hit = hit;
+	}
+	public long getNum2() {
+		return num2;
+	}
+	public void setNum2(long num2) {
+		this.num2 = num2;
 	}
 	
 }

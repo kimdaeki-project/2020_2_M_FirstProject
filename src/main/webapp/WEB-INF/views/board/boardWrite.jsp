@@ -13,13 +13,32 @@
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
 <!-- Latest compiled JavaScript -->
-<script
-	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
 <meta charset="UTF-8">
 <title>Notice Write title</title>
 
 <c:import url="../template/bootStrap.jsp"></c:import>
-
+<style type="text/css">
+.btns{
+		background-color: black;
+		color:white;
+		font-size: large;
+		border-radius: 10px;
+	}
+	.divWrite{
+		display: inline-block;
+	}
+	.del {
+		color: red;
+		font-weight: bold;
+		cursor: pointer;
+	}
+	.noResize{
+		resize: none;
+	
+	}
+</style>
 
 </head>
 <body>
@@ -46,18 +65,18 @@
 
 			<div class="form-group">
 				<label for="contents">내용 </label>
-				<textarea class="form-control" rows="20" cols="30" id="contents"
+				<textarea class="form-control noResize" rows="20" cols="30" id="contents"
 					name="contents"></textarea>
 			</div>
 
 			<input type="button" value="FileAdd" id="fileAdd"
-				class="btn btn-info">
-			<div id="files"></div>
-			<div class="form-group">
-				<input type="button" class="btn btn-primary form-control"
-					value="Write" id="btn">
+				class="btns">
+			<div class="form-group divWrite" >
+				<input type="button" class="btns" value="Write" id="btn">
 				<!-- 	<button class="btn btn-primary form-control" id="btn">Write</button> -->
 			</div>
+			<div id="files"></div>
+			
 
 		</form>
 	</div>
@@ -69,36 +88,8 @@
 			</div>
 		</div>
 	</div>
-	<script type="text/javascript">
-		var count = 0;
-
-		$("#btn").click(function() {
-			var title = $("#title").val();
-			var contents = $("#contents").val();
-			if (title == '' && contents == '') {
-				alert("제목과 내용은 비울 수 없습니다.");
-			} else {
-				$("#frm2").submit();
-			}
-		});
-		$("#fileAdd").click(function() {
-
-			if (count < 5) {
-				var f = $("#f").html().trim();
-				$("#files").append(f);
-				count++;
-			} else {
-				alert("첨부파일은 최대 5개까지 입니다")
-			}
-		});
-		$("#files").on("click", ".del", function() {
-			$(this).parent().remove();
-			count--;
-		});
-	</script>
-
-
 	<!-- Footer -->
 	<c:import url="../template/footer.jsp"></c:import>
+	<script src="../resources/js/noticeWrite.js"></script>
 </body>
 </html>

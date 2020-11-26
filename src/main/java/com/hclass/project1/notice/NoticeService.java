@@ -66,8 +66,22 @@ public class NoticeService {
 		return result;
 	}
 	
-	public int setUpdate(NoticeDTO noticeDTO) throws Exception{
-		return noticeDAO.setUpdate(noticeDTO);
+	public int setUpdate(NoticeDTO noticeDTO,MultipartFile[] photo, HttpSession session) throws Exception{
+		String path =session.getServletContext().getRealPath("/resources/upload/notice");
+		File file2 = new File(path);
+		String fileName="";
+		int result = noticeDAO.setUpdate(noticeDTO);
+		for(MultipartFile file :photo) {
+			if(file.getSize()!=0) {
+				fileName = filesaver.saver(file2, file);
+				NoticeFileDTO noticefileDTO = new NoticeFileDTO();
+				noticefileDTO.setOriName(file.getOriginalFilename());
+				noticefileDTO.setFileName(fileName);
+				noticefileDTO.setNum(noticeDTO.getNum());
+				result = noticeFileDAO.setFileOne(noticefileDTO);
+			}
+			}
+		return result;
 	}
 	
 	public int setDelete(NoticeDTO noticeDTO)throws Exception{

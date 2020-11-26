@@ -34,6 +34,11 @@ img { display: block; margin: 0px auto; }
 	width :900px;
 	margin: 0px auto
 }
+.wribtn{
+		
+		color:white;
+		border-radius: 10px;
+	}
 </style>
 </head>
 <body>
@@ -130,21 +135,21 @@ img { display: block; margin: 0px auto; }
 			<c:when test="${board eq 'notice'}">
 				<c:if test="${not empty member and member.id eq 'admin'}">
 					<a href="./${board}Update?num=${dto.num}"><input type="button"
-						id="upbtn" class="btn btn-primary member" value="update"></a>
+						id="upbtn  btn btn-primary" class="wribtn btn btn-primary"" value="update"></a>
 					<a href="./${board}Delete?num=${dto.num}"><input type="button"
-						id="debtn" class="btn btn-danger member" value="delete"></a>
+						id="debtn  btn btn-danger" class="wribtn btn btn-danger" value="delete"></a>
 				</c:if>
 			</c:when>
 				<c:when test="${board eq 'Qna'}">
 				<c:if test="${not empty member and member.id eq dto.writer}">
-					<a href="./qnaUpdate?num=${dto.num}"><input type="button"
-						id="upbtn" class="btn btn-primary member" value="update"></a>
-					<a href="./qnaDelete?num=${dto.num}"><input type="button"
-						id="debtn" class="btn btn-danger member" value="delete"></a>
+					<a href="./qnaUpdate?num=${dto.num}">
+					<input type="button" id="upbtn" class="wribtn btn btn-primary" value="update"></a>
+					<a href="./qnaDelete?num=${dto.num}">
+					<input type="button" id="debtn" class="wribtn btn btn-danger" value="delete"></a>
 				</c:if>
 				<c:if test="${not empty member and member.id eq 'admin'}">
-					<a href="./qnaReply?num=${dto.num}"><input type="button"
-						id="rebtn" class="btn btn-primary admin" value="reply"></a>
+					<a href="./qnaReply?num=${dto.num}">
+					<input type="button"id="rebtn" class="wribtn admin btn btn-info" value="reply"></a>
 				</c:if>
 			</c:when>
 		</c:choose>

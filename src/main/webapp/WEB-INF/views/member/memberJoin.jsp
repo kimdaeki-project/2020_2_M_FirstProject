@@ -249,7 +249,7 @@
                 <div class="form-group" id="divFile" hidden="">
                 	 <label for="inputPhoneNumber" class="col-lg-2 control-label">트레이너구분</label>
                 	 <div class="col-lg-10">
-                	 <input type="text" class="form-control" id="trainer" data-rule-required="true" value="M" name="trainer" readonly="readonly" hidden="">
+                	 <input type="text" class="form-control" id="trainer" data-rule-required="true" value="" name="trainer" readonly="readonly">
                 	 </div>
                 </div>
                 <div class="form-group" id="divsingIn"> 
@@ -272,7 +272,7 @@
 			var ageCheck = false;
 			var addressCheck=false;
 			var gymCheck = false;
-			var ch = $("#title").val();
+			var ch = '${classification}';
 			
 		//******************************트레이너 주종목**************************************************
 		$("#divKind").on("change","#kindbox",function(){
@@ -291,17 +291,16 @@
 			
 		//***************************************회원가입시에 트레이너와 일반회원 구분*****************************
 			if(ch=='trainer'){
-				$("#trainer").val("T");
-				}
-			else{
-				$("#trainer").val("M");
-				}
+						$("#trainer").val("T");
+						}
+					else{
+						$("#trainer").val("M");
+						}
 			
 		
 			//*****************************필수 입력 체크 및 회원가입*********************************
 				$("#signIn").click(function(){
-					
-					
+			
 					if(ch!='trainer'){
 						if(pwCheck&&idCheck&&emailCheck&&ageCheck){
 							$("#frm").submit();

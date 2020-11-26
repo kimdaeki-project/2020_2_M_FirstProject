@@ -20,6 +20,14 @@
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 
 <c:import url="../template/bootStrap.jsp"></c:import>
+<style type="text/css">
+	.wribtn{
+		color:white;
+		font-size: large;
+		border-radius: 10px;
+	}
+
+</style>
 </head>
 <body>
 
@@ -64,7 +72,7 @@
 						<td>${dto.num}</td>
 						<td><a href="./${board}Select?num=${dto.num}" id="link"> <c:catch>
 									<%-- jsp 주석  --%>
-									<c:forEach begin="1" end="${dto.depth}">--</c:forEach>
+									<c:forEach begin="1" end="${dto.depth}">ㄴ</c:forEach>
 								</c:catch> ${dto.title}
 						</a></td>
 						<td>${dto.writer}</td>
@@ -91,7 +99,9 @@
 		<c:choose>
 			<c:when test="${board eq 'notice'}">
 				<c:if test="${not empty member and member.id eq 'admin'}">
-					<a href="./noticeWrite" class="btn btn-danger">Write</a>
+					<a href="./noticeWrite">
+					<input type="button" value="Write" class="wribtn btn btn-primary">
+					</a>
 				</c:if>
 			</c:when>
 
@@ -99,7 +109,7 @@
 		<c:choose>
 			<c:when test="${board eq 'qna'}">
 				<c:if test="${not empty member}">
-					<a href="./qnaWrite" class="btn btn-danger">Write</a>
+					<a href="./qnaWrite"><input type="button" value="Write" class="wribtn btn btn-primary"></a>
 				</c:if>
 			</c:when>
 		</c:choose>
