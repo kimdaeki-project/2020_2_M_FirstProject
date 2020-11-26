@@ -246,7 +246,7 @@
                         </label>
                     </div>
                 </div>
-                <div class="form-group" id="divFile">
+                <div class="form-group" id="divFile" hidden="">
                 	 <label for="inputPhoneNumber" class="col-lg-2 control-label">트레이너구분</label>
                 	 <div class="col-lg-10">
                 	 <input type="text" class="form-control" id="trainer" data-rule-required="true" value="" name="trainer" readonly="readonly">

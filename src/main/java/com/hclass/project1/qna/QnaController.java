@@ -48,7 +48,10 @@ public class QnaController {
 	public ModelAndView setReply(QnaDTO qnaDTO,HttpSession session) throws Exception{
 		ModelAndView mv = new ModelAndView();
 		MemberDTO memberDTO= new MemberDTO();
+		qnaDTO = qnaService.getOne(qnaDTO);
+		
 		memberDTO = (MemberDTO) session.getAttribute("member");
+		mv.addObject("qnareply", qnaDTO);
 		mv.addObject("member",memberDTO);
 		mv.setViewName("board/boardReply");
 		return mv;

@@ -51,7 +51,7 @@ table {
 			<div class="form-group">
 				<label for="title">글제목</label> <input type="text"
 					class="form-control" id="title" placeholder="Enter Title"
-					name="title">
+					name="title" value="${qnareply.title }">
 			</div>
 
 			<div class="form-group">

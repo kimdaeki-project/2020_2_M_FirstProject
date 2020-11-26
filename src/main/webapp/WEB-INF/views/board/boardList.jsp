@@ -22,7 +22,6 @@
 <c:import url="../template/bootStrap.jsp"></c:import>
 <style type="text/css">
 	.wribtn{
-		background-color: black;
 		color:white;
 		font-size: large;
 		border-radius: 10px;
@@ -73,7 +72,7 @@
 						<td>${dto.num}</td>
 						<td><a href="./${board}Select?num=${dto.num}" id="link"> <c:catch>
 									<%-- jsp 주석  --%>
-									<c:forEach begin="1" end="${dto.depth}">--</c:forEach>
+									<c:forEach begin="1" end="${dto.depth}">ㄴ</c:forEach>
 								</c:catch> ${dto.title}
 						</a></td>
 						<td>${dto.writer}</td>
@@ -101,7 +100,7 @@
 			<c:when test="${board eq 'notice'}">
 				<c:if test="${not empty member and member.id eq 'admin'}">
 					<a href="./noticeWrite">
-					<input type="button" value="Write" class="wribtn">
+					<input type="button" value="Write" class="wribtn btn btn-primary">
 					</a>
 				</c:if>
 			</c:when>
@@ -110,7 +109,7 @@
 		<c:choose>
 			<c:when test="${board eq 'qna'}">
 				<c:if test="${not empty member}">
-					<a href="./qnaWrite"><input type="button" value="Write" class="wribtn"></a>
+					<a href="./qnaWrite"><input type="button" value="Write" class="wribtn btn btn-primary"></a>
 				</c:if>
 			</c:when>
 		</c:choose>
