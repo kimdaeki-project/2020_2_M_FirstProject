@@ -1,6 +1,5 @@
 package com.hclass.project1.trainer;
 
-import java.nio.channels.SeekableByteChannel;
 import java.util.List;
 
 import javax.servlet.http.HttpSession;
@@ -13,11 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.hclass.project1.member.MemberDTO;
 import com.hclass.project1.util.Pager;
-
-import oracle.security.crypto.core.SHA1RandomBitsSource;
-
 
 @Controller
 @RequestMapping(value="/trainer/**")

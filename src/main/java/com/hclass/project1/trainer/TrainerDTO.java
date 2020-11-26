@@ -8,20 +8,24 @@ public class TrainerDTO {
 	private String kind;
 	private String address;
 	private String business;
-	private String filename;
-	private String oriname;
+	private String fileName;
+	private String oriName;
 	private String id;
 	private String education;
 	private String certificate;
 	private String career;
 	
-	
-	
-	public String getOriname() {
-		return oriname;
+	public String getFileName() {
+		return fileName;
 	}
-	public void setOriname(String oriname) {
-		this.oriname = oriname;
+	public void setFileName(String fileName) {
+		this.fileName = fileName;
+	}
+	public String getOriName() {
+		return oriName;
+	}
+	public void setOriName(String oriName) {
+		this.oriName = oriName;
 	}
 	public String getEducation() {
 		return education;
@@ -46,12 +50,6 @@ public class TrainerDTO {
 	}
 	public void setId(String id) {
 		this.id = id;
-	}
-	public String getFilename() {
-		return filename;
-	}
-	public void setFilename(String filename) {
-		this.filename = filename;
 	}
 	public long getNum() {
 		return num;
