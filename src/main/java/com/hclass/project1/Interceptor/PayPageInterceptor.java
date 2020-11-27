@@ -13,6 +13,7 @@ import com.hclass.project1.member.MemberDTO;
 @Component
 public class PayPageInterceptor extends HandlerInterceptorAdapter{
 
+	// 회원 전용 페이지로 트레이너는 접근 불가
 	@Override
 	public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler)
 			throws Exception {
