@@ -63,7 +63,7 @@
 		delete qna where num =#{num}
 	</delete>
     <insert id ="setReply" parameterType="QnaDTO">
-		insert into qna values(qna_seq.nextval
+		insert into qna values(#{num}+1
 		, sysdate,#{title},#{writer}, #{contents},
 		(select ref from qna where num =#{num}),
 		(select step+1 from qna where num =#{num}),
