@@ -32,8 +32,10 @@ public class MemberController {
 		memberDTO=(MemberDTO) session.getAttribute("member");
 		int result = memberService.memberDelete(memberDTO);
 		session.invalidate();
+		String message ="탈퇴 실패";
 		if(result>0) {
-			mv.addObject("msg","탈퇴 성공");
+			message ="탈퇴 성공";
+			mv.addObject("msg",message);
 			mv.addObject("path","../");
 			mv.setViewName("common/result");
 		}
@@ -51,8 +53,14 @@ public class MemberController {
 			memberDTO.setAddress("");
 			memberDTO.setGym("");
 		}
-		memberService.memberUpdate(memberDTO);
-		mv.setViewName("redirect:../");
+		int result=memberService.memberUpdate(memberDTO);
+		String message ="정보 수정 실패";
+		if(result>0) {
+			message ="정보 수정 성공";
+			mv.addObject("msg",message);
+			mv.addObject("path","../");
+			mv.setViewName("common/result");
+		}
 		return mv;
 	}
 	
