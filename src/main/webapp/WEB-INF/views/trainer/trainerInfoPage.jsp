@@ -120,7 +120,7 @@
 	// 예약 페이지로 이동
 	$("#reserveBtn").click(function() {
 		var testnum = $(this).attr("title")
-		location.href="../payment/paymentPage?num="+testnum;	
+		location.href="../payment/paymentPage?num="+testnum;
 	});
 	
 </script>	
