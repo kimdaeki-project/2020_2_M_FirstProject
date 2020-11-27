@@ -31,6 +31,7 @@ public class QnaController {
 	@PostMapping("qnaReply")
 	public ModelAndView setReply(QnaDTO qnaDTO ) throws Exception{
 		ModelAndView mv = new ModelAndView();
+		
 		int result = qnaService.setReply(qnaDTO);
 		System.out.println("확인");
 		String message = "입력 실패";
