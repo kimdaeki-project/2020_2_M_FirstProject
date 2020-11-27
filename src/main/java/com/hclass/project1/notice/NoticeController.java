@@ -80,7 +80,7 @@ public class NoticeController {
       noticeDTO = (NoticeDTO) Session.getAttribute("notice");
       mv.addObject("notice", noticeDTO);
       mv.addObject("board","notice");
-      mv.setViewName("board/boadWrite");
+      mv.setViewName("board/boardWrite");
       return mv;
    }
    
