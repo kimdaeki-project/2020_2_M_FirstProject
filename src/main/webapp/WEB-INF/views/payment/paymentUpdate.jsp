@@ -54,6 +54,8 @@
 <c:import url="../template/header.jsp"></c:import>
 <body>
 												<!--  날짜 변경    -->
+	
+<c:if test="${not empty upDto.regDate}">	
 	<h1 class="cash_h1">예약 변경</h1>
 	<div id="cash-div">
 		<form action="./paymentUpdate" id="upfrm" method="post">
@@ -61,17 +63,24 @@
 		
 				<div class="container" id="cashDiv">					
 					<input type="text" value="${member.id}" name="id" id="member_id-text" readonly="readonly">회원님
-					<div class="date_style">변경하실 날짜와 시간을 선택해주세요.(당일날짜로 변경 불가)</div>
+					<div class="date_style" style="color: red;">* 변경하실 날짜와 시간을 선택해주세요.(당일날짜로 변경 불가) *</div>
 					<div class="date_style">(Time 08:00 to 21:00)</div>
+					<div class="date_style">시간은 정각 기준 15분 간격으로 선택하여주세요.</div>
 					<div>
 					<input _date type="date" id="date" name="regDate" value="${upDto.regDate}">
-					<input type="time" id="time" value="${upDto.time}" min="08:00" max="21:00" required="required" name="time">
+					<input type="time" id="time" value="${upDto.time}" min="08:00" max="21:00" step="900" required="required" name="time">
 					<span class="validity"></span>
 					</div>
 				</div>
 		</form>
 		<input type="button" value="예약 변경하기" class="btn btn-primary" id="change_btn">
 	</div>
+</c:if>
+
+<c:if test="${empty upDto.regDate}">
+	<h1 class="cash_h1">예약 현황이 없습니다.</h1>
+</c:if>	
+	
 <c:import url="../template/footer.jsp"></c:import>	
 </body>
 <script type="text/javascript">
@@ -83,12 +92,13 @@
 		
 		if(!td.checkValidity()){
 			alert("지정된 시간을 선택해주세요.");
-		}else{
-			d = confirm(d +" 일,"+t +" 으로 변경 하시겠습니까?");
-		}if(d){
-			$("#upfrm").submit();
-		}else{
-			alert("취소하셨습니다.");
+		}else if(td.checkValidity){
+			d = confirm(d +" 일 "+t +"분으로 변경 하시겠습니까?");
+			if(d){
+				$("#upfrm").submit();
+			}else{
+				alert("취소하셨습니다.");
+				}
 		}
 	});
 
