@@ -67,22 +67,23 @@
 			<!-- 선택한 트레이너 정보 -->
 			<div class="container" id="cashDiv">
 				<h3 class="cash_h1" style="padding:15px; background-color: #f2d9e6; margin-bottom: 30px;">선택하신 트레이너 정보입니다.</h3>	
-				이름 : <input type="text" value="${trainers.name}" class="info-tr" name="name" id="trName">
+				이름 : <input type="text" value="${trainers.name}" class="info-tr" name="name" id="trName" readonly="readonly">
 				<br>
-				종류 : <input type="text" value="${trainers.kind}" class="info-tr" name="kind">
+				종류 : <input type="text" value="${trainers.kind}" class="info-tr" name="kind" readonly="readonly">
 				<br>
-				출장 : <input type="text" value="${trainers.business}" class="info-tr" name="business">
+				출장 : <input type="text" value="${trainers.business}" class="info-tr" name="business" readonly="readonly">
 				<br>
 				<hr>
 			<!--  -->
 			
 			<!-- 나의 아이디 확인, 날짜, 시간 선택  -->						
 				<input type="text" value="${member.id}" name="id" id="member_id-text" readonly="readonly">회원님
-				<div class="date_style">예약하실 날짜와 시간을 선택해주세요.(당일예약 불가)</div>
-				<div class="date_style">(Time 08:00 to 21:00)</div>
+				<div class="date_style" style="color: red;">날짜와 시간을 선택해주세요. (당일 예약 불가)</div>
+					<div class="date_style">(Time 08:00 to 21:00)</div>
+					<div class="date_style">시간은 정각 기준 15분 간격으로 선택하여주세요.</div>
 				<div>
 				<input _date type="date" id="date" name="regDate" >
-				<input type="time" id="time" value="08:00" min="08:00" max="21:00" required="required" name="time">
+				<input type="time" id="time" value="08:00" min="08:00" max="21:00" step="900" required="required" name="time">
 			
 			<!-- 지정된 시간에 맞는 선택 시 "",X 결과 출력 -->	
 				<span class="validity"></span>
