@@ -35,7 +35,7 @@
 				contents
 			</otherwise>
 		</choose>
-		like '%'||#{search}||'%' order by ref desc, step asc) N)
+		like '%'||#{search}||'%' order by num asc,ref desc, step asc) N)
 		where R between #{startRow} and #{lastRow}
 	</select>
 	
