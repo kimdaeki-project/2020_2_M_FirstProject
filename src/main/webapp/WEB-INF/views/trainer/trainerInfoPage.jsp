@@ -77,7 +77,7 @@
 		<div class="detail container-fluid">
 			<div class="pc-detail-header">
 				<div class="trainer-photo">
-					<img alt="" src="../resources/img/trainer/${trainers.filename}" style="width: 500px; height: 500px;">
+					<img alt="" src="../resources/img/trainer/${trainers.fileName}" style="width: 500px; height: 500px;">
 				</div>
 				<div class="trainer-info">
 					<div class="title">
