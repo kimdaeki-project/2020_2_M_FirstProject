@@ -27,7 +27,7 @@
 	<h3 class="info_h3">회원 예약 현황</h3>
 	<table class="table table-condensed info_table">
 		<tr>
-			<th>회원이름</th><th>날짜</th><th>시간</th><th>트레이너</th>
+			<th>회원ID</th><th>날짜</th><th>시간</th><th>트레이너</th>
 		</tr>
 	<c:forEach items="${payinfo}" var="paydto">
 		<tr>
