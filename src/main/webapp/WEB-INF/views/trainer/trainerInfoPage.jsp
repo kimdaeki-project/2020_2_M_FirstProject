@@ -13,8 +13,9 @@
 <c:import url="../template/slide.jsp"></c:import>
 <style type="text/css">
 	
-	#reserveDiv{
-		text-align:right;
+	#reserveBtn{
+		width: 200px;
+		margin-left: 950px;
 	}
 	#reserve_h1{
 		text-align: center;
@@ -23,6 +24,7 @@
 	.pc-detail-header{
 		padding: 40px 80px;
 		margin-left: 100px;
+		width: 1400px;
 	}
 	.detail.container-fluid{
 		position: relative;
@@ -38,20 +40,19 @@
 		display: inline-block;
 		overflow: hidden;
 		text-align: center;
-		max-width: 500px;
 	}
 	.pc-detail-header .trainer-info{
 		vertical-align: top;
-		display: inline-block;
-		max-width: 450px;
+		width:600px;
+		display:inline-block;
 		margin-top:50px;
-		padding-left: 100px;
+		padding-left: 80px;
 	}
 	.pc-detail-header .trainer-info .title div.ts-sxl{
 		display: inline-block;
 		font-size: 28px !important;
 		vertical-align: top;
-		max-width: 400px;
+		max-width: 550px;
 	}
 	.pc-detail-header .trainer-info .title{
 		height: 70px;
@@ -59,7 +60,7 @@
 	.pc-detail-header .trainer-info .info-text{
 		font-size: 16px;
 		padding: 20px 0;
-		color: #330066 !important;
+		color: #004d99 !important;
 	}
 	.pc-detail-header .trainer-info .in-detail-border{
 		border-top: 2px solid #f4f5f6;
@@ -82,6 +83,7 @@
 				<div class="trainer-info">
 					<div class="title">
 						<div class="ts-sxl"><strong>트레이너 : </strong> ${trainers.name}</div>
+						<div class="ts-sxl" style="margin-left: 50px; color: #6666ff;"><strong>ｏ</strong>${trainers.kind}<strong>ｏ</strong> </div>
 					</div>
 					<div class="info-text in-detail-border">
 						<div style="margin-bottom: 10px;"><strong>주소 : </strong>${trainers.address }</div>
