@@ -17,7 +17,7 @@ IMP.init('imp64105428');
 var msg;
 
 IMP.request_pay({
-    pg : 'kakaopay',
+    pg : 'incis',
     pay_method : 'card',
     merchant_uid : 'merchant_' + new Date().getTime(),
     name : '(주)PT Matching',

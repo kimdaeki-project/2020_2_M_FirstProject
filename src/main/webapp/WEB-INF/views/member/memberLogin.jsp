@@ -70,6 +70,8 @@ $("#divLogin").on("click","#login",function(){
 	loginChk();
 
 	});
+
+
 function loginChk(event){
 	var pw = $("#pw").val();
 	var id = $("#id").val();
