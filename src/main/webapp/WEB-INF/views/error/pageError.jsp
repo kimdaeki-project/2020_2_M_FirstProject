@@ -15,7 +15,7 @@
 <body>
 <div class = "container">
 	<div class = "img" style="text-align: center; margin-top: 80px;">
-		<img class="error_img" alt="" src="../resources/img/error/error.jpg">
+		<img class="error_img" alt="" src="${pageContext.request.contextPath}/resources/img/error/error.jpg">
 	</div>
 	
 </div>
