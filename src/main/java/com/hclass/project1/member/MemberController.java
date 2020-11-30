@@ -121,11 +121,12 @@ public class MemberController {
 		}
 		memberDTO=memberService.memberLogin(memberDTO);
 		String message ="로그인실패";
+		String referer = request.getHeader("Referer");
 		if(memberDTO!=null) {
 			session.setAttribute("member", memberDTO);
 			message ="로그인성공";
 			mv.addObject("msg",message);
-			mv.addObject("path","../");
+			mv.addObject("path",referer);
 			mv.setViewName("common/result");
 		}
 		return mv;
